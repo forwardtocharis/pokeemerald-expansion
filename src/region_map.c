@@ -1166,7 +1166,7 @@ enum RegionMapType GetRegionMapType(u32 mapSecId)
     enum Region region = GetRegionForSectionId(mapSecId);
     if (mapSecId == MAPSEC_NONE)
     {
-        u8 activeRegion = VarGet(VAR_CURRENT_REGION);
+        u8 activeRegion = GetActiveRegion();
         if (activeRegion == 1)
             return REGION_MAP_KANTO;
         return REGION_MAP_HOENN;

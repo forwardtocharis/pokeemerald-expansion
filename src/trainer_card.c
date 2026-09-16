@@ -854,7 +854,7 @@ static void SetDataFromTrainerCard(void)
         sData->hasBattleTowerWins++;
 
     {
-        u8 activeRegion = VarGet(VAR_CURRENT_REGION);
+        u8 activeRegion = GetActiveRegion();
         static const u16 sKantoBadgeFlags[NUM_BADGES] = {
             FLAG_KANTO_BADGE01_GET, FLAG_KANTO_BADGE02_GET, FLAG_KANTO_BADGE03_GET, FLAG_KANTO_BADGE04_GET,
             FLAG_KANTO_BADGE05_GET, FLAG_KANTO_BADGE06_GET, FLAG_KANTO_BADGE07_GET, FLAG_KANTO_BADGE08_GET,
@@ -1898,7 +1898,7 @@ static void InitTrainerCardData(void)
 
 static u8 GetSetCardType(void)
 {
-    u8 activeRegion = VarGet(VAR_CURRENT_REGION);
+    u8 activeRegion = GetActiveRegion();
     if (sData == NULL)
     {
         if (activeRegion == 1)

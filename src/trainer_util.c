@@ -137,7 +137,7 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
     personality |= genderValue;
     ModifyPersonalityForNature(&personality, trainerMon->nature);
     {
-        u8 monLevel = GetScaledTrainerMonLevel(trainerMon->lvl, trainer->trainerId);
+        u8 monLevel = GetScaledTrainerMonLevel(trainerMon->lvl);
         CreateMon(mon, trainerMon->species, monLevel, personality, trainer->otID);
     }
     if (trainerMon->nickname != NULL)

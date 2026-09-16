@@ -9,6 +9,6 @@ u16 GetTotalBadgesCount(void);
 u16 GetRegionBadgeCount(u8 regionId);
 u8 GetActiveRegion(void);
 void SetActiveRegion(u8 regionId);
-u8 GetScaledTrainerMonLevel(u8 baseLevel, u16 trainerNum);
+u8 GetScaledTrainerMonLevel(u8 baseLevel);
 
 #endif // GUARD_MULTI_REGION_H

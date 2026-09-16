@@ -113,7 +113,7 @@ void SetActiveRegion(u8 regionId)
     VarSet(VAR_CURRENT_REGION, regionId);
 }
 
-u8 GetScaledTrainerMonLevel(u8 baseLevel, u16 trainerNum)
+u8 GetScaledTrainerMonLevel(u8 baseLevel)
 {
     u16 totalBadges;
     u32 scaled;
