@@ -4,6 +4,7 @@
 #include "constants/trainers.h"
 #include "constants/opponents.h"
 #include "constants/rematches.h"
+#include "constants/multi_region_flags.h"
 
 
 // Temporary Flags
@@ -1638,8 +1639,7 @@
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
-
-#define FLAGS_COUNT (DAILY_FLAGS_END + 1)
+#define FLAGS_COUNT 4096
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

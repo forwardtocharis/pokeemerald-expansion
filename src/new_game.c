@@ -19,6 +19,7 @@
 #include "rtc.h"
 #include "easy_chat.h"
 #include "event_data.h"
+#include "multi_region.h"
 #include "money.h"
 #include "trainer_hill.h"
 #include "trainer_tower.h"
@@ -135,7 +136,8 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    if (IS_FRLG)
+    u16 startingRegion = VarGet(VAR_CURRENT_REGION);
+    if (startingRegion == 1 || IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else
         SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
@@ -184,6 +186,14 @@ void NewGameInitData(void)
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();
+    VarSet(VAR_CURRENT_REGION, 0); // 0: Hoenn (from content/game.yaml starting_region)
+    VarSet(VAR_TOTAL_BADGES, 0);
+    VarSet(VAR_HOENN_BADGES, 0);
+    VarSet(VAR_KANTO_BADGES, 0);
+    VarSet(VAR_JOHTO_BADGES, 0);
+    VarSet(VAR_SINNOH_BADGES, 0);
+    FlagSet(FLAG_SYS_MULTI_REGION_ACTIVE);
+    FlagSet(FLAG_SYS_BATTLE_SCALING_ENABLED);
     ClearTVShowData();
     ResetGabbyAndTy();
     ClearSecretBases();

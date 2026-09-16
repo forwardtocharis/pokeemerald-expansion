@@ -394,3 +394,31 @@ VermilionCity_Text_Route2AideHasPackageForYou::
 	.string "If you're in the ROUTE 2 area,\n"
 	.string "please look for him.$"
 
+VermilionCity_EventScript_FerrySailor::
+	lock
+	faceplayer
+	msgbox VermilionCity_Text_SailorReturnToHoenn, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_SailorCancel
+	msgbox VermilionCity_Text_SailorDepartHoenn, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 0
+	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
+	waitstate
+	release
+	end
+
+VermilionCity_EventScript_SailorCancel::
+	msgbox VermilionCity_Text_SailorComeBackSoon, MSGBOX_DEFAULT
+	release
+	end
+
+VermilionCity_Text_SailorReturnToHoenn:
+	.string "Ahoy! The S.S. TIDAL is ready to\n"
+	.string "set sail back to the HOENN region.\p"
+	.string "Would you like to board for Slateport?$"
+
+VermilionCity_Text_SailorDepartHoenn:
+	.string "Aye aye! Next stop, Slateport City!$"
+
+VermilionCity_Text_SailorComeBackSoon:
+	.string "Let me know whenever you're ready\n"
+	.string "to sail back.$"

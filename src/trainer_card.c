@@ -18,6 +18,7 @@
 #include "strings.h"
 #include "string_util.h"
 #include "trainer_card.h"
+#include "multi_region.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "pokedex.h"
@@ -852,10 +853,53 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
-    for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
     {
-        if (FlagGet(badgeFlag))
-            sData->badgeCount[i]++;
+        u8 activeRegion = VarGet(VAR_CURRENT_REGION);
+        static const u16 sKantoBadgeFlags[NUM_BADGES] = {
+            FLAG_KANTO_BADGE01_GET, FLAG_KANTO_BADGE02_GET, FLAG_KANTO_BADGE03_GET, FLAG_KANTO_BADGE04_GET,
+            FLAG_KANTO_BADGE05_GET, FLAG_KANTO_BADGE06_GET, FLAG_KANTO_BADGE07_GET, FLAG_KANTO_BADGE08_GET,
+        };
+        static const u16 sJohtoBadgeFlags[NUM_BADGES] = {
+            FLAG_JOHTO_BADGE01_GET, FLAG_JOHTO_BADGE02_GET, FLAG_JOHTO_BADGE03_GET, FLAG_JOHTO_BADGE04_GET,
+            FLAG_JOHTO_BADGE05_GET, FLAG_JOHTO_BADGE06_GET, FLAG_JOHTO_BADGE07_GET, FLAG_JOHTO_BADGE08_GET,
+        };
+        static const u16 sSinnohBadgeFlags[NUM_BADGES] = {
+            FLAG_SINNOH_BADGE01_GET, FLAG_SINNOH_BADGE02_GET, FLAG_SINNOH_BADGE03_GET, FLAG_SINNOH_BADGE04_GET,
+            FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET,
+        };
+
+        if (activeRegion == 1) // Kanto
+        {
+            for (i = 0; i < NUM_BADGES; i++)
+            {
+                if (FlagGet(sKantoBadgeFlags[i]))
+                    sData->badgeCount[i]++;
+            }
+        }
+        else if (activeRegion == 2) // Johto
+        {
+            for (i = 0; i < NUM_BADGES; i++)
+            {
+                if (FlagGet(sJohtoBadgeFlags[i]))
+                    sData->badgeCount[i]++;
+            }
+        }
+        else if (activeRegion == 3) // Sinnoh
+        {
+            for (i = 0; i < NUM_BADGES; i++)
+            {
+                if (FlagGet(sSinnohBadgeFlags[i]))
+                    sData->badgeCount[i]++;
+            }
+        }
+        else // Hoenn (default)
+        {
+            for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
+            {
+                if (FlagGet(badgeFlag))
+                    sData->badgeCount[i]++;
+            }
+        }
     }
 }
 
@@ -1854,9 +1898,12 @@ static void InitTrainerCardData(void)
 
 static u8 GetSetCardType(void)
 {
+    u8 activeRegion = VarGet(VAR_CURRENT_REGION);
     if (sData == NULL)
     {
-        if (gGameVersion == VERSION_FIRE_RED || gGameVersion == VERSION_LEAF_GREEN)
+        if (activeRegion == 1)
+            return CARD_TYPE_FRLG;
+        else if (gGameVersion == VERSION_FIRE_RED || gGameVersion == VERSION_LEAF_GREEN)
             return CARD_TYPE_FRLG;
         else if (gGameVersion == VERSION_EMERALD)
             return CARD_TYPE_EMERALD;
@@ -1865,7 +1912,7 @@ static u8 GetSetCardType(void)
     }
     else
     {
-        if (sData->trainerCard.version == VERSION_FIRE_RED || sData->trainerCard.version == VERSION_LEAF_GREEN)
+        if (activeRegion == 1 || sData->trainerCard.version == VERSION_FIRE_RED || sData->trainerCard.version == VERSION_LEAF_GREEN)
         {
             sData->isHoenn = FALSE;
             return CARD_TYPE_FRLG;

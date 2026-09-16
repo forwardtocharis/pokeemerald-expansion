@@ -157,6 +157,7 @@ SlateportCity_Harbor_Movement_PlayerWalkUp:
 SlateportCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
+	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_AskForTicket
 	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_AskForTicket
 	msgbox SlateportCity_Harbor_Text_FerryServiceUnavailable, MSGBOX_DEFAULT
 	release
@@ -170,12 +171,27 @@ SlateportCity_Harbor_EventScript_AskForTicket::
 	end
 
 SlateportCity_Harbor_EventScript_ChooseDestination::
+	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_ChooseDestinationWithKanto
 	goto_if_set FLAG_MET_SCOTT_ON_SS_TIDAL, SlateportCity_Harbor_EventScript_ChooseDestinationWithBattleFrontier
 	multichoicedefault 18, 8, MULTI_SSTIDAL_SLATEPORT_NO_BF, 2, FALSE
 	switch VAR_RESULT
 	case 0, SlateportCity_Harbor_EventScript_Lilycove
 	case 1, SlateportCity_Harbor_EventScript_CancelDestinationSelect
 	case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+	end
+
+SlateportCity_Harbor_EventScript_ChooseDestinationWithKanto::
+	msgbox SlateportCity_Harbor_Text_SailToKanto, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_SailToKanto
+	goto SlateportCity_Harbor_EventScript_Lilycove
+
+SlateportCity_Harbor_EventScript_SailToKanto::
+	msgbox SlateportCity_Harbor_Text_KantoItIs, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 1
+	call SlateportCity_Harbor_EventScript_BoardFerry
+	warp MAP_VERMILION_CITY, 15, 30
+	waitstate
+	release
 	end
 
 SlateportCity_Harbor_EventScript_ChooseDestinationWithBattleFrontier::
@@ -538,3 +554,12 @@ SlateportCity_Harbor_Text_HandedScannerToStern:
 SlateportCity_Harbor_Text_ThisWillHelpResearch:
 	.string "CAPT. STERN: Thanks, {PLAYER}{KUN}!\n"
 	.string "This will help our research a lot!$"
+
+SlateportCity_Harbor_Text_SailToKanto:
+	.string "We have special transit booked for\n"
+	.string "Vermilion City in the KANTO region!\p"
+	.string "Would you like to set sail for KANTO?$"
+
+SlateportCity_Harbor_Text_KantoItIs:
+	.string "All aboard for Vermilion City, KANTO!\n"
+	.string "Please watch your step.$"

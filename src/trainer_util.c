@@ -6,6 +6,7 @@
 #include "string_util.h"
 #include "trainer_util.h"
 #include "text.h"
+#include "multi_region.h"
 
 #include "constants/battle_ai.h"
 #include "constants/pokeball.h"
@@ -135,7 +136,10 @@ void GenerateMonFromTrainerMon(struct Pokemon *mon, const struct TrainerMon *tra
         errorf("Unkwown trainer mon gender value %d", trainerMon->gender);
     personality |= genderValue;
     ModifyPersonalityForNature(&personality, trainerMon->nature);
-    CreateMon(mon, trainerMon->species, trainerMon->lvl, personality, trainer->otID);
+    {
+        u8 monLevel = GetScaledTrainerMonLevel(trainerMon->lvl, trainer->trainerId);
+        CreateMon(mon, trainerMon->species, monLevel, personality, trainer->otID);
+    }
     if (trainerMon->nickname != NULL)
         SetMonData(mon, MON_DATA_NICKNAME, trainerMon->nickname);
     if (trainerMon->ev) //ev in struct TrainerMon are stored in Showdown order not vanilla Emerald order

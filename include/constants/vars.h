@@ -2,6 +2,7 @@
 #define GUARD_CONSTANTS_VARS_H
 
 #include "constants/vars_frlg.h"
+#include "constants/multi_region_vars.h"
 
 #define VARS_START 0x4000
 
@@ -276,7 +277,7 @@
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
-#define VARS_END                                         0x40FF
+#define VARS_END                                         0x43FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000

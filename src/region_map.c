@@ -21,6 +21,7 @@
 #include "fldeff.h"
 #include "regions.h"
 #include "region_map.h"
+#include "multi_region.h"
 #include "decompress.h"
 #include "constants/region_map_sections.h"
 #include "heal_location.h"
@@ -1162,7 +1163,16 @@ void PokedexAreaScreen_UpdateRegionMapVariablesAndVideoRegs(s16 x, s16 y)
 
 enum RegionMapType GetRegionMapType(u32 mapSecId)
 {
-    switch (GetRegionForSectionId(mapSecId))
+    enum Region region = GetRegionForSectionId(mapSecId);
+    if (mapSecId == MAPSEC_NONE)
+    {
+        u8 activeRegion = VarGet(VAR_CURRENT_REGION);
+        if (activeRegion == 1)
+            return REGION_MAP_KANTO;
+        return REGION_MAP_HOENN;
+    }
+
+    switch (region)
     {
     case REGION_KANTO:
         switch (GetKantoSubregion(mapSecId))
@@ -1420,7 +1430,7 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
     sRegionMap->cursorPosY = gRegionMapEntries[sRegionMap->mapSecId].y + y + MAPCURSOR_Y_MIN;
 }
 
-static u8 GetMapsecType(mapsec_u16_t mapSecId)
+static u8 GetMapsecTypeRaw(mapsec_u16_t mapSecId)
 {
     switch (mapSecId)
     {
@@ -1505,6 +1515,20 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
     default:
         return MAPSECTYPE_ROUTE;
     }
+}
+
+static u8 GetMapsecType(mapsec_u16_t mapSecId)
+{
+    u8 type = GetMapsecTypeRaw(mapSecId);
+    if (type == MAPSECTYPE_CITY_CANFLY)
+    {
+        enum Region region = GetRegionForSectionId(mapSecId);
+        if (region == REGION_HOENN && !FlagGet(FLAG_BADGE06_GET))
+            type = MAPSECTYPE_CITY_CANTFLY;
+        else if (region == REGION_KANTO && !FlagGet(FLAG_KANTO_BADGE03_GET))
+            type = MAPSECTYPE_CITY_CANTFLY;
+    }
+    return type;
 }
 
 mapsec_u16_t GetRegionMapSecIdAt(u16 x, u16 y)
@@ -2329,6 +2353,7 @@ static const struct FlyLocation sFlyLocations[] =
 static void CreateFlyDestIcons(void)
 {
     enum RegionMapType regionMapType = GetRegionMapType(gMapHeader.regionMapSectionId);
+    bool8 canFlyInRegion;
     u32 i;
     u16 x;
     u16 y;
@@ -2336,6 +2361,13 @@ static void CreateFlyDestIcons(void)
     u16 height;
     u16 shape;
     u8 spriteId;
+
+    if (regionMapType == REGION_MAP_HOENN)
+        canFlyInRegion = FlagGet(FLAG_BADGE06_GET);
+    else if (regionMapType == REGION_MAP_KANTO)
+        canFlyInRegion = FlagGet(FLAG_KANTO_BADGE03_GET);
+    else
+        canFlyInRegion = TRUE;
 
     for (i = 0; i < ARRAY_COUNT(sFlyLocations); i++)
     {
@@ -2358,7 +2390,7 @@ static void CreateFlyDestIcons(void)
         {
             gSprites[spriteId].oam.shape = shape;
 
-            if (FlagGet(sFlyLocations[i].flag))
+            if (canFlyInRegion && FlagGet(sFlyLocations[i].flag))
                 gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
             else
                 shape += 3;
