@@ -76,7 +76,8 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg",
     "gMapGroup_TownsAndRoutes_Johto",
-    "gMapGroup_TownsAndRoutes_Kanto"
+    "gMapGroup_TownsAndRoutes_Kanto",
+    "gMapGroup_TownsAndRoutes_Sinnoh"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -1194,5 +1195,37 @@
     "Route23",
     "Route24",
     "Route25"
+  ],
+  "gMapGroup_TownsAndRoutes_Sinnoh": [
+    "TwinleafTown",
+    "SandgemTown",
+    "JubilifeCity",
+    "OreburghCity",
+    "FloaromaTown",
+    "EternaCity",
+    "HearthomeCity",
+    "SolaceonTown",
+    "VeilstoneCity",
+    "PastoriaCity",
+    "CelesticTown",
+    "CanalaveCity",
+    "SnowpointCity",
+    "SunyshoreCity",
+    "Route201",
+    "Route202",
+    "Route203",
+    "Route204",
+    "Route205",
+    "Route206",
+    "Route207",
+    "Route208",
+    "Route209",
+    "Route210",
+    "Route211",
+    "Route212",
+    "Route213",
+    "Route214",
+    "Route215",
+    "Route218"
   ]
 }

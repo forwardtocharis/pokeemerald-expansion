@@ -1,0 +1,49 @@
+{
+  "id": "MAP_OREBURGH_CITY",
+  "name": "OreburghCity",
+  "layout": "LAYOUT_OREBURGH_CITY",
+  "music": "MUS_DEWFORD",
+  "region": "REGION_SINNOH",
+  "region_map_section": "MAPSEC_OREBURGH_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE203",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE207",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_CitySign"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_GymSign"
+    }
+  ]
+}
