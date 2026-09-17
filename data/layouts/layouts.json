@@ -9364,7 +9364,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_AZALEATOWN",
+      "id": "LAYOUT_AZALEA_TOWN",
       "name": "AzaleaTown_Layout",
       "width": 40,
       "height": 18,
@@ -9377,7 +9377,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_BLACKTHORNCITY",
+      "id": "LAYOUT_BLACKTHORN_CITY",
       "name": "BlackthornCity_Layout",
       "width": 40,
       "height": 36,
@@ -9390,20 +9390,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_CHERRYGROVECITY",
-      "name": "CherrygroveCity_Layout",
-      "width": 40,
-      "height": 18,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/CherrygroveCity/border.bin",
-      "blockdata_filepath": "data/layouts/CherrygroveCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_CIANWOODCITY",
+      "id": "LAYOUT_CIANWOOD_CITY",
       "name": "CianwoodCity_Layout",
       "width": 30,
       "height": 54,
@@ -9416,7 +9403,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_ECRUTEAKCITY",
+      "id": "LAYOUT_ECRUTEAK_CITY",
       "name": "EcruteakCity_Layout",
       "width": 40,
       "height": 36,
@@ -9429,7 +9416,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_GOLDENRODCITY",
+      "id": "LAYOUT_GOLDENROD_CITY",
       "name": "GoldenrodCity_Layout",
       "width": 40,
       "height": 36,
@@ -9442,7 +9429,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_MAHOGANYTOWN",
+      "id": "LAYOUT_MAHOGANY_TOWN",
       "name": "MahoganyTown_Layout",
       "width": 20,
       "height": 18,
@@ -9455,20 +9442,7 @@
       "layout_version": "emerald"
     },
     {
-      "id": "LAYOUT_NEWBARKTOWN",
-      "name": "NewBarkTown_Layout",
-      "width": 20,
-      "height": 18,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/NewBarkTown/border.bin",
-      "blockdata_filepath": "data/layouts/NewBarkTown/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_OLIVINECITY",
+      "id": "LAYOUT_OLIVINE_CITY",
       "name": "OlivineCity_Layout",
       "width": 40,
       "height": 36,
@@ -9699,110 +9673,6 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route46/border.bin",
       "blockdata_filepath": "data/layouts/Route46/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_VIOLETCITY",
-      "name": "VioletCity_Layout",
-      "width": 40,
-      "height": 40,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/VioletCity/border.bin",
-      "blockdata_filepath": "data/layouts/VioletCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_AZALEA_TOWN",
-      "name": "AzaleaTown_Layout",
-      "width": 40,
-      "height": 18,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/AzaleaTown/border.bin",
-      "blockdata_filepath": "data/layouts/AzaleaTown/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_BLACKTHORN_CITY",
-      "name": "BlackthornCity_Layout",
-      "width": 40,
-      "height": 36,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/BlackthornCity/border.bin",
-      "blockdata_filepath": "data/layouts/BlackthornCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_CIANWOOD_CITY",
-      "name": "CianwoodCity_Layout",
-      "width": 30,
-      "height": 54,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/CianwoodCity/border.bin",
-      "blockdata_filepath": "data/layouts/CianwoodCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_ECRUTEAK_CITY",
-      "name": "EcruteakCity_Layout",
-      "width": 40,
-      "height": 36,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/EcruteakCity/border.bin",
-      "blockdata_filepath": "data/layouts/EcruteakCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_GOLDENROD_CITY",
-      "name": "GoldenrodCity_Layout",
-      "width": 40,
-      "height": 36,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/GoldenrodCity/border.bin",
-      "blockdata_filepath": "data/layouts/GoldenrodCity/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_MAHOGANY_TOWN",
-      "name": "MahoganyTown_Layout",
-      "width": 20,
-      "height": 18,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/MahoganyTown/border.bin",
-      "blockdata_filepath": "data/layouts/MahoganyTown/map.bin",
-      "layout_version": "emerald"
-    },
-    {
-      "id": "LAYOUT_OLIVINE_CITY",
-      "name": "OlivineCity_Layout",
-      "width": 40,
-      "height": 36,
-      "border_width": 2,
-      "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/OlivineCity/border.bin",
-      "blockdata_filepath": "data/layouts/OlivineCity/map.bin",
       "layout_version": "emerald"
     },
     {
