@@ -16878,10 +16878,10 @@ Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-# ========================================================
-# MULTI-REGION EXPANSION TRAINERS (PHASE 6)
-# Automatically synchronized by tools/gen/gba/gen_trainers.py
-# ========================================================
+/* ========================================================
+   MULTI-REGION EXPANSION TRAINERS (PHASE 6)
+   Automatically synchronized by tools/gen/gba/gen_trainers.py
+   ======================================================== */
 
 === TRAINER_LEADER_FALKNER ===
 Name: FALKNER
