@@ -229,8 +229,8 @@ void NewGameInitData(void)
         if (starterChoice >= 3)
             starterChoice = 0;
         u16 starterSpecies = GetStarterPokemon(starterChoice);
-        CreateMon(&gPlayerParty[0], starterSpecies, 5, USE_RANDOM_IVS, TRUE, 0, OT_ID_PLAYER_ID, 0);
-        gPlayerPartyCount = 1;
+        CreateMon(&gParties[B_TRAINER_PLAYER][0], starterSpecies, 5, Random32(), OTID_STRUCT_PLAYER_ID);
+        gPartiesCount[B_TRAINER_PLAYER] = 1;
         FlagSet(FLAG_SYS_POKEMON_GET);
         FlagSet(FLAG_SYS_POKEDEX_GET);
     }
