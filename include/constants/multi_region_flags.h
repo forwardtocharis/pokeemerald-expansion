@@ -5,42 +5,43 @@
 
 #define FLAG_SYS_MULTI_REGION_ACTIVE             0x960 // [system] Indicates multi-region save structure is active
 #define FLAG_SYS_BATTLE_SCALING_ENABLED          0x961 // [system] Enables dynamic badge-based trainer level scaling
-#define FLAG_TRANSIT_SS_TIDAL_UNLOCKED           0x962 // [transit] Player has obtained ferry ticket for Hoenn-Kanto transit
-#define FLAG_TRANSIT_MAGNET_TRAIN_UNLOCKED       0x963 // [transit] Player has restored power to Magnet Train for Kanto-Johto transit
-#define FLAG_HOENN_INTRO_COMPLETE                0x964 // [hoenn] Completed Littleroot Town intro sequence
-#define FLAG_HOENN_STARTER_CHOSEN                0x965 // [hoenn] Rescued Professor Birch and selected starter Pokemon
-#define FLAG_KANTO_BADGE01_GET                   0x966 // [kanto] Boulder Badge obtained (Brock)
-#define FLAG_KANTO_BADGE02_GET                   0x967 // [kanto] Cascade Badge obtained (Misty)
-#define FLAG_KANTO_BADGE03_GET                   0x968 // [kanto] Thunder Badge obtained (Lt. Surge)
-#define FLAG_KANTO_BADGE04_GET                   0x969 // [kanto] Rainbow Badge obtained (Erika)
-#define FLAG_KANTO_BADGE05_GET                   0x96a // [kanto] Soul Badge obtained (Koga)
-#define FLAG_KANTO_BADGE06_GET                   0x96b // [kanto] Marsh Badge obtained (Sabrina)
-#define FLAG_KANTO_BADGE07_GET                   0x96c // [kanto] Volcano Badge obtained (Blaine)
-#define FLAG_KANTO_BADGE08_GET                   0x96d // [kanto] Earth Badge obtained (Giovanni)
-#define FLAG_JOHTO_BADGE01_GET                   0x96e // [johto] Zephyr Badge obtained (Falkner)
-#define FLAG_JOHTO_BADGE02_GET                   0x96f // [johto] Hive Badge obtained (Bugsy)
-#define FLAG_JOHTO_BADGE03_GET                   0x970 // [johto] Plain Badge obtained (Whitney)
-#define FLAG_JOHTO_BADGE04_GET                   0x971 // [johto] Fog Badge obtained (Morty)
-#define FLAG_JOHTO_BADGE05_GET                   0x972 // [johto] Storm Badge obtained (Chuck)
-#define FLAG_JOHTO_BADGE06_GET                   0x973 // [johto] Mineral Badge obtained (Jasmine)
-#define FLAG_JOHTO_BADGE07_GET                   0x974 // [johto] Glacier Badge obtained (Pryce)
-#define FLAG_JOHTO_BADGE08_GET                   0x975 // [johto] Rising Badge obtained (Clair)
-#define FLAG_SINNOH_BADGE01_GET                  0x976 // [sinnoh] Coal Badge obtained (Roark)
-#define FLAG_SINNOH_BADGE02_GET                  0x977 // [sinnoh] Forest Badge obtained (Gardenia)
-#define FLAG_SINNOH_BADGE03_GET                  0x978 // [sinnoh] Cobble Badge obtained (Maylene)
-#define FLAG_SINNOH_BADGE04_GET                  0x979 // [sinnoh] Fen Badge obtained (Crasher Wake)
-#define FLAG_SINNOH_BADGE05_GET                  0x97a // [sinnoh] Relic Badge obtained (Fantina)
-#define FLAG_SINNOH_BADGE06_GET                  0x97b // [sinnoh] Mine Badge obtained (Byron)
-#define FLAG_SINNOH_BADGE07_GET                  0x97c // [sinnoh] Icicle Badge obtained (Candice)
-#define FLAG_SINNOH_BADGE08_GET                  0x97d // [sinnoh] Beacon Badge obtained (Volkner)
-#define FLAG_BATTLE_FRONTIER_QUALIFIED           0x97e // [system] Player has qualified for Battle Frontier access across all regions
-#define FLAG_SCOTT_FRONTIER_PASS_GIFT            0x97f // [system] Received Frontier Pass and multi-region invitation from Scott
-#define FLAG_DEFEATED_KANTO_CHAMPION_REMATCH     0x980 // [kanto] Defeated Champion Blue in Indigo Plateau post-game rematch
-#define FLAG_DEFEATED_JOHTO_CHAMPION_REMATCH     0x981 // [johto] Defeated Champion Lance in post-game rematch
-#define FLAG_DEFEATED_SINNOH_CHAMPION_REMATCH    0x982 // [sinnoh] Defeated Champion Cynthia in post-game rematch
-#define FLAG_DEFEATED_HOENN_CHAMPION_REMATCH     0x983 // [hoenn] Defeated Champion Wallace in post-game rematch
-#define FLAG_DEFEATED_STEVEN_POSTGAME            0x984 // [hoenn] Defeated Former Champion Steven in Meteor Falls post-game
-#define FLAG_DEFEATED_RED_POSTGAME               0x985 // [johto] Defeated Legendary Trainer Red in post-game summit battle
-#define FLAG_CROSS_REGION_LEGENDARY_UNLOCKED     0x986 // [system] Cross-region ancient seals unlocked across all 4 regions
+#define FLAG_EXP_SHARE_ENABLED                   0x962 // [system] Exp. Share modern key item active state
+#define FLAG_TRANSIT_SS_TIDAL_UNLOCKED           0x963 // [transit] Player has obtained ferry ticket for Hoenn-Kanto transit
+#define FLAG_TRANSIT_MAGNET_TRAIN_UNLOCKED       0x964 // [transit] Player has restored power to Magnet Train for Kanto-Johto transit
+#define FLAG_HOENN_INTRO_COMPLETE                0x965 // [hoenn] Completed Littleroot Town intro sequence
+#define FLAG_HOENN_STARTER_CHOSEN                0x966 // [hoenn] Rescued Professor Birch and selected starter Pokemon
+#define FLAG_KANTO_BADGE01_GET                   0x967 // [kanto] Boulder Badge obtained (Brock)
+#define FLAG_KANTO_BADGE02_GET                   0x968 // [kanto] Cascade Badge obtained (Misty)
+#define FLAG_KANTO_BADGE03_GET                   0x969 // [kanto] Thunder Badge obtained (Lt. Surge)
+#define FLAG_KANTO_BADGE04_GET                   0x96a // [kanto] Rainbow Badge obtained (Erika)
+#define FLAG_KANTO_BADGE05_GET                   0x96b // [kanto] Soul Badge obtained (Koga)
+#define FLAG_KANTO_BADGE06_GET                   0x96c // [kanto] Marsh Badge obtained (Sabrina)
+#define FLAG_KANTO_BADGE07_GET                   0x96d // [kanto] Volcano Badge obtained (Blaine)
+#define FLAG_KANTO_BADGE08_GET                   0x96e // [kanto] Earth Badge obtained (Giovanni)
+#define FLAG_JOHTO_BADGE01_GET                   0x96f // [johto] Zephyr Badge obtained (Falkner)
+#define FLAG_JOHTO_BADGE02_GET                   0x970 // [johto] Hive Badge obtained (Bugsy)
+#define FLAG_JOHTO_BADGE03_GET                   0x971 // [johto] Plain Badge obtained (Whitney)
+#define FLAG_JOHTO_BADGE04_GET                   0x972 // [johto] Fog Badge obtained (Morty)
+#define FLAG_JOHTO_BADGE05_GET                   0x973 // [johto] Storm Badge obtained (Chuck)
+#define FLAG_JOHTO_BADGE06_GET                   0x974 // [johto] Mineral Badge obtained (Jasmine)
+#define FLAG_JOHTO_BADGE07_GET                   0x975 // [johto] Glacier Badge obtained (Pryce)
+#define FLAG_JOHTO_BADGE08_GET                   0x976 // [johto] Rising Badge obtained (Clair)
+#define FLAG_SINNOH_BADGE01_GET                  0x977 // [sinnoh] Coal Badge obtained (Roark)
+#define FLAG_SINNOH_BADGE02_GET                  0x978 // [sinnoh] Forest Badge obtained (Gardenia)
+#define FLAG_SINNOH_BADGE03_GET                  0x979 // [sinnoh] Cobble Badge obtained (Maylene)
+#define FLAG_SINNOH_BADGE04_GET                  0x97a // [sinnoh] Fen Badge obtained (Crasher Wake)
+#define FLAG_SINNOH_BADGE05_GET                  0x97b // [sinnoh] Relic Badge obtained (Fantina)
+#define FLAG_SINNOH_BADGE06_GET                  0x97c // [sinnoh] Mine Badge obtained (Byron)
+#define FLAG_SINNOH_BADGE07_GET                  0x97d // [sinnoh] Icicle Badge obtained (Candice)
+#define FLAG_SINNOH_BADGE08_GET                  0x97e // [sinnoh] Beacon Badge obtained (Volkner)
+#define FLAG_BATTLE_FRONTIER_QUALIFIED           0x97f // [system] Player has qualified for Battle Frontier access across all regions
+#define FLAG_SCOTT_FRONTIER_PASS_GIFT            0x980 // [system] Received Frontier Pass and multi-region invitation from Scott
+#define FLAG_DEFEATED_KANTO_CHAMPION_REMATCH     0x981 // [kanto] Defeated Champion Blue in Indigo Plateau post-game rematch
+#define FLAG_DEFEATED_JOHTO_CHAMPION_REMATCH     0x982 // [johto] Defeated Champion Lance in post-game rematch
+#define FLAG_DEFEATED_SINNOH_CHAMPION_REMATCH    0x983 // [sinnoh] Defeated Champion Cynthia in post-game rematch
+#define FLAG_DEFEATED_HOENN_CHAMPION_REMATCH     0x984 // [hoenn] Defeated Champion Wallace in post-game rematch
+#define FLAG_DEFEATED_STEVEN_POSTGAME            0x985 // [hoenn] Defeated Former Champion Steven in Meteor Falls post-game
+#define FLAG_DEFEATED_RED_POSTGAME               0x986 // [johto] Defeated Legendary Trainer Red in post-game summit battle
+#define FLAG_CROSS_REGION_LEGENDARY_UNLOCKED     0x987 // [system] Cross-region ancient seals unlocked across all 4 regions
 
 #endif // GUARD_CONSTANTS_MULTI_REGION_FLAGS_H

@@ -279,6 +279,10 @@ static void BufferLeftColumnStats(void);
 static void PrintLeftColumnStats(void);
 static void BufferRightColumnStats(void);
 static void PrintRightColumnStats(void);
+static void BufferLeftColumnStages(void);
+static void BufferRightColumnStages(void);
+static bool32 IsCurrentMonActiveBattler(void);
+static enum BattlerId GetCurrentBattlerFromSumIndex(u32 sumIndex);
 static void PrintExpPointsNextLevel(void);
 static void PrintBattleMoves(void);
 static void Task_PrintBattleMoves(u8);
@@ -1683,6 +1687,7 @@ static void ChangeStatLabel(s16 mode)
     switch (mode)
     {
     case SUMMARY_SKILLS_MODE_STATS:
+    default:
         WriteToStatsTilemapBuffer(statsLength, statsBlock, statsCoordX, statsCoordY);
         break;
     case SUMMARY_SKILLS_MODE_IVS:
@@ -1802,18 +1807,43 @@ static void Task_HandleInput(u8 taskId)
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
-        else if (DEBUG_POKEMON_SPRITE_VISUALIZER && JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
+        else if (JOY_NEW(SELECT_BUTTON))
         {
-            sMonSummaryScreen->callback = CB2_Pokemon_Sprite_Visualizer;
-            StopPokemonAnimations();
-            PlaySE(SE_SELECT);
-            CloseSummaryScreen(taskId);
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && ShouldShowIvEvPrompt())
+            {
+                ShowMonSkillsInfo(taskId, IncrementSkillsStatsMode(sMonSummaryScreen->skillsPageMode));
+                PlaySE(SE_SELECT);
+            }
+            else if (DEBUG_POKEMON_SPRITE_VISUALIZER && !gMain.inBattle)
+            {
+                sMonSummaryScreen->callback = CB2_Pokemon_Sprite_Visualizer;
+                StopPokemonAnimations();
+                PlaySE(SE_SELECT);
+                CloseSummaryScreen(taskId);
+            }
         }
         else if (ShouldShowMoveRelearner() && IS_MOVE_PAGE(sMonSummaryScreen->currPageIndex))
         {
             HandleMoveRelearnerInput(taskId);
         }
     }
+}
+
+static bool32 IsCurrentMonActiveBattler(void)
+{
+    if (!gMain.inBattle)
+        return FALSE;
+
+    for (u32 battler = B_BATTLER_0; battler < gBattlersCount; battler++)
+    {
+        if (!IsOnPlayerSide(battler))
+            continue;
+
+        if (gBattlerPartyIndexes[battler] == sMonSummaryScreen->curMonIndex)
+            return TRUE;
+    }
+
+    return FALSE;
 }
 
 static u8 IncrementSkillsStatsMode(u8 mode)
@@ -1844,11 +1874,19 @@ static u8 IncrementSkillsStatsMode(u8 mode)
             return SUMMARY_SKILLS_MODE_EVS;
         }
     case SUMMARY_SKILLS_MODE_EVS:
+        if (IsCurrentMonActiveBattler())
+        {
+            sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_STAGES;
+            return SUMMARY_SKILLS_MODE_STAGES;
+        }
+        sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_STATS;
+        return SUMMARY_SKILLS_MODE_STATS;
+
+    case SUMMARY_SKILLS_MODE_STAGES:
     default:
         sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_STATS;
         return SUMMARY_SKILLS_MODE_STATS;
     }
-
 }
 
 static void ShowMonSkillsInfo(u8 taskId, s16 mode)
@@ -1869,20 +1907,27 @@ static void ShowMonSkillsInfo(u8 taskId, s16 mode)
     {
         ExtractMonSkillStatsData(mon, sum);
         BufferLeftColumnStats();
+        BufferRightColumnStats();
     }
     else if (mode == SUMMARY_SKILLS_MODE_IVS)
     {
         ExtractMonSkillIvData(mon, sum);
         BufferLeftColumnIvEvStats();
+        BufferRightColumnStats();
     }
     else if (mode == SUMMARY_SKILLS_MODE_EVS)
     {
         ExtractMonSkillEvData(mon, sum);
         BufferLeftColumnIvEvStats();
+        BufferRightColumnStats();
+    }
+    else if (mode == SUMMARY_SKILLS_MODE_STAGES)
+    {
+        BufferLeftColumnStages();
+        BufferRightColumnStages();
     }
 
     PrintLeftColumnStats();
-    BufferRightColumnStats();
     PrintRightColumnStats();
     gTasks[taskId].func = Task_HandleInput;
 }
@@ -3915,6 +3960,59 @@ static void BufferLeftColumnIvEvStats(void)
     Free(defenseIvEvString);
 }
 
+static void BufferStage(u8 *dst, s32 stageDelta, u32 strId)
+{
+    static const u8 sTextStageUp[] = _("{COLOR}{05}+");
+    static const u8 sTextStageDown[] = _("{COLOR}{08}-");
+    static const u8 sTextStageNeutral[] = _("{COLOR}{01} ");
+    u8 *txtPtr;
+
+    if (stageDelta > 0)
+    {
+        txtPtr = StringCopy(dst, sTextStageUp);
+        ConvertIntToDecimalStringN(txtPtr, stageDelta, STR_CONV_MODE_LEFT_ALIGN, 1);
+    }
+    else if (stageDelta < 0)
+    {
+        txtPtr = StringCopy(dst, sTextStageDown);
+        ConvertIntToDecimalStringN(txtPtr, -stageDelta, STR_CONV_MODE_LEFT_ALIGN, 1);
+    }
+    else
+    {
+        txtPtr = StringCopy(dst, sTextStageNeutral);
+        ConvertIntToDecimalStringN(txtPtr, 0, STR_CONV_MODE_LEFT_ALIGN, 1);
+    }
+
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
+}
+
+static void BufferLeftColumnStages(void)
+{
+    enum BattlerId battler = GetCurrentBattlerFromSumIndex(sMonSummaryScreen->curMonIndex);
+
+    DynamicPlaceholderTextUtil_Reset();
+
+    StringCopy(gStringVar1, COMPOUND_STRING("{COLOR}{01} --"));
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
+    BufferStage(gStringVar2, (s32)gBattleMons[battler].statStages[STAT_ATK] - DEFAULT_STAT_STAGE, 1);
+    BufferStage(gStringVar3, (s32)gBattleMons[battler].statStages[STAT_DEF] - DEFAULT_STAT_STAGE, 2);
+
+    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftIVEVColumnLayout);
+}
+
+static void BufferRightColumnStages(void)
+{
+    enum BattlerId battler = GetCurrentBattlerFromSumIndex(sMonSummaryScreen->curMonIndex);
+
+    DynamicPlaceholderTextUtil_Reset();
+
+    BufferStage(gStringVar1, (s32)gBattleMons[battler].statStages[STAT_SPATK] - DEFAULT_STAT_STAGE, 0);
+    BufferStage(gStringVar2, (s32)gBattleMons[battler].statStages[STAT_SPDEF] - DEFAULT_STAT_STAGE, 1);
+    BufferStage(gStringVar3, (s32)gBattleMons[battler].statStages[STAT_SPEED] - DEFAULT_STAT_STAGE, 2);
+
+    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
+}
+
 static void PrintLeftColumnStats(void)
 {
     int x;
@@ -4777,6 +4875,7 @@ static inline void ShowUtilityPrompt(s16 mode)
     const u8* promptText = NULL;
     const u8* gText_SkillPageIvs = COMPOUND_STRING("IVs");
     const u8* gText_SkillPageEvs = COMPOUND_STRING("EVs");
+    const u8* gText_SkillPageStages = COMPOUND_STRING("STAGES");
     const u8* gText_SkillPageStats = COMPOUND_STRING("STATS");
     const u8* gText_Rename = COMPOUND_STRING("RENAME");
 
@@ -4806,6 +4905,13 @@ static inline void ShowUtilityPrompt(s16 mode)
                     promptText = gText_SkillPageEvs;
             }
             else if (mode == SUMMARY_SKILLS_MODE_EVS)
+            {
+                if (IsCurrentMonActiveBattler())
+                    promptText = gText_SkillPageStages;
+                else
+                    promptText = gText_SkillPageStats;
+            }
+            else if (mode == SUMMARY_SKILLS_MODE_STAGES)
             {
                 promptText = gText_SkillPageStats;
             }
