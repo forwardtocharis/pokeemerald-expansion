@@ -1122,6 +1122,46 @@ static const struct MenuAction sMultichoiceList_HOF_Eggs_Victories_Quit[] = {
     {gText_ShopQuit}
 };
 
+static const struct MenuAction sMultichoiceList_TransitSlateport[] = {
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("VERMILION")},
+    {COMPOUND_STRING("OLIVINE")},
+    {COMPOUND_STRING("CANALAVE")},
+    {gText_Exit}
+};
+
+static const struct MenuAction sMultichoiceList_TransitLilycove[] = {
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("VERMILION")},
+    {COMPOUND_STRING("OLIVINE")},
+    {COMPOUND_STRING("CANALAVE")},
+    {gText_Exit}
+};
+
+static const struct MenuAction sMultichoiceList_TransitVermilion[] = {
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("OLIVINE")},
+    {COMPOUND_STRING("CANALAVE")},
+    {gText_Exit}
+};
+
+static const struct MenuAction sMultichoiceList_TransitOlivine[] = {
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("VERMILION")},
+    {COMPOUND_STRING("CANALAVE")},
+    {gText_Exit}
+};
+
+static const struct MenuAction sMultichoiceList_TransitCanalave[] = {
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("VERMILION")},
+    {COMPOUND_STRING("OLIVINE")},
+    {gText_Exit}
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1294,6 +1334,11 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_TRANSIT_SLATEPORT]                          = MULTICHOICE(sMultichoiceList_TransitSlateport),
+    [MULTI_TRANSIT_LILYCOVE]                           = MULTICHOICE(sMultichoiceList_TransitLilycove),
+    [MULTI_TRANSIT_VERMILION]                          = MULTICHOICE(sMultichoiceList_TransitVermilion),
+    [MULTI_TRANSIT_OLIVINE]                            = MULTICHOICE(sMultichoiceList_TransitOlivine),
+    [MULTI_TRANSIT_CANALAVE]                           = MULTICHOICE(sMultichoiceList_TransitCanalave),
 };
 
 const u8 *const gStdStrings[] =

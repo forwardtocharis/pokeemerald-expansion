@@ -9,6 +9,7 @@ LilycoveCity_Harbor_OnTransition:
 LilycoveCity_Harbor_EventScript_FerryAttendant::
 	lock
 	faceplayer
+	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, LilycoveCity_Harbor_EventScript_HasMultiRegionTicket
 	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_FerryUnavailable
 	call LilycoveCity_Harbor_EventScript_GetEonTicketState
 	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
@@ -25,6 +26,13 @@ LilycoveCity_Harbor_EventScript_FerryAttendant::
 	goto LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets
 	end
 
+LilycoveCity_Harbor_EventScript_HasMultiRegionTicket::
+	msgbox LilycoveCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
+	message LilycoveCity_Harbor_Text_FlashTicketWhereTo
+	waitmessage
+	goto LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect
+	end
+
 @ First goto_if_eq is unnecessary; identical scripts
 LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets::
 	goto_if_eq VAR_TEMP_A, 0, LilycoveCity_Harbor_EventScript_NoEventTickets
@@ -32,6 +40,50 @@ LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets::
 	message LilycoveCity_Harbor_Text_FlashTicketWhereTo
 	waitmessage
 	goto LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect
+	end
+
+LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect::
+	multichoicedefault 16, 4, MULTI_TRANSIT_LILYCOVE, 4, FALSE
+	switch VAR_RESULT
+	case 0, LilycoveCity_Harbor_EventScript_GoToSlateport
+	case 1, LilycoveCity_Harbor_EventScript_GoToVermilion
+	case 2, LilycoveCity_Harbor_EventScript_GoToOlivine
+	case 3, LilycoveCity_Harbor_EventScript_GoToCanalave
+	case 4, LilycoveCity_Harbor_EventScript_ExitSailSelect
+	case MULTI_B_PRESSED, LilycoveCity_Harbor_EventScript_ExitSailSelect
+	end
+
+LilycoveCity_Harbor_EventScript_GoToVermilion::
+	msgbox LilycoveCity_Harbor_Text_VermilionItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
+	msgbox LilycoveCity_Harbor_Text_SailToVermilion, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 1
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_VERMILION_CITY, 24, 32
+	waitstate
+	release
+	end
+
+LilycoveCity_Harbor_EventScript_GoToOlivine::
+	msgbox LilycoveCity_Harbor_Text_OlivineItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
+	msgbox LilycoveCity_Harbor_Text_SailToOlivine, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 2
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_OLIVINE_CITY, 20, 31
+	waitstate
+	release
+	end
+
+LilycoveCity_Harbor_EventScript_GoToCanalave::
+	msgbox LilycoveCity_Harbor_Text_CanalaveItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
+	msgbox LilycoveCity_Harbor_Text_SailToCanalave, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 3
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_CANALAVE_CITY, 14, 19
+	waitstate
+	release
 	end
 
 LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect::
@@ -583,3 +635,25 @@ LilycoveCity_Harbor_Text_SailorFerryAvailable:
 	.string "The folks at the SHIPYARD in SLATEPORT\n"
 	.string "must've worked extra hard.\p"
 	.string "Well, it's my turn to get busy now!$"
+
+LilycoveCity_Harbor_Text_VermilionItIs:
+	.string "Vermilion City in KANTO, is that right?$"
+
+LilycoveCity_Harbor_Text_SailToVermilion:
+	.string "All aboard for Vermilion City, KANTO!\n"
+	.string "Please watch your step.$"
+
+LilycoveCity_Harbor_Text_OlivineItIs:
+	.string "Olivine City in JOHTO, is that right?$"
+
+LilycoveCity_Harbor_Text_SailToOlivine:
+	.string "All aboard for Olivine City, JOHTO!\n"
+	.string "Please watch your step.$"
+
+LilycoveCity_Harbor_Text_CanalaveItIs:
+	.string "Canalave City in SINNOH, is that right?$"
+
+LilycoveCity_Harbor_Text_SailToCanalave:
+	.string "All aboard for Canalave City, SINNOH!\n"
+	.string "Please watch your step.$"
+

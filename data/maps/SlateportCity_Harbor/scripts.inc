@@ -171,7 +171,7 @@ SlateportCity_Harbor_EventScript_AskForTicket::
 	end
 
 SlateportCity_Harbor_EventScript_ChooseDestination::
-	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_ChooseDestinationWithKanto
+	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_ChooseDestinationMultiRegion
 	goto_if_set FLAG_MET_SCOTT_ON_SS_TIDAL, SlateportCity_Harbor_EventScript_ChooseDestinationWithBattleFrontier
 	multichoicedefault 18, 8, MULTI_SSTIDAL_SLATEPORT_NO_BF, 2, FALSE
 	switch VAR_RESULT
@@ -180,16 +180,52 @@ SlateportCity_Harbor_EventScript_ChooseDestination::
 	case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_CancelDestinationSelect
 	end
 
+SlateportCity_Harbor_EventScript_ChooseDestinationMultiRegion::
+	multichoicedefault 16, 4, MULTI_TRANSIT_SLATEPORT, 4, FALSE
+	switch VAR_RESULT
+	case 0, SlateportCity_Harbor_EventScript_Lilycove
+	case 1, SlateportCity_Harbor_EventScript_SailToVermilion
+	case 2, SlateportCity_Harbor_EventScript_SailToOlivine
+	case 3, SlateportCity_Harbor_EventScript_SailToCanalave
+	case 4, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+	case MULTI_B_PRESSED, SlateportCity_Harbor_EventScript_CancelDestinationSelect
+	end
+
 SlateportCity_Harbor_EventScript_ChooseDestinationWithKanto::
-	msgbox SlateportCity_Harbor_Text_SailToKanto, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_SailToKanto
-	goto SlateportCity_Harbor_EventScript_Lilycove
+	goto SlateportCity_Harbor_EventScript_ChooseDestinationMultiRegion
 
 SlateportCity_Harbor_EventScript_SailToKanto::
+	goto SlateportCity_Harbor_EventScript_SailToVermilion
+
+SlateportCity_Harbor_EventScript_SailToVermilion::
+	msgbox SlateportCity_Harbor_Text_VermilionItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseNewDestination
 	msgbox SlateportCity_Harbor_Text_KantoItIs, MSGBOX_DEFAULT
 	setvar VAR_CURRENT_REGION, 1
 	call SlateportCity_Harbor_EventScript_BoardFerry
-	warp MAP_VERMILION_CITY, 15, 30
+	warp MAP_VERMILION_CITY, 24, 32
+	waitstate
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SailToOlivine::
+	msgbox SlateportCity_Harbor_Text_OlivineItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseNewDestination
+	msgbox SlateportCity_Harbor_Text_JohtoItIs, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 2
+	call SlateportCity_Harbor_EventScript_BoardFerry
+	warp MAP_OLIVINE_CITY, 20, 31
+	waitstate
+	release
+	end
+
+SlateportCity_Harbor_EventScript_SailToCanalave::
+	msgbox SlateportCity_Harbor_Text_CanalaveItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseNewDestination
+	msgbox SlateportCity_Harbor_Text_SinnohItIs, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 3
+	call SlateportCity_Harbor_EventScript_BoardFerry
+	warp MAP_CANALAVE_CITY, 14, 19
 	waitstate
 	release
 	end
@@ -563,3 +599,21 @@ SlateportCity_Harbor_Text_SailToKanto:
 SlateportCity_Harbor_Text_KantoItIs:
 	.string "All aboard for Vermilion City, KANTO!\n"
 	.string "Please watch your step.$"
+
+SlateportCity_Harbor_Text_VermilionItIs:
+	.string "Vermilion City in KANTO, is that right?$"
+
+SlateportCity_Harbor_Text_OlivineItIs:
+	.string "Olivine City in JOHTO, is that right?$"
+
+SlateportCity_Harbor_Text_JohtoItIs:
+	.string "All aboard for Olivine City, JOHTO!\n"
+	.string "Please watch your step.$"
+
+SlateportCity_Harbor_Text_CanalaveItIs:
+	.string "Canalave City in SINNOH, is that right?$"
+
+SlateportCity_Harbor_Text_SinnohItIs:
+	.string "All aboard for Canalave City, SINNOH!\n"
+	.string "Please watch your step.$"
+
