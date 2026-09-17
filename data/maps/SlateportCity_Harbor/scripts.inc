@@ -164,11 +164,31 @@ SlateportCity_Harbor_EventScript_FerryAttendant::
 	end
 
 SlateportCity_Harbor_EventScript_AskForTicket::
+	call SlateportCity_Harbor_EventScript_CheckBattleFrontierQualification
 	msgbox SlateportCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
 	message SlateportCity_Harbor_Text_FlashedTicketWhereTo
 	waitmessage
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, SlateportCity_Harbor_EventScript_OfferBattleFrontier
 	goto SlateportCity_Harbor_EventScript_ChooseDestination
 	end
+
+SlateportCity_Harbor_EventScript_CheckBattleFrontierQualification::
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, Common_EventScript_NopReturn
+	goto_if_set FLAG_SYS_GAME_CLEAR, SlateportCity_Harbor_EventScript_QualifyFrontier
+	goto_if_ge VAR_TOTAL_BADGES, 8, SlateportCity_Harbor_EventScript_QualifyFrontier
+	return
+
+SlateportCity_Harbor_EventScript_QualifyFrontier::
+	setflag FLAG_BATTLE_FRONTIER_QUALIFIED
+	setflag FLAG_SYS_FRONTIER_PASS
+	setflag FLAG_RECEIVED_SS_TICKET
+	setflag FLAG_MET_SCOTT_ON_SS_TIDAL
+	return
+
+SlateportCity_Harbor_EventScript_OfferBattleFrontier::
+	msgbox SlateportCity_Harbor_Text_SailToFrontierPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_BattleFrontier
+	goto SlateportCity_Harbor_EventScript_ChooseDestination
 
 SlateportCity_Harbor_EventScript_ChooseDestination::
 	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_ChooseDestinationMultiRegion
@@ -616,4 +636,9 @@ SlateportCity_Harbor_Text_CanalaveItIs:
 SlateportCity_Harbor_Text_SinnohItIs:
 	.string "All aboard for Canalave City, SINNOH!\n"
 	.string "Please watch your step.$"
+
+SlateportCity_Harbor_Text_SailToFrontierPrompt:
+	.string "Ah, an authorized BATTLE FRONTIER\n"
+	.string "competitor! Would you like to sail to\l"
+	.string "the BATTLE FRONTIER?$"
 

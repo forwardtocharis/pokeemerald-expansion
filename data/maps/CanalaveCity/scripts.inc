@@ -12,6 +12,9 @@ CanalaveCity_EventScript_GymSign::
 CanalaveCity_EventScript_FerrySailor::
 	lock
 	faceplayer
+	call CanalaveCity_EventScript_CheckBattleFrontierQualification
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, CanalaveCity_EventScript_OfferBattleFrontier
+CanalaveCity_EventScript_AskFerryDestination:
 	msgbox CanalaveCity_Text_SailorWelcome, MSGBOX_DEFAULT
 	message CanalaveCity_Text_SailorWhereTo
 	waitmessage
@@ -21,6 +24,36 @@ CanalaveCity_EventScript_FerrySailor::
 	goto_if_eq VAR_RESULT, 2, CanalaveCity_EventScript_SailToVermilion
 	goto_if_eq VAR_RESULT, 3, CanalaveCity_EventScript_SailToOlivine
 	goto CanalaveCity_EventScript_SailorCancel
+
+CanalaveCity_EventScript_CheckBattleFrontierQualification::
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, Common_EventScript_NopReturn
+	goto_if_set FLAG_SYS_GAME_CLEAR, CanalaveCity_EventScript_QualifyFrontier
+	goto_if_ge VAR_TOTAL_BADGES, 8, CanalaveCity_EventScript_QualifyFrontier
+	return
+
+CanalaveCity_EventScript_QualifyFrontier::
+	setflag FLAG_BATTLE_FRONTIER_QUALIFIED
+	setflag FLAG_SYS_FRONTIER_PASS
+	setflag FLAG_RECEIVED_SS_TICKET
+	setflag FLAG_MET_SCOTT_ON_SS_TIDAL
+	return
+
+CanalaveCity_EventScript_OfferBattleFrontier::
+	msgbox CanalaveCity_Text_SailToFrontierPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CanalaveCity_EventScript_SailToFrontier
+	goto CanalaveCity_EventScript_AskFerryDestination
+
+CanalaveCity_EventScript_SailToFrontier::
+	msgbox CanalaveCity_Text_BattleFrontierItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_AskFerryDestination
+	msgbox CanalaveCity_Text_SailorDepartFrontier, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	setvar VAR_CURRENT_REGION, 0
+	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67
+	waitstate
+	release
+	end
 
 CanalaveCity_EventScript_SailToSlateport::
 	msgbox CanalaveCity_Text_SlateportItIs, MSGBOX_YESNO
@@ -113,4 +146,13 @@ CanalaveCity_Text_SailorDepartJohto:
 
 CanalaveCity_Text_SailorComeBackSoon:
 	.string "Let me know whenever you want to set sail!"
+
+CanalaveCity_Text_SailToFrontierPrompt:
+	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?"
+
+CanalaveCity_Text_BattleFrontierItIs:
+	.string "The BATTLE FRONTIER, is that right?"
+
+CanalaveCity_Text_SailorDepartFrontier:
+	.string "Aye aye! Setting sail for the BATTLE FRONTIER!"
 

@@ -33,5 +33,14 @@
 #define FLAG_SINNOH_BADGE06_GET                  0x97b // [sinnoh] Mine Badge obtained (Byron)
 #define FLAG_SINNOH_BADGE07_GET                  0x97c // [sinnoh] Icicle Badge obtained (Candice)
 #define FLAG_SINNOH_BADGE08_GET                  0x97d // [sinnoh] Beacon Badge obtained (Volkner)
+#define FLAG_BATTLE_FRONTIER_QUALIFIED           0x97e // [system] Player has qualified for Battle Frontier access across all regions
+#define FLAG_SCOTT_FRONTIER_PASS_GIFT            0x97f // [system] Received Frontier Pass and multi-region invitation from Scott
+#define FLAG_DEFEATED_KANTO_CHAMPION_REMATCH     0x980 // [kanto] Defeated Champion Blue in Indigo Plateau post-game rematch
+#define FLAG_DEFEATED_JOHTO_CHAMPION_REMATCH     0x981 // [johto] Defeated Champion Lance in post-game rematch
+#define FLAG_DEFEATED_SINNOH_CHAMPION_REMATCH    0x982 // [sinnoh] Defeated Champion Cynthia in post-game rematch
+#define FLAG_DEFEATED_HOENN_CHAMPION_REMATCH     0x983 // [hoenn] Defeated Champion Wallace in post-game rematch
+#define FLAG_DEFEATED_STEVEN_POSTGAME            0x984 // [hoenn] Defeated Former Champion Steven in Meteor Falls post-game
+#define FLAG_DEFEATED_RED_POSTGAME               0x985 // [johto] Defeated Legendary Trainer Red in post-game summit battle
+#define FLAG_CROSS_REGION_LEGENDARY_UNLOCKED     0x986 // [system] Cross-region ancient seals unlocked across all 4 regions
 
 #endif // GUARD_CONSTANTS_MULTI_REGION_FLAGS_H

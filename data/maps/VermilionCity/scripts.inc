@@ -53,6 +53,9 @@ VermilionCity_EventScript_OaksAide::
 VermilionCity_EventScript_FerrySailor::
 	lock
 	faceplayer
+	call VermilionCity_EventScript_CheckBattleFrontierQualification
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, VermilionCity_EventScript_OfferBattleFrontier
+VermilionCity_EventScript_AskFerryDestination:
 	msgbox VermilionCity_Text_SailorWelcome, MSGBOX_DEFAULT
 	message VermilionCity_Text_SailorWhereTo
 	waitmessage
@@ -62,6 +65,36 @@ VermilionCity_EventScript_FerrySailor::
 	goto_if_eq VAR_RESULT, 2, VermilionCity_EventScript_SailToOlivine
 	goto_if_eq VAR_RESULT, 3, VermilionCity_EventScript_SailToCanalave
 	goto VermilionCity_EventScript_SailorCancel
+
+VermilionCity_EventScript_CheckBattleFrontierQualification::
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, Common_EventScript_NopReturn
+	goto_if_set FLAG_SYS_GAME_CLEAR, VermilionCity_EventScript_QualifyFrontier
+	goto_if_ge VAR_TOTAL_BADGES, 8, VermilionCity_EventScript_QualifyFrontier
+	return
+
+VermilionCity_EventScript_QualifyFrontier::
+	setflag FLAG_BATTLE_FRONTIER_QUALIFIED
+	setflag FLAG_SYS_FRONTIER_PASS
+	setflag FLAG_RECEIVED_SS_TICKET
+	setflag FLAG_MET_SCOTT_ON_SS_TIDAL
+	return
+
+VermilionCity_EventScript_OfferBattleFrontier::
+	msgbox VermilionCity_Text_SailToFrontierPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, VermilionCity_EventScript_SailToFrontier
+	goto VermilionCity_EventScript_AskFerryDestination
+
+VermilionCity_EventScript_SailToFrontier::
+	msgbox VermilionCity_Text_BattleFrontierItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_AskFerryDestination
+	msgbox VermilionCity_Text_SailorDepartFrontier, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	setvar VAR_CURRENT_REGION, 0
+	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67
+	waitstate
+	release
+	end
 
 VermilionCity_EventScript_SailToSlateport::
 	msgbox VermilionCity_Text_SlateportItIs, MSGBOX_YESNO
@@ -182,4 +215,13 @@ VermilionCity_Text_SailorDepartSinnoh:
 
 VermilionCity_Text_SailorComeBackSoon:
 	.string "Let me know whenever you're ready to sail!"
+
+VermilionCity_Text_SailToFrontierPrompt:
+	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?"
+
+VermilionCity_Text_BattleFrontierItIs:
+	.string "The BATTLE FRONTIER, is that right?"
+
+VermilionCity_Text_SailorDepartFrontier:
+	.string "Aye aye! Setting sail for the BATTLE FRONTIER!"
 

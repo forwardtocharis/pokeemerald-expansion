@@ -19,12 +19,58 @@ BattleFrontier_OutsideWest_EventScript_FerryAttendant::
 	end
 
 BattleFrontier_OutsideWest_EventScript_ChooseFerryDestination::
+	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, BattleFrontier_OutsideWest_EventScript_ChooseFerryMultiRegion
 	multichoicedefault 18, 6, MULTI_SSTIDAL_BATTLE_FRONTIER, 2, FALSE
 	switch VAR_RESULT
 	case 0, BattleFrontier_OutsideWest_EventScript_FerryToSlateport
 	case 1, BattleFrontier_OutsideWest_EventScript_FerryToLilycove
 	case 2, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
 	case MULTI_B_PRESSED, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
+	end
+
+BattleFrontier_OutsideWest_EventScript_ChooseFerryMultiRegion::
+	multichoicedefault 16, 4, MULTI_TRANSIT_FRONTIER, 5, FALSE
+	switch VAR_RESULT
+	case 0, BattleFrontier_OutsideWest_EventScript_FerryToSlateport
+	case 1, BattleFrontier_OutsideWest_EventScript_FerryToLilycove
+	case 2, BattleFrontier_OutsideWest_EventScript_FerryToVermilion
+	case 3, BattleFrontier_OutsideWest_EventScript_FerryToOlivine
+	case 4, BattleFrontier_OutsideWest_EventScript_FerryToCanalave
+	case 5, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
+	case MULTI_B_PRESSED, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
+	end
+
+BattleFrontier_OutsideWest_EventScript_FerryToVermilion::
+	msgbox BattleFrontier_OutsideWest_Text_VermilionItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
+	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 1
+	call BattleFrontier_OutsideWest_EventScript_BoardFerry
+	warp MAP_VERMILION_CITY, 24, 32
+	waitstate
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_FerryToOlivine::
+	msgbox BattleFrontier_OutsideWest_Text_OlivineItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
+	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 2
+	call BattleFrontier_OutsideWest_EventScript_BoardFerry
+	warp MAP_OLIVINE_CITY, 20, 31
+	waitstate
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_FerryToCanalave::
+	msgbox BattleFrontier_OutsideWest_Text_CanalaveItIs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
+	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 3
+	call BattleFrontier_OutsideWest_EventScript_BoardFerry
+	warp MAP_CANALAVE_CITY, 14, 19
+	waitstate
+	release
 	end
 
 BattleFrontier_OutsideWest_EventScript_NoSSTicket::
@@ -36,6 +82,7 @@ BattleFrontier_OutsideWest_EventScript_FerryToSlateport::
 	msgbox BattleFrontier_OutsideWest_Text_SlateportItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 0
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
 	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
 	waitstate
@@ -46,6 +93,7 @@ BattleFrontier_OutsideWest_EventScript_FerryToLilycove::
 	msgbox BattleFrontier_OutsideWest_Text_LilycoveItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	setvar VAR_CURRENT_REGION, 0
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
 	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
 	waitstate
@@ -514,4 +562,13 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "It must be adorable. I'm sure of it…\p"
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"
+
+BattleFrontier_OutsideWest_Text_VermilionItIs:
+	.string "Vermilion City in Kanto, is that right?$"
+
+BattleFrontier_OutsideWest_Text_OlivineItIs:
+	.string "Olivine City in Johto, is that right?$"
+
+BattleFrontier_OutsideWest_Text_CanalaveItIs:
+	.string "Canalave City in Sinnoh, is that right?$"
 

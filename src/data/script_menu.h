@@ -1162,6 +1162,15 @@ static const struct MenuAction sMultichoiceList_TransitCanalave[] = {
     {gText_Exit}
 };
 
+static const struct MenuAction sMultichoiceList_TransitFrontier[] = {
+    {COMPOUND_STRING("SLATEPORT")},
+    {COMPOUND_STRING("LILYCOVE")},
+    {COMPOUND_STRING("VERMILION")},
+    {COMPOUND_STRING("OLIVINE")},
+    {COMPOUND_STRING("CANALAVE")},
+    {gText_Exit}
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1339,6 +1348,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TRANSIT_VERMILION]                          = MULTICHOICE(sMultichoiceList_TransitVermilion),
     [MULTI_TRANSIT_OLIVINE]                            = MULTICHOICE(sMultichoiceList_TransitOlivine),
     [MULTI_TRANSIT_CANALAVE]                           = MULTICHOICE(sMultichoiceList_TransitCanalave),
+    [MULTI_TRANSIT_FRONTIER]                           = MULTICHOICE(sMultichoiceList_TransitFrontier),
 };
 
 const u8 *const gStdStrings[] =

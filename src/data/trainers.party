@@ -16883,6 +16883,238 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
    Automatically synchronized by tools/gen/gba/gen_trainers.py
    ======================================================== */
 
+=== TRAINER_CHAMPION_WALLACE_REMATCH ===
+Name: WALLACE
+Class: Champion
+Pic: Champion Wallace
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Wailord @ Chesto Berry
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Spout
+- Hydro Pump
+- Blizzard
+- Rest
+
+Ludicolo @ Leftovers
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Giga Drain
+- Leech Seed
+- Ice Beam
+
+Tentacruel @ Black Sludge
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Sludge Bomb
+- Ice Beam
+- Toxic
+
+Whiscash @ Lum Berry
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Surf
+- Rock Slide
+- Dragon Dance
+
+Gyarados @ Sitrus Berry
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Earthquake
+- Waterfall
+- Return
+
+Milotic @ Leftovers
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Recover
+- Hypnosis
+
+=== TRAINER_CHAMPION_STEVEN_REMATCH ===
+Name: STEVEN
+Class: Champion
+Pic: Steven
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Skarmory @ Leftovers
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spikes
+- Toxic
+- Aerial Ace
+- Steel Wing
+
+Claydol @ Sitrus Berry
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Psychic
+- Ancient Power
+- Light Screen
+
+Cradily @ Leftovers
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Ancient Power
+- Confuse Ray
+- Recover
+
+Armaldo @ Choice Band
+Level: 83
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Earthquake
+- X Scissor
+- Aerial Ace
+
+Aggron @ Lum Berry
+Level: 84
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Tail
+- Earthquake
+- Rock Slide
+- Double Edge
+
+Metagross @ Choice Band
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Meteor Mash
+- Earthquake
+- Psychic
+- Shadow Ball
+
+=== TRAINER_CHAMPION_LANCE_REMATCH ===
+Name: LANCE
+Class: Champion
+Pic: Elite Four Lance Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Gyarados @ Sitrus Berry
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Waterfall
+- Earthquake
+- Return
+
+Charizard @ Choice Band
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Aerial Ace
+- Dragon Claw
+- Earthquake
+
+Aerodactyl @ Choice Band
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Aerial Ace
+- Earthquake
+- Crunch
+
+Kingdra @ Lum Berry
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Surf
+- Ice Beam
+- Outrage
+
+Dragonite @ Leftovers
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Outrage
+- Earthquake
+- Extreme Speed
+
+Dragonite @ Lum Berry
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Outrage
+- Fire Blast
+- Thunder
+- Hyper Beam
+
+=== TRAINER_CHAMPION_RED_POSTGAME ===
+Name: RED
+Class: Pkmn Trainer
+Pic: Red
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Pikachu @ Light Ball
+Level: 88
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Tackle
+- Thunderbolt
+- Iron Tail
+- Quick Attack
+
+Espeon @ Lum Berry
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Morning Sun
+- Calm Mind
+
+Snorlax @ Leftovers
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Shadow Ball
+- Rest
+- Sleep Talk
+
+Venusaur @ Leftovers
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Frenzy Plant
+- Sludge Bomb
+- Sleep Powder
+- Synthesis
+
+Blastoise @ White Herb
+Level: 86
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Cannon
+- Ice Beam
+- Focus Punch
+- Rain Dance
+
+Charizard @ Choice Band
+Level: 87
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blast Burn
+- Flamethrower
+- Aerial Ace
+- Earthquake
+
 === TRAINER_LEADER_FALKNER ===
 Name: FALKNER
 Class: Leader
@@ -17408,6 +17640,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Ice Beam
 - Rain Dance
 
+=== TRAINER_CHAMPION_BLUE_REMATCH ===
+Name: BLUE
+Class: Champion
+Pic: Rival Late Frlg
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Tyranitar @ Lum Berry
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Earthquake
+- Crunch
+- Dragon Dance
+
+Arcanine @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Extreme Speed
+- Crunch
+- Will-O-Wisp
+
+Exeggutor @ Leftovers
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Giga Drain
+- Sleep Powder
+- Sludge Bomb
+
+Alakazam @ Focus Band
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Thunder Punch
+- Calm Mind
+
+Gyarados @ Leftovers
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Earthquake
+- Hydro Pump
+- Double-Edge
+
+Charizard @ Charcoal
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Aerial Ace
+- Dragon Claw
+- Earthquake
+
 === TRAINER_LEADER_BROCK_REMATCH ===
 Name: BROCK
 Class: Leader
@@ -17679,6 +17969,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Stone Edge
 - Megahorn
 - Fire Punch
+
+=== TRAINER_CHAMPION_CYNTHIA_REMATCH ===
+Name: CYNTHIA
+Class: Champion
+Pic: Beauty
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Spiritomb @ Leftovers
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Dark Pulse
+- Psychic
+- Will-O-Wisp
+
+Roserade @ Focus Band
+Level: 80
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Giga Drain
+- Shadow Ball
+- Toxic
+
+Togekiss @ Scope Lens
+Level: 81
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Aura Sphere
+- Psychic
+- Roost
+
+Lucario @ Choice Band
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Extreme Speed
+- Shadow Ball
+- Earthquake
+
+Milotic @ Leftovers
+Level: 82
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Recover
+- Mirror Coat
+
+Garchomp @ Lum Berry
+Level: 85
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Dragon Claw
+- Swords Dance
+- Rock Slide
 
 === TRAINER_LEADER_ROARK ===
 Name: ROARK

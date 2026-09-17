@@ -27,11 +27,31 @@ LilycoveCity_Harbor_EventScript_FerryAttendant::
 	end
 
 LilycoveCity_Harbor_EventScript_HasMultiRegionTicket::
+	call LilycoveCity_Harbor_EventScript_CheckBattleFrontierQualification
 	msgbox LilycoveCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
 	message LilycoveCity_Harbor_Text_FlashTicketWhereTo
 	waitmessage
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, LilycoveCity_Harbor_EventScript_OfferBattleFrontier
 	goto LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect
 	end
+
+LilycoveCity_Harbor_EventScript_CheckBattleFrontierQualification::
+	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, Common_EventScript_NopReturn
+	goto_if_set FLAG_SYS_GAME_CLEAR, LilycoveCity_Harbor_EventScript_QualifyFrontier
+	goto_if_ge VAR_TOTAL_BADGES, 8, LilycoveCity_Harbor_EventScript_QualifyFrontier
+	return
+
+LilycoveCity_Harbor_EventScript_QualifyFrontier::
+	setflag FLAG_BATTLE_FRONTIER_QUALIFIED
+	setflag FLAG_SYS_FRONTIER_PASS
+	setflag FLAG_RECEIVED_SS_TICKET
+	setflag FLAG_MET_SCOTT_ON_SS_TIDAL
+	return
+
+LilycoveCity_Harbor_EventScript_OfferBattleFrontier::
+	msgbox LilycoveCity_Harbor_Text_SailToFrontierPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_Harbor_EventScript_GoToBattleFrontier
+	goto LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect
 
 @ First goto_if_eq is unnecessary; identical scripts
 LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets::
@@ -656,4 +676,9 @@ LilycoveCity_Harbor_Text_CanalaveItIs:
 LilycoveCity_Harbor_Text_SailToCanalave:
 	.string "All aboard for Canalave City, SINNOH!\n"
 	.string "Please watch your step.$"
+
+LilycoveCity_Harbor_Text_SailToFrontierPrompt:
+	.string "Ah, an authorized BATTLE FRONTIER\n"
+	.string "competitor! Would you like to sail to\l"
+	.string "the BATTLE FRONTIER?$"
 
