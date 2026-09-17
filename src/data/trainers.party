@@ -16886,7 +16886,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_LEADER_FALKNER ===
 Name: FALKNER
 Class: Leader
-Pic: Leader Falkner
+Pic: Bird Keeper
 Gender: Male
 Music: Male
 Items: Potion
@@ -16911,7 +16911,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 === TRAINER_LEADER_FALKNER_REMATCH ===
 Name: FALKNER
 Class: Leader
-Pic: Leader Falkner
+Pic: Bird Keeper
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -16945,7 +16945,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_BUGSY ===
 Name: BUGSY
 Class: Leader
-Pic: Leader Bugsy
+Pic: Bug Catcher
 Gender: Male
 Music: Male
 Items: Potion
@@ -16977,7 +16977,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_LEADER_BUGSY_REMATCH ===
 Name: BUGSY
 Class: Leader
-Pic: Leader Bugsy
+Pic: Bug Catcher
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17011,7 +17011,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_WHITNEY ===
 Name: WHITNEY
 Class: Leader
-Pic: Leader Whitney
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Super Potion
@@ -17037,7 +17037,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 === TRAINER_LEADER_WHITNEY_REMATCH ===
 Name: WHITNEY
 Class: Leader
-Pic: Leader Whitney
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17071,7 +17071,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_MORTY ===
 Name: MORTY
 Class: Leader
-Pic: Leader Morty
+Pic: Hex Maniac
 Gender: Male
 Music: Male
 Items: Super Potion
@@ -17105,7 +17105,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 === TRAINER_LEADER_MORTY_REMATCH ===
 Name: MORTY
 Class: Leader
-Pic: Leader Morty
+Pic: Hex Maniac
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17139,7 +17139,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CHUCK ===
 Name: CHUCK
 Class: Leader
-Pic: Leader Chuck
+Pic: Black Belt
 Gender: Male
 Music: Male
 Items: Hyper Potion
@@ -17165,7 +17165,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 === TRAINER_LEADER_CHUCK_REMATCH ===
 Name: CHUCK
 Class: Leader
-Pic: Leader Chuck
+Pic: Black Belt
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17199,7 +17199,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_JASMINE ===
 Name: JASMINE
 Class: Leader
-Pic: Leader Jasmine
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Hyper Potion
@@ -17233,7 +17233,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_LEADER_JASMINE_REMATCH ===
 Name: JASMINE
 Class: Leader
-Pic: Leader Jasmine
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17267,7 +17267,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_PRYCE ===
 Name: PRYCE
 Class: Leader
-Pic: Leader Pryce
+Pic: Gentleman
 Gender: Male
 Music: Male
 Items: Hyper Potion
@@ -17301,7 +17301,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 === TRAINER_LEADER_PRYCE_REMATCH ===
 Name: PRYCE
 Class: Leader
-Pic: Leader Pryce
+Pic: Gentleman
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17335,7 +17335,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CLAIR ===
 Name: CLAIR
 Class: Leader
-Pic: Leader Clair
+Pic: Dragon Tamer
 Gender: Female
 Music: Female
 Items: Full Restore
@@ -17377,7 +17377,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CLAIR_REMATCH ===
 Name: CLAIR
 Class: Leader
-Pic: Leader Clair
+Pic: Dragon Tamer
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17411,7 +17411,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_BROCK_REMATCH ===
 Name: BROCK
 Class: Leader
-Pic: Leader Brock
+Pic: Leader Brock Frlg
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17445,7 +17445,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_MISTY_REMATCH ===
 Name: MISTY
 Class: Leader
-Pic: Leader Misty
+Pic: Leader Misty Frlg
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17479,7 +17479,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_LT_SURGE_REMATCH ===
 Name: LT. SURGE
 Class: Leader
-Pic: Leader Lt Surge
+Pic: Leader Lt Surge Frlg
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17513,7 +17513,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_ERIKA_REMATCH ===
 Name: ERIKA
 Class: Leader
-Pic: Leader Erika
+Pic: Leader Erika Frlg
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17547,7 +17547,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_KOGA_REMATCH ===
 Name: KOGA
 Class: Leader
-Pic: Leader Koga
+Pic: Leader Koga Frlg
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17581,7 +17581,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_SABRINA_REMATCH ===
 Name: SABRINA
 Class: Leader
-Pic: Leader Sabrina
+Pic: Leader Sabrina Frlg
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17615,7 +17615,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_BLAINE_REMATCH ===
 Name: BLAINE
 Class: Leader
-Pic: Leader Blaine
+Pic: Leader Blaine Frlg
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17649,7 +17649,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_GIOVANNI_REMATCH ===
 Name: GIOVANNI
 Class: Leader
-Pic: Leader Giovanni
+Pic: Leader Giovanni Frlg
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17683,7 +17683,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_ROARK ===
 Name: ROARK
 Class: Leader
-Pic: Leader Roark
+Pic: Hiker
 Gender: Male
 Music: Male
 Items: Potion
@@ -17716,7 +17716,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_LEADER_ROARK_REMATCH ===
 Name: ROARK
 Class: Leader
-Pic: Leader Roark
+Pic: Hiker
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17750,7 +17750,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_GARDENIA ===
 Name: GARDENIA
 Class: Leader
-Pic: Leader Gardenia
+Pic: Aroma Lady
 Gender: Female
 Music: Female
 Items: Super Potion
@@ -17784,7 +17784,7 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 === TRAINER_LEADER_GARDENIA_REMATCH ===
 Name: GARDENIA
 Class: Leader
-Pic: Leader Gardenia
+Pic: Aroma Lady
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17818,7 +17818,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_MAYLENE ===
 Name: MAYLENE
 Class: Leader
-Pic: Leader Maylene
+Pic: Battle Girl
 Gender: Female
 Music: Female
 Items: Hyper Potion
@@ -17852,7 +17852,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 === TRAINER_LEADER_MAYLENE_REMATCH ===
 Name: MAYLENE
 Class: Leader
-Pic: Leader Maylene
+Pic: Battle Girl
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -17886,7 +17886,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CRASHER_WAKE ===
 Name: WAKE
 Class: Leader
-Pic: Leader Wake
+Pic: Fisherman
 Gender: Male
 Music: Male
 Items: Hyper Potion
@@ -17920,7 +17920,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 === TRAINER_LEADER_CRASHER_WAKE_REMATCH ===
 Name: WAKE
 Class: Leader
-Pic: Leader Wake
+Pic: Fisherman
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -17954,7 +17954,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_FANTINA ===
 Name: FANTINA
 Class: Leader
-Pic: Leader Fantina
+Pic: Hex Maniac
 Gender: Female
 Music: Female
 Items: Hyper Potion
@@ -17988,7 +17988,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_LEADER_FANTINA_REMATCH ===
 Name: FANTINA
 Class: Leader
-Pic: Leader Fantina
+Pic: Hex Maniac
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -18022,7 +18022,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_BYRON ===
 Name: BYRON
 Class: Leader
-Pic: Leader Byron
+Pic: Expert M
 Gender: Male
 Music: Male
 Items: Hyper Potion
@@ -18056,7 +18056,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_BYRON_REMATCH ===
 Name: BYRON
 Class: Leader
-Pic: Leader Byron
+Pic: Expert M
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
@@ -18090,7 +18090,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CANDICE ===
 Name: CANDICE
 Class: Leader
-Pic: Leader Candice
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Hyper Potion
@@ -18132,7 +18132,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_CANDICE_REMATCH ===
 Name: CANDICE
 Class: Leader
-Pic: Leader Candice
+Pic: Beauty
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -18166,7 +18166,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_VOLKNER ===
 Name: VOLKNER
 Class: Leader
-Pic: Leader Volkner
+Pic: Guitarist
 Gender: Male
 Music: Male
 Items: Full Restore
@@ -18208,7 +18208,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_LEADER_VOLKNER_REMATCH ===
 Name: VOLKNER
 Class: Leader
-Pic: Leader Volkner
+Pic: Guitarist
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
