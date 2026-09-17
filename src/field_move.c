@@ -8,6 +8,10 @@
 #include "constants/field_move.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/battle.h"
+#include "item.h"
+#include "pokemon.h"
+#include "config/overworld.h"
 
 static bool32 IsAlwaysFalse(enum FieldMove fieldMove)
 {
@@ -191,3 +195,88 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .hideIfLocked = TRUE,
     },
 };
+
+bool32 CanMonUseFieldMove(struct Pokemon *mon, enum FieldMove fieldMove)
+{
+    enum Move move;
+    enum Species species;
+
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    if (species == SPECIES_NONE)
+        return FALSE;
+
+    move = FieldMove_GetMoveId(fieldMove);
+    if (move == MOVE_NONE)
+        return FALSE;
+
+    if (MonKnowsMove(mon, move))
+        return TRUE;
+
+#if OW_HM_LEARNABLE_FIELD_MOVE
+    if (IsMoveHM(move))
+    {
+        enum Item hmItem;
+
+        if (!IsFieldMoveUnlocked(fieldMove))
+            return FALSE;
+
+        hmItem = GetTMHMItemIdFromMoveId(move);
+        if (hmItem == ITEM_NONE || !CheckBagHasItem(hmItem, 1))
+            return FALSE;
+
+        if (CanLearnTeachableMove(species, move))
+            return TRUE;
+    }
+#endif
+
+    return FALSE;
+}
+
+u32 GetPartyMonForFieldMove(enum FieldMove fieldMove)
+{
+    u32 i;
+    enum Move move = FieldMove_GetMoveId(fieldMove);
+
+    if (move == MOVE_NONE)
+        return PARTY_SIZE;
+
+    // Pass 1: Prioritize Pokémon that explicitly know the move
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NONE)
+            break;
+        if (!GetMonData(mon, MON_DATA_IS_EGG) && MonKnowsMove(mon, move))
+            return i;
+    }
+
+#if OW_HM_LEARNABLE_FIELD_MOVE
+    // Pass 2: Check for Pokémon capable of learning the HM
+    if (IsMoveHM(move) && IsFieldMoveUnlocked(fieldMove))
+    {
+        enum Item hmItem = GetTMHMItemIdFromMoveId(move);
+        if (hmItem != ITEM_NONE && CheckBagHasItem(hmItem, 1))
+        {
+            for (i = 0; i < PARTY_SIZE; i++)
+            {
+                struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+                enum Species species = GetMonData(mon, MON_DATA_SPECIES);
+                if (species == SPECIES_NONE)
+                    break;
+                if (!GetMonData(mon, MON_DATA_IS_EGG) && CanLearnTeachableMove(species, move))
+                    return i;
+            }
+        }
+    }
+#endif
+
+    return PARTY_SIZE;
+}
+
+bool32 CanPartyUseFieldMove(enum FieldMove fieldMove)
+{
+    return GetPartyMonForFieldMove(fieldMove) != PARTY_SIZE;
+}

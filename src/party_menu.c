@@ -2949,25 +2949,49 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
+    u8 j;
+    u8 maxFieldMoves;
+    u8 standardActions = 2; // MENU_SUMMARY + MENU_CANCEL1
+
+    if (!InBattlePike())
+    {
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
+            standardActions++; // MENU_SWITCH
+        standardActions++; // MENU_MAIL or MENU_ITEM
+    }
+
+    maxFieldMoves = ARRAY_COUNT(sPartyMenuInternal->actions) - standardActions;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    // Add field moves to action list
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    // Pass 1: Add field moves the Pokémon explicitly knows
+    for (j = 0; j != FIELD_MOVES_COUNT; j++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
-        {
-            if (!FieldMove_IsVisible(j))
-                continue;
+        if (sPartyMenuInternal->numActions - 1 >= maxFieldMoves)
+            break;
 
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
-            {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                break;
-            }
-        }
+        if (!FieldMove_IsVisible(j))
+            continue;
+
+        if (MonKnowsMove(&mons[slotId], FieldMove_GetMoveId(j)))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+    }
+
+    // Pass 2: Add HM moves the Pokémon is capable of learning
+    for (j = 0; j != FIELD_MOVES_COUNT; j++)
+    {
+        if (sPartyMenuInternal->numActions - 1 >= maxFieldMoves)
+            break;
+
+        if (!FieldMove_IsVisible(j))
+            continue;
+
+        if (MonKnowsMove(&mons[slotId], FieldMove_GetMoveId(j)))
+            continue;
+
+        if (CanMonUseFieldMove(&mons[slotId], j))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
     }
 
     if (!InBattlePike())

@@ -62,4 +62,11 @@ static inline bool32 FieldMove_IsVisible(enum FieldMove fieldMove)
     return !gFieldMoveInfo[fieldMove].hideIfLocked || IsFieldMoveUnlocked(fieldMove);
 }
 
+struct Pokemon;
+
+bool32 CanMonUseFieldMove(struct Pokemon *mon, enum FieldMove fieldMove);
+bool32 CanPartyUseFieldMove(enum FieldMove fieldMove);
+u32 GetPartyMonForFieldMove(enum FieldMove fieldMove);
+
 #endif //GUARD_FIELD_MOVE_H
+
