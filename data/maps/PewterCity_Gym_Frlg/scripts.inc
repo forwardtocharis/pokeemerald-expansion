@@ -3,16 +3,31 @@ PewterCity_Gym_Frlg_MapScripts::
 
 PewterCity_Gym_EventScript_Brock::
 	famechecker FAMECHECKER_BROCK, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE01_GET, PewterCity_Gym_EventScript_BrockRematch
 	trainerbattle_single TRAINER_LEADER_BROCK, PewterCity_Gym_Text_BrockIntro, PewterCity_Gym_Text_BrockDefeat, PewterCity_Gym_EventScript_DefeatedBrock, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM39_FROM_BROCK, PewterCity_Gym_EventScript_GiveTM39
 	msgbox PewterCity_Gym_Text_BrockPostBattle
 	release
 	end
 
+PewterCity_Gym_EventScript_BrockRematch::
+	msgbox PewterCity_Gym_Text_BrockRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PewterCity_Gym_EventScript_BrockNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_BROCK_REMATCH, PewterCity_Gym_Text_BrockDefeat
+	msgbox PewterCity_Gym_Text_BrockPostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+PewterCity_Gym_EventScript_BrockNoRematch::
+	msgbox PewterCity_Gym_Text_BrockPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
 PewterCity_Gym_EventScript_DefeatedBrock::
 	famechecker FAMECHECKER_BROCK, 1
 	setflag FLAG_DEFEATED_BROCK
-	setflag FLAG_BADGE01_GET
+	setflag FLAG_KANTO_BADGE01_GET
+	special UpdateTotalBadges
 	setvar VAR_MAP_SCENE_PEWTER_CITY, 1
 	setflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
 	clearflag FLAG_HIDE_PEWTER_CITY_RUNNING_SHOES_GUY
@@ -71,7 +86,7 @@ PewterCity_Gym_EventScript_GymGuyAdvice::
 
 PewterCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE01_GET, PewterCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE01_GET, PewterCity_Gym_EventScript_GymStatuePostVictory
 	msgbox PewterCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -199,4 +214,16 @@ PewterCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: BROCK\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+PewterCity_Gym_Text_BrockRematchIntro::
+	.string "BROCK: Welcome back, {PLAYER}!\n"
+	.string "My rock-hard willpower has only\l"
+	.string "grown stronger with my Pokémon!\p"
+	.string "Are you ready for a rematch battle?$"
+
+PewterCity_Gym_Text_BrockPostRematch::
+	.string "BROCK: Your battling prowess remains\n"
+	.string "as solid as bedrock!\l"
+	.string "A true champion caliber battle!$"
+
 

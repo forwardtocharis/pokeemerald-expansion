@@ -47,16 +47,31 @@ CinnabarIsland_Gym_OnLoadOpenDoor6::
 
 CinnabarIsland_Gym_EventScript_Blaine::
 	famechecker FAMECHECKER_BLAINE, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE07_GET, CinnabarIsland_Gym_EventScript_BlaineRematch
 	trainerbattle_single TRAINER_LEADER_BLAINE, CinnabarIsland_Gym_Text_BlaineIntro, CinnabarIsland_Gym_Text_BlaineDefeat, CinnabarIsland_Gym_EventScript_DefeatedBlaine, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM38_FROM_BLAINE, CinnabarIsland_Gym_EventScript_GiveTM38
 	msgbox CinnabarIsland_Gym_Text_BlainePostBattle
 	release
 	end
 
+CinnabarIsland_Gym_EventScript_BlaineRematch::
+	msgbox CinnabarIsland_Gym_Text_BlaineRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CinnabarIsland_Gym_EventScript_BlaineNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_BLAINE_REMATCH, CinnabarIsland_Gym_Text_BlaineDefeat
+	msgbox CinnabarIsland_Gym_Text_BlainePostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+CinnabarIsland_Gym_EventScript_BlaineNoRematch::
+	msgbox CinnabarIsland_Gym_Text_BlainePostBattle, MSGBOX_DEFAULT
+	release
+	end
+
 CinnabarIsland_Gym_EventScript_DefeatedBlaine::
 	famechecker FAMECHECKER_BLAINE, 1
 	setflag FLAG_DEFEATED_BLAINE
-	setflag FLAG_BADGE07_GET
+	setflag FLAG_KANTO_BADGE07_GET
+	special UpdateTotalBadges
 	setrespawn HEAL_LOCATION_CINNABAR_ISLAND
 	setvar VAR_MAP_SCENE_CINNABAR_ISLAND, 1
 	clearflag FLAG_HIDE_CINNABAR_BILL
@@ -184,7 +199,7 @@ CinnabarIsland_Gym_EventScript_GymGuyPostVictory::
 
 CinnabarIsland_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE07_GET, CinnabarIsland_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE07_GET, CinnabarIsland_Gym_EventScript_GymStatuePostVictory
 	msgbox CinnabarIsland_Gym_Text_GymStatue
 	releaseall
 	end
@@ -898,4 +913,15 @@ CinnabarIsland_Gym_Text_CorrectGoOnThrough::
 CinnabarIsland_Gym_Text_SorryBadCall::
 	.string "Sorry!\n"
 	.string "Bad call!$"
+
+CinnabarIsland_Gym_Text_BlaineRematchIntro::
+	.string "BLAINE: Hah! You'd best have Burn Heal\n"
+	.string "ready, because our fire burns even\l"
+	.string "hotter than before!\p"
+	.string "Ready for our fiery rematch?$"
+
+CinnabarIsland_Gym_Text_BlainePostRematch::
+	.string "BLAINE: You have thoroughly quenched\n"
+	.string "my inferno! Your passion is truly\l"
+	.string "an inextinguishable flame!$"
 

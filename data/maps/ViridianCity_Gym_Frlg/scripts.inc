@@ -3,6 +3,7 @@ ViridianCity_Gym_Frlg_MapScripts::
 
 ViridianCity_Gym_EventScript_Giovanni::
 	famechecker FAMECHECKER_GIOVANNI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE08_GET, ViridianCity_Gym_EventScript_GiovanniRematch
 	trainerbattle_single TRAINER_LEADER_GIOVANNI, ViridianCity_Gym_Text_GiovanniIntro, ViridianCity_Gym_Text_GiovanniDefeat, ViridianCity_Gym_EventScript_DefeatedGiovanni, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM26_FROM_GIOVANNI, ViridianCity_Gym_EventScript_GiveTM26
 	msgbox ViridianCity_Gym_Text_GiovanniPostBattle
@@ -13,11 +14,25 @@ ViridianCity_Gym_EventScript_Giovanni::
 	release
 	end
 
+ViridianCity_Gym_EventScript_GiovanniRematch::
+	msgbox ViridianCity_Gym_Text_GiovanniRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ViridianCity_Gym_EventScript_GiovanniNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_GIOVANNI_REMATCH, ViridianCity_Gym_Text_GiovanniDefeat
+	msgbox ViridianCity_Gym_Text_GiovanniPostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+ViridianCity_Gym_EventScript_GiovanniNoRematch::
+	msgbox ViridianCity_Gym_Text_ExplainTM26, MSGBOX_DEFAULT
+	release
+	end
+
 ViridianCity_Gym_EventScript_DefeatedGiovanni::
 	famechecker FAMECHECKER_GIOVANNI, 3
 	setflag FLAG_HIDE_MISC_KANTO_ROCKETS
 	setflag FLAG_DEFEATED_LEADER_GIOVANNI
-	setflag FLAG_BADGE08_GET
+	setflag FLAG_KANTO_BADGE08_GET
+	special UpdateTotalBadges
 	setvar VAR_MAP_SCENE_ROUTE22, 3
 	set_gym_trainers_frlg 8
 	goto ViridianCity_Gym_EventScript_GiveTM26
@@ -94,7 +109,7 @@ ViridianCity_Gym_EventScript_GymGuyPostVictory::
 
 ViridianCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE08_GET, ViridianCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE08_GET, ViridianCity_Gym_EventScript_GymStatuePostVictory
 	msgbox ViridianCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -274,4 +289,15 @@ ViridianCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: GIOVANNI\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+ViridianCity_Gym_Text_GiovanniRematchIntro::
+	.string "GIOVANNI: You dare face me again?\n"
+	.string "Team Rocket may be no more, but my\l"
+	.string "might as a trainer remains absolute!\p"
+	.string "Let us battle without restraint!$"
+
+ViridianCity_Gym_Text_GiovanniPostRematch::
+	.string "GIOVANNI: Magnificent…\n"
+	.string "Your bond with your Pokémon is truly\l"
+	.string "unbreakable. I concede defeat once more.$"
 

@@ -3,9 +3,23 @@ FuchsiaCity_Gym_Frlg_MapScripts::
 
 FuchsiaCity_Gym_EventScript_Koga::
 	famechecker FAMECHECKER_KOGA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE05_GET, FuchsiaCity_Gym_EventScript_KogaRematch
 	trainerbattle_single TRAINER_LEADER_KOGA, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM06_FROM_KOGA, FuchsiaCity_Gym_EventScript_GiveTM06
 	msgbox FuchsiaCity_Gym_Text_KogaPostBattle
+	release
+	end
+
+FuchsiaCity_Gym_EventScript_KogaRematch::
+	msgbox FuchsiaCity_Gym_Text_KogaRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FuchsiaCity_Gym_EventScript_KogaNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_KOGA_REMATCH, FuchsiaCity_Gym_Text_KogaDefeat
+	msgbox FuchsiaCity_Gym_Text_KogaPostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+FuchsiaCity_Gym_EventScript_KogaNoRematch::
+	msgbox FuchsiaCity_Gym_Text_KogaPostBattle, MSGBOX_DEFAULT
 	release
 	end
 
@@ -13,7 +27,8 @@ FuchsiaCity_Gym_EventScript_DefeatedKoga::
 	famechecker FAMECHECKER_KOGA, 1
 	clearflag FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL
 	setflag FLAG_DEFEATED_KOGA
-	setflag FLAG_BADGE05_GET
+	setflag FLAG_KANTO_BADGE05_GET
+	special UpdateTotalBadges
 	set_gym_trainers_frlg 5
 	goto FuchsiaCity_Gym_EventScript_GiveTM06
 	end
@@ -79,7 +94,7 @@ FuchsiaCity_Gym_EventScript_GymGuyPostVictory::
 
 FuchsiaCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE05_GET, FuchsiaCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE05_GET, FuchsiaCity_Gym_EventScript_GymStatuePostVictory
 	msgbox FuchsiaCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -244,4 +259,15 @@ FuchsiaCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: KOGA\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+FuchsiaCity_Gym_Text_KogaRematchIntro::
+	.string "KOGA: Fwahahaha!\n"
+	.string "You return to test your skills against\l"
+	.string "the art of ninja and poison?\p"
+	.string "Prepare yourself for our rematch!$"
+
+FuchsiaCity_Gym_Text_KogaPostRematch::
+	.string "KOGA: Astounding!\n"
+	.string "Your mastery overcomes even the most\l"
+	.string "insidious toxins and techniques!$"
 

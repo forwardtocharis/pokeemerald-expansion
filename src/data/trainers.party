@@ -16877,3 +16877,1365 @@ Double Battle: No
 Kyogre
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+# ========================================================
+# MULTI-REGION EXPANSION TRAINERS (PHASE 6)
+# Automatically synchronized by tools/gen/gba/gen_trainers.py
+# ========================================================
+
+=== TRAINER_LEADER_FALKNER ===
+Name: FALKNER
+Class: Leader
+Pic: Leader Falkner
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Pidgey
+Level: 9
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Tackle
+- Sand Attack
+- Gust
+
+Pidgeotto @ Oran Berry
+Level: 13
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Gust
+- Quick Attack
+- Roost
+- Mud-Slap
+
+=== TRAINER_LEADER_FALKNER_REMATCH ===
+Name: FALKNER
+Class: Leader
+Pic: Leader Falkner
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Noctowl @ Leftovers
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Air Slash
+- Roost
+- Hypnosis
+- Shadow Ball
+
+Pidgeot @ Choice Band
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Return
+- U-turn
+- Steel Wing
+
+Honchkrow @ Life Orb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sucker Punch
+- Brave Bird
+- Superpower
+- Roost
+
+=== TRAINER_LEADER_BUGSY ===
+Name: BUGSY
+Class: Leader
+Pic: Leader Bugsy
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Metapod
+Level: 15
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Tackle
+- String Shot
+- Harden
+
+Kakuna
+Level: 15
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Poison Sting
+- String Shot
+- Harden
+
+Scyther @ Sitrus Berry
+Level: 17
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Fury Cutter
+- Quick Attack
+- Leer
+- Wing Attack
+
+=== TRAINER_LEADER_BUGSY_REMATCH ===
+Name: BUGSY
+Class: Leader
+Pic: Leader Bugsy
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Heracross @ Flame Orb
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Megahorn
+- Close Combat
+- Facade
+- Stone Edge
+
+Scizor @ Metal Coat
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bullet Punch
+- Bug Bite
+- Swords Dance
+- Roost
+
+Yanmega @ Choice Specs
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Air Slash
+- Ancient Power
+- Shadow Ball
+
+=== TRAINER_LEADER_WHITNEY ===
+Name: WHITNEY
+Class: Leader
+Pic: Leader Whitney
+Gender: Female
+Music: Female
+Items: Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Clefairy
+Level: 17
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Metronome
+- Sing
+- Double Slap
+- Encore
+
+Miltank @ Lum Berry
+Level: 20
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Rollout
+- Attract
+- Milk Drink
+- Stomp
+
+=== TRAINER_LEADER_WHITNEY_REMATCH ===
+Name: WHITNEY
+Class: Leader
+Pic: Leader Whitney
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Clefable @ Life Orb
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Moonblast
+- Flamethrower
+- Soft-Boiled
+- Calm Mind
+
+Blissey @ Leftovers
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Seismic Toss
+- Toxic
+- Soft-Boiled
+- Aromatherapy
+
+Miltank @ Chople Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Body Slam
+- Earthquake
+- Milk Drink
+- Curse
+
+=== TRAINER_LEADER_MORTY ===
+Name: MORTY
+Class: Leader
+Pic: Leader Morty
+Gender: Male
+Music: Male
+Items: Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Gastly
+Level: 21
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Lick
+- Spite
+- Mean Look
+- Curse
+
+Haunter
+Level: 21
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hypnosis
+- Dream Eater
+- Nightmare
+- Shadow Ball
+
+Gengar @ Sitrus Berry
+Level: 25
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Shadow Ball
+- Hypnosis
+- Dream Eater
+- Confuse Ray
+
+=== TRAINER_LEADER_MORTY_REMATCH ===
+Name: MORTY
+Class: Leader
+Pic: Leader Morty
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Mismagius @ Colbur Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Mystical Fire
+- Nasty Plot
+
+Dusknoir @ Leftovers
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Sneak
+- Earthquake
+- Will-O-Wisp
+- Pain Split
+
+Gengar @ Focus Sash
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Sludge Wave
+- Focus Blast
+- Destiny Bond
+
+=== TRAINER_LEADER_CHUCK ===
+Name: CHUCK
+Class: Leader
+Pic: Leader Chuck
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Primeape
+Level: 29
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Karate Chop
+- Fury Swipes
+- Focus Energy
+- Rock Slide
+
+Poliwrath @ Sitrus Berry
+Level: 31
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dynamic Punch
+- Surf
+- Hypnosis
+- Body Slam
+
+=== TRAINER_LEADER_CHUCK_REMATCH ===
+Name: CHUCK
+Class: Leader
+Pic: Leader Chuck
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Hitmontop @ Sitrus Berry
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Sucker Punch
+- Mach Punch
+- Rapid Spin
+
+Machamp @ Assault Vest
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dynamic Punch
+- Stone Edge
+- Knock Off
+- Bullet Punch
+
+Poliwrath @ Leftovers
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Circle Throw
+- Bulk Up
+- Rest
+
+=== TRAINER_LEADER_JASMINE ===
+Name: JASMINE
+Class: Leader
+Pic: Leader Jasmine
+Gender: Female
+Music: Female
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Magnemite
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Sonic Boom
+- Supersonic
+- Thunder Wave
+
+Magnemite
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Thunderbolt
+- Sonic Boom
+- Supersonic
+- Thunder Wave
+
+Steelix @ Sitrus Berry
+Level: 35
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Iron Tail
+- Rock Throw
+- Screech
+- Sandstorm
+
+=== TRAINER_LEADER_JASMINE_REMATCH ===
+Name: JASMINE
+Class: Leader
+Pic: Leader Jasmine
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Magnezone @ Choice Specs
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Skarmory @ Rocky Helmet
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Roost
+- Spikes
+- Whirlwind
+
+Steelix @ Leftovers
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heavy Slam
+- Earthquake
+- Stealth Rock
+- Roar
+
+=== TRAINER_LEADER_PRYCE ===
+Name: PRYCE
+Class: Leader
+Pic: Leader Pryce
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Seel
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Headbutt
+- Icy Wind
+- Aurora Beam
+- Rest
+
+Dewgong
+Level: 32
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Aurora Beam
+- Take Down
+- Ice Beam
+- Rest
+
+Piloswine @ Sitrus Berry
+Level: 34
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Blizzard
+- Mud Bomb
+- Ice Fang
+- Take Down
+
+=== TRAINER_LEADER_PRYCE_REMATCH ===
+Name: PRYCE
+Class: Leader
+Pic: Leader Pryce
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Dewgong @ Leftovers
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Encore
+- Toxic
+
+Weavile @ Life Orb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Knock Off
+- Icicle Crash
+- Ice Shard
+- Low Kick
+
+Mamoswine @ Choice Band
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Superpower
+
+=== TRAINER_LEADER_CLAIR ===
+Name: CLAIR
+Class: Leader
+Pic: Leader Clair
+Gender: Female
+Music: Female
+Items: Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Dragonair
+Level: 38
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Breath
+- Slam
+- Thunder Wave
+- Twister
+
+Dragonair
+Level: 38
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Breath
+- Slam
+- Thunder Wave
+- Twister
+
+Gyarados
+Level: 38
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Dragon Rage
+- Bite
+- Twister
+- Hydro Pump
+
+Kingdra @ Sitrus Berry
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Dragon Pulse
+- Smokescreen
+- Hyper Beam
+
+=== TRAINER_LEADER_CLAIR_REMATCH ===
+Name: CLAIR
+Class: Leader
+Pic: Leader Clair
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Dragonite @ Lum Berry
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Outrage
+- Extreme Speed
+- Fire Punch
+- Dragon Dance
+
+Garchomp @ Focus Sash
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Outrage
+- Earthquake
+- Swords Dance
+- Stone Edge
+
+Kingdra @ Life Orb
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Draco Meteor
+- Ice Beam
+- Rain Dance
+
+=== TRAINER_LEADER_BROCK_REMATCH ===
+Name: BROCK
+Class: Leader
+Pic: Leader Brock
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Golem @ Sitrus Berry
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Rock Slide
+- Explosion
+- Double-Edge
+
+Aerodactyl @ Choice Band
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Aerial Ace
+- Earthquake
+- Crunch
+
+Steelix @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Tail
+- Earthquake
+- Rock Slide
+- Toxic
+
+=== TRAINER_LEADER_MISTY_REMATCH ===
+Name: MISTY
+Class: Leader
+Pic: Leader Misty
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Golduck @ Sitrus Berry
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Psychic
+- Ice Beam
+- Calm Mind
+
+Lapras @ Leftovers
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Thunderbolt
+- Confuse Ray
+
+Starmie @ Lum Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Psychic
+- Thunderbolt
+- Ice Beam
+
+=== TRAINER_LEADER_LT_SURGE_REMATCH ===
+Name: LT. SURGE
+Class: Leader
+Pic: Leader Lt Surge
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Electrode @ Focus Band
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Thunder Wave
+- Light Screen
+- Explosion
+
+Magneton @ Quick Claw
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Metal Sound
+
+Raichu @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Volt Tackle
+- Iron Tail
+- Brick Break
+- Thunder Wave
+
+=== TRAINER_LEADER_ERIKA_REMATCH ===
+Name: ERIKA
+Class: Leader
+Pic: Leader Erika
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Victreebel @ Miracle Seed
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Swords Dance
+
+Bellossom @ Leftovers
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Solar Beam
+- Sunny Day
+- Moonlight
+- Toxic
+
+Vileplume @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Petal Dance
+- Sludge Bomb
+- Aromatherapy
+- Moonlight
+
+=== TRAINER_LEADER_KOGA_REMATCH ===
+Name: KOGA
+Class: Leader
+Pic: Leader Koga
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Weezing @ Black Sludge
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Will-O-Wisp
+- Flamethrower
+- Explosion
+
+Muk @ Leftovers
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gunk Shot
+- Brick Break
+- Shadow Sneak
+- Curse
+
+Venomoth @ Focus Sash
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Sludge Bomb
+- Quiver Dance
+- Sleep Powder
+
+=== TRAINER_LEADER_SABRINA_REMATCH ===
+Name: SABRINA
+Class: Leader
+Pic: Leader Sabrina
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Mr. Mime @ Sitrus Berry
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Reflect
+- Light Screen
+- Dazzling Gleam
+
+Espeon @ Wise Glasses
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Morning Sun
+- Calm Mind
+
+Alakazam @ Focus Sash
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Focus Blast
+- Shadow Ball
+- Energy Ball
+
+=== TRAINER_LEADER_BLAINE_REMATCH ===
+Name: BLAINE
+Class: Leader
+Pic: Leader Blaine
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Ninetales @ Charcoal
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Solar Beam
+- Will-O-Wisp
+- Extrasensory
+
+Arcanine @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Extreme Speed
+- Wild Charge
+- Crunch
+
+Magmortar @ Expert Belt
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Fire Blast
+- Thunderbolt
+- Focus Blast
+- Confuse Ray
+
+=== TRAINER_LEADER_GIOVANNI_REMATCH ===
+Name: GIOVANNI
+Class: Leader
+Pic: Leader Giovanni
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Nidoqueen @ Life Orb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Thunderbolt
+
+Nidoking @ Life Orb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Wave
+- Flamethrower
+- Megahorn
+
+Rhyperior @ Leftovers
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Stone Edge
+- Megahorn
+- Fire Punch
+
+=== TRAINER_LEADER_ROARK ===
+Name: ROARK
+Class: Leader
+Pic: Leader Roark
+Gender: Male
+Music: Male
+Items: Potion
+Double Battle: No
+AI: Basic Trainer
+
+Geodude
+Level: 12
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Stealth Rock
+- Rock Throw
+- Sand Attack
+
+Onix
+Level: 12
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Stealth Rock
+- Rock Throw
+- Screech
+- Bind
+
+Cranidos @ Sitrus Berry
+Level: 14
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Headbutt
+- Pursuit
+- Leer
+- Rock Tomb
+
+=== TRAINER_LEADER_ROARK_REMATCH ===
+Name: ROARK
+Class: Leader
+Pic: Leader Roark
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Aerodactyl @ Focus Sash
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stealth Rock
+- Stone Edge
+- Earthquake
+- Taunt
+
+Probopass @ Leftovers
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Power Gem
+- Earth Power
+- Volt Switch
+- Thunder Wave
+
+Rampardos @ Life Orb
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Smash
+- Earthquake
+- Superpower
+- Zen Headbutt
+
+=== TRAINER_LEADER_GARDENIA ===
+Name: GARDENIA
+Class: Leader
+Pic: Leader Gardenia
+Gender: Female
+Music: Female
+Items: Super Potion
+Double Battle: No
+AI: Basic Trainer
+
+Cherubi
+Level: 19
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Grass Knot
+- Leech Seed
+- Safeguard
+- Growth
+
+Turtwig
+Level: 19
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Razor Leaf
+- Reflect
+- Tackle
+- Withdraw
+
+Roserade @ Sitrus Berry
+Level: 22
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Grass Knot
+- Poison Sting
+- Magical Leaf
+- Stun Spore
+
+=== TRAINER_LEADER_GARDENIA_REMATCH ===
+Name: GARDENIA
+Class: Leader
+Pic: Leader Gardenia
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Jumpluff @ Focus Sash
+Level: 63
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sleep Powder
+- Leech Seed
+- Strength Sap
+- U-turn
+
+Torterra @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wood Hammer
+- Earthquake
+- Stealth Rock
+- Synthesis
+
+Roserade @ Life Orb
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Leaf Storm
+- Sludge Bomb
+- Shadow Ball
+- Dazzling Gleam
+
+=== TRAINER_LEADER_MAYLENE ===
+Name: MAYLENE
+Class: Leader
+Pic: Leader Maylene
+Gender: Female
+Music: Female
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Meditite
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Drain Punch
+- Confusion
+- Rock Tomb
+- Fake Out
+
+Machoke
+Level: 29
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Karate Chop
+- Rock Tomb
+- Strength
+- Foresight
+
+Lucario @ Sitrus Berry
+Level: 30
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Drain Punch
+- Force Palm
+- Bone Rush
+- Metal Claw
+
+=== TRAINER_LEADER_MAYLENE_REMATCH ===
+Name: MAYLENE
+Class: Leader
+Pic: Leader Maylene
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Medicham @ Life Orb
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- High Jump Kick
+- Zen Headbutt
+- Ice Punch
+- Fake Out
+
+Infernape @ Focus Sash
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Flare Blitz
+- U-turn
+- Mach Punch
+
+Lucario @ Expert Belt
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Flash Cannon
+- Extreme Speed
+- Swords Dance
+
+=== TRAINER_LEADER_CRASHER_WAKE ===
+Name: WAKE
+Class: Leader
+Pic: Leader Wake
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Gyarados
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Waterfall
+- Bite
+- Twister
+- Brine
+
+Quagsire
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Mud Bomb
+- Water Pulse
+- Slam
+- Yawn
+
+Floatzel @ Sitrus Berry
+Level: 30
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Aqua Jet
+- Brine
+- Crunch
+- Ice Fang
+
+=== TRAINER_LEADER_CRASHER_WAKE_REMATCH ===
+Name: WAKE
+Class: Leader
+Pic: Leader Wake
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Gyarados @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dragon Dance
+- Waterfall
+- Bounce
+- Earthquake
+
+Quagsire @ Rocky Helmet
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
+- Earthquake
+- Recover
+- Toxic
+
+Floatzel @ Life Orb
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Ice Spinner
+- Aqua Jet
+- Crunch
+
+=== TRAINER_LEADER_FANTINA ===
+Name: FANTINA
+Class: Leader
+Pic: Leader Fantina
+Gender: Female
+Music: Female
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Duskull
+Level: 32
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Shadow Sneak
+- Will-O-Wisp
+- Confuse Ray
+- Pursuit
+
+Haunter
+Level: 34
+IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Shadow Claw
+- Hypnosis
+- Confuse Ray
+- Sucker Punch
+
+Mismagius @ Sitrus Berry
+Level: 36
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Psybeam
+- Magical Leaf
+- Confuse Ray
+
+=== TRAINER_LEADER_FANTINA_REMATCH ===
+Name: FANTINA
+Class: Leader
+Pic: Leader Fantina
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Drifblim @ Sitrus Berry
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Acrobatics
+- Will-O-Wisp
+- Strength Sap
+
+Dusknoir @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poltergeist
+- Earthquake
+- Ice Punch
+- Pain Split
+
+Mismagius @ Colbur Berry
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Dazzling Gleam
+- Mystical Fire
+- Nasty Plot
+
+=== TRAINER_LEADER_BYRON ===
+Name: BYRON
+Class: Leader
+Pic: Leader Byron
+Gender: Male
+Music: Male
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Magneton
+Level: 37
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Thunderbolt
+- Flash Cannon
+- Metal Sound
+- Tri Attack
+
+Steelix
+Level: 38
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Iron Tail
+- Earthquake
+- Rock Slide
+- Sandstorm
+
+Bastiodon @ Sitrus Berry
+Level: 41
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Head
+- Ancient Power
+- Stone Edge
+- Iron Defense
+
+=== TRAINER_LEADER_BYRON_REMATCH ===
+Name: BYRON
+Class: Leader
+Pic: Leader Byron
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Magnezone @ Choice Specs
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Steelix @ Leftovers
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heavy Slam
+- Earthquake
+- Stealth Rock
+- Dragon Tail
+
+Bastiodon @ Chesto Berry
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heavy Slam
+- Stone Edge
+- Rest
+- Curse
+
+=== TRAINER_LEADER_CANDICE ===
+Name: CANDICE
+Class: Leader
+Pic: Leader Candice
+Gender: Female
+Music: Female
+Items: Hyper Potion
+Double Battle: No
+AI: Basic Trainer
+
+Snover
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Blizzard
+- Wood Hammer
+- Ice Shard
+- Water Pulse
+
+Sneasel
+Level: 40
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Slash
+- Ice Punch
+- Feint Attack
+- Quick Attack
+
+Medicham
+Level: 42
+IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+- Ice Punch
+- Drain Punch
+- Bulk Up
+- Fire Punch
+
+Froslass @ Sitrus Berry
+Level: 44
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Shadow Ball
+- Hail
+- Confuse Ray
+
+=== TRAINER_LEADER_CANDICE_REMATCH ===
+Name: CANDICE
+Class: Leader
+Pic: Leader Candice
+Gender: Female
+Music: Female
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Abomasnow @ Focus Sash
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Blizzard
+- Wood Hammer
+- Ice Shard
+- Aurora Veil
+
+Weavile @ Choice Band
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Knock Off
+- Triple Axel
+- Ice Shard
+- Low Kick
+
+Froslass @ Colbur Berry
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Spikes
+- Shadow Ball
+- Ice Beam
+- Destiny Bond
+
+=== TRAINER_LEADER_VOLKNER ===
+Name: VOLKNER
+Class: Leader
+Pic: Leader Volkner
+Gender: Male
+Music: Male
+Items: Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Raichu
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Thunderbolt
+- Charge Beam
+- Iron Tail
+- Brick Break
+
+Ambipom
+Level: 47
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Fake Out
+- Double Hit
+- Shock Wave
+- Agility
+
+Octillery
+Level: 47
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Charge Beam
+- Octazooka
+- Bullet Seed
+- Aurora Beam
+
+Luxray @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder Fang
+- Crunch
+- Iron Tail
+- Fire Fang
+
+=== TRAINER_LEADER_VOLKNER_REMATCH ===
+Name: VOLKNER
+Class: Leader
+Pic: Leader Volkner
+Gender: Male
+Music: Male
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Rotom-Wash @ Leftovers
+Level: 67
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hydro Pump
+- Volt Switch
+- Will-O-Wisp
+- Pain Split
+
+Electivire @ Life Orb
+Level: 68
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Cross Chop
+- Ice Punch
+- Earthquake
+
+Luxray @ Choice Band
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Wild Charge
+- Superpower
+- Crunch
+- Volt Switch
+

@@ -3,9 +3,23 @@ SaffronCity_Gym_Frlg_MapScripts::
 
 SaffronCity_Gym_EventScript_Sabrina::
 	famechecker FAMECHECKER_SABRINA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE06_GET, SaffronCity_Gym_EventScript_SabrinaRematch
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntro, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM04_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTM04
 	msgbox SaffronCity_Gym_Text_ExplainTM04
+	release
+	end
+
+SaffronCity_Gym_EventScript_SabrinaRematch::
+	msgbox SaffronCity_Gym_Text_SabrinaRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SaffronCity_Gym_EventScript_SabrinaNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_SABRINA_REMATCH, SaffronCity_Gym_Text_SabrinaDefeat
+	msgbox SaffronCity_Gym_Text_SabrinaPostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+SaffronCity_Gym_EventScript_SabrinaNoRematch::
+	msgbox SaffronCity_Gym_Text_ExplainTM04, MSGBOX_DEFAULT
 	release
 	end
 
@@ -14,7 +28,8 @@ SaffronCity_Gym_EventScript_DefeatedSabrina::
 	famechecker FAMECHECKER_SABRINA, 3
 	clearflag FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS
 	setflag FLAG_DEFEATED_SABRINA
-	setflag FLAG_BADGE06_GET
+	setflag FLAG_KANTO_BADGE06_GET
+	special UpdateTotalBadges
 	set_gym_trainers_frlg 6
 	goto SaffronCity_Gym_EventScript_GiveTM04
 	end
@@ -85,7 +100,7 @@ SaffronCity_Gym_EventScript_GymGuyPostVictory::
 
 SaffronCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE06_GET, SaffronCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE06_GET, SaffronCity_Gym_EventScript_GymStatuePostVictory
 	msgbox SaffronCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -254,4 +269,15 @@ SaffronCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: SABRINA\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+SaffronCity_Gym_Text_SabrinaRematchIntro::
+	.string "SABRINA: I foresaw your return.\n"
+	.string "The telepathic bond between you and\l"
+	.string "your Pokémon resonates deeply.\p"
+	.string "Shall we test our powers once more?$"
+
+SaffronCity_Gym_Text_SabrinaPostRematch::
+	.string "SABRINA: Your future holds limitless\n"
+	.string "potential. The universe bends to\l"
+	.string "your clarity of purpose.$"
 

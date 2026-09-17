@@ -3,16 +3,31 @@ CeruleanCity_Gym_Frlg_MapScripts::
 
 CeruleanCity_Gym_EventScript_Misty::
 	famechecker FAMECHECKER_MISTY, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE02_GET, CeruleanCity_Gym_EventScript_MistyRematch
 	trainerbattle_single TRAINER_LEADER_MISTY, CeruleanCity_Gym_Text_MistyIntro, CeruleanCity_Gym_Text_MistyDefeat, CeruleanCity_Gym_EventScript_MistyDefeated, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM03_FROM_MISTY, CeruleanCity_Gym_EventScript_GiveTM03
 	msgbox CeruleanCity_Gym_Text_ExplainTM03
 	release
 	end
 
+CeruleanCity_Gym_EventScript_MistyRematch::
+	msgbox CeruleanCity_Gym_Text_MistyRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeruleanCity_Gym_EventScript_MistyNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_MISTY_REMATCH, CeruleanCity_Gym_Text_MistyDefeat
+	msgbox CeruleanCity_Gym_Text_MistyPostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+CeruleanCity_Gym_EventScript_MistyNoRematch::
+	msgbox CeruleanCity_Gym_Text_ExplainTM03, MSGBOX_DEFAULT
+	release
+	end
+
 CeruleanCity_Gym_EventScript_MistyDefeated::
 	famechecker FAMECHECKER_MISTY, 1
 	setflag FLAG_DEFEATED_MISTY
-	setflag FLAG_BADGE02_GET
+	setflag FLAG_KANTO_BADGE02_GET
+	special UpdateTotalBadges
 	setrespawn HEAL_LOCATION_CERULEAN_CITY
 	set_gym_trainers_frlg 2
 	goto CeruleanCity_Gym_EventScript_GiveTM03
@@ -59,7 +74,7 @@ CeruleanCity_Gym_EventScript_GymGuyPostVictory::
 
 CeruleanCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE02_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
 	msgbox CeruleanCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -160,4 +175,15 @@ CeruleanCity_Gym_Text_GymStatuePlayerWon::
 	.string "LEADER: MISTY\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+CeruleanCity_Gym_Text_MistyRematchIntro::
+	.string "MISTY: Hi there, {PLAYER}!\n"
+	.string "My water-type Pokémon and I have\l"
+	.string "polished our tactics to perfection!\p"
+	.string "Are you ready to dive into a rematch?$"
+
+CeruleanCity_Gym_Text_MistyPostRematch::
+	.string "MISTY: Wow! You completely washed away\n"
+	.string "my defenses again! You're really amazing!$"
+
 

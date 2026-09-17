@@ -40,7 +40,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_OLIVINE_CITY__GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_OLIVINE_CITY__POKEMON_CENTER_1_F",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

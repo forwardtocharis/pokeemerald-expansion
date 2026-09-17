@@ -26,7 +26,22 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 32,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_GOLDENROD_CITY__GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_GOLDENROD_CITY__POKEMON_CENTER_1_F",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

@@ -203,9 +203,23 @@ VermilionCity_Gym_EventScript_SetBeamsOn::
 
 VermilionCity_Gym_EventScript_LtSurge::
 	famechecker FAMECHECKER_LTSURGE, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
+	goto_if_set FLAG_KANTO_BADGE03_GET, VermilionCity_Gym_EventScript_LtSurgeRematch
 	trainerbattle_single TRAINER_LEADER_LT_SURGE, VermilionCity_Gym_Text_LtSurgeIntro, VermilionCity_Gym_Text_LtSurgeDefeat, VermilionCity_Gym_EventScript_DefeatedLtSurge, NO_MUSIC
 	goto_if_unset FLAG_GOT_TM34_FROM_SURGE, VermilionCity_Gym_EventScript_GiveTM34
 	msgbox VermilionCity_Gym_Text_LtSurgePostBattle
+	release
+	end
+
+VermilionCity_Gym_EventScript_LtSurgeRematch::
+	msgbox VermilionCity_Gym_Text_LtSurgeRematchIntro, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VermilionCity_Gym_EventScript_LtSurgeNoRematch
+	trainerbattle_no_intro TRAINER_LEADER_LT_SURGE_REMATCH, VermilionCity_Gym_Text_LtSurgeDefeat
+	msgbox VermilionCity_Gym_Text_LtSurgePostRematch, MSGBOX_DEFAULT
+	release
+	end
+
+VermilionCity_Gym_EventScript_LtSurgeNoRematch::
+	msgbox VermilionCity_Gym_Text_LtSurgePostBattle, MSGBOX_DEFAULT
 	release
 	end
 
@@ -214,7 +228,8 @@ VermilionCity_Gym_EventScript_DefeatedLtSurge::
 	call_if_unset FLAG_GOT_HM05, VermilionCity_Gym_EventScript_ShowOaksAide
 	clearflag FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL
 	setflag FLAG_DEFEATED_LT_SURGE
-	setflag FLAG_BADGE03_GET
+	setflag FLAG_KANTO_BADGE03_GET
+	special UpdateTotalBadges
 	set_gym_trainers_frlg 3
 	goto VermilionCity_Gym_EventScript_GiveTM34
 	end
@@ -275,7 +290,7 @@ VermilionCity_Gym_EventScript_GymGuyPostVictory::
 
 VermilionCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE03_GET, VermilionCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_KANTO_BADGE03_GET, VermilionCity_Gym_EventScript_GymStatuePostVictory
 	msgbox VermilionCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -418,4 +433,15 @@ VermilionCity_Gym_Text_OnlyTrashLocksWereReset::
 	.string "There's only trash here.\p"
 	.string "Hey!\n"
 	.string "The electric locks were reset!$"
+
+VermilionCity_Gym_Text_LtSurgeRematchIntro::
+	.string "LT. SURGE: Ten-hut, {PLAYER}!\n"
+	.string "You're back for another live-wire battle!\l"
+	.string "My electric squad is fully charged!\p"
+	.string "Are you ready to face the Lightning American?$"
+
+VermilionCity_Gym_Text_LtSurgePostRematch::
+	.string "LT. SURGE: Whoa! You zapped right through\n"
+	.string "my high-voltage offense! At ease, soldier!$"
+
 

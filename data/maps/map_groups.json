@@ -1156,7 +1156,15 @@
     "Route44",
     "Route45",
     "Route46",
-    "VioletCity"
+    "VioletCity",
+    "AzaleaTown_Gym",
+    "AzaleaTown_PokemonCenter_1F",
+    "GoldenrodCity_Gym",
+    "GoldenrodCity_PokemonCenter_1F",
+    "OlivineCity_Gym",
+    "OlivineCity_PokemonCenter_1F",
+    "VioletCity_Gym",
+    "VioletCity_PokemonCenter_1F"
   ],
   "gMapGroup_TownsAndRoutes_Kanto": [
     "PalletTown",
@@ -1226,6 +1234,14 @@
     "Route213",
     "Route214",
     "Route215",
-    "Route218"
+    "Route218",
+    "CanalaveCity_Gym",
+    "CanalaveCity_PokemonCenter_1F",
+    "EternaCity_Gym",
+    "EternaCity_PokemonCenter_1F",
+    "OreburghCity_Gym",
+    "OreburghCity_PokemonCenter_1F",
+    "VeilstoneCity_Gym",
+    "VeilstoneCity_PokemonCenter_1F"
   ]
 }
