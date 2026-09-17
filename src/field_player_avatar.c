@@ -846,6 +846,7 @@ static void PlayerNotOnBikeTurningInPlace(enum Direction direction, u16 heldKeys
 
 static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
 {
+    bool8 isRunning;
     enum Collision collision = CheckForPlayerAvatarCollision(direction);
 
     if (collision)
@@ -908,8 +909,13 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
         return;
     }
 
+    if (FlagGet(FLAG_SYS_AUTO_RUN))
+        isRunning = !(heldKeys & B_BUTTON);
+    else
+        isRunning = (heldKeys & B_BUTTON) != 0;
+
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-     && (heldKeys & B_BUTTON)
+     && isRunning
      && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
      && !FollowerNPCComingThroughDoor()

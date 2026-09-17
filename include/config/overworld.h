@@ -4,6 +4,8 @@
 // Movement config
 #define OW_RUNNING_INDOORS          GEN_LATEST  // In Gen4+, players are allowed to run indoors.
 #define SLOW_MOVEMENT_ON_STAIRS     FALSE       // If enabled, the player will move slower up/down stairs like in FR
+#define OW_FLAG_AUTO_RUN            FLAG_SYS_AUTO_RUN // Flag used to toggle auto-run (run by default, hold B to walk)
+#define OW_AUTORUN_BUTTON           L_BUTTON    // Button used to toggle auto-run in the overworld
 
 // Other settings
 #define OW_POISON_DAMAGE                GEN_LATEST // In Gen4, Pokémon no longer faint from Poison in the overworld. In Gen5+, they no longer take damage at all.
