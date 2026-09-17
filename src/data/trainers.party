@@ -17059,7 +17059,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_CHAMPION_RED_POSTGAME ===
 Name: RED
-Class: Pkmn Trainer
+Class: Champion
 Pic: Red
 Gender: Male
 Music: Male
