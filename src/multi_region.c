@@ -134,3 +134,16 @@ u8 GetScaledTrainerMonLevel(u8 baseLevel)
 
     return (u8)scaled;
 }
+
+static EWRAM_DATA u8 sStartingRegionChoice = 0;
+
+void SetStartingRegionChoice(u8 region)
+{
+    sStartingRegionChoice = (region <= 3) ? region : 0;
+}
+
+u8 GetStartingRegionChoice(void)
+{
+    return sStartingRegionChoice;
+}
+

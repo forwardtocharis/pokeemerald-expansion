@@ -114,6 +114,14 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 #define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
 #define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
 
+static const u16 sRegionalStarters[4][STARTER_MON_COUNT] =
+{
+    [0] = { SPECIES_TREECKO,   SPECIES_TORCHIC,    SPECIES_MUDKIP },   // Hoenn
+    [1] = { SPECIES_BULBASAUR, SPECIES_CHARMANDER, SPECIES_SQUIRTLE }, // Kanto
+    [2] = { SPECIES_CHIKORITA, SPECIES_CYNDAQUIL,  SPECIES_TOTODILE }, // Johto
+    [3] = { SPECIES_TURTWIG,   SPECIES_CHIMCHAR,   SPECIES_PIPLUP },   // Sinnoh
+};
+
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
     GRASS_STARTER,
@@ -347,11 +355,22 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 };
 
 // .text
+u16 GetStarterPokemonByRegion(u16 chosenStarterId, u8 regionId)
+{
+    if (chosenStarterId >= STARTER_MON_COUNT)
+        chosenStarterId = 0;
+    if (regionId > 3)
+        regionId = 0;
+    return sRegionalStarters[regionId][chosenStarterId];
+}
+
 u16 GetStarterPokemon(u16 chosenStarterId)
 {
-    if (chosenStarterId > STARTER_MON_COUNT)
+    u8 region;
+    if (chosenStarterId >= STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    region = (u8)VarGet(VAR_CURRENT_REGION);
+    return GetStarterPokemonByRegion(chosenStarterId, region);
 }
 
 static void VblankCB_StarterChoose(void)

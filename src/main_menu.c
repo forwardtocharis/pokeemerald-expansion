@@ -40,6 +40,7 @@
 #include "title_screen.h"
 #include "window.h"
 #include "mystery_gift_menu.h"
+#include "multi_region.h"
 
 /*
  * Main menu state machine
@@ -232,6 +233,11 @@ void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8);
 static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8);
+static void Task_NewGameBirchSpeech_AskRegion(u8);
+static void Task_NewGameBirchSpeech_WaitToShowRegionMenu(u8);
+static void Task_NewGameBirchSpeech_ChooseRegion(u8);
+static void NewGameBirchSpeech_ShowRegionMenu(void);
+static s8 NewGameBirchSpeech_ProcessRegionMenuInput(void);
 static void Task_NewGameBirchSpeech_AreYouReady(u8);
 static void Task_NewGameBirchSpeech_ShrinkPlayer(u8);
 static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *);
@@ -475,6 +481,13 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_PlayerShrink[] =
 static const struct MenuAction sMenuActions_Gender[] = {
     {gText_Boy, {NULL}},
     {gText_Girl, {NULL}}
+};
+
+static const struct MenuAction sMenuActions_Region[] = {
+    {COMPOUND_STRING("HOENN"), {NULL}},
+    {COMPOUND_STRING("KANTO"), {NULL}},
+    {COMPOUND_STRING("JOHTO"), {NULL}},
+    {COMPOUND_STRING("SINNOH"), {NULL}}
 };
 
 static const u8 *const sMalePresetNames[] = {
@@ -1728,8 +1741,40 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8 taskId)
             NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
             NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
             gTasks[taskId].tTimer = 64;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_AskRegion;
         }
+    }
+}
+
+static const u8 sText_Birch_WhichRegion[] = _("Which region will your\njourney begin in?");
+
+static void Task_NewGameBirchSpeech_AskRegion(u8 taskId)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, sText_Birch_WhichRegion);
+    AddTextPrinterForMessage(TRUE);
+    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowRegionMenu;
+}
+
+static void Task_NewGameBirchSpeech_WaitToShowRegionMenu(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        NewGameBirchSpeech_ShowRegionMenu();
+        gTasks[taskId].func = Task_NewGameBirchSpeech_ChooseRegion;
+    }
+}
+
+static void Task_NewGameBirchSpeech_ChooseRegion(u8 taskId)
+{
+    s8 region = NewGameBirchSpeech_ProcessRegionMenuInput();
+
+    if (region >= 0 && region <= 3)
+    {
+        PlaySE(SE_SELECT);
+        SetStartingRegionChoice((u8)region);
+        NewGameBirchSpeech_ClearGenderWindow(2, 1);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_AreYouReady;
     }
 }
 
@@ -2129,6 +2174,21 @@ static void NewGameBirchSpeech_ShowGenderMenu(void)
 }
 
 static s8 NewGameBirchSpeech_ProcessGenderMenuInput(void)
+{
+    return Menu_ProcessInputNoWrap();
+}
+
+static void NewGameBirchSpeech_ShowRegionMenu(void)
+{
+    DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[2], 0xF3);
+    FillWindowPixelBuffer(2, PIXEL_FILL(1));
+    PrintMenuTable(2, ARRAY_COUNT(sMenuActions_Region), sMenuActions_Region);
+    InitMenuInUpperLeftCornerNormal(2, ARRAY_COUNT(sMenuActions_Region), 0);
+    PutWindowTilemap(2);
+    CopyWindowToVram(2, COPYWIN_FULL);
+}
+
+static s8 NewGameBirchSpeech_ProcessRegionMenuInput(void)
 {
     return Menu_ProcessInputNoWrap();
 }

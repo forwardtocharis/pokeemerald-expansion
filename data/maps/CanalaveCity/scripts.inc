@@ -26,6 +26,8 @@ CanalaveCity_EventScript_SailToSlateport::
 	msgbox CanalaveCity_Text_SlateportItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_FerrySailor
 	msgbox CanalaveCity_Text_SailorDepartHoenn, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 0
 	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
 	waitstate
@@ -36,6 +38,8 @@ CanalaveCity_EventScript_SailToLilycove::
 	msgbox CanalaveCity_Text_LilycoveItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_FerrySailor
 	msgbox CanalaveCity_Text_SailorDepartHoenn, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 0
 	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
 	waitstate
@@ -46,6 +50,8 @@ CanalaveCity_EventScript_SailToVermilion::
 	msgbox CanalaveCity_Text_VermilionItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_FerrySailor
 	msgbox CanalaveCity_Text_SailorDepartKanto, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 1
 	warp MAP_VERMILION_CITY, 24, 32
 	waitstate
@@ -56,6 +62,8 @@ CanalaveCity_EventScript_SailToOlivine::
 	msgbox CanalaveCity_Text_OlivineItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_FerrySailor
 	msgbox CanalaveCity_Text_SailorDepartJohto, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 2
 	warp MAP_OLIVINE_CITY, 20, 31
 	waitstate

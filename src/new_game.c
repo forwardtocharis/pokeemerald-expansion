@@ -53,6 +53,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "starter_choose.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
@@ -137,10 +138,22 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     u16 startingRegion = VarGet(VAR_CURRENT_REGION);
-    if (startingRegion == 1 || IS_FRLG)
+    switch (startingRegion)
+    {
+    case 1: // Kanto
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
-    else
+        break;
+    case 2: // Johto
+        SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN), MAP_NUM(MAP_NEW_BARK_TOWN), WARP_ID_NONE, 13, 6);
+        break;
+    case 3: // Sinnoh
+        SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN), MAP_NUM(MAP_TWINLEAF_TOWN), WARP_ID_NONE, 8, 6);
+        break;
+    case 0: // Hoenn
+    default:
         SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+        break;
+    }
     WarpIntoMap();
 }
 
@@ -187,6 +200,8 @@ void NewGameInitData(void)
     ClearPokedexFlags();
     InitEventData();
     VarSet(VAR_CURRENT_REGION, 0); // 0: Hoenn (from content/game.yaml starting_region)
+    if (GetStartingRegionChoice() != 0)
+        VarSet(VAR_CURRENT_REGION, GetStartingRegionChoice());
     VarSet(VAR_TOTAL_BADGES, 0);
     VarSet(VAR_HOENN_BADGES, 0);
     VarSet(VAR_KANTO_BADGES, 0);
@@ -208,6 +223,17 @@ void NewGameInitData(void)
     InitLotadSizeRecord();
     gPartiesCount[B_TRAINER_PLAYER] = 0;
     ZeroPlayerPartyMons();
+    if (VarGet(VAR_CURRENT_REGION) != 0)
+    {
+        u16 starterChoice = VarGet(VAR_STARTER_MON);
+        if (starterChoice >= 3)
+            starterChoice = 0;
+        u16 starterSpecies = GetStarterPokemon(starterChoice);
+        CreateMon(&gPlayerParty[0], starterSpecies, 5, USE_RANDOM_IVS, TRUE, 0, OT_ID_PLAYER_ID, 0);
+        gPlayerPartyCount = 1;
+        FlagSet(FLAG_SYS_POKEMON_GET);
+        FlagSet(FLAG_SYS_POKEDEX_GET);
+    }
     ResetPokemonStorageSystem();
     DeactivateAllRoamers();
     gSaveBlock1Ptr->registeredItem = ITEM_NONE;

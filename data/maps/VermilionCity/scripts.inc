@@ -67,6 +67,8 @@ VermilionCity_EventScript_SailToSlateport::
 	msgbox VermilionCity_Text_SlateportItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_FerrySailor
 	msgbox VermilionCity_Text_SailorDepartHoenn, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 0
 	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
 	waitstate
@@ -77,6 +79,8 @@ VermilionCity_EventScript_SailToLilycove::
 	msgbox VermilionCity_Text_LilycoveItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_FerrySailor
 	msgbox VermilionCity_Text_SailorDepartHoenn, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 0
 	warp MAP_LILYCOVE_CITY_HARBOR, 8, 11
 	waitstate
@@ -87,6 +91,8 @@ VermilionCity_EventScript_SailToOlivine::
 	msgbox VermilionCity_Text_OlivineItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_FerrySailor
 	msgbox VermilionCity_Text_SailorDepartJohto, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 2
 	warp MAP_OLIVINE_CITY, 20, 31
 	waitstate
@@ -97,6 +103,8 @@ VermilionCity_EventScript_SailToCanalave::
 	msgbox VermilionCity_Text_CanalaveItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VermilionCity_EventScript_FerrySailor
 	msgbox VermilionCity_Text_SailorDepartSinnoh, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
 	setvar VAR_CURRENT_REGION, 3
 	warp MAP_CANALAVE_CITY, 14, 19
 	waitstate
