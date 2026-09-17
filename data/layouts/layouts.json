@@ -5392,11 +5392,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_PewterCity",
-      "border_filepath": "data/layouts/PewterCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/PewterCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PewterCity/border.bin",
+      "blockdata_filepath": "data/layouts/PewterCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_CERULEAN_CITY",
@@ -5405,11 +5405,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/CeruleanCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/CeruleanCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CeruleanCity/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_LAVENDER_TOWN",
@@ -5418,11 +5418,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/LavenderTown_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/LavenderTown_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LavenderTown/border.bin",
+      "blockdata_filepath": "data/layouts/LavenderTown/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_VERMILION_CITY",
@@ -5431,11 +5431,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_VermilionCity",
-      "border_filepath": "data/layouts/VermilionCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/VermilionCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/VermilionCity/border.bin",
+      "blockdata_filepath": "data/layouts/VermilionCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_CELADON_CITY",
@@ -5444,11 +5444,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
-      "border_filepath": "data/layouts/CeladonCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/CeladonCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CeladonCity/border.bin",
+      "blockdata_filepath": "data/layouts/CeladonCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_FUCHSIA_CITY",
@@ -5457,11 +5457,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_FuchsiaCity",
-      "border_filepath": "data/layouts/FuchsiaCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/FuchsiaCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/FuchsiaCity/border.bin",
+      "blockdata_filepath": "data/layouts/FuchsiaCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_CINNABAR_ISLAND",
@@ -5470,11 +5470,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CinnabarIsland",
-      "border_filepath": "data/layouts/CinnabarIsland_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/CinnabarIsland_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CinnabarIsland/border.bin",
+      "blockdata_filepath": "data/layouts/CinnabarIsland/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_INDIGO_PLATEAU_EXTERIOR",
@@ -5522,11 +5522,11 @@
       "height": 80,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_ViridianCity",
-      "border_filepath": "data/layouts/Route2_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route2_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route2/border.bin",
+      "blockdata_filepath": "data/layouts/Route2/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE3",
@@ -5535,11 +5535,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_PewterCity",
-      "border_filepath": "data/layouts/Route3_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route3_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route3/border.bin",
+      "blockdata_filepath": "data/layouts/Route3/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE4",
@@ -5548,11 +5548,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/Route4_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route4_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route4/border.bin",
+      "blockdata_filepath": "data/layouts/Route4/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE5",
@@ -5561,11 +5561,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/Route5_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route5_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route5/border.bin",
+      "blockdata_filepath": "data/layouts/Route5/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE6",
@@ -5574,11 +5574,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_VermilionCity",
-      "border_filepath": "data/layouts/Route6_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route6_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route6/border.bin",
+      "blockdata_filepath": "data/layouts/Route6/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE7",
@@ -5587,11 +5587,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
-      "border_filepath": "data/layouts/Route7_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route7_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route7/border.bin",
+      "blockdata_filepath": "data/layouts/Route7/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE8",
@@ -5600,11 +5600,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/Route8_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route8_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route8/border.bin",
+      "blockdata_filepath": "data/layouts/Route8/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE9",
@@ -5613,11 +5613,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/Route9_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route9_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route9/border.bin",
+      "blockdata_filepath": "data/layouts/Route9/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE10",
@@ -5626,11 +5626,11 @@
       "height": 80,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/Route10_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route10_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route10/border.bin",
+      "blockdata_filepath": "data/layouts/Route10/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE11",
@@ -5639,11 +5639,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_VermilionCity",
-      "border_filepath": "data/layouts/Route11_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route11_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route11/border.bin",
+      "blockdata_filepath": "data/layouts/Route11/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE12",
@@ -5652,11 +5652,11 @@
       "height": 120,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/Route12_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route12_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route12/border.bin",
+      "blockdata_filepath": "data/layouts/Route12/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE13",
@@ -5665,11 +5665,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/Route13_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route13_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route13/border.bin",
+      "blockdata_filepath": "data/layouts/Route13/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE14",
@@ -5678,11 +5678,11 @@
       "height": 60,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_LavenderTown",
-      "border_filepath": "data/layouts/Route14_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route14_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route14/border.bin",
+      "blockdata_filepath": "data/layouts/Route14/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE15",
@@ -5691,11 +5691,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_FuchsiaCity",
-      "border_filepath": "data/layouts/Route15_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route15_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route15/border.bin",
+      "blockdata_filepath": "data/layouts/Route15/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE16",
@@ -5704,11 +5704,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
-      "border_filepath": "data/layouts/Route16_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route16_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route16/border.bin",
+      "blockdata_filepath": "data/layouts/Route16/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE17",
@@ -5717,11 +5717,11 @@
       "height": 160,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
-      "border_filepath": "data/layouts/Route17_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route17_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route17/border.bin",
+      "blockdata_filepath": "data/layouts/Route17/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE18",
@@ -5730,11 +5730,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
-      "border_filepath": "data/layouts/Route18_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route18_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route18/border.bin",
+      "blockdata_filepath": "data/layouts/Route18/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE19",
@@ -5743,11 +5743,11 @@
       "height": 60,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_FuchsiaCity",
-      "border_filepath": "data/layouts/Route19_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route19_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route19/border.bin",
+      "blockdata_filepath": "data/layouts/Route19/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE20",
@@ -5756,11 +5756,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CinnabarIsland",
-      "border_filepath": "data/layouts/Route20_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route20_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route20/border.bin",
+      "blockdata_filepath": "data/layouts/Route20/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE21_NORTH",
@@ -5769,11 +5769,11 @@
       "height": 50,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_PalletTown",
-      "border_filepath": "data/layouts/Route21_North_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route21_North_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route21_North/border.bin",
+      "blockdata_filepath": "data/layouts/Route21_North/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE22",
@@ -5782,11 +5782,11 @@
       "height": 24,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_ViridianCity",
-      "border_filepath": "data/layouts/Route22_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route22_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route22/border.bin",
+      "blockdata_filepath": "data/layouts/Route22/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE23",
@@ -5795,11 +5795,11 @@
       "height": 160,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_IndigoPlateau",
-      "border_filepath": "data/layouts/Route23_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route23_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route23/border.bin",
+      "blockdata_filepath": "data/layouts/Route23/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE24",
@@ -5808,11 +5808,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/Route24_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route24_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route24/border.bin",
+      "blockdata_filepath": "data/layouts/Route24/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE25",
@@ -5821,11 +5821,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeruleanCity",
-      "border_filepath": "data/layouts/Route25_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route25_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route25/border.bin",
+      "blockdata_filepath": "data/layouts/Route25/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_MT_MOON_1F",
@@ -7030,11 +7030,11 @@
       "height": 55,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_SaffronCity",
-      "border_filepath": "data/layouts/SaffronCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/SaffronCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SaffronCity/border.bin",
+      "blockdata_filepath": "data/layouts/SaffronCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_SAFFRON_CITY_NORTH_SOUTH_ENTRANCE",
@@ -7186,11 +7186,11 @@
       "height": 50,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CinnabarIsland",
-      "border_filepath": "data/layouts/Route21_South_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route21_South_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route21_South/border.bin",
+      "blockdata_filepath": "data/layouts/Route21_South/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ENTRANCE_2F",
@@ -9361,6 +9361,461 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route29/border.bin",
       "blockdata_filepath": "data/layouts/Route29/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_AZALEATOWN",
+      "name": "AzaleaTown_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/AzaleaTown/border.bin",
+      "blockdata_filepath": "data/layouts/AzaleaTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_BLACKTHORNCITY",
+      "name": "BlackthornCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BlackthornCity/border.bin",
+      "blockdata_filepath": "data/layouts/BlackthornCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_CHERRYGROVECITY",
+      "name": "CherrygroveCity_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CherrygroveCity/border.bin",
+      "blockdata_filepath": "data/layouts/CherrygroveCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_CIANWOODCITY",
+      "name": "CianwoodCity_Layout",
+      "width": 30,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CianwoodCity/border.bin",
+      "blockdata_filepath": "data/layouts/CianwoodCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ECRUTEAKCITY",
+      "name": "EcruteakCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/EcruteakCity/border.bin",
+      "blockdata_filepath": "data/layouts/EcruteakCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_GOLDENRODCITY",
+      "name": "GoldenrodCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GoldenrodCity/border.bin",
+      "blockdata_filepath": "data/layouts/GoldenrodCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_MAHOGANYTOWN",
+      "name": "MahoganyTown_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MahoganyTown/border.bin",
+      "blockdata_filepath": "data/layouts/MahoganyTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NEWBARKTOWN",
+      "name": "NewBarkTown_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewBarkTown/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_OLIVINECITY",
+      "name": "OlivineCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/OlivineCity/border.bin",
+      "blockdata_filepath": "data/layouts/OlivineCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE30",
+      "name": "Route30_Layout",
+      "width": 20,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route30/border.bin",
+      "blockdata_filepath": "data/layouts/Route30/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE31",
+      "name": "Route31_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route31/border.bin",
+      "blockdata_filepath": "data/layouts/Route31/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE32",
+      "name": "Route32_Layout",
+      "width": 20,
+      "height": 90,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route32/border.bin",
+      "blockdata_filepath": "data/layouts/Route32/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE33",
+      "name": "Route33_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route33/border.bin",
+      "blockdata_filepath": "data/layouts/Route33/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE34",
+      "name": "Route34_Layout",
+      "width": 20,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route34/border.bin",
+      "blockdata_filepath": "data/layouts/Route34/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE35",
+      "name": "Route35_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route35/border.bin",
+      "blockdata_filepath": "data/layouts/Route35/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE36",
+      "name": "Route36_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route36/border.bin",
+      "blockdata_filepath": "data/layouts/Route36/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE37",
+      "name": "Route37_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route37/border.bin",
+      "blockdata_filepath": "data/layouts/Route37/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE38",
+      "name": "Route38_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route38/border.bin",
+      "blockdata_filepath": "data/layouts/Route38/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE39",
+      "name": "Route39_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route39/border.bin",
+      "blockdata_filepath": "data/layouts/Route39/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE40",
+      "name": "Route40_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route40/border.bin",
+      "blockdata_filepath": "data/layouts/Route40/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE41",
+      "name": "Route41_Layout",
+      "width": 50,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route41/border.bin",
+      "blockdata_filepath": "data/layouts/Route41/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE42",
+      "name": "Route42_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route42/border.bin",
+      "blockdata_filepath": "data/layouts/Route42/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE43",
+      "name": "Route43_Layout",
+      "width": 20,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route43/border.bin",
+      "blockdata_filepath": "data/layouts/Route43/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE44",
+      "name": "Route44_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route44/border.bin",
+      "blockdata_filepath": "data/layouts/Route44/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE45",
+      "name": "Route45_Layout",
+      "width": 20,
+      "height": 90,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route45/border.bin",
+      "blockdata_filepath": "data/layouts/Route45/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE46",
+      "name": "Route46_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route46/border.bin",
+      "blockdata_filepath": "data/layouts/Route46/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_VIOLETCITY",
+      "name": "VioletCity_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/VioletCity/border.bin",
+      "blockdata_filepath": "data/layouts/VioletCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_AZALEA_TOWN",
+      "name": "AzaleaTown_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/AzaleaTown/border.bin",
+      "blockdata_filepath": "data/layouts/AzaleaTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_BLACKTHORN_CITY",
+      "name": "BlackthornCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/BlackthornCity/border.bin",
+      "blockdata_filepath": "data/layouts/BlackthornCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_CIANWOOD_CITY",
+      "name": "CianwoodCity_Layout",
+      "width": 30,
+      "height": 54,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CianwoodCity/border.bin",
+      "blockdata_filepath": "data/layouts/CianwoodCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ECRUTEAK_CITY",
+      "name": "EcruteakCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/EcruteakCity/border.bin",
+      "blockdata_filepath": "data/layouts/EcruteakCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_GOLDENROD_CITY",
+      "name": "GoldenrodCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/GoldenrodCity/border.bin",
+      "blockdata_filepath": "data/layouts/GoldenrodCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_MAHOGANY_TOWN",
+      "name": "MahoganyTown_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MahoganyTown/border.bin",
+      "blockdata_filepath": "data/layouts/MahoganyTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_OLIVINE_CITY",
+      "name": "OlivineCity_Layout",
+      "width": 40,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/OlivineCity/border.bin",
+      "blockdata_filepath": "data/layouts/OlivineCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_VIOLET_CITY",
+      "name": "VioletCity_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/VioletCity/border.bin",
+      "blockdata_filepath": "data/layouts/VioletCity/map.bin",
       "layout_version": "emerald"
     }
   ]
