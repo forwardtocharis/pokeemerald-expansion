@@ -5366,11 +5366,11 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_PalletTown",
-      "border_filepath": "data/layouts/PalletTown_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/PalletTown_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PalletTown/border.bin",
+      "blockdata_filepath": "data/layouts/PalletTown/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_VIRIDIAN_CITY",
@@ -5379,11 +5379,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_ViridianCity",
-      "border_filepath": "data/layouts/ViridianCity_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/ViridianCity_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/ViridianCity/border.bin",
+      "blockdata_filepath": "data/layouts/ViridianCity/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_PEWTER_CITY",
@@ -5509,11 +5509,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_PalletTown",
-      "border_filepath": "data/layouts/Route1_Frlg/border.bin",
-      "blockdata_filepath": "data/layouts/Route1_Frlg/map.bin",
-      "layout_version": "frlg"
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_ROUTE2",
@@ -9323,6 +9323,45 @@
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_CHERRYGROVE_CITY",
+      "name": "CherrygroveCity_Layout",
+      "width": 40,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CherrygroveCity/border.bin",
+      "blockdata_filepath": "data/layouts/CherrygroveCity/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_NEW_BARK_TOWN",
+      "name": "NewBarkTown_Layout",
+      "width": 20,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/NewBarkTown/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_ROUTE29",
+      "name": "Route29_Layout",
+      "width": 60,
+      "height": 18,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route29/border.bin",
+      "blockdata_filepath": "data/layouts/Route29/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
