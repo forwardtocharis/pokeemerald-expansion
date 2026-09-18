@@ -32,6 +32,7 @@ OlivineCity_EventScript_QualifyFrontier::
 	setflag FLAG_SYS_FRONTIER_PASS
 	setflag FLAG_RECEIVED_SS_TICKET
 	setflag FLAG_MET_SCOTT_ON_SS_TIDAL
+	setflag FLAG_TRANSIT_SS_TIDAL_UNLOCKED
 	return
 
 OlivineCity_EventScript_OfferBattleFrontier::
