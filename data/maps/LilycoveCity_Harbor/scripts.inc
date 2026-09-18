@@ -29,11 +29,27 @@ LilycoveCity_Harbor_EventScript_FerryAttendant::
 LilycoveCity_Harbor_EventScript_HasMultiRegionTicket::
 	call LilycoveCity_Harbor_EventScript_CheckBattleFrontierQualification
 	msgbox LilycoveCity_Harbor_Text_MayISeeYourTicket, MSGBOX_DEFAULT
+	call LilycoveCity_Harbor_EventScript_CheckSpecialIslands
 	message LilycoveCity_Harbor_Text_FlashTicketWhereTo
 	waitmessage
 	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, LilycoveCity_Harbor_EventScript_OfferBattleFrontier
 	goto LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect
 	end
+
+LilycoveCity_Harbor_EventScript_CheckSpecialIslands::
+	call LilycoveCity_Harbor_EventScript_GetEonTicketState
+	call LilycoveCity_Harbor_EventScript_GetAuroraTicketState
+	call LilycoveCity_Harbor_EventScript_GetOldSeaMapState
+	call LilycoveCity_Harbor_EventScript_GetMysticTicketState
+	call LilycoveCity_Harbor_EventScript_GetHasTicketsState
+	goto_if_ne VAR_TEMP_A, 0, LilycoveCity_Harbor_EventScript_PromptSpecialIslands
+	return
+
+LilycoveCity_Harbor_EventScript_PromptSpecialIslands::
+	msgbox LilycoveCity_Harbor_Text_SailToSpecialIslandPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect
+	return
+
 
 LilycoveCity_Harbor_EventScript_CheckBattleFrontierQualification::
 	goto_if_set FLAG_BATTLE_FRONTIER_QUALIFIED, Common_EventScript_NopReturn
@@ -682,4 +698,10 @@ LilycoveCity_Harbor_Text_SailToFrontierPrompt:
 	.string "Ah, an authorized BATTLE FRONTIER\n"
 	.string "competitor! Would you like to sail to\l"
 	.string "the BATTLE FRONTIER?$"
+
+LilycoveCity_Harbor_Text_SailToSpecialIslandPrompt:
+	.string "I see you hold rare island charts!\n"
+	.string "Would you like to set sail for\l"
+	.string "one of the charted special islands?$"
+
 

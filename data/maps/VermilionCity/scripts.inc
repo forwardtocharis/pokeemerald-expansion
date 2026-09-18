@@ -43,8 +43,23 @@ VermilionCity_EventScript_Machop::
 	end
 
 VermilionCity_EventScript_Sailor::
-	msgbox VermilionCity_Text_Sailor, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox VermilionCity_Text_SailorOneIslandPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, VermilionCity_EventScript_SailToOneIsland
+	msgbox VermilionCity_Text_Sailor, MSGBOX_DEFAULT
+	release
 	end
+
+VermilionCity_EventScript_SailToOneIsland::
+	msgbox VermilionCity_Text_SailorDepartOneIsland, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	warp MAP_ONE_ISLAND_HARBOR, 8, 5
+	waitstate
+	release
+	end
+
 
 VermilionCity_EventScript_OaksAide::
 	msgbox VermilionCity_Text_OaksAide, MSGBOX_NPC
@@ -225,4 +240,13 @@ VermilionCity_Text_BattleFrontierItIs:
 
 VermilionCity_Text_SailorDepartFrontier:
 	.string "Aye aye! Setting sail for the BATTLE FRONTIER!"
+
+VermilionCity_Text_SailorOneIslandPrompt:
+	.string "Ahoy! I operate the Seagallop ferry service"
+	.string "to the SEVII ISLANDS."
+	.string "Would you like to set sail for ONE ISLAND?"
+
+VermilionCity_Text_SailorDepartOneIsland:
+	.string "All aboard the Seagallop for ONE ISLAND!"
+	.string "Hold on tight!"
 

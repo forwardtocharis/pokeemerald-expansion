@@ -43,5 +43,28 @@
 #define FLAG_DEFEATED_STEVEN_POSTGAME            0x985 // [hoenn] Defeated Former Champion Steven in Meteor Falls post-game
 #define FLAG_DEFEATED_RED_POSTGAME               0x986 // [johto] Defeated Legendary Trainer Red in post-game summit battle
 #define FLAG_CROSS_REGION_LEGENDARY_UNLOCKED     0x987 // [system] Cross-region ancient seals unlocked across all 4 regions
+#define FLAG_RECEIVED_OLD_SEA_MAP                0x988 // [kanto] Received Old Sea Map from Professor Oak
+#define FLAG_RECEIVED_MYSTIC_TICKET              0x989 // [johto] Received Mystic Ticket from Professor Elm
+#define FLAG_RECEIVED_AURORA_TICKET              0x98a // [hoenn] Received Aurora Ticket from Devon Corp / Scott
+#define FLAG_RECEIVED_EON_TICKET_GIFT            0x98b // [hoenn] Received Eon Ticket from Norman
+#define FLAG_DEFEATED_JIRACHI                    0x98c // [hoenn] Defeated or caught Jirachi at Mossdeep White Rock
+#define FLAG_CAUGHT_JIRACHI                      0x98d // [hoenn] Successfully caught Jirachi at Mossdeep White Rock
+#define FLAG_DEFEATED_RAIKOU                     0x98e // [johto] Defeated or caught Raikou on Route 38
+#define FLAG_DEFEATED_ENTEI                      0x98f // [johto] Defeated or caught Entei on Route 45
+#define FLAG_DEFEATED_SUICUNE                    0x990 // [johto] Defeated or caught Suicune on Route 42
+#define FLAG_DEFEATED_CELEBI                     0x991 // [johto] Defeated or caught Celebi at Route 34 Ilex Shrine
+#define FLAG_DEFEATED_MESPRIT                    0x992 // [sinnoh] Defeated or caught Mesprit at Lake Verity
+#define FLAG_DEFEATED_UXIE                       0x993 // [sinnoh] Defeated or caught Uxie at Lake Acuity
+#define FLAG_DEFEATED_AZELF                      0x994 // [sinnoh] Defeated or caught Azelf at Lake Valor
+#define FLAG_DEFEATED_DIALGA                     0x995 // [sinnoh] Defeated or caught Dialga at Spear Pillar
+#define FLAG_DEFEATED_PALKIA                     0x996 // [sinnoh] Defeated or caught Palkia at Spear Pillar
+#define FLAG_DEFEATED_GIRATINA                   0x997 // [sinnoh] Defeated or caught Giratina at Turnback Cave
+#define FLAG_DEFEATED_HEATRAN                    0x998 // [sinnoh] Defeated or caught Heatran at Stark Mountain
+#define FLAG_DEFEATED_REGIGIGAS                  0x999 // [sinnoh] Defeated or caught Regigigas at Snowpoint Temple
+#define FLAG_DEFEATED_CRESSELIA                  0x99a // [sinnoh] Defeated or caught Cresselia at Fullmoon Island
+#define FLAG_DEFEATED_DARKRAI                    0x99b // [sinnoh] Defeated or caught Darkrai at Newmoon Island
+#define FLAG_DEFEATED_SHAYMIN                    0x99c // [sinnoh] Defeated or caught Shaymin at Floaroma Meadow
+#define FLAG_DEFEATED_ARCEUS                     0x99d // [sinnoh] Defeated or caught Arceus at Hall of Origin
+#define FLAG_RECEIVED_MANAPHY_EGG                0x99e // [sinnoh] Received Fiore Ranger Manaphy Egg
 
 #endif // GUARD_CONSTANTS_MULTI_REGION_FLAGS_H

@@ -172,12 +172,35 @@ RustboroCity_DevonCorp_3F_EventScript_GiveExpShare::
 	end
 
 RustboroCity_DevonCorp_3F_EventScript_MrStoneAfterFavor::
+	goto_if_set FLAG_RECEIVED_AURORA_TICKET, RustboroCity_DevonCorp_3F_EventScript_MrStoneAfterAuroraTicket
+	goto_if_unset FLAG_SYS_GAME_CLEAR, RustboroCity_DevonCorp_3F_EventScript_MrStoneNormalAfterFavor
+	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneGiveAuroraTicket, MSGBOX_DEFAULT
+	giveitem ITEM_AURORA_TICKET
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	setflag FLAG_RECEIVED_AURORA_TICKET
+	msgbox RustboroCity_DevonCorp_3F_Text_ExplainAuroraTicket, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_MrStoneAfterAuroraTicket::
+	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneAfterAuroraTicket, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_MrStoneNormalAfterFavor::
 	msgbox RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
+
 
 RustboroCity_DevonCorp_3F_EventScript_Employee::
 	lock
@@ -304,4 +327,30 @@ RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
 	.string "It's a collection of rare rocks and\n"
 	.string "stones assembled by the PRESIDENT.$"
+
+RustboroCity_DevonCorp_3F_Text_MrStoneGiveAuroraTicket:
+	.string "MR. STONE: {PLAYER}! Splendid to\n"
+	.string "see you! As the CHAMPION of the\l"
+	.string "POKéMON LEAGUE, your accomplishments\l"
+	.string "have inspired all of Hoenn!\p"
+	.string "Devon Corp's space observatory recently\n"
+	.string "intercepted signals of an extraterrestrial\l"
+	.string "entity descending onto BIRTH ISLAND!\p"
+	.string "We chartered this pass to investigate,\n"
+	.string "but an explorer of your caliber is best\l"
+	.string "suited to brave its mysteries.\p"
+	.string "Please, take this AURORA TICKET!$"
+
+RustboroCity_DevonCorp_3F_Text_ExplainAuroraTicket:
+	.string "The ferry in LILYCOVE CITY can take\n"
+	.string "you to BIRTH ISLAND with that ticket.\p"
+	.string "According to our sensors, an unknown\n"
+	.string "life-form mutated by cosmic rays\l"
+	.string "resides there. Be careful, {PLAYER}!$"
+
+RustboroCity_DevonCorp_3F_Text_MrStoneAfterAuroraTicket:
+	.string "Have you explored BIRTH ISLAND yet?\n"
+	.string "The universe holds infinite wonders for\l"
+	.string "dedicated TRAINERS like you!$"
+
 

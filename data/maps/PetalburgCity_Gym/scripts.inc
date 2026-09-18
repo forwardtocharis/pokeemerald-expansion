@@ -330,10 +330,25 @@ PetalburgCity_Gym_EventScript_NormanPostBattle::
 	call PetalburgCity_Gym_EventScript_ShouldGiveEnigmaBerry
 	goto_if_eq VAR_RESULT, TRUE, PetalburgCity_Gym_EventScript_GiveEnigmaBerry
 	goto_if_unset FLAG_RECEIVED_TM_FACADE, PetalburgCity_Gym_EventScript_GiveFacade2
-	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
+	goto_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_NormanGameClearCheck
 	msgbox PetalburgCity_Gym_Text_DadGoingToKeepTraining, MSGBOX_DEFAULT
 	release
 	end
+
+PetalburgCity_Gym_EventScript_NormanGameClearCheck::
+	goto_if_unset FLAG_RECEIVED_EON_TICKET_GIFT, PetalburgCity_Gym_EventScript_GiveEonTicket
+	goto PetalburgCity_Gym_EventScript_NoAmountOfTrainingIsEnough
+	end
+
+PetalburgCity_Gym_EventScript_GiveEonTicket::
+	msgbox PetalburgCity_Gym_Text_NormanGiveEonTicket, MSGBOX_DEFAULT
+	giveitem ITEM_EON_TICKET
+	setflag FLAG_ENABLE_SHIP_SOUTHERN_ISLAND
+	setflag FLAG_RECEIVED_EON_TICKET_GIFT
+	msgbox PetalburgCity_Gym_Text_ExplainEonTicket, MSGBOX_DEFAULT
+	release
+	end
+
 
 PetalburgCity_Gym_EventScript_GiveFacade2::
 	call PetalburgCity_Gym_EventScript_GiveFacade
@@ -1588,4 +1603,24 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "capable of battle?\p"
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two POKéMON.$"
+
+PetalburgCity_Gym_Text_NormanGiveEonTicket::
+	.string "DAD: {PLAYER}! Hearing of your victory\n"
+	.string "at the POKéMON LEAGUE made me prouder\l"
+	.string "than words could ever say!\p"
+	.string "A sailor friend from Slateport entrusted\n"
+	.string "me with this ancient ferry pass to a\l"
+	.string "secluded sanctuary off our southern coast.\p"
+	.string "They call it SOUTHERN ISLAND.\n"
+	.string "Legendary dragon POKéMON are said\l"
+	.string "to roost in its sacred groves.\p"
+	.string "I want you to have this, {PLAYER}!$"
+
+PetalburgCity_Gym_Text_ExplainEonTicket::
+	.string "Take that EON TICKET to the harbor in\n"
+	.string "LILYCOVE CITY to board the ferry.\p"
+	.string "Keep striving forward with everything you\n"
+	.string "have, {PLAYER}! Your mother and I will\l"
+	.string "always be cheering you on!$"
+
 

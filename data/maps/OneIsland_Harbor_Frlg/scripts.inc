@@ -35,8 +35,28 @@ OneIsland_Harbor_Movement_PlayerExitHarbor::
 OneIsland_Harbor_EventScript_Sailor::
 	lock
 	faceplayer
-	message Text_WhereDoYouWantToSail
-	waitmessage
-	setvar VAR_0x8004, SEAGALLOP_ONE_ISLAND
-	goto EventScript_ChooseDestFromOneIsland
+	msgbox OneIsland_Harbor_Text_SailToVermilionPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, OneIsland_Harbor_EventScript_SailToVermilion
+	msgbox OneIsland_Harbor_Text_SailorStay, MSGBOX_DEFAULT
+	release
 	end
+
+OneIsland_Harbor_EventScript_SailToVermilion::
+	msgbox OneIsland_Harbor_Text_DepartingVermilion, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	warp MAP_VERMILION_CITY, 31, 31
+	waitstate
+	release
+	end
+
+OneIsland_Harbor_Text_SailToVermilionPrompt:
+	.string "Ahoy! Returning to VERMILION CITY\n"
+	.string "on the Kanto mainland?$"
+
+OneIsland_Harbor_Text_DepartingVermilion:
+	.string "Aye aye! Setting sail for VERMILION CITY!$"
+
+OneIsland_Harbor_Text_SailorStay:
+	.string "Take your time exploring the island!$"
+

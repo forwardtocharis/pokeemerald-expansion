@@ -53,8 +53,66 @@ MossdeepCity_EventScript_Woman::
 	end
 
 MossdeepCity_EventScript_WhiteRock::
-	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
+	lock
+	goto_if_set FLAG_CAUGHT_JIRACHI, MossdeepCity_EventScript_WhiteRockQuiet
+	goto_if_set FLAG_DEFEATED_JIRACHI, MossdeepCity_EventScript_WhiteRockQuiet
+	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_DEFAULT
+	checkitem ITEM_STAR_PIECE
+	goto_if_eq VAR_RESULT, TRUE, MossdeepCity_EventScript_JirachiAwaken
+	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_EventScript_JirachiAwaken
+	release
 	end
+
+MossdeepCity_EventScript_WhiteRockQuiet::
+	msgbox MossdeepCity_Text_WhiteRockQuiet, MSGBOX_SIGN
+	end
+
+MossdeepCity_EventScript_JirachiAwaken::
+	msgbox MossdeepCity_Text_WhiteRockGlowingPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MossdeepCity_EventScript_WhiteRockLeave
+	msgbox MossdeepCity_Text_WhiteRockMakeWish, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	delay 30
+	playse SE_M_SOLAR_BEAM
+	waitse
+	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
+	waitmoncry
+	delay 30
+	setwildbattle SPECIES_JIRACHI, 30
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, MossdeepCity_EventScript_DefeatedJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, MossdeepCity_EventScript_CaughtJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MossdeepCity_EventScript_RanFromJirachi
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, MossdeepCity_EventScript_RanFromJirachi
+	release
+	end
+
+MossdeepCity_EventScript_CaughtJirachi::
+	setflag FLAG_CAUGHT_JIRACHI
+	setflag FLAG_DEFEATED_JIRACHI
+	msgbox MossdeepCity_Text_JirachiWishGranted, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_DefeatedJirachi::
+	setflag FLAG_DEFEATED_JIRACHI
+	msgbox MossdeepCity_Text_JirachiReturnedToSleep, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_RanFromJirachi::
+	msgbox MossdeepCity_Text_JirachiDisappeared, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_EventScript_WhiteRockLeave::
+	release
+	end
+
 
 MossdeepCity_EventScript_GymSign::
 	msgbox MossdeepCity_Text_GymSign, MSGBOX_SIGN
@@ -389,6 +447,34 @@ MossdeepCity_Text_SpecialSpaceCenterRock:
 
 MossdeepCity_Text_ItsAWhiteRock:
 	.string "It's a white rock.$"
+
+MossdeepCity_Text_WhiteRockQuiet:
+	.string "The white rock stands peacefully under\n"
+	.string "the celestial sky.$"
+
+MossdeepCity_Text_WhiteRockGlowingPrompt:
+	.string "The white rock begins to shimmer with\n"
+	.string "a soft, starlike radiance!\p"
+	.string "Would you like to make a wish?$"
+
+MossdeepCity_Text_WhiteRockMakeWish:
+	.string "{PLAYER} closed {PLAYER_their} eyes and made a\n"
+	.string "heartfelt wish to the stars…\p"
+	.string "A brilliant shooting star streaked\n"
+	.string "across the sky, and a mythical presence\l"
+	.string "descended from the cosmos!$"
+
+MossdeepCity_Text_JirachiWishGranted:
+	.string "JIRACHI smiled warmly!\n"
+	.string "Your wish was granted!$"
+
+MossdeepCity_Text_JirachiReturnedToSleep:
+	.string "JIRACHI gently dissolved into stardust,\n"
+	.string "returning to its thousand-year slumber…$"
+
+MossdeepCity_Text_JirachiDisappeared:
+	.string "JIRACHI drifted back into the cosmos…$"
+
 
 MossdeepCity_Text_GymSign:
 	.string "MOSSDEEP CITY POKéMON GYM\n"

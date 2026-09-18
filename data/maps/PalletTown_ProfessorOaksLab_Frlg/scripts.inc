@@ -567,6 +567,8 @@ PalletTown_ProfessorOaksLab_EventScript_RivalChoseStarter::
 PalletTown_ProfessorOaksLab_EventScript_ProfOak::
 	lock
 	faceplayer
+	goto_if_unset FLAG_RECEIVED_OLD_SEA_MAP, PalletTown_ProfessorOaksLab_EventScript_CheckGiveOldSeaMap
+PalletTown_ProfessorOaksLab_EventScript_OakContinue::
 	goto_if_set SHOWED_OAK_COMPLETE_DEX, PalletTown_ProfessorOaksLab_EventScript_OakJustShownCompleteDex
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 9, PalletTown_ProfessorOaksLab_EventScript_RatePokedex
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 8, PalletTown_ProfessorOaksLab_EventScript_MonsAroundWorldWait
@@ -574,6 +576,17 @@ PalletTown_ProfessorOaksLab_EventScript_ProfOak::
 	goto_if_eq VAR_MAP_SCENE_CERULEAN_CITY_RIVAL, 1, PalletTown_ProfessorOaksLab_EventScript_RatePokedex
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6, PalletTown_ProfessorOaksLab_EventScript_RatePokedexOrTryGiveBalls
 	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1, PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene
+
+PalletTown_ProfessorOaksLab_EventScript_CheckGiveOldSeaMap::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, PalletTown_ProfessorOaksLab_EventScript_OakContinue
+	msgbox PalletTown_ProfessorOaksLab_Text_OakGiveOldSeaMap, MSGBOX_DEFAULT
+	giveitem ITEM_OLD_SEA_MAP
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
+	setflag FLAG_RECEIVED_OLD_SEA_MAP
+	msgbox PalletTown_ProfessorOaksLab_Text_OakOldSeaMapExplanation, MSGBOX_DEFAULT
+	release
+	end
+
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 4, PalletTown_ProfessorOaksLab_EventScript_OakBattleMonForItToGrow
 	goto_if_eq VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_OakCanReachNextTownWithMon
 	msgbox PalletTown_ProfessorOaksLab_Text_OakWhichOneWillYouChoose
@@ -1654,4 +1667,24 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
 	.string "I think I'll try looking around\n"
 	.string "ONE ISLAND first…\p"
 	.string "Anyways, I'm outta here!$"
+
+PalletTown_ProfessorOaksLab_Text_OakGiveOldSeaMap::
+	.string "OAK: Ah, {PLAYER}! As the POKéMON\n"
+	.string "LEAGUE CHAMPION, your bond with\l"
+	.string "POKéMON is unmatched!\p"
+	.string "An ocean survey team recently discovered\n"
+	.string "an ancient, mist-shrouded isle known as\l"
+	.string "FARAWAY ISLAND.\p"
+	.string "They recovered this weathered sea chart,\n"
+	.string "and I know no one better suited to\l"
+	.string "explore its secrets than you.\p"
+	.string "Please, take this OLD SEA MAP!$"
+
+PalletTown_ProfessorOaksLab_Text_OakOldSeaMapExplanation::
+	.string "You can show that OLD SEA MAP at the\n"
+	.string "harbor in LILYCOVE CITY to set sail.\p"
+	.string "Legend tells of a mythical ancestor of\n"
+	.string "all POKéMON dwelling on that island…\l"
+	.string "Good luck, CHAMPION {PLAYER}!$"
+
 
