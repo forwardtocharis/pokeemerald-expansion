@@ -458,7 +458,7 @@ MossdeepCity_Text_WhiteRockGlowingPrompt:
 	.string "Would you like to make a wish?$"
 
 MossdeepCity_Text_WhiteRockMakeWish:
-	.string "{PLAYER} closed {PLAYER_their} eyes and made a\n"
+	.string "{PLAYER} closed their eyes and made a\n"
 	.string "heartfelt wish to the stars…\p"
 	.string "A brilliant shooting star streaked\n"
 	.string "across the sky, and a mythical presence\l"
