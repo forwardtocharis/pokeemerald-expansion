@@ -364,7 +364,7 @@ PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "That was awfully close!\p"
 	.string "Thanks to you, he didn't rob me of\n"
 	.string "these important papers.\p"
-	.string "I know, I work for DEVON CORPORATION—\n"
+	.string "I know, I work for DEVON CORPORATION-\n"
 	.string "I'll give you one of our prototypes!\p"
 	.string "It's called an EXP. SHARE. It lets your\n"
 	.string "whole team share in the experience!$"
