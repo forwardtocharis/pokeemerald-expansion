@@ -195,3 +195,18 @@ EventSnippet_NotEnoughMonsForDoubleBattle::
 	waitbuttonpress
 	release
 	end
+
+EventSnippet_AskTrainerRematch::
+	msgbox Text_AskTrainerRematch, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventSnippet_DoUniversalRematch
+	gotopostbattlescript
+	return
+
+EventSnippet_DoUniversalRematch::
+	special PlayTrainerEncounterMusic
+	dotrainerbattle
+	gotopostbattlescript
+	return
+
+Text_AskTrainerRematch:
+	.string "Care for a rematch?$"

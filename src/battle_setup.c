@@ -50,6 +50,7 @@
 #include "vs_seeker.h"
 #include "wild_encounter_ow.h"
 #include "window.h"
+#include "multi_region.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_special.h"
 #include "constants/event_objects.h"
@@ -1228,7 +1229,29 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
 
     if ((isTrainerDefeated && !battleParams->params.isRematch)
     || (!IsTrainerReadyForRematch() && battleParams->params.isRematch)) {
-        PUSH(EventSnippet_GotoPostBattleScript)
+        if (isTrainerDefeated)
+        {
+            // One rematch per trainer per calendar day
+            if (HasRematchedToday(battleParams->params.opponentA))
+            {
+                PUSH(EventSnippet_GotoPostBattleScript);
+                return;
+            }
+            if (battleParams->params.isDoubleBattle && !HasEnoughMonsForDoubleBattle2())
+            {
+                PUSH(EventSnippet_NotEnoughMonsForDoubleBattle);
+                return;
+            }
+#if FREE_MATCH_CALL == FALSE
+            if (battleParams->params.isRematch)
+            {
+                battleParams->params.opponentA = GetRematchTrainerId(battleParams->params.opponentA);
+            }
+#endif //FREE_MATCH_CALL
+            PUSH(EventSnippet_AskTrainerRematch);
+            return;
+        }
+        PUSH(EventSnippet_GotoPostBattleScript);
         return;
     }
 
@@ -1499,10 +1522,14 @@ void BattleSetup_StartTrainerBattle(void)
 
         SetHillTrainerFlag();
     }
-    else if (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_BATTLE_TYPE_DOUBLES)
+    else if (TRAINER_BATTLE_PARAM.isDoubleBattle || GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_BATTLE_TYPE_DOUBLES)
     {
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }
+
+    // Mark this trainer as rematched today (only if already defeated, i.e. a rematch)
+    if (FlagGet(GetTrainerAFlag()))
+        SetRematchedToday(TRAINER_BATTLE_PARAM.opponentA);
 
     sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;
     gNoOfApproachingTrainers = 0;

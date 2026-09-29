@@ -176,7 +176,7 @@ u32 ChooseWildMonIndex_Land(void)
 {
     u8 wildMonIndex = 0;
     bool8 swap = FALSE;
-    u8 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
+    u16 rand = Random() % ENCOUNTER_CHANCE_LAND_MONS_TOTAL;
 
     if (rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_0)
         wildMonIndex = 0;

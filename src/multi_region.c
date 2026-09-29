@@ -1,6 +1,7 @@
 #include "global.h"
 #include "event_data.h"
 #include "multi_region.h"
+#include "rtc.h"
 #include "constants/flags.h"
 #include "constants/vars.h"
 #include "constants/regions.h"
@@ -121,14 +122,18 @@ u8 GetScaledTrainerMonLevel(u8 baseLevel)
     if (!FlagGet(FLAG_SYS_BATTLE_SCALING_ENABLED))
         return baseLevel;
 
+    // Never downscale trainers originally configured above the cap
+    if (baseLevel >= REGIONAL_SCALING_CAP)
+        return baseLevel;
+
     totalBadges = VarGet(VAR_TOTAL_BADGES);
     if (totalBadges == 0)
         return baseLevel;
 
-    // Smooth progression scaling across 32 badges without overflowing MAX_LEVEL
-    scaled = baseLevel + ((totalBadges * (MAX_LEVEL - baseLevel)) / 48);
-    if (scaled > MAX_LEVEL)
-        scaled = MAX_LEVEL;
+    // Smooth scaling from baseLevel up to REGIONAL_SCALING_CAP across 32 badges
+    scaled = baseLevel + ((totalBadges * (REGIONAL_SCALING_CAP - baseLevel)) / 32);
+    if (scaled > REGIONAL_SCALING_CAP)
+        scaled = REGIONAL_SCALING_CAP;
     if (scaled < 1)
         scaled = 1;
 
@@ -145,5 +150,40 @@ void SetStartingRegionChoice(u8 region)
 u8 GetStartingRegionChoice(void)
 {
     return sStartingRegionChoice;
+}
+
+// ── Daily rematch cooldown ──────────────────────────────────────────────
+// One rematch per trainer per calendar day. The bitfield is in EWRAM, so
+// it resets on power-off/load (every session starts with all rematches
+// available). Within a session, talking to a trainer you already rematched
+// today skips the "Care for a rematch?" prompt and shows post-battle text.
+
+static EWRAM_DATA u32 sRematchDayCount = 0;
+static EWRAM_DATA u8 sRematchedTodayBits[REMATCH_TRACKER_BYTES] = {0};
+
+// If the calendar day has changed since the last rematch, wipe the bitfield.
+static void RefreshRematchDay(void)
+{
+    u32 today = RtcGetLocalDayCount();
+    if (today != sRematchDayCount)
+    {
+        sRematchDayCount = today;
+        memset(sRematchedTodayBits, 0, sizeof(sRematchedTodayBits));
+    }
+}
+
+bool32 HasRematchedToday(u16 trainerId)
+{
+    RefreshRematchDay();
+    if (trainerId / 8 >= REMATCH_TRACKER_BYTES)
+        return FALSE;
+    return (sRematchedTodayBits[trainerId / 8] >> (trainerId % 8)) & 1;
+}
+
+void SetRematchedToday(u16 trainerId)
+{
+    RefreshRematchDay();
+    if (trainerId / 8 < REMATCH_TRACKER_BYTES)
+        sRematchedTodayBits[trainerId / 8] |= (1 << (trainerId % 8));
 }
 
