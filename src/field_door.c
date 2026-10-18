@@ -148,8 +148,7 @@ static const u8 sDoorAnimTiles_TrainerHillLobbyElevator[] = INCGFX_U8("graphics/
 static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCGFX_U8("graphics/door_anims/trainer_hill_roof_elevator.png", ".4bpp");
 static const u16 sDoorNullPalette49[16] = {};
-
-#if IS_FRLG
+#if 1
 
 static const u8 sDoorAnimTiles_GeneralFrlg[] = INCGFX_U8("graphics/door_anims/general_frlg.png", ".4bpp");
 static const u8 sDoorAnimTiles_SlidingSingle[] = INCGFX_U8("graphics/door_anims/sliding_single.png", ".4bpp");
@@ -311,8 +310,7 @@ static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
-
-#if IS_FRLG
+#if 1
 
 static const u8 sDoorAnimPalettes_GeneralFrlg[] = {2, 2, 2, 2, 2, 2, 2, 2};
 static const u8 sDoorAnimPalettes_SlidingSingle[] = {3, 3, 3, 3, 3, 3, 3, 3};
@@ -351,7 +349,6 @@ static const u8 sDoorAnimPalettes_TrainerTowerRoofElevator[] = {11, 11, 2, 2, 2,
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
-#if !IS_FRLG
     {
         .metatileNum = METATILE_General_Door,
         .tileset = &gTileset_General,
@@ -775,7 +772,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .tiles = sDoorAnimTiles_TrainerHillRoofElevator,
         .palettes = sDoorAnimPalettes_TrainerHillRoofElevator
     },
-#else
     {
         .metatileNum = METATILE_GeneralFrlg_Door,
         .tileset = &gTileset_General_Frlg,
@@ -1024,7 +1020,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .tiles = sDoorAnimTiles_TrainerTowerRoofElevator,
         .palettes = sDoorAnimPalettes_TrainerTowerRoofElevator
     },
-#endif // !IS_FRLG
     {},
 };
 

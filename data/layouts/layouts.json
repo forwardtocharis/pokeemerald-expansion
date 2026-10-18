@@ -5431,11 +5431,11 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_VermilionCity",
       "border_filepath": "data/layouts/VermilionCity/border.bin",
       "blockdata_filepath": "data/layouts/VermilionCity/map.bin",
-      "layout_version": "emerald"
+      "layout_version": "frlg"
     },
     {
       "id": "LAYOUT_CELADON_CITY",
