@@ -6,5 +6,5 @@ MahoganyTown_EventScript_TownSign::
 	end
 
 MahoganyTown_Text_Sign1:
-	.string "MahoganyTown"
+	.string "MahoganyTown$"
 

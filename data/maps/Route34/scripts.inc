@@ -59,32 +59,32 @@ Route34_EventScript_ShrineLeave::
 
 
 Route34_Text_Sign1:
-	.string "Route34"
+	.string "Route34$"
 
 Route34_Text_IlexShrineDescription:
-	.string "An ancient wooden shrine weathered by centuries."
-	.string "It honors the guardian spirit of the forest."
+	.string "An ancient wooden shrine weathered by centuries.\n"
+	.string "It honors the guardian spirit of the forest.$"
 
 Route34_Text_OfferPrayerPrompt:
-	.string "A soothing breeze whispers through the trees."
-	.string "Would you like to offer a prayer at the shrine?"
+	.string "A soothing breeze whispers through the trees.\n"
+	.string "Would you like to offer a prayer at the shrine?$"
 
 Route34_Text_OfferedPrayer:
-	.string "{PLAYER} offered a sincere prayer at the shrine..."
-	.string "A brilliant emerald light illuminated the forest canopy,"
-	.string "and the mythical voice of the forest appeared!"
+	.string "{PLAYER} offered a sincere prayer at the shrine...\n"
+	.string "A brilliant emerald light illuminated the forest canopy,\p"
+	.string "and the mythical voice of the forest appeared!$"
 
 Route34_Text_CelebiBlessedForest:
-	.string "CELEBI touched {PLAYER}'s hand with a warm smile"
-	.string "before settling peacefully into the POKé BALL."
+	.string "CELEBI touched {PLAYER}'s hand with a warm smile\n"
+	.string "before settling peacefully into the POKé BALL.$"
 
 Route34_Text_CelebiFlewThroughTime:
-	.string "CELEBI dissolved into sparkling verdant light,"
-	.string "vanishing into the streams of time..."
+	.string "CELEBI dissolved into sparkling verdant light,\n"
+	.string "vanishing into the streams of time...$"
 
 Route34_Text_CelebiVanished:
-	.string "CELEBI zipped back into the dense green canopy..."
+	.string "CELEBI zipped back into the dense green canopy...$"
 
 Route34_Text_ShrinePeaceful:
-	.string "The forest shrine rests quietly in the gentle breeze."
+	.string "The forest shrine rests quietly in the gentle breeze.$"
 

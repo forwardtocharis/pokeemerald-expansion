@@ -56,29 +56,29 @@ Route214_EventScript_TurnbackCaveLeave::
 	end
 
 Route214_Text_Sign1:
-	.string "Route 214"
-	.string "North to Veilstone City, South to Route 213."
+	.string "Route 214\n"
+	.string "North to Veilstone City, South to Route 213.$"
 
 Route214_Text_TurnbackCaveDescription:
-	.string "An obscure path leads east through dense fog toward Sendoff Spring."
-	.string "Deep within lies Turnback Cave, a spatial nexus where dimensions overlap."
+	.string "An obscure path leads east through dense fog toward Sendoff Spring.\n"
+	.string "Deep within lies Turnback Cave, a spatial nexus where dimensions overlap.$"
 
 Route214_Text_InspectGiratinaPrompt:
-	.string "Would you like to enter the abyssal depths of Turnback Cave?"
+	.string "Would you like to enter the abyssal depths of Turnback Cave?$"
 
 Route214_Text_GiratinaApproaches:
-	.string "A terrifying shadow tears open the fabric between reality and the Distortion World!"
-	.string "The Renegade Pokémon Giratina emerges!"
+	.string "A terrifying shadow tears open the fabric between reality and the Distortion World!\n"
+	.string "The Renegade Pokémon Giratina emerges!$"
 
 Route214_Text_GiratinaCalm:
-	.string "Giratina accepted your bond and reined in its chaotic fury."
+	.string "Giratina accepted your bond and reined in its chaotic fury.$"
 
 Route214_Text_GiratinaVanished:
-	.string "Giratina vanished back into the dark depths of the Distortion World..."
+	.string "Giratina vanished back into the dark depths of the Distortion World...$"
 
 Route214_Text_GiratinaFlewOff:
-	.string "Giratina melted away into a shadowy mist!"
+	.string "Giratina melted away into a shadowy mist!$"
 
 Route214_Text_GiratinaPeaceful:
-	.string "The Sendoff Spring rests in haunting, quiet peace."
+	.string "The Sendoff Spring rests in haunting, quiet peace.$"
 

@@ -60,8 +60,8 @@ Route38_EventScript_RanFromRaikou::
 
 
 Route38_Text_Sign1:
-	.string "Route38"
+	.string "Route38$"
 
 Route38_Text_RaikouRoar:
-	.string "Gyaaa-ooh!"
+	.string "Gyaaa-ooh!$"
 

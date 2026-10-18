@@ -6,5 +6,5 @@ GoldenrodCity_EventScript_CitySign::
 	end
 
 GoldenrodCity_Text_Sign1:
-	.string "GoldenrodCity"
+	.string "GoldenrodCity$"
 

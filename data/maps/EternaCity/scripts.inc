@@ -10,8 +10,8 @@ EternaCity_EventScript_GymSign::
 	end
 
 EternaCity_Text_Sign1:
-	.string "EternaCity"
+	.string "EternaCity$"
 
 EternaCity_Text_Sign2:
-	.string "EternaCity"
+	.string "EternaCity$"
 

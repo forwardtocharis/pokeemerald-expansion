@@ -6,5 +6,5 @@ Route22_EventScript_LeagueGateSign::
 	end
 
 Route22_Text_Sign1:
-	.string "Route22"
+	.string "Route22$"
 

@@ -10,8 +10,8 @@ VeilstoneCity_EventScript_GymSign::
 	end
 
 VeilstoneCity_Text_Sign1:
-	.string "VeilstoneCity"
+	.string "VeilstoneCity$"
 
 VeilstoneCity_Text_Sign2:
-	.string "VeilstoneCity"
+	.string "VeilstoneCity$"
 

@@ -10,8 +10,8 @@ SunyshoreCity_EventScript_GymSign::
 	end
 
 SunyshoreCity_Text_Sign1:
-	.string "SunyshoreCity"
+	.string "SunyshoreCity$"
 
 SunyshoreCity_Text_Sign2:
-	.string "SunyshoreCity"
+	.string "SunyshoreCity$"
 

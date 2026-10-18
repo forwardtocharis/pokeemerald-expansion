@@ -54,48 +54,48 @@ OreburghCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 OreburghCity_Gym_Text_RoarkIntro:
-	.string "ROARK: Welcome to the OREBURGH CITY GYM!"
-	.string "I specialize in ROCK-type Pokémon."
-	.string "Show me what you and your team are made of!"
+	.string "ROARK: Welcome to the OREBURGH CITY GYM!\n"
+	.string "I specialize in ROCK-type Pokémon.\p"
+	.string "Show me what you and your team are made of!$"
 
 OreburghCity_Gym_Text_RoarkDefeat:
-	.string "Incredible! You have bested my ROCK techniques!"
-	.string "Take the official LEAGUE COAL BADGE!"
+	.string "Incredible! You have bested my ROCK techniques!\n"
+	.string "Take the official LEAGUE COAL BADGE!$"
 
 OreburghCity_Gym_Text_RoarkPostBattle:
-	.string "ROARK: With that badge, your journey reaches new heights."
-	.string "Continue striving toward greatness!"
+	.string "ROARK: With that badge, your journey reaches new heights.\n"
+	.string "Continue striving toward greatness!$"
 
 OreburghCity_Gym_Text_RoarkRematchIntro:
-	.string "ROARK: Welcome back, Trainer!"
-	.string "My team has grown substantially since our last match."
-	.string "Are you ready for a rematch battle?"
+	.string "ROARK: Welcome back, Trainer!\n"
+	.string "My team has grown substantially since our last match.\p"
+	.string "Are you ready for a rematch battle?$"
 
 OreburghCity_Gym_Text_RoarkPostRematch:
-	.string "ROARK: What a spectacular contest!"
-	.string "Your mastery is truly beyond compare!"
+	.string "ROARK: What a spectacular contest!\n"
+	.string "Your mastery is truly beyond compare!$"
 
 OreburghCity_Gym_Text_RoarkExplainBadge:
-	.string "ROARK: The COAL BADGE proves your strength."
-	.string "Pokémon across the land will acknowledge your bond!"
+	.string "ROARK: The COAL BADGE proves your strength.\n"
+	.string "Pokémon across the land will acknowledge your bond!$"
 
 OreburghCity_Gym_Text_GymGuyAdvice:
-	.string "Yo! Champ in the making!"
-	.string "This GYM is all about ROCK-type Pokémon."
-	.string "Plan your types carefully and strike with purpose!"
+	.string "Yo! Champ in the making!\n"
+	.string "This GYM is all about ROCK-type Pokémon.\p"
+	.string "Plan your types carefully and strike with purpose!$"
 
 OreburghCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!"
+	.string "You did it! That was an incredible gym victory!$"
 
 OreburghCity_Gym_Text_GymStatue:
-	.string "OREBURGH CITY POKéMON GYM"
-	.string "LEADER: ROARK"
-	.string "WINNING TRAINERS:"
-	.string "????"
+	.string "OREBURGH CITY POKéMON GYM\n"
+	.string "LEADER: ROARK\p"
+	.string "WINNING TRAINERS:\n"
+	.string "????$"
 
 OreburghCity_Gym_Text_GymStatuePlayerWon:
-	.string "OREBURGH CITY POKéMON GYM"
-	.string "LEADER: ROARK"
-	.string "WINNING TRAINERS:"
-	.string "{PLAYER}"
+	.string "OREBURGH CITY POKéMON GYM\n"
+	.string "LEADER: ROARK\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 

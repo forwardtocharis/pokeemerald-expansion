@@ -10,8 +10,8 @@ PastoriaCity_EventScript_GymSign::
 	end
 
 PastoriaCity_Text_Sign1:
-	.string "PastoriaCity"
+	.string "PastoriaCity$"
 
 PastoriaCity_Text_Sign2:
-	.string "PastoriaCity"
+	.string "PastoriaCity$"
 

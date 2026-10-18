@@ -4,7 +4,7 @@
   "layout": "LAYOUT_CANALAVE_CITY",
   "music": "MUS_DEWFORD",
   "region": "REGION_SINNOH",
-  "region_map_section": "MAPSEC_CANALAVE_CITY",
+  "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",

@@ -10,8 +10,8 @@ OreburghCity_EventScript_GymSign::
 	end
 
 OreburghCity_Text_Sign1:
-	.string "OreburghCity"
+	.string "OreburghCity$"
 
 OreburghCity_Text_Sign2:
-	.string "OreburghCity"
+	.string "OreburghCity$"
 

@@ -14,6 +14,7 @@ EventScript_MonFlewAway::
 	release
 	end
 
+.if IS_FRLG
 EventScript_AwakenSnorlax::
 	message Text_PlayedPokeFlute
 	waitmessage
@@ -21,3 +22,4 @@ EventScript_AwakenSnorlax::
 	waitfanfare
 	msgbox Text_SnorlaxWokeUp
 	return
+.endif

@@ -107,45 +107,45 @@ OlivineCity_EventScript_SailorCancel::
 
 
 OlivineCity_Text_Sign1:
-	.string "Olivine City"
-	.string "The Port with Sea Breeze and Scent"
+	.string "Olivine City\n"
+	.string "The Port with Sea Breeze and Scent$"
 
 OlivineCity_Text_SailorWelcome:
-	.string "Ahoy! Welcome to Olivine Port in the JOHTO region."
+	.string "Ahoy! Welcome to Olivine Port in the JOHTO region.$"
 
 OlivineCity_Text_SailorWhereTo:
-	.string "Where would you like to sail today?"
+	.string "Where would you like to sail today?$"
 
 OlivineCity_Text_SlateportItIs:
-	.string "Slateport City in HOENN, is that right?"
+	.string "Slateport City in HOENN, is that right?$"
 
 OlivineCity_Text_LilycoveItIs:
-	.string "Lilycove City in HOENN, is that right?"
+	.string "Lilycove City in HOENN, is that right?$"
 
 OlivineCity_Text_VermilionItIs:
-	.string "Vermilion City in KANTO, is that right?"
+	.string "Vermilion City in KANTO, is that right?$"
 
 OlivineCity_Text_CanalaveItIs:
-	.string "Canalave City in SINNOH, is that right?"
+	.string "Canalave City in SINNOH, is that right?$"
 
 OlivineCity_Text_SailorDepartHoenn:
-	.string "Aye aye! Setting sail for the HOENN region!"
+	.string "Aye aye! Setting sail for the HOENN region!$"
 
 OlivineCity_Text_SailorDepartKanto:
-	.string "Aye aye! Setting sail for the KANTO region!"
+	.string "Aye aye! Setting sail for the KANTO region!$"
 
 OlivineCity_Text_SailorDepartSinnoh:
-	.string "Aye aye! Setting sail for the SINNOH region!"
+	.string "Aye aye! Setting sail for the SINNOH region!$"
 
 OlivineCity_Text_SailorComeBackSoon:
-	.string "Let me know whenever you want to set sail!"
+	.string "Let me know whenever you want to set sail!$"
 
 OlivineCity_Text_SailToFrontierPrompt:
-	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?"
+	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?$"
 
 OlivineCity_Text_BattleFrontierItIs:
-	.string "The BATTLE FRONTIER, is that right?"
+	.string "The BATTLE FRONTIER, is that right?$"
 
 OlivineCity_Text_SailorDepartFrontier:
-	.string "Aye aye! Setting sail for the BATTLE FRONTIER!"
+	.string "Aye aye! Setting sail for the BATTLE FRONTIER!$"
 

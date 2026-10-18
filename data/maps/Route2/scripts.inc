@@ -10,8 +10,8 @@ Route2_EventScript_RouteSign::
 	end
 
 Route2_Text_Sign1:
-	.string "Route2"
+	.string "Route2$"
 
 Route2_Text_Sign2:
-	.string "Route2"
+	.string "Route2$"
 

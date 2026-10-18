@@ -6,5 +6,5 @@ Route210_EventScript_RouteSign::
 	end
 
 Route210_Text_Sign1:
-	.string "Route210"
+	.string "Route210$"
 

@@ -6,5 +6,5 @@ Route5_EventScript_UndergroundPathSign::
 	end
 
 Route5_Text_Sign1:
-	.string "Route5"
+	.string "Route5$"
 

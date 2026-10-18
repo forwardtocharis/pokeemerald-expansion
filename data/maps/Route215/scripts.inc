@@ -56,29 +56,29 @@ Route215_EventScript_StarkMountainLeave::
 	end
 
 Route215_Text_Sign1:
-	.string "Route 215"
-	.string "West to Route 210, East to Veilstone City."
+	.string "Route 215\n"
+	.string "West to Route 210, East to Veilstone City.$"
 
 Route215_Text_StarkMountainDescription:
-	.string "A rugged trail winds northeast through intense thermal vents toward Stark Mountain."
-	.string "Deep in the volcanic cavern rests the incandescent Magma Stone altar."
+	.string "A rugged trail winds northeast through intense thermal vents toward Stark Mountain.\n"
+	.string "Deep in the volcanic cavern rests the incandescent Magma Stone altar.$"
 
 Route215_Text_InspectHeatranPrompt:
-	.string "Would you like to approach the searing volcanic chamber?"
+	.string "Would you like to approach the searing volcanic chamber?$"
 
 Route215_Text_HeatranApproaches:
-	.string "Boiling magma surges up from the depths!"
-	.string "Heatran erupts from the molten rock with intense fury!"
+	.string "Boiling magma surges up from the depths!\n"
+	.string "Heatran erupts from the molten rock with intense fury!$"
 
 Route215_Text_HeatranCalm:
-	.string "Heatran's boiling magma cooled and it yielded with respect!"
+	.string "Heatran's boiling magma cooled and it yielded with respect!$"
 
 Route215_Text_HeatranVanished:
-	.string "Heatran sank back into the molten crust of the mountain..."
+	.string "Heatran sank back into the molten crust of the mountain...$"
 
 Route215_Text_HeatranFlewOff:
-	.string "Heatran burrowed through the volcanic cavern walls and vanished!"
+	.string "Heatran burrowed through the volcanic cavern walls and vanished!$"
 
 Route215_Text_HeatranPeaceful:
-	.string "The magma chambers of Stark Mountain rumble peacefully in the deep earth."
+	.string "The magma chambers of Stark Mountain rumble peacefully in the deep earth.$"
 

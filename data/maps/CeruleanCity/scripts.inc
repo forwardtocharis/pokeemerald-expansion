@@ -53,44 +53,107 @@ CeruleanCity_BikeShop_EventScript_Bicycle::
 	msgbox CeruleanCity_Text_Sign5, MSGBOX_SIGN
 	end
 
-CeruleanCity_BikeShop_EventScript_Bicycle::
-	msgbox CeruleanCity_Text_Sign6, MSGBOX_SIGN
+CeruleanCity_EventScript_BaldingMan::
+	msgbox CeruleanCity_Text_CeruleanCaveHorriblyDangerous, MSGBOX_NPC
 	end
 
-CeruleanCity_BikeShop_EventScript_Bicycle::
-	msgbox CeruleanCity_Text_Sign7, MSGBOX_SIGN
+CeruleanCity_EventScript_Grunt::
+	msgbox CeruleanCity_Text_RocketGrunt, MSGBOX_NPC
 	end
 
+CeruleanCity_EventScript_Lass::
+	msgbox CeruleanCity_Text_MistyExpertOnWaterPokemon, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_LittleBoy::
+	msgbox CeruleanCity_Text_MakePokemonFightAndGrow, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_Policeman::
+	msgbox CeruleanCity_Text_PolicemanWatchForTeamRocket, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_Slowbro::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SLOWBRO, CRY_MODE_NORMAL
+	msgbox CeruleanCity_Text_Slowbro, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+CeruleanCity_EventScript_Woman::
+	msgbox CeruleanCity_Text_BillInventedStorageSystem, MSGBOX_NPC
+	end
+
+CeruleanCity_EventScript_Youngster::
+	msgbox CeruleanCity_Text_BikeShopBicyclesExpensive, MSGBOX_NPC
+	end
 CeruleanCity_Text_Sign1:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign2:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign3:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign4:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign5:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign6:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_Sign7:
-	.string "CeruleanCity"
+	.string "CeruleanCity$"
 
 CeruleanCity_Text_CaveGuardHalt:
-	.string "This is CERULEAN CAVE."
-	.string "Horribly powerful POKéMON lurk within."
-	.string "Only a recognized POKéMON LEAGUE CHAMPION"
-	.string "is permitted beyond this point!"
+	.string "This is CERULEAN CAVE.\n"
+	.string "Horribly powerful POKéMON lurk within.\p"
+	.string "Only a recognized POKéMON LEAGUE CHAMPION\n"
+	.string "is permitted beyond this point!$"
 
 CeruleanCity_Text_CaveGuardStepAside:
-	.string "Wait... you're the POKéMON LEAGUE CHAMPION!"
-	.string "Your strength and accomplishments are undeniable."
-	.string "The barrier to CERULEAN CAVE is cleared for you."
-	.string "Be extremely careful in those depths!"
+	.string "Wait... you're the POKéMON LEAGUE CHAMPION!\n"
+	.string "Your strength and accomplishments are undeniable.\p"
+	.string "The barrier to CERULEAN CAVE is cleared for you.\n"
+	.string "Be extremely careful in those depths!$"
+
+CeruleanCity_Text_CeruleanCaveHorriblyDangerous:
+	.string "The CERULEAN CAVE is horribly\n"
+	.string "dangerous!\p"
+	.string "Only truly powerful TRAINERS are\n"
+	.string "allowed inside.$"
+
+CeruleanCity_Text_RocketGrunt:
+	.string "I'm a TEAM ROCKET member!\n"
+	.string "Don't mess with me!$"
+
+CeruleanCity_Text_MistyExpertOnWaterPokemon:
+	.string "MISTY, the GYM LEADER, is an\n"
+	.string "expert on WATER-type POKéMON.$"
+
+CeruleanCity_Text_MakePokemonFightAndGrow:
+	.string "You make your POKéMON fight and\n"
+	.string "make them grow!$"
+
+CeruleanCity_Text_PolicemanWatchForTeamRocket:
+	.string "I'm keeping watch for suspicious\n"
+	.string "characters like TEAM ROCKET.$"
+
+CeruleanCity_Text_Slowbro:
+	.string "SLOWBRO: Yaaawn?$"
+
+CeruleanCity_Text_BillInventedStorageSystem:
+	.string "BILL has lots of POKéMON!\p"
+	.string "He's the one who invented the\n"
+	.string "POKéMON STORAGE SYSTEM.$"
+
+CeruleanCity_Text_BikeShopBicyclesExpensive:
+	.string "That BIKE SHOP sells great BICYCLES,\n"
+	.string "but they're so expensive!$"
 

@@ -4,7 +4,7 @@
   "layout": "LAYOUT_HEARTHOME_CITY",
   "music": "MUS_SLATEPORT",
   "region": "REGION_SINNOH",
-  "region_map_section": "MAPSEC_HEARTHOME_CITY",
+  "region_map_section": "MAPSEC_SLATEPORT_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",

@@ -6,5 +6,5 @@ Route32_EventScript_RouteSign::
 	end
 
 Route32_Text_Sign1:
-	.string "Route32"
+	.string "Route32$"
 

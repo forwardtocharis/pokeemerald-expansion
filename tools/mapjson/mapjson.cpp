@@ -750,8 +750,11 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
         }
         string map_name = json_to_string(map_data, "name");
 
-        if ((version == "emerald" && region != "REGION_HOENN")
-         || (version == "firered" && region != "REGION_KANTO")) {
+        // Allow genuine multi-region maps (Johto/Kanto/Sinnoh).
+        // Only filter out legacy FireRed/LeafGreen maps (name ends with "_Frlg").
+        bool is_frlg_legacy = (map_name.size() >= 5
+            && map_name.compare(map_name.size() - 5, 5, "_Frlg") == 0);
+        if (is_frlg_legacy) {
             invalid_maps.push_back(map_name);
         }
     }

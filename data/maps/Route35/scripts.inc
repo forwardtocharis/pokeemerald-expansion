@@ -6,5 +6,5 @@ Route35_EventScript_RouteSign::
 	end
 
 Route35_Text_Sign1:
-	.string "Route35"
+	.string "Route35$"
 

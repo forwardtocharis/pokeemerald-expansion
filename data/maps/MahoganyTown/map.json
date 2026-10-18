@@ -2,7 +2,7 @@
   "id": "MAP_MAHOGANY_TOWN",
   "name": "MahoganyTown",
   "layout": "LAYOUT_MAHOGANY_TOWN",
-  "music": "MUS_LAVARIDGE",
+  "music": "MUS_FALLARBOR",
   "region": "REGION_JOHTO",
   "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
   "requires_flash": false,

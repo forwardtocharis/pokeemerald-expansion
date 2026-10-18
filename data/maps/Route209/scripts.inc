@@ -6,5 +6,5 @@ Route209_EventScript_RouteSign::
 	end
 
 Route209_Text_Sign1:
-	.string "Route209"
+	.string "Route209$"
 

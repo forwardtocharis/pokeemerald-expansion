@@ -10,8 +10,8 @@ SandgemTown_EventScript_LabSign::
 	end
 
 SandgemTown_Text_Sign1:
-	.string "SandgemTown"
+	.string "SandgemTown$"
 
 SandgemTown_Text_Sign2:
-	.string "SandgemTown"
+	.string "SandgemTown$"
 

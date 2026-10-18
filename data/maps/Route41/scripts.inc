@@ -6,5 +6,5 @@ Route41_EventScript_RouteSign::
 	end
 
 Route41_Text_Sign1:
-	.string "Route41"
+	.string "Route41$"
 

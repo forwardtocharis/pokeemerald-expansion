@@ -4,7 +4,7 @@
   "layout": "LAYOUT_OREBURGH_CITY",
   "music": "MUS_DEWFORD",
   "region": "REGION_SINNOH",
-  "region_map_section": "MAPSEC_OREBURGH_CITY",
+  "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",

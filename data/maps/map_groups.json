@@ -1202,7 +1202,9 @@
     "Route22",
     "Route23",
     "Route24",
-    "Route25"
+    "Route25",
+    "VermilionCity_Gym",
+    "VermilionCity_PokemonCenter_1F"
   ],
   "gMapGroup_TownsAndRoutes_Sinnoh": [
     "TwinleafTown",

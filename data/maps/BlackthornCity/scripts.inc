@@ -6,5 +6,5 @@ BlackthornCity_EventScript_CitySign::
 	end
 
 BlackthornCity_Text_Sign1:
-	.string "BlackthornCity"
+	.string "BlackthornCity$"
 

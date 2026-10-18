@@ -60,8 +60,8 @@ Route45_EventScript_RanFromEntei::
 
 
 Route45_Text_Sign1:
-	.string "Route45"
+	.string "Route45$"
 
 Route45_Text_EnteiRoar:
-	.string "Booo-ooh!"
+	.string "Booo-ooh!$"
 

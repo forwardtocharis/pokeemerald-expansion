@@ -6,5 +6,5 @@ SolaceonTown_EventScript_TownSign::
 	end
 
 SolaceonTown_Text_Sign1:
-	.string "SolaceonTown"
+	.string "SolaceonTown$"
 

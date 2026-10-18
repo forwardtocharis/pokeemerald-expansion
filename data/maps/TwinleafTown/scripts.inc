@@ -10,8 +10,8 @@ TwinleafTown_EventScript_RivalHouseSign::
 	end
 
 TwinleafTown_Text_Sign1:
-	.string "TwinleafTown"
+	.string "TwinleafTown$"
 
 TwinleafTown_Text_Sign2:
-	.string "TwinleafTown"
+	.string "TwinleafTown$"
 

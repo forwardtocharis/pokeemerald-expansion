@@ -6,5 +6,5 @@ VioletCity_EventScript_TownSign::
 	end
 
 VioletCity_Text_Sign1:
-	.string "VioletCity"
+	.string "VioletCity$"
 

@@ -54,48 +54,48 @@ GoldenrodCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 GoldenrodCity_Gym_Text_WhitneyIntro:
-	.string "WHITNEY: Welcome to the GOLDENROD CITY GYM!"
-	.string "I specialize in NORMAL-type Pokémon."
-	.string "Show me what you and your team are made of!"
+	.string "WHITNEY: Welcome to the GOLDENROD CITY GYM!\n"
+	.string "I specialize in NORMAL-type Pokémon.\p"
+	.string "Show me what you and your team are made of!$"
 
 GoldenrodCity_Gym_Text_WhitneyDefeat:
-	.string "Incredible! You have bested my NORMAL techniques!"
-	.string "Take the official LEAGUE PLAIN BADGE!"
+	.string "Incredible! You have bested my NORMAL techniques!\n"
+	.string "Take the official LEAGUE PLAIN BADGE!$"
 
 GoldenrodCity_Gym_Text_WhitneyPostBattle:
-	.string "WHITNEY: With that badge, your journey reaches new heights."
-	.string "Continue striving toward greatness!"
+	.string "WHITNEY: With that badge, your journey reaches new heights.\n"
+	.string "Continue striving toward greatness!$"
 
 GoldenrodCity_Gym_Text_WhitneyRematchIntro:
-	.string "WHITNEY: Welcome back, Trainer!"
-	.string "My team has grown substantially since our last match."
-	.string "Are you ready for a rematch battle?"
+	.string "WHITNEY: Welcome back, Trainer!\n"
+	.string "My team has grown substantially since our last match.\p"
+	.string "Are you ready for a rematch battle?$"
 
 GoldenrodCity_Gym_Text_WhitneyPostRematch:
-	.string "WHITNEY: What a spectacular contest!"
-	.string "Your mastery is truly beyond compare!"
+	.string "WHITNEY: What a spectacular contest!\n"
+	.string "Your mastery is truly beyond compare!$"
 
 GoldenrodCity_Gym_Text_WhitneyExplainBadge:
-	.string "WHITNEY: The PLAIN BADGE proves your strength."
-	.string "Pokémon across the land will acknowledge your bond!"
+	.string "WHITNEY: The PLAIN BADGE proves your strength.\n"
+	.string "Pokémon across the land will acknowledge your bond!$"
 
 GoldenrodCity_Gym_Text_GymGuyAdvice:
-	.string "Yo! Champ in the making!"
-	.string "This GYM is all about NORMAL-type Pokémon."
-	.string "Plan your types carefully and strike with purpose!"
+	.string "Yo! Champ in the making!\n"
+	.string "This GYM is all about NORMAL-type Pokémon.\p"
+	.string "Plan your types carefully and strike with purpose!$"
 
 GoldenrodCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!"
+	.string "You did it! That was an incredible gym victory!$"
 
 GoldenrodCity_Gym_Text_GymStatue:
-	.string "GOLDENROD CITY POKéMON GYM"
-	.string "LEADER: WHITNEY"
-	.string "WINNING TRAINERS:"
-	.string "????"
+	.string "GOLDENROD CITY POKéMON GYM\n"
+	.string "LEADER: WHITNEY\p"
+	.string "WINNING TRAINERS:\n"
+	.string "????$"
 
 GoldenrodCity_Gym_Text_GymStatuePlayerWon:
-	.string "GOLDENROD CITY POKéMON GYM"
-	.string "LEADER: WHITNEY"
-	.string "WINNING TRAINERS:"
-	.string "{PLAYER}"
+	.string "GOLDENROD CITY POKéMON GYM\n"
+	.string "LEADER: WHITNEY\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 

@@ -6,5 +6,5 @@ CianwoodCity_EventScript_CitySign::
 	end
 
 CianwoodCity_Text_Sign1:
-	.string "CianwoodCity"
+	.string "CianwoodCity$"
 

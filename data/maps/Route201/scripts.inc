@@ -57,32 +57,32 @@ Route201_EventScript_LakeVerityLeave::
 
 
 Route201_Text_Sign1:
-	.string "Route201"
+	.string "Route201$"
 
 Route201_Text_LakeVerityDescription:
-	.string "The tranquil waters of Lake Verity stretch beyond."
-	.string "A mystical cavern stands at the center of the lake."
+	.string "The tranquil waters of Lake Verity stretch beyond.\n"
+	.string "A mystical cavern stands at the center of the lake.$"
 
 Route201_Text_InspectLakeVerityPrompt:
-	.string "A soothing aura fills the air."
-	.string "Would you like to investigate the cavern?"
+	.string "A soothing aura fills the air.\n"
+	.string "Would you like to investigate the cavern?$"
 
 Route201_Text_MespritApproaches:
-	.string "{PLAYER} entered the sacred cavern..."
-	.string "A warm pink radiance shimmered over the waters,"
-	.string "and MESPRIT, the Being of Emotion, descended!"
+	.string "{PLAYER} entered the sacred cavern...\n"
+	.string "A warm pink radiance shimmered over the waters,\p"
+	.string "and MESPRIT, the Being of Emotion, descended!$"
 
 Route201_Text_MespritCalm:
-	.string "MESPRIT conveyed feelings of deep trust and joy"
-	.string "before settling calmly into the POKé BALL."
+	.string "MESPRIT conveyed feelings of deep trust and joy\n"
+	.string "before settling calmly into the POKé BALL.$"
 
 Route201_Text_MespritVanished:
-	.string "MESPRIT dissolved into sparkling light,"
-	.string "retreating into the serene depths of the lake..."
+	.string "MESPRIT dissolved into sparkling light,\n"
+	.string "retreating into the serene depths of the lake...$"
 
 Route201_Text_MespritFlewOff:
-	.string "MESPRIT darted swiftly across the lake..."
+	.string "MESPRIT darted swiftly across the lake...$"
 
 Route201_Text_LakeVerityPeaceful:
-	.string "The waters of Lake Verity ripple peacefully."
+	.string "The waters of Lake Verity ripple peacefully.$"
 

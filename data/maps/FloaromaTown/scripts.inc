@@ -56,33 +56,33 @@ FloaromaTown_EventScript_MeadowLeave::
 	end
 
 FloaromaTown_Text_Sign1:
-	.string "Floaroma Town"
-	.string "The Blooming, Beautiful Town of Fragrance."
+	.string "Floaroma Town\n"
+	.string "The Blooming, Beautiful Town of Fragrance.$"
 
 FloaromaMeadow_Text_Sign:
-	.string "Floaroma Meadow"
-	.string "A lush field carpeted with vivid Gracidea blooms."
+	.string "Floaroma Meadow\n"
+	.string "A lush field carpeted with vivid Gracidea blooms.$"
 
 FloaromaTown_Text_MeadowDescription:
-	.string "A hidden path leads north into Floaroma Meadow."
-	.string "The air is sweet with the scent of blooming Gracidea flowers."
+	.string "A hidden path leads north into Floaroma Meadow.\n"
+	.string "The air is sweet with the scent of blooming Gracidea flowers.$"
 
 FloaromaTown_Text_InspectShayminPrompt:
-	.string "Would you like to offer your gratitude to the meadow?"
+	.string "Would you like to offer your gratitude to the meadow?$"
 
 FloaromaTown_Text_ShayminApproaches:
-	.string "Gracidea petals burst into vibrant color across the meadow!"
-	.string "The Gratitude Pokémon Shaymin scurries out playfully from the flowers!"
+	.string "Gracidea petals burst into vibrant color across the meadow!\n"
+	.string "The Gratitude Pokémon Shaymin scurries out playfully from the flowers!$"
 
 FloaromaTown_Text_ShayminCalm:
-	.string "Shaymin chirped happily and nestled affectionately in your arms!"
+	.string "Shaymin chirped happily and nestled affectionately in your arms!$"
 
 FloaromaTown_Text_ShayminVanished:
-	.string "Shaymin vanished into the sea of sweet-smelling flowers..."
+	.string "Shaymin vanished into the sea of sweet-smelling flowers...$"
 
 FloaromaTown_Text_ShayminFlewOff:
-	.string "Shaymin scampered joyfully away through the tall grass!"
+	.string "Shaymin scampered joyfully away through the tall grass!$"
 
 FloaromaTown_Text_ShayminPeaceful:
-	.string "The Gracidea blossoms sway peacefully in the gentle breeze."
+	.string "The Gracidea blossoms sway peacefully in the gentle breeze.$"
 

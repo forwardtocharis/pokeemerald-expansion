@@ -10,8 +10,8 @@ HearthomeCity_EventScript_GymSign::
 	end
 
 HearthomeCity_Text_Sign1:
-	.string "HearthomeCity"
+	.string "HearthomeCity$"
 
 HearthomeCity_Text_Sign2:
-	.string "HearthomeCity"
+	.string "HearthomeCity$"
 

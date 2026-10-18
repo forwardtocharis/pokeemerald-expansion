@@ -54,48 +54,48 @@ OlivineCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 OlivineCity_Gym_Text_JasmineIntro:
-	.string "JASMINE: Welcome to the OLIVINE CITY GYM!"
-	.string "I specialize in STEEL-type Pokémon."
-	.string "Show me what you and your team are made of!"
+	.string "JASMINE: Welcome to the OLIVINE CITY GYM!\n"
+	.string "I specialize in STEEL-type Pokémon.\p"
+	.string "Show me what you and your team are made of!$"
 
 OlivineCity_Gym_Text_JasmineDefeat:
-	.string "Incredible! You have bested my STEEL techniques!"
-	.string "Take the official LEAGUE MINERAL BADGE!"
+	.string "Incredible! You have bested my STEEL techniques!\n"
+	.string "Take the official LEAGUE MINERAL BADGE!$"
 
 OlivineCity_Gym_Text_JasminePostBattle:
-	.string "JASMINE: With that badge, your journey reaches new heights."
-	.string "Continue striving toward greatness!"
+	.string "JASMINE: With that badge, your journey reaches new heights.\n"
+	.string "Continue striving toward greatness!$"
 
 OlivineCity_Gym_Text_JasmineRematchIntro:
-	.string "JASMINE: Welcome back, Trainer!"
-	.string "My team has grown substantially since our last match."
-	.string "Are you ready for a rematch battle?"
+	.string "JASMINE: Welcome back, Trainer!\n"
+	.string "My team has grown substantially since our last match.\p"
+	.string "Are you ready for a rematch battle?$"
 
 OlivineCity_Gym_Text_JasminePostRematch:
-	.string "JASMINE: What a spectacular contest!"
-	.string "Your mastery is truly beyond compare!"
+	.string "JASMINE: What a spectacular contest!\n"
+	.string "Your mastery is truly beyond compare!$"
 
 OlivineCity_Gym_Text_JasmineExplainBadge:
-	.string "JASMINE: The MINERAL BADGE proves your strength."
-	.string "Pokémon across the land will acknowledge your bond!"
+	.string "JASMINE: The MINERAL BADGE proves your strength.\n"
+	.string "Pokémon across the land will acknowledge your bond!$"
 
 OlivineCity_Gym_Text_GymGuyAdvice:
-	.string "Yo! Champ in the making!"
-	.string "This GYM is all about STEEL-type Pokémon."
-	.string "Plan your types carefully and strike with purpose!"
+	.string "Yo! Champ in the making!\n"
+	.string "This GYM is all about STEEL-type Pokémon.\p"
+	.string "Plan your types carefully and strike with purpose!$"
 
 OlivineCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!"
+	.string "You did it! That was an incredible gym victory!$"
 
 OlivineCity_Gym_Text_GymStatue:
-	.string "OLIVINE CITY POKéMON GYM"
-	.string "LEADER: JASMINE"
-	.string "WINNING TRAINERS:"
-	.string "????"
+	.string "OLIVINE CITY POKéMON GYM\n"
+	.string "LEADER: JASMINE\p"
+	.string "WINNING TRAINERS:\n"
+	.string "????$"
 
 OlivineCity_Gym_Text_GymStatuePlayerWon:
-	.string "OLIVINE CITY POKéMON GYM"
-	.string "LEADER: JASMINE"
-	.string "WINNING TRAINERS:"
-	.string "{PLAYER}"
+	.string "OLIVINE CITY POKéMON GYM\n"
+	.string "LEADER: JASMINE\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 

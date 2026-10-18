@@ -10,8 +10,8 @@ JubilifeCity_EventScript_PoketchSign::
 	end
 
 JubilifeCity_Text_Sign1:
-	.string "JubilifeCity"
+	.string "JubilifeCity$"
 
 JubilifeCity_Text_Sign2:
-	.string "JubilifeCity"
+	.string "JubilifeCity$"
 

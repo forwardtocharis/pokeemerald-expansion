@@ -6,5 +6,5 @@ CherrygroveCity_EventScript_TownSign::
 	end
 
 CherrygroveCity_Text_Sign1:
-	.string "CherrygroveCity"
+	.string "CherrygroveCity$"
 

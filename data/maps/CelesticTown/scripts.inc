@@ -6,5 +6,5 @@ CelesticTown_EventScript_TownSign::
 	end
 
 CelesticTown_Text_Sign1:
-	.string "CelesticTown"
+	.string "CelesticTown$"
 

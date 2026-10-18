@@ -56,28 +56,28 @@ Route213_EventScript_LakeValorLeave::
 	end
 
 Route213_Text_Sign1:
-	.string "Route 213"
-	.string "East to Sunyshore City, West to Pastoria City."
+	.string "Route 213\n"
+	.string "East to Sunyshore City, West to Pastoria City.$"
 
 Route213_Text_LakeValorDescription:
-	.string "A hidden pathway leads north toward the grand basin of Lake Valor."
-	.string "An island cavern rests calmly in the middle of the reservoir."
+	.string "A hidden pathway leads north toward the grand basin of Lake Valor.\n"
+	.string "An island cavern rests calmly in the middle of the reservoir.$"
 
 Route213_Text_InspectLakeValorPrompt:
-	.string "Would you like to enter the cavern of Lake Valor?"
+	.string "Would you like to enter the cavern of Lake Valor?$"
 
 Route213_Text_AzelfApproaches:
-	.string "The Being of Willpower descends from the glowing dome of the cavern!"
+	.string "The Being of Willpower descends from the glowing dome of the cavern!$"
 
 Route213_Text_AzelfCalm:
-	.string "Azelf acknowledged your unwavering resolve!"
+	.string "Azelf acknowledged your unwavering resolve!$"
 
 Route213_Text_AzelfVanished:
-	.string "Azelf vanished silently into the sparkling water..."
+	.string "Azelf vanished silently into the sparkling water...$"
 
 Route213_Text_AzelfFlewOff:
-	.string "Azelf darted across the cavern and vanished!"
+	.string "Azelf darted across the cavern and vanished!$"
 
 Route213_Text_LakeValorPeaceful:
-	.string "Lake Valor rests in majestic tranquility."
+	.string "Lake Valor rests in majestic tranquility.$"
 

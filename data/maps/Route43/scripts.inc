@@ -6,5 +6,5 @@ Route43_EventScript_RouteSign::
 	end
 
 Route43_Text_Sign1:
-	.string "Route43"
+	.string "Route43$"
 

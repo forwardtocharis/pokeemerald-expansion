@@ -54,48 +54,48 @@ VioletCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 VioletCity_Gym_Text_FalknerIntro:
-	.string "FALKNER: Welcome to the VIOLET CITY GYM!"
-	.string "I specialize in FLYING-type Pokémon."
-	.string "Show me what you and your team are made of!"
+	.string "FALKNER: Welcome to the VIOLET CITY GYM!\n"
+	.string "I specialize in FLYING-type Pokémon.\p"
+	.string "Show me what you and your team are made of!$"
 
 VioletCity_Gym_Text_FalknerDefeat:
-	.string "Incredible! You have bested my FLYING techniques!"
-	.string "Take the official LEAGUE ZEPHYR BADGE!"
+	.string "Incredible! You have bested my FLYING techniques!\n"
+	.string "Take the official LEAGUE ZEPHYR BADGE!$"
 
 VioletCity_Gym_Text_FalknerPostBattle:
-	.string "FALKNER: With that badge, your journey reaches new heights."
-	.string "Continue striving toward greatness!"
+	.string "FALKNER: With that badge, your journey reaches new heights.\n"
+	.string "Continue striving toward greatness!$"
 
 VioletCity_Gym_Text_FalknerRematchIntro:
-	.string "FALKNER: Welcome back, Trainer!"
-	.string "My team has grown substantially since our last match."
-	.string "Are you ready for a rematch battle?"
+	.string "FALKNER: Welcome back, Trainer!\n"
+	.string "My team has grown substantially since our last match.\p"
+	.string "Are you ready for a rematch battle?$"
 
 VioletCity_Gym_Text_FalknerPostRematch:
-	.string "FALKNER: What a spectacular contest!"
-	.string "Your mastery is truly beyond compare!"
+	.string "FALKNER: What a spectacular contest!\n"
+	.string "Your mastery is truly beyond compare!$"
 
 VioletCity_Gym_Text_FalknerExplainBadge:
-	.string "FALKNER: The ZEPHYR BADGE proves your strength."
-	.string "Pokémon across the land will acknowledge your bond!"
+	.string "FALKNER: The ZEPHYR BADGE proves your strength.\n"
+	.string "Pokémon across the land will acknowledge your bond!$"
 
 VioletCity_Gym_Text_GymGuyAdvice:
-	.string "Yo! Champ in the making!"
-	.string "This GYM is all about FLYING-type Pokémon."
-	.string "Plan your types carefully and strike with purpose!"
+	.string "Yo! Champ in the making!\n"
+	.string "This GYM is all about FLYING-type Pokémon.\p"
+	.string "Plan your types carefully and strike with purpose!$"
 
 VioletCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!"
+	.string "You did it! That was an incredible gym victory!$"
 
 VioletCity_Gym_Text_GymStatue:
-	.string "VIOLET CITY POKéMON GYM"
-	.string "LEADER: FALKNER"
-	.string "WINNING TRAINERS:"
-	.string "????"
+	.string "VIOLET CITY POKéMON GYM\n"
+	.string "LEADER: FALKNER\p"
+	.string "WINNING TRAINERS:\n"
+	.string "????$"
 
 VioletCity_Gym_Text_GymStatuePlayerWon:
-	.string "VIOLET CITY POKéMON GYM"
-	.string "LEADER: FALKNER"
-	.string "WINNING TRAINERS:"
-	.string "{PLAYER}"
+	.string "VIOLET CITY POKéMON GYM\n"
+	.string "LEADER: FALKNER\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 

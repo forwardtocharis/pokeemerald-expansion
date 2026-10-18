@@ -60,8 +60,8 @@ Route42_EventScript_RanFromSuicune::
 
 
 Route42_Text_Sign1:
-	.string "Route42"
+	.string "Route42$"
 
 Route42_Text_SuicuneRoar:
-	.string "Gugyoo-ooh!"
+	.string "Gugyoo-ooh!$"
 

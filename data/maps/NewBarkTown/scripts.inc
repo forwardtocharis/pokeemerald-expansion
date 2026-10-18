@@ -33,29 +33,29 @@ NewBarkTown_EventScript_ElmAfterTicket::
 
 
 NewBarkTown_Text_Sign1:
-	.string "NewBarkTown"
+	.string "NewBarkTown$"
 
 NewBarkTown_Text_Sign2:
-	.string "NewBarkTown"
+	.string "NewBarkTown$"
 
 NewBarkTown_Text_ElmEncourage:
-	.string "ELM: Hello, {PLAYER}! How is your journey across JOHTO progressing?"
-	.string "If you earn all 8 BADGES of our region, I have an astounding"
-	.string "discovery of ancient legend to share with you!"
+	.string "ELM: Hello, {PLAYER}! How is your journey across JOHTO progressing?\n"
+	.string "If you earn all 8 BADGES of our region, I have an astounding\p"
+	.string "discovery of ancient legend to share with you!$"
 
 NewBarkTown_Text_ElmGiveMysticTicket:
-	.string "ELM: Incredible, {PLAYER}! You have conquered all the GYMS of JOHTO!"
-	.string "An expedition team recently recovered an ancient charter to NAVEL ROCK!"
-	.string "Legends say the guardian of the sea, LUGIA, and the rainbow bird, HO-OH,"
-	.string "both roost in its deep caverns and towering peak!"
-	.string "Please, take this MYSTIC TICKET!"
+	.string "ELM: Incredible, {PLAYER}! You have conquered all the GYMS of JOHTO!\n"
+	.string "An expedition team recently recovered an ancient charter to NAVEL ROCK!\p"
+	.string "Legends say the guardian of the sea, LUGIA, and the rainbow bird, HO-OH,\n"
+	.string "both roost in its deep caverns and towering peak!\p"
+	.string "Please, take this MYSTIC TICKET!$"
 
 NewBarkTown_Text_ElmMysticTicketExplanation:
-	.string "You can board the ferry in LILYCOVE CITY or VERMILION CITY"
-	.string "to explore NAVEL ROCK with that MYSTIC TICKET."
-	.string "May the ancient guardians smile upon your courage!"
+	.string "You can board the ferry in LILYCOVE CITY or VERMILION CITY\n"
+	.string "to explore NAVEL ROCK with that MYSTIC TICKET.\p"
+	.string "May the ancient guardians smile upon your courage!$"
 
 NewBarkTown_Text_ElmAfterTicket:
-	.string "ELM: Have you visited NAVEL ROCK yet?"
-	.string "May the blessing of the rainbow wings guide your steps!"
+	.string "ELM: Have you visited NAVEL ROCK yet?\n"
+	.string "May the blessing of the rainbow wings guide your steps!$"
 

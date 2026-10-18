@@ -2,7 +2,7 @@
   "id": "MAP_VIOLET_CITY__POKEMON_CENTER_1_F",
   "name": "VioletCity_PokemonCenter_1F",
   "layout": "LAYOUT_VIOLET_CITY__POKEMON_CENTER_1_F",
-  "music": "MUS_POKECEN",
+  "music": "MUS_POKE_CENTER",
   "region": "REGION_JOHTO",
   "region_map_section": "MAPSEC_RUSTBORO_CITY",
   "requires_flash": false,

@@ -6,5 +6,5 @@ EcruteakCity_EventScript_CitySign::
 	end
 
 EcruteakCity_Text_Sign1:
-	.string "EcruteakCity"
+	.string "EcruteakCity$"
 

@@ -6,5 +6,5 @@ AzaleaTown_EventScript_TownSign::
 	end
 
 AzaleaTown_Text_Sign1:
-	.string "AzaleaTown"
+	.string "AzaleaTown$"
 

@@ -54,48 +54,48 @@ EternaCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 EternaCity_Gym_Text_GardeniaIntro:
-	.string "GARDENIA: Welcome to the ETERNA CITY GYM!"
-	.string "I specialize in GRASS-type Pokémon."
-	.string "Show me what you and your team are made of!"
+	.string "GARDENIA: Welcome to the ETERNA CITY GYM!\n"
+	.string "I specialize in GRASS-type Pokémon.\p"
+	.string "Show me what you and your team are made of!$"
 
 EternaCity_Gym_Text_GardeniaDefeat:
-	.string "Incredible! You have bested my GRASS techniques!"
-	.string "Take the official LEAGUE FOREST BADGE!"
+	.string "Incredible! You have bested my GRASS techniques!\n"
+	.string "Take the official LEAGUE FOREST BADGE!$"
 
 EternaCity_Gym_Text_GardeniaPostBattle:
-	.string "GARDENIA: With that badge, your journey reaches new heights."
-	.string "Continue striving toward greatness!"
+	.string "GARDENIA: With that badge, your journey reaches new heights.\n"
+	.string "Continue striving toward greatness!$"
 
 EternaCity_Gym_Text_GardeniaRematchIntro:
-	.string "GARDENIA: Welcome back, Trainer!"
-	.string "My team has grown substantially since our last match."
-	.string "Are you ready for a rematch battle?"
+	.string "GARDENIA: Welcome back, Trainer!\n"
+	.string "My team has grown substantially since our last match.\p"
+	.string "Are you ready for a rematch battle?$"
 
 EternaCity_Gym_Text_GardeniaPostRematch:
-	.string "GARDENIA: What a spectacular contest!"
-	.string "Your mastery is truly beyond compare!"
+	.string "GARDENIA: What a spectacular contest!\n"
+	.string "Your mastery is truly beyond compare!$"
 
 EternaCity_Gym_Text_GardeniaExplainBadge:
-	.string "GARDENIA: The FOREST BADGE proves your strength."
-	.string "Pokémon across the land will acknowledge your bond!"
+	.string "GARDENIA: The FOREST BADGE proves your strength.\n"
+	.string "Pokémon across the land will acknowledge your bond!$"
 
 EternaCity_Gym_Text_GymGuyAdvice:
-	.string "Yo! Champ in the making!"
-	.string "This GYM is all about GRASS-type Pokémon."
-	.string "Plan your types carefully and strike with purpose!"
+	.string "Yo! Champ in the making!\n"
+	.string "This GYM is all about GRASS-type Pokémon.\p"
+	.string "Plan your types carefully and strike with purpose!$"
 
 EternaCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!"
+	.string "You did it! That was an incredible gym victory!$"
 
 EternaCity_Gym_Text_GymStatue:
-	.string "ETERNA CITY POKéMON GYM"
-	.string "LEADER: GARDENIA"
-	.string "WINNING TRAINERS:"
-	.string "????"
+	.string "ETERNA CITY POKéMON GYM\n"
+	.string "LEADER: GARDENIA\p"
+	.string "WINNING TRAINERS:\n"
+	.string "????$"
 
 EternaCity_Gym_Text_GymStatuePlayerWon:
-	.string "ETERNA CITY POKéMON GYM"
-	.string "LEADER: GARDENIA"
-	.string "WINNING TRAINERS:"
-	.string "{PLAYER}"
+	.string "ETERNA CITY POKéMON GYM\n"
+	.string "LEADER: GARDENIA\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
