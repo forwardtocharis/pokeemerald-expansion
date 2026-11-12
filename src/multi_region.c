@@ -1,8 +1,14 @@
 #include "global.h"
 #include "event_data.h"
 #include "multi_region.h"
+#include "pokemon.h"
+#include "random.h"
 #include "rtc.h"
 #include "constants/flags.h"
+#include "constants/items.h"
+#include "constants/moves.h"
+#include "constants/pokemon.h"
+#include "constants/species.h"
 #include "constants/vars.h"
 #include "constants/regions.h"
 
@@ -140,6 +146,66 @@ u8 GetScaledTrainerMonLevel(u8 baseLevel)
     return (u8)scaled;
 }
 
+static const u8 sHoennGymLevelCaps[8]  = {15, 19, 24, 29, 31, 33, 42, 46};
+static const u8 sKantoGymLevelCaps[8]  = {14, 21, 24, 29, 43, 43, 47, 50};
+static const u8 sJohtoGymLevelCaps[8]  = {13, 17, 20, 25, 31, 35, 34, 41};
+static const u8 sSinnohGymLevelCaps[8] = {14, 22, 32, 37, 36, 41, 44, 50};
+static const u8 sRegionalLeagueCaps[4] = {58, 63, 79, 80};
+
+u8 GetCurrentRegionLevelCap(void)
+{
+    u8 activeRegion;
+    u32 i;
+    const u16 *badgeFlags;
+    const u8 *gymCaps;
+    u8 nextCap = MAX_LEVEL;
+
+    if (!FlagGet(FLAG_SYS_LEVEL_CAP_ENABLED))
+        return MAX_LEVEL;
+
+    if (GetTotalBadgesCount() >= 32)
+        return MAX_LEVEL;
+
+    activeRegion = GetActiveRegion();
+    if (activeRegion > 3)
+        activeRegion = 0;
+
+    switch (activeRegion)
+    {
+    case 1:
+        badgeFlags = sKantoBadges;
+        gymCaps = sKantoGymLevelCaps;
+        break;
+    case 2:
+        badgeFlags = sJohtoBadges;
+        gymCaps = sJohtoGymLevelCaps;
+        break;
+    case 3:
+        badgeFlags = sSinnohBadges;
+        gymCaps = sSinnohGymLevelCaps;
+        break;
+    case 0:
+    default:
+        badgeFlags = sHoennBadges;
+        gymCaps = sHoennGymLevelCaps;
+        break;
+    }
+
+    for (i = 0; i < 8; i++)
+    {
+        if (!FlagGet(badgeFlags[i]))
+        {
+            if (gymCaps[i] < nextCap)
+                nextCap = gymCaps[i];
+        }
+    }
+
+    if (nextCap == MAX_LEVEL)
+        nextCap = sRegionalLeagueCaps[activeRegion];
+
+    return GetScaledTrainerMonLevel(nextCap);
+}
+
 static EWRAM_DATA u8 sStartingRegionChoice = 0;
 
 void SetStartingRegionChoice(u8 region)
@@ -185,5 +251,152 @@ void SetRematchedToday(u16 trainerId)
     RefreshRematchDay();
     if (trainerId / 8 < REMATCH_TRACKER_BYTES)
         sRematchedTodayBits[trainerId / 8] |= (1 << (trainerId % 8));
+}
+
+// ── Grand Champion Red Procedural Team Generator (WP4) ──────────────────
+// Draws 3 unique Level 100 Legendaries from sRedLegendaryPool and
+// 3 unique Level 100 Competitive Aces from sRedAcePool, enforcing
+// Species Clause (no duplicate species) and Item Clause (no duplicate items),
+// with 31 IVs across all 6 stats and optimized 252/252/4 EV spreads.
+
+struct RedPoolEntry
+{
+    u16 species;
+    u16 heldItem;
+    u8 nature;
+    u8 evs[6]; // HP, Atk, Def, SpA, SpD, Spe
+    u16 moves[MAX_MON_MOVES];
+};
+
+static const struct RedPoolEntry sRedLegendaryPool[] =
+{
+    { SPECIES_MEWTWO,   ITEM_LIFE_ORB,         NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_PSYSTRIKE,        MOVE_AURA_SPHERE,  MOVE_ICE_BEAM,      MOVE_CALM_MIND} },
+    { SPECIES_RAYQUAZA, ITEM_FOCUS_SASH,       NATURE_NAIVE,   {  0, 252,   0,   4,   0, 252}, {MOVE_DRAGON_ASCENT,    MOVE_EXTREME_SPEED,MOVE_EARTHQUAKE,    MOVE_DRAGON_DANCE} },
+    { SPECIES_LUGIA,    ITEM_LEFTOVERS,        NATURE_BOLD,    {252,   0, 252,   0,   4,   0}, {MOVE_AEROBLAST,        MOVE_PSYCHIC,      MOVE_RECOVER,       MOVE_CALM_MIND} },
+    { SPECIES_HO_OH,    ITEM_HEAVY_DUTY_BOOTS, NATURE_ADAMANT, {252, 252,   0,   0,   4,   0}, {MOVE_SACRED_FIRE,      MOVE_BRAVE_BIRD,   MOVE_EARTHQUAKE,    MOVE_RECOVER} },
+    { SPECIES_DIALGA,   ITEM_ASSAULT_VEST,     NATURE_MODEST,  {252,   0,   0, 252,   4,   0}, {MOVE_DRACO_METEOR,     MOVE_FLASH_CANNON, MOVE_FIRE_BLAST,    MOVE_EARTH_POWER} },
+    { SPECIES_PALKIA,   ITEM_CHOICE_SCARF,     NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_SPACIAL_REND,     MOVE_HYDRO_PUMP,   MOVE_FIRE_BLAST,    MOVE_THUNDERBOLT} },
+    { SPECIES_GIRATINA, ITEM_LUM_BERRY,        NATURE_IMPISH,  {252,   4, 252,   0,   0,   0}, {MOVE_SHADOW_FORCE,     MOVE_DRAGON_CLAW,  MOVE_WILL_O_WISP,   MOVE_REST} },
+    { SPECIES_GROUDON,  ITEM_SITRUS_BERRY,     NATURE_ADAMANT, {252, 252,   0,   0,   4,   0}, {MOVE_PRECIPICE_BLADES, MOVE_STONE_EDGE,   MOVE_FIRE_PUNCH,    MOVE_SWORDS_DANCE} },
+    { SPECIES_KYOGRE,   ITEM_CHOICE_SPECS,     NATURE_MODEST,  {  4,   0,   0, 252,   0, 252}, {MOVE_WATER_SPOUT,      MOVE_ORIGIN_PULSE, MOVE_ICE_BEAM,      MOVE_THUNDER} },
+    { SPECIES_LATIOS,   ITEM_SOUL_DEW,         NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_DRACO_METEOR,     MOVE_LUSTER_PURGE, MOVE_THUNDERBOLT,   MOVE_RECOVER} },
+    { SPECIES_ZAPDOS,   ITEM_ROCKY_HELMET,     NATURE_BOLD,    {252,   0, 252,   0,   0,   4}, {MOVE_THUNDERBOLT,      MOVE_HURRICANE,    MOVE_HEAT_WAVE,     MOVE_ROOST} },
+    { SPECIES_SUICUNE,  ITEM_CHESTO_BERRY,     NATURE_BOLD,    {252,   0, 252,   0,   4,   0}, {MOVE_SCALD,            MOVE_ICE_BEAM,     MOVE_CALM_MIND,     MOVE_REST} },
+    { SPECIES_HEATRAN,  ITEM_AIR_BALLOON,      NATURE_MODEST,  {252,   0,   0, 252,   0,   4}, {MOVE_MAGMA_STORM,      MOVE_FLASH_CANNON, MOVE_EARTH_POWER,   MOVE_STEALTH_ROCK} },
+    { SPECIES_RAIKOU,   ITEM_EXPERT_BELT,      NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_THUNDERBOLT,      MOVE_AURA_SPHERE,  MOVE_SHADOW_BALL,   MOVE_CALM_MIND} },
+    { SPECIES_ENTEI,    ITEM_CHOICE_BAND,      NATURE_ADAMANT, {  4, 252,   0,   0,   0, 252}, {MOVE_SACRED_FIRE,      MOVE_EXTREME_SPEED,MOVE_STONE_EDGE,    MOVE_CRUNCH} },
+};
+
+static const struct RedPoolEntry sRedAcePool[] =
+{
+    { SPECIES_PIKACHU,   ITEM_LIGHT_BALL,       NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_VOLT_TACKLE,  MOVE_THUNDERBOLT,   MOVE_SURF,          MOVE_EXTREME_SPEED} },
+    { SPECIES_TYRANITAR, ITEM_WEAKNESS_POLICY,  NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_STONE_EDGE,   MOVE_CRUNCH,        MOVE_EARTHQUAKE,    MOVE_DRAGON_DANCE} },
+    { SPECIES_GARCHOMP,  ITEM_ROCKY_HELMET,     NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_EARTHQUAKE,   MOVE_OUTRAGE,       MOVE_STONE_EDGE,    MOVE_SWORDS_DANCE} },
+    { SPECIES_METAGROSS, ITEM_ASSAULT_VEST,     NATURE_ADAMANT, {252, 252,   0,   0,   4,   0}, {MOVE_METEOR_MASH,  MOVE_BULLET_PUNCH,  MOVE_ZEN_HEADBUTT,  MOVE_EARTHQUAKE} },
+    { SPECIES_DRAGONITE, ITEM_HEAVY_DUTY_BOOTS, NATURE_ADAMANT, {  4, 252,   0,   0,   0, 252}, {MOVE_OUTRAGE,      MOVE_EXTREME_SPEED, MOVE_EARTHQUAKE,    MOVE_DRAGON_DANCE} },
+    { SPECIES_LUCARIO,   ITEM_LIFE_ORB,         NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_CLOSE_COMBAT, MOVE_EXTREME_SPEED, MOVE_METEOR_MASH,   MOVE_SWORDS_DANCE} },
+    { SPECIES_GENGAR,    ITEM_FOCUS_SASH,       NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_SHADOW_BALL,  MOVE_SLUDGE_WAVE,   MOVE_FOCUS_BLAST,   MOVE_DESTINY_BOND} },
+    { SPECIES_SNORLAX,   ITEM_LEFTOVERS,        NATURE_CAREFUL, {252,   4,   0,   0, 252,   0}, {MOVE_BODY_SLAM,    MOVE_CRUNCH,        MOVE_CURSE,         MOVE_REST} },
+    { SPECIES_CHARIZARD, ITEM_CHARCOAL,         NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_FIRE_BLAST,   MOVE_AIR_SLASH,     MOVE_SOLAR_BEAM,    MOVE_SCORCHING_SANDS} },
+    { SPECIES_VENUSAUR,  ITEM_BLACK_SLUDGE,     NATURE_MODEST,  {252,   0,   0, 252,   4,   0}, {MOVE_GIGA_DRAIN,   MOVE_SLUDGE_BOMB,   MOVE_EARTH_POWER,   MOVE_SLEEP_POWDER} },
+    { SPECIES_BLASTOISE, ITEM_WHITE_HERB,       NATURE_MODEST,  {  4,   0,   0, 252,   0, 252}, {MOVE_HYDRO_PUMP,   MOVE_ICE_BEAM,      MOVE_DARK_PULSE,    MOVE_SHELL_SMASH} },
+    { SPECIES_VOLCARONA, ITEM_LUM_BERRY,        NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_FIERY_DANCE,  MOVE_BUG_BUZZ,      MOVE_GIGA_DRAIN,    MOVE_QUIVER_DANCE} },
+    { SPECIES_SCIZOR,    ITEM_CHOICE_BAND,      NATURE_ADAMANT, {252, 252,   0,   0,   4,   0}, {MOVE_BULLET_PUNCH, MOVE_U_TURN,        MOVE_CLOSE_COMBAT,  MOVE_KNOCK_OFF} },
+    { SPECIES_TOGEKISS,  ITEM_CHOICE_SCARF,     NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_AIR_SLASH,    MOVE_DAZZLING_GLEAM,MOVE_AURA_SPHERE,   MOVE_FLAMETHROWER} },
+    { SPECIES_WEAVILE,   ITEM_EXPERT_BELT,      NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_TRIPLE_AXEL,  MOVE_KNOCK_OFF,     MOVE_ICE_SHARD,     MOVE_LOW_KICK} },
+    { SPECIES_SALAMENCE, ITEM_SITRUS_BERRY,     NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_OUTRAGE,      MOVE_DUAL_WINGBEAT, MOVE_EARTHQUAKE,    MOVE_DRAGON_DANCE} },
+    { SPECIES_HYDREIGON, ITEM_CHOICE_SPECS,     NATURE_TIMID,   {  4,   0,   0, 252,   0, 252}, {MOVE_DRACO_METEOR, MOVE_DARK_PULSE,    MOVE_FLASH_CANNON,  MOVE_FLAMETHROWER} },
+    { SPECIES_MILOTIC,   ITEM_FLAME_ORB,        NATURE_BOLD,    {252,   0, 252,   0,   4,   0}, {MOVE_SCALD,        MOVE_ICE_BEAM,      MOVE_RECOVER,       MOVE_HAZE} },
+    { SPECIES_AEGISLASH, ITEM_AIR_BALLOON,      NATURE_QUIET,   {252,   4,   0, 252,   0,   0}, {MOVE_SHADOW_BALL,  MOVE_FLASH_CANNON,  MOVE_SHADOW_SNEAK,  MOVE_KINGS_SHIELD} },
+    { SPECIES_EXCADRILL, ITEM_SOFT_SAND,        NATURE_JOLLY,   {  4, 252,   0,   0,   0, 252}, {MOVE_EARTHQUAKE,   MOVE_IRON_HEAD,     MOVE_ROCK_SLIDE,    MOVE_SWORDS_DANCE} },
+};
+
+static bool32 IsRedEntryAllowed(const struct RedPoolEntry *entry, const u16 *usedSpecies, const u16 *usedItems, u32 currentCount)
+{
+    u32 i;
+    for (i = 0; i < currentCount; i++)
+    {
+        if (usedSpecies[i] == entry->species)
+            return FALSE; // Species Clause
+        if (usedItems[i] == entry->heldItem)
+            return FALSE; // Item Clause
+    }
+    return TRUE;
+}
+
+static void BuildRedMonFromPoolEntry(struct Pokemon *mon, const struct RedPoolEntry *entry)
+{
+    u32 i;
+    u8 maxIv = MAX_PER_STAT_IVS;
+    u32 personality = GetMonPersonality(entry->species, MON_GENDERLESS, entry->nature, 0);
+
+    CreateMonWithIVs(mon, entry->species, MAX_LEVEL, personality, OTID_STRUCT_RANDOM_NO_SHINY, MAX_PER_STAT_IVS);
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        SetMonMoveSlot(mon, entry->moves[i], i);
+
+    SetMonData(mon, MON_DATA_HELD_ITEM, &entry->heldItem);
+    SetMonData(mon, MON_DATA_HP_EV, &entry->evs[0]);
+    SetMonData(mon, MON_DATA_ATK_EV, &entry->evs[1]);
+    SetMonData(mon, MON_DATA_DEF_EV, &entry->evs[2]);
+    SetMonData(mon, MON_DATA_SPATK_EV, &entry->evs[3]);
+    SetMonData(mon, MON_DATA_SPDEF_EV, &entry->evs[4]);
+    SetMonData(mon, MON_DATA_SPEED_EV, &entry->evs[5]);
+
+    SetMonData(mon, MON_DATA_HP_IV, &maxIv);
+    SetMonData(mon, MON_DATA_ATK_IV, &maxIv);
+    SetMonData(mon, MON_DATA_DEF_IV, &maxIv);
+    SetMonData(mon, MON_DATA_SPEED_IV, &maxIv);
+    SetMonData(mon, MON_DATA_SPATK_IV, &maxIv);
+    SetMonData(mon, MON_DATA_SPDEF_IV, &maxIv);
+
+    CalculateMonStats(mon);
+}
+
+void CreateRedGrandChampionParty(struct Pokemon *party)
+{
+    u16 usedSpecies[PARTY_SIZE];
+    u16 usedItems[PARTY_SIZE];
+    u32 slot = 0;
+    u32 attempts;
+    u32 idx;
+
+    ZeroPartyMons(party);
+
+    // Draw 3 unique Legendaries from sRedLegendaryPool
+    while (slot < 3)
+    {
+        idx = Random() % ARRAY_COUNT(sRedLegendaryPool);
+        for (attempts = 0; attempts < ARRAY_COUNT(sRedLegendaryPool); attempts++)
+        {
+            const struct RedPoolEntry *candidate = &sRedLegendaryPool[(idx + attempts) % ARRAY_COUNT(sRedLegendaryPool)];
+            if (IsRedEntryAllowed(candidate, usedSpecies, usedItems, slot))
+            {
+                usedSpecies[slot] = candidate->species;
+                usedItems[slot] = candidate->heldItem;
+                BuildRedMonFromPoolEntry(&party[slot], candidate);
+                slot++;
+                break;
+            }
+        }
+    }
+
+    // Draw 3 unique Competitive Aces from sRedAcePool
+    while (slot < PARTY_SIZE)
+    {
+        idx = Random() % ARRAY_COUNT(sRedAcePool);
+        for (attempts = 0; attempts < ARRAY_COUNT(sRedAcePool); attempts++)
+        {
+            const struct RedPoolEntry *candidate = &sRedAcePool[(idx + attempts) % ARRAY_COUNT(sRedAcePool)];
+            if (IsRedEntryAllowed(candidate, usedSpecies, usedItems, slot))
+            {
+                usedSpecies[slot] = candidate->species;
+                usedItems[slot] = candidate->heldItem;
+                BuildRedMonFromPoolEntry(&party[slot], candidate);
+                slot++;
+                break;
+            }
+        }
+    }
 }
 

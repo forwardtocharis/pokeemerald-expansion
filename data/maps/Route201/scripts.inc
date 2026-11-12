@@ -67,6 +67,11 @@ Route201_EventScript_Trainer2::
 	msgbox Route201_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route201_EventScript_Trainer3::
+	trainerbattle_single TRAINER_GRUNT_MT_PYRE_2, Route201_Text_Trainer3Intro, Route201_Text_Trainer3Defeat
+	msgbox Route201_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route201_Text_Sign1:
 	.string "ROUTE 201\n"
@@ -111,26 +116,38 @@ Route201_Text_LakeVerityPeaceful:
 	.string "peacefully.$"
 
 Route201_Text_Trainer1Intro:
-	.string "Our eyes met on Route 201! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route201! My Pokémon\n"
+	.string "are itching for a match!$"
 
 Route201_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route201_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route201\n"
+	.string "always turns up new surprises!$"
 
 Route201_Text_Trainer2Intro:
-	.string "Our eyes met on Route 201! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route201 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route201_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route201_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route201_Text_Trainer3Intro:
+	.string "ACE TRAINER: Travelling across\n"
+	.string "Route201? Show me your team's\p"
+	.string "synergy!$"
+
+Route201_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route201_Text_Trainer3Post:
+	.string "Only sharp strategy will carry you\n"
+	.string "through the League challenge!$"
 

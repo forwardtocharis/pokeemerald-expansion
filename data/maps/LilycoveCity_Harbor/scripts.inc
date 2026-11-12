@@ -66,9 +66,24 @@ LilycoveCity_Harbor_EventScript_QualifyFrontier::
 	return
 
 LilycoveCity_Harbor_EventScript_OfferBattleFrontier::
+	goto_if_ge VAR_TOTAL_BADGES, 32, LilycoveCity_Harbor_EventScript_OfferWorldChampionship
+LilycoveCity_Harbor_EventScript_OfferBattleFrontierPrompt::
 	msgbox LilycoveCity_Harbor_Text_SailToFrontierPrompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LilycoveCity_Harbor_EventScript_GoToBattleFrontier
 	goto LilycoveCity_Harbor_EventScript_FerryMultiRegionLocationSelect
+
+LilycoveCity_Harbor_EventScript_OfferWorldChampionship::
+	msgbox LilycoveCity_Harbor_Text_BoardSSAnneChampionshipPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, LilycoveCity_Harbor_EventScript_SailToSSAnneChampionship
+	goto LilycoveCity_Harbor_EventScript_OfferBattleFrontierPrompt
+
+LilycoveCity_Harbor_EventScript_SailToSSAnneChampionship::
+	setvar VAR_SS_ANNE_CHAMPIONSHIP_STAGE, 0
+	call LilycoveCity_Harbor_EventScript_BoardFerry
+	warp MAP_SS_TIDAL_LOWER_DECK, 8, 6
+	waitstate
+	release
+	end
 
 @ First goto_if_eq is unnecessary; identical scripts
 LilycoveCity_Harbor_EventScript_NoFirstTimeEventTickets::
@@ -703,5 +718,12 @@ LilycoveCity_Harbor_Text_SailToSpecialIslandPrompt:
 	.string "I see you hold rare island charts!\n"
 	.string "Would you like to set sail for\l"
 	.string "one of the charted special islands?$"
+
+LilycoveCity_Harbor_Text_BoardSSAnneChampionshipPrompt:
+	.string "Incredible! You hold all 32 GYM BADGES\n"
+	.string "across HOENN, KANTO, JOHTO, and SINNOH!\p"
+	.string "Would you like to board the S.S. ANNE\n"
+	.string "WORLD CHAMPIONSHIP luxury liner?$"
+
 
 

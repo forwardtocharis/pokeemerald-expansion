@@ -161,6 +161,11 @@ Route207_EventScript_Trainer1::
 	msgbox Route207_Text_Trainer1Post, MSGBOX_AUTOCLOSE
 	end
 
+Route207_EventScript_Trainer2::
+	trainerbattle_single TRAINER_ARCHIE, Route207_Text_Trainer2Intro, Route207_Text_Trainer2Defeat
+	msgbox Route207_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route207_Text_Sign1:
 	.string "Route 207\n"
@@ -268,14 +273,27 @@ Route207_Text_ArceusPeaceful:
 	.string "quiet divine tranquility.$"
 
 Route207_Text_Trainer1Intro:
-	.string "Our eyes met on Route 207! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route207! My Pokémon\n"
+	.string "are itching for a match!$"
 
 Route207_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route207_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route207\n"
+	.string "always turns up new surprises!$"
+
+Route207_Text_Trainer2Intro:
+	.string "CAMPER: Travelling across\n"
+	.string "Route207? Show me your team's\p"
+	.string "synergy!$"
+
+Route207_Text_Trainer2Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route207_Text_Trainer2Post:
+	.string "I've been camping out waiting for\n"
+	.string "a worthy challenger!$"
 

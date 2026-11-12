@@ -17,32 +17,49 @@ Route210_EventScript_Trainer2::
 	msgbox Route210_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route210_EventScript_Trainer3::
+	trainerbattle_single TRAINER_FELIX, Route210_Text_Trainer3Intro, Route210_Text_Trainer3Defeat
+	msgbox Route210_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route210_Text_Sign1:
 	.string "ROUTE 210\n"
 	.string "SOLACEON TOWN - ROUTE 215$"
 
 Route210_Text_Trainer1Intro:
-	.string "Our eyes met on Route 210! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route210! My Pokémon\n"
+	.string "are itching for a match!$"
 
 Route210_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route210_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route210\n"
+	.string "always turns up new surprises!$"
 
 Route210_Text_Trainer2Intro:
-	.string "Our eyes met on Route 210! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route210 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route210_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route210_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route210_Text_Trainer3Intro:
+	.string "ACE TRAINER: Travelling across\n"
+	.string "Route210? Show me your team's\p"
+	.string "synergy!$"
+
+Route210_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route210_Text_Trainer3Post:
+	.string "Only sharp strategy will carry you\n"
+	.string "through the League challenge!$"
 

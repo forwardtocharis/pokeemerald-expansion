@@ -9,5 +9,6 @@
 #define VAR_KANTO_BADGES                         0x4103 // [kanto] Kanto gym badges obtained (0 to 8)
 #define VAR_JOHTO_BADGES                         0x4104 // [johto] Johto gym badges obtained (0 to 8)
 #define VAR_SINNOH_BADGES                        0x4105 // [sinnoh] Sinnoh gym badges obtained (0 to 8)
+#define VAR_SS_ANNE_CHAMPIONSHIP_STAGE           0x4106 // [system] World Championship progression stage (0: Steven/Wallace, 1: Blue, 2: Lance, 3: Cynthia, 4: Grand Champion Red, 5: Completed)
 
 #endif // GUARD_CONSTANTS_MULTI_REGION_VARS_H

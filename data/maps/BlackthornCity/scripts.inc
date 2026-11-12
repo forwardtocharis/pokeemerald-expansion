@@ -36,6 +36,29 @@ BlackthornCity_EventScript_AutoNPC2::
 	msgbox BlackthornCity_Text_AutoNPC2, MSGBOX_NPC
 	end
 
+BlackthornCity_EventScript_JohtoLeagueEnvoy::
+	lock
+	faceplayer
+	goto_if_lt VAR_JOHTO_BADGES, 8, BlackthornCity_EventScript_JohtoLeagueNeedBadges
+	msgbox BlackthornCity_Text_JohtoLeaguePrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BlackthornCity_EventScript_TravelToIndigoPlateau
+	release
+	end
+
+BlackthornCity_EventScript_JohtoLeagueNeedBadges::
+	msgbox BlackthornCity_Text_JohtoLeagueNeedBadges, MSGBOX_DEFAULT
+	release
+	end
+
+BlackthornCity_EventScript_TravelToIndigoPlateau::
+	setvar VAR_CURRENT_REGION, 2
+	msgbox BlackthornCity_Text_JohtoLeagueDepart, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F, 8, 4
+	waitstate
+	release
+	end
+
 @ === END GENERATED EVENTS ===
 BlackthornCity_Text_Sign1:
 	.string "BLACKTHORN CITY\n"
@@ -82,4 +105,24 @@ BlackthornCity_Text_AutoNPC2:
 	.string "South of Blackthorn lies Route 45\n"
 	.string "- rumor says legendary Trainers\p"
 	.string "train along its cliffs!$"
+
+BlackthornCity_Text_JohtoLeagueNeedBadges:
+	.string "I am an envoy from the Indigo\n"
+	.string "Plateau Pokémon League!\p"
+	.string "Once you have earned all 8 Johto\n"
+	.string "Gym Badges, speak with me to\p"
+	.string "travel to Indigo Plateau's Johto\n"
+	.string "League Hall!$"
+
+BlackthornCity_Text_JohtoLeaguePrompt:
+	.string "Congratulations on earning all 8\n"
+	.string "Johto Gym Badges!\p"
+	.string "Would you like me to escort you to\n"
+	.string "Indigo Plateau Door 2 to challenge\p"
+	.string "the Johto Elite Four (Will, Koga,\n"
+	.string "Silver, Karen, and Lance)?$"
+
+BlackthornCity_Text_JohtoLeagueDepart:
+	.string "Right away! Off we go to Indigo\n"
+	.string "Plateau!$"
 

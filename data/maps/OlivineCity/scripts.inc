@@ -36,9 +36,26 @@ OlivineCity_EventScript_QualifyFrontier::
 	return
 
 OlivineCity_EventScript_OfferBattleFrontier::
+	goto_if_ge VAR_TOTAL_BADGES, 32, OlivineCity_EventScript_OfferWorldChampionship
+OlivineCity_EventScript_OfferBattleFrontierPrompt::
 	msgbox OlivineCity_Text_SailToFrontierPrompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, OlivineCity_EventScript_SailToFrontier
 	goto OlivineCity_EventScript_AskFerryDestination
+
+OlivineCity_EventScript_OfferWorldChampionship::
+	msgbox OlivineCity_Text_BoardSSAnneChampionshipPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, OlivineCity_EventScript_SailToSSAnneChampionship
+	goto OlivineCity_EventScript_OfferBattleFrontierPrompt
+
+OlivineCity_EventScript_SailToSSAnneChampionship::
+	setvar VAR_SS_ANNE_CHAMPIONSHIP_STAGE, 0
+	msgbox OlivineCity_Text_SailorDepartChampionship, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	warp MAP_SS_TIDAL_LOWER_DECK, 8, 6
+	waitstate
+	release
+	end
 
 OlivineCity_EventScript_SailToFrontier::
 	msgbox OlivineCity_Text_BattleFrontierItIs, MSGBOX_YESNO
@@ -188,4 +205,15 @@ OlivineCity_Text_AutoNPC2:
 	.string "Jasmine cares deeply for every\n"
 	.string "Pokémon, and her Steel types shine\p"
 	.string "like beacons.$"
+
+OlivineCity_Text_BoardSSAnneChampionshipPrompt:
+	.string "Incredible! You hold all 32 GYM\n"
+	.string "BADGES across all four regions!\p"
+	.string "Would you like to board the S.S.\n"
+	.string "ANNE WORLD CHAMPIONSHIP luxury\p"
+	.string "liner?$"
+
+OlivineCity_Text_SailorDepartChampionship:
+	.string "All aboard for the S.S. ANNE WORLD\n"
+	.string "CHAMPIONSHIP Grand Ballroom!$"
 

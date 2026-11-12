@@ -53,6 +53,16 @@ MahoganyTown_Gym_EventScript_GymStatuePostVictory::
 	msgbox MahoganyTown_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+MahoganyTown_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_MT_PYRE_2, MahoganyTown_Gym_Text_GymTrainer1Intro, MahoganyTown_Gym_Text_GymTrainer1Defeat
+	msgbox MahoganyTown_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MahoganyTown_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, MahoganyTown_Gym_Text_GymTrainer2Intro, MahoganyTown_Gym_Text_GymTrainer2Defeat
+	msgbox MahoganyTown_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 MahoganyTown_Gym_Text_PryceIntro:
 	.string "PRYCE: Welcome to the MAHOGANY\n"
 	.string "TOWN GYM!\p"
@@ -110,4 +120,29 @@ MahoganyTown_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: PRYCE\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+MahoganyTown_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "PRYCE, you must pass my ICE-type\p"
+	.string "trial!$"
+
+MahoganyTown_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Glacier formation\n"
+	.string "couldn't hold you back!$"
+
+MahoganyTown_Gym_Text_GymTrainer1PostBattle:
+	.string "PRYCE has honed ICE-type mastery\n"
+	.string "far beyond mine. Stay sharp!$"
+
+MahoganyTown_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from PRYCE! Let's\n"
+	.string "see how you handle true ICE power!$"
+
+MahoganyTown_Gym_Text_GymTrainer2Defeat:
+	.string "Your Frost counter-strategy broke\n"
+	.string "right through my defense!$"
+
+MahoganyTown_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! PRYCE is waiting at\n"
+	.string "the back of the Gym!$"
 

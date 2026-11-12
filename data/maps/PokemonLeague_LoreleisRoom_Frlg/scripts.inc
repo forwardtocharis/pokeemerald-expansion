@@ -50,6 +50,8 @@ PokemonLeague_LoreleisRoom_EventScript_EnterRoom::
 PokemonLeague_LoreleisRoom_EventScript_Lorelei::
 	lock
 	faceplayer
+	goto_if_eq VAR_CURRENT_REGION, 2, PokemonLeague_LoreleisRoom_EventScript_Will
+	goto_if_eq VAR_CURRENT_REGION, 3, PokemonLeague_LoreleisRoom_EventScript_Aaron
 	famechecker FAMECHECKER_LORELEI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	goto_if_set FLAG_DEFEATED_LORELEI, PokemonLeague_LoreleisRoom_EventScript_PostBattle
 	famechecker FAMECHECKER_LORELEI, 0
@@ -62,6 +64,42 @@ PokemonLeague_LoreleisRoom_EventScript_Lorelei::
 	call_if_set FLAG_IS_CHAMPION, PokemonLeague_LoreleisRoom_EventScript_Rematch
 	clearflag FLAG_TEMP_5
 	goto PokemonLeague_LoreleisRoom_EventScript_DefeatedLorelei
+	end
+
+PokemonLeague_LoreleisRoom_EventScript_Will::
+	goto_if_set FLAG_DEFEATED_LORELEI, PokemonLeague_LoreleisRoom_EventScript_WillPostBattle
+	msgbox PokemonLeague_LoreleisRoom_Text_WillIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_WILL, PokemonLeague_LoreleisRoom_Text_WillDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_LORELEI
+	call PokemonLeague_EventScript_OpenDoor
+	msgbox PokemonLeague_LoreleisRoom_Text_WillPostBattle
+	release
+	end
+
+PokemonLeague_LoreleisRoom_EventScript_WillPostBattle::
+	msgbox PokemonLeague_LoreleisRoom_Text_WillPostBattle
+	release
+	end
+
+PokemonLeague_LoreleisRoom_EventScript_Aaron::
+	goto_if_set FLAG_DEFEATED_LORELEI, PokemonLeague_LoreleisRoom_EventScript_AaronPostBattle
+	msgbox PokemonLeague_LoreleisRoom_Text_AaronIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_AARON, PokemonLeague_LoreleisRoom_Text_AaronDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_LORELEI
+	call PokemonLeague_EventScript_OpenDoor
+	msgbox PokemonLeague_LoreleisRoom_Text_AaronPostBattle
+	release
+	end
+
+PokemonLeague_LoreleisRoom_EventScript_AaronPostBattle::
+	msgbox PokemonLeague_LoreleisRoom_Text_AaronPostBattle
+	release
 	end
 
 PokemonLeague_LoreleisRoom_EventScript_Intro::
@@ -124,4 +162,45 @@ PokemonLeague_LoreleisRoom_Text_PostBattle::
 	.string "Go on ahead.\p"
 	.string "You only got a taste of the\n"
 	.string "POKéMON LEAGUE's power.$"
+
+PokemonLeague_LoreleisRoom_Text_WillIntro::
+	.string "Welcome to the JOHTO POKéMON LEAGUE,\n"
+	.string "{PLAYER}.\p"
+	.string "Allow me to introduce myself.\n"
+	.string "I am WILL of the ELITE FOUR.\p"
+	.string "I have trained all around the world,\n"
+	.string "making my PSYCHIC-type POKéMON\l"
+	.string "powerful.\p"
+	.string "Losing is not an option!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+PokemonLeague_LoreleisRoom_Text_WillDefeat::
+	.string "I… I can't…\n"
+	.string "believe it…$"
+
+PokemonLeague_LoreleisRoom_Text_WillPostBattle::
+	.string "Even though I was defeated, I won't\n"
+	.string "change my course.\p"
+	.string "Move on to the next room and experience\n"
+	.string "the true depth of the ELITE FOUR!$"
+
+PokemonLeague_LoreleisRoom_Text_AaronIntro::
+	.string "Hello! Welcome to the SINNOH\n"
+	.string "POKéMON LEAGUE!\p"
+	.string "I'm AARON of the ELITE FOUR!\p"
+	.string "I'm a huge fan of BUG-type POKéMON!\n"
+	.string "Bug POKéMON are nasty-mean, and yet\l"
+	.string "they're beautiful, too!\p"
+	.string "Let me take you on with my finest\n"
+	.string "BUG-type team!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+PokemonLeague_LoreleisRoom_Text_AaronDefeat::
+	.string "I lost with the most beautiful and\n"
+	.string "toughest BUG POKéMON…$"
+
+PokemonLeague_LoreleisRoom_Text_AaronPostBattle::
+	.string "We lost because I wasn't good\n"
+	.string "enough… That's it!\p"
+	.string "Go on to the next room! Three\n"
+	.string "stronger ELITE FOUR members await!$"
+
 

@@ -30,6 +30,13 @@ GoldenrodCity_Mart_Pokemart_Stock:
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_MOON_STONE
 	@gba-only
 	pokemartlistend
 

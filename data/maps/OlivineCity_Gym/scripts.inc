@@ -53,6 +53,16 @@ OlivineCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox OlivineCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+OlivineCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_1, OlivineCity_Gym_Text_GymTrainer1Intro, OlivineCity_Gym_Text_GymTrainer1Defeat
+	msgbox OlivineCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+OlivineCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_MT_PYRE_1, OlivineCity_Gym_Text_GymTrainer2Intro, OlivineCity_Gym_Text_GymTrainer2Defeat
+	msgbox OlivineCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 OlivineCity_Gym_Text_JasmineIntro:
 	.string "JASMINE: Welcome to the OLIVINE\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,31 @@ OlivineCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: JASMINE\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+OlivineCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "JASMINE, you must pass my STEEL-\p"
+	.string "type trial!$"
+
+OlivineCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Mineral formation\n"
+	.string "couldn't hold you back!$"
+
+OlivineCity_Gym_Text_GymTrainer1PostBattle:
+	.string "JASMINE has honed STEEL-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+OlivineCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from JASMINE!\n"
+	.string "Let's see how you handle true\p"
+	.string "STEEL power!$"
+
+OlivineCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Iron counter-strategy broke\n"
+	.string "right through my defense!$"
+
+OlivineCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! JASMINE is waiting at\n"
+	.string "the back of the Gym!$"
 

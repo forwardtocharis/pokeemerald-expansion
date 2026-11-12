@@ -53,6 +53,16 @@ VioletCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox VioletCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+VioletCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_4, VioletCity_Gym_Text_GymTrainer1Intro, VioletCity_Gym_Text_GymTrainer1Defeat
+	msgbox VioletCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VioletCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_1, VioletCity_Gym_Text_GymTrainer2Intro, VioletCity_Gym_Text_GymTrainer2Defeat
+	msgbox VioletCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 VioletCity_Gym_Text_FalknerIntro:
 	.string "FALKNER: Welcome to the VIOLET\n"
 	.string "CITY GYM!\p"
@@ -112,4 +122,31 @@ VioletCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: FALKNER\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+VioletCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "FALKNER, you must pass my FLYING-\p"
+	.string "type trial!$"
+
+VioletCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Wind formation\n"
+	.string "couldn't hold you back!$"
+
+VioletCity_Gym_Text_GymTrainer1PostBattle:
+	.string "FALKNER has honed FLYING-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+VioletCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from FALKNER!\n"
+	.string "Let's see how you handle true\p"
+	.string "FLYING power!$"
+
+VioletCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Zephyr counter-strategy broke\n"
+	.string "right through my defense!$"
+
+VioletCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! FALKNER is waiting at\n"
+	.string "the back of the Gym!$"
 

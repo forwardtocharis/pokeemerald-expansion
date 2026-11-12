@@ -53,6 +53,16 @@ BlackthornCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox BlackthornCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+BlackthornCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, BlackthornCity_Gym_Text_GymTrainer1Intro, BlackthornCity_Gym_Text_GymTrainer1Defeat
+	msgbox BlackthornCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+BlackthornCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, BlackthornCity_Gym_Text_GymTrainer2Intro, BlackthornCity_Gym_Text_GymTrainer2Defeat
+	msgbox BlackthornCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 BlackthornCity_Gym_Text_ClairIntro:
 	.string "CLAIR: Welcome to the BLACKTHORN\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,31 @@ BlackthornCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: CLAIR\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+BlackthornCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "CLAIR, you must pass my DRAGON-\p"
+	.string "type trial!$"
+
+BlackthornCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Rising formation\n"
+	.string "couldn't hold you back!$"
+
+BlackthornCity_Gym_Text_GymTrainer1PostBattle:
+	.string "CLAIR has honed DRAGON-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+BlackthornCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from CLAIR! Let's\n"
+	.string "see how you handle true DRAGON\p"
+	.string "power!$"
+
+BlackthornCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Fang counter-strategy broke\n"
+	.string "right through my defense!$"
+
+BlackthornCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! CLAIR is waiting at\n"
+	.string "the back of the Gym!$"
 

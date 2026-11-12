@@ -7,9 +7,12 @@ PokemonLeague_ChampionsRoom_Frlg_MapScripts::
 PokemonLeague_ChampionsRoom_OnResume::
 	setvar VAR_0x8004, 4
 	call PokemonLeague_EventScript_DoLightingEffect
+	goto_if_eq VAR_CURRENT_REGION, 2, PokemonLeague_ChampionsRoom_OnResumeEnd
+	goto_if_eq VAR_CURRENT_REGION, 3, PokemonLeague_ChampionsRoom_OnResumeEnd
 	call_if_eq VAR_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerSquirtle
 	call_if_eq VAR_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerBulbasaur
 	call_if_eq VAR_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerCharmander
+PokemonLeague_ChampionsRoom_OnResumeEnd::
 	end
 
 PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerSquirtle::
@@ -50,6 +53,8 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerEnter
 	waitmovement 0
 	delay 20
+	goto_if_eq VAR_CURRENT_REGION, 2, PokemonLeague_ChampionsRoom_EventScript_JohtoChampionLance
+	goto_if_eq VAR_CURRENT_REGION, 3, PokemonLeague_ChampionsRoom_EventScript_SinnohChampionCynthia
 	call_if_unset FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_Intro
 	call_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_RematchIntro
 	setflag FLAG_TEMP_3
@@ -90,6 +95,58 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	waitmovement 0
 	setvar VAR_TEMP_1, 1
 	warp MAP_POKEMON_LEAGUE_HALL_OF_FAME, 5, 12
+	waitstate
+	releaseall
+	end
+
+PokemonLeague_ChampionsRoom_EventScript_JohtoChampionLance::
+	msgbox PokemonLeague_ChampionsRoom_Text_JohtoLanceIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	savebgm MUS_VICTORY_GYM_LEADER
+	trainerbattle_no_intro TRAINER_CHAMPION_LANCE_REMATCH, PokemonLeague_ChampionsRoom_Text_JohtoLanceDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_CHAMP
+	setflag FLAG_DEFEATED_JOHTO_ELITE_FOUR
+	special HealPlayerParty
+	playfanfare MUS_OBTAIN_BADGE
+	msgbox PokemonLeague_ChampionsRoom_Text_JohtoLancePostBattle
+	waitfanfare
+	closemessage
+	clearflag FLAG_DEFEATED_LORELEI
+	clearflag FLAG_DEFEATED_BRUNO
+	clearflag FLAG_DEFEATED_AGATHA
+	clearflag FLAG_DEFEATED_LANCE
+	clearflag FLAG_DEFEATED_CHAMP
+	setvar VAR_MAP_SCENE_POKEMON_LEAGUE, 0
+	setvar VAR_TEMP_1, 1
+	warp MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F, 8, 4
+	waitstate
+	releaseall
+	end
+
+PokemonLeague_ChampionsRoom_EventScript_SinnohChampionCynthia::
+	msgbox PokemonLeague_ChampionsRoom_Text_SinnohCynthiaIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	savebgm MUS_VICTORY_GYM_LEADER
+	trainerbattle_no_intro TRAINER_CHAMPION_CYNTHIA_REMATCH, PokemonLeague_ChampionsRoom_Text_SinnohCynthiaDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_CHAMP
+	setflag FLAG_DEFEATED_SINNOH_ELITE_FOUR
+	special HealPlayerParty
+	playfanfare MUS_OBTAIN_BADGE
+	msgbox PokemonLeague_ChampionsRoom_Text_SinnohCynthiaPostBattle
+	waitfanfare
+	closemessage
+	clearflag FLAG_DEFEATED_LORELEI
+	clearflag FLAG_DEFEATED_BRUNO
+	clearflag FLAG_DEFEATED_AGATHA
+	clearflag FLAG_DEFEATED_LANCE
+	clearflag FLAG_DEFEATED_CHAMP
+	setvar VAR_MAP_SCENE_POKEMON_LEAGUE, 0
+	setvar VAR_TEMP_1, 1
+	warp MAP_SUNYSHORE_CITY, 20, 15
 	waitstate
 	releaseall
 	end
@@ -324,4 +381,54 @@ PokemonLeague_ChampionsRoom_Text_OakPlayerComeWithMe::
 	.string "POKéMON is marvelous.\p"
 	.string "{PLAYER}!\n"
 	.string "Come with me!$"
+
+PokemonLeague_ChampionsRoom_Text_JohtoLanceIntro::
+	.string "LANCE: I've been waiting for you,\n"
+	.string "{PLAYER}!\p"
+	.string "I knew that you, with your skills,\n"
+	.string "would eventually reach me here\l"
+	.string "at the pinnacle of the JOHTO LEAGUE.\p"
+	.string "As the most powerful TRAINER and\n"
+	.string "as the POKéMON LEAGUE CHAMPION,\l"
+	.string "I, LANCE the dragon master,\l"
+	.string "accept your challenge!$"
+
+PokemonLeague_ChampionsRoom_Text_JohtoLanceDefeat::
+	.string "…It's over.\n"
+	.string "But it's an odd feeling.\p"
+	.string "I'm not angry that I lost. In fact,\n"
+	.string "I feel happy to witness the rise\l"
+	.string "of a great new JOHTO CHAMPION!$"
+
+PokemonLeague_ChampionsRoom_Text_JohtoLancePostBattle::
+	.string "LANCE: Congratulations, {PLAYER}!\n"
+	.string "You and your POKéMON have conquered\l"
+	.string "the JOHTO POKéMON LEAGUE!\p"
+	.string "Your achievement is now immortalized\n"
+	.string "in the JOHTO HALL OF FAME!$"
+
+PokemonLeague_ChampionsRoom_Text_SinnohCynthiaIntro::
+	.string "CYNTHIA: Welcome to the summit of\n"
+	.string "the SINNOH POKéMON LEAGUE, {PLAYER}.\p"
+	.string "By overcoming AARON, BERTHA, FLINT,\n"
+	.string "and LUCIAN, you and your POKéMON\l"
+	.string "have grown remarkably strong.\p"
+	.string "Before me, I see a bond that cannot\n"
+	.string "be broken.\p"
+	.string "As the SINNOH POKéMON LEAGUE\n"
+	.string "CHAMPION, I will face you with\l"
+	.string "everything I have!$"
+
+PokemonLeague_ChampionsRoom_Text_SinnohCynthiaDefeat::
+	.string "Just moments ago, you were the\n"
+	.string "challenger…\p"
+	.string "And now, you are the new SINNOH\n"
+	.string "LEAGUE CHAMPION!$"
+
+PokemonLeague_ChampionsRoom_Text_SinnohCynthiaPostBattle::
+	.string "CYNTHIA: That was an unforgettable\n"
+	.string "battle, {PLAYER}!\p"
+	.string "You and your partners are officially\n"
+	.string "inducted as SINNOH CHAMPIONS!$"
+
 

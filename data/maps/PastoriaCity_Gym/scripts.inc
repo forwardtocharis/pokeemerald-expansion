@@ -53,6 +53,16 @@ PastoriaCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox PastoriaCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+PastoriaCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_ALBERTO, PastoriaCity_Gym_Text_GymTrainer1Intro, PastoriaCity_Gym_Text_GymTrainer1Defeat
+	msgbox PastoriaCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PastoriaCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_ED, PastoriaCity_Gym_Text_GymTrainer2Intro, PastoriaCity_Gym_Text_GymTrainer2Defeat
+	msgbox PastoriaCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 PastoriaCity_Gym_Text_WakeIntro:
 	.string "CRASHER_WAKE: Welcome to the\n"
 	.string "PASTORIA CITY GYM!\p"
@@ -111,4 +121,30 @@ PastoriaCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: CRASHER_WAKE\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+PastoriaCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "WAKE, you must pass my WATER-type\p"
+	.string "trial!$"
+
+PastoriaCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Fen formation\n"
+	.string "couldn't hold you back!$"
+
+PastoriaCity_Gym_Text_GymTrainer1PostBattle:
+	.string "WAKE has honed WATER-type mastery\n"
+	.string "far beyond mine. Stay sharp!$"
+
+PastoriaCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from WAKE! Let's\n"
+	.string "see how you handle true WATER\p"
+	.string "power!$"
+
+PastoriaCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Torrent counter-strategy\n"
+	.string "broke right through my defense!$"
+
+PastoriaCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! WAKE is waiting at\n"
+	.string "the back of the Gym!$"
 

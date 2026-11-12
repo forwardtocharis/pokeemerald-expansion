@@ -866,7 +866,7 @@
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
 #define TRAINERS_COUNT_EMERALD     (855 + TRAINERS_MULTI_REGION_COUNT)
-#define MAX_TRAINERS_COUNT_EMERALD (864 + TRAINERS_MULTI_REGION_COUNT)
+#define MAX_TRAINERS_COUNT_EMERALD 910
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

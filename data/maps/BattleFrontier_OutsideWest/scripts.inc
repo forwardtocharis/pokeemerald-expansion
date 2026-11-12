@@ -121,6 +121,36 @@ BattleFrontier_OutsideWest_EventScript_CancelFerrySelect::
 	release
 	end
 
+BattleFrontier_OutsideWest_EventScript_CompetitivePrepVendor::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart BattleFrontier_OutsideWest_Pokemart_CompetitivePrep
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+BattleFrontier_OutsideWest_Pokemart_CompetitivePrep:
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_BOTTLE_CAP
+	.2byte ITEM_ADAMANT_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_TIMID_MINT
+	.2byte ITEM_BOLD_MINT
+	.2byte ITEM_CAREFUL_MINT
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_IRON
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_ZINC
+	.2byte ITEM_CARBOS
+	.2byte ITEM_HP_UP
+	.2byte ITEM_LINKING_CORD
+	pokemartlistend
+
 BattleFrontier_OutsideWest_EventScript_BattleDomeSign::
 	msgbox BattleFrontier_OutsideWest_Text_BattleDomeSign, MSGBOX_SIGN
 	end

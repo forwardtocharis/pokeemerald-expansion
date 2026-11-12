@@ -53,6 +53,16 @@ GoldenrodCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox GoldenrodCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+GoldenrodCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_ALBERTO, GoldenrodCity_Gym_Text_GymTrainer1Intro, GoldenrodCity_Gym_Text_GymTrainer1Defeat
+	msgbox GoldenrodCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+GoldenrodCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_DECLAN, GoldenrodCity_Gym_Text_GymTrainer2Intro, GoldenrodCity_Gym_Text_GymTrainer2Defeat
+	msgbox GoldenrodCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 GoldenrodCity_Gym_Text_WhitneyIntro:
 	.string "WHITNEY: Welcome to the GOLDENROD\n"
 	.string "CITY GYM!\p"
@@ -112,4 +122,31 @@ GoldenrodCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: WHITNEY\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+GoldenrodCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "WHITNEY, you must pass my NORMAL-\p"
+	.string "type trial!$"
+
+GoldenrodCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Plain formation\n"
+	.string "couldn't hold you back!$"
+
+GoldenrodCity_Gym_Text_GymTrainer1PostBattle:
+	.string "WHITNEY has honed NORMAL-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+GoldenrodCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from WHITNEY!\n"
+	.string "Let's see how you handle true\p"
+	.string "NORMAL power!$"
+
+GoldenrodCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Metronome counter-strategy\n"
+	.string "broke right through my defense!$"
+
+GoldenrodCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! WHITNEY is waiting at\n"
+	.string "the back of the Gym!$"
 

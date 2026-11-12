@@ -17,32 +17,49 @@ Route209_EventScript_Trainer2::
 	msgbox Route209_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route209_EventScript_Trainer3::
+	trainerbattle_single TRAINER_ROSE_1, Route209_Text_Trainer3Intro, Route209_Text_Trainer3Defeat
+	msgbox Route209_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route209_Text_Sign1:
 	.string "ROUTE 209\n"
 	.string "HEARTHOME CITY - SOLACEON TOWN$"
 
 Route209_Text_Trainer1Intro:
-	.string "Our eyes met on Route 209! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route209! My Pokémon\n"
+	.string "are itching for a match!$"
 
 Route209_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route209_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route209\n"
+	.string "always turns up new surprises!$"
 
 Route209_Text_Trainer2Intro:
-	.string "Our eyes met on Route 209! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route209 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route209_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route209_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route209_Text_Trainer3Intro:
+	.string "BUG CATCHER: Travelling across\n"
+	.string "Route209? Show me your team's\p"
+	.string "synergy!$"
+
+Route209_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route209_Text_Trainer3Post:
+	.string "Check out the rare specimens I\n"
+	.string "caught along this route!$"
 

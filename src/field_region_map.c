@@ -10,6 +10,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "region_map.h"
+#include "multi_region.h"
 #include "sound.h"
 #include "strings.h"
 #include "text.h"
@@ -231,9 +232,16 @@ static void PrintRegionMapSecName(void)
 static void PrintTitleWindowText(void)
 {
     static const u8 FlyPromptText[] = _("{R_BUTTON} FLY");
+    static const u8 sText_Johto[]  = _("JOHTO");
+    static const u8 sText_Sinnoh[] = _("SINNOH");
     const u8 *region;
-    if (IS_FRLG)
+    u8 activeRegion = GetActiveRegion();
+    if (activeRegion == 1)
         region = gText_Kanto;
+    else if (activeRegion == 2)
+        region = sText_Johto;
+    else if (activeRegion == 3)
+        region = sText_Sinnoh;
     else
         region = gText_Hoenn;
     u32 hoennOffset = GetStringCenterAlignXOffset(FONT_NORMAL, region, 0x38);

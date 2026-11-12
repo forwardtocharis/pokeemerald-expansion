@@ -53,6 +53,16 @@ CianwoodCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox CianwoodCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+CianwoodCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, CianwoodCity_Gym_Text_GymTrainer1Intro, CianwoodCity_Gym_Text_GymTrainer1Defeat
+	msgbox CianwoodCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CianwoodCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_MUSEUM_1, CianwoodCity_Gym_Text_GymTrainer2Intro, CianwoodCity_Gym_Text_GymTrainer2Defeat
+	msgbox CianwoodCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 CianwoodCity_Gym_Text_ChuckIntro:
 	.string "CHUCK: Welcome to the CIANWOOD\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,31 @@ CianwoodCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: CHUCK\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+CianwoodCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "CHUCK, you must pass my FIGHTING-\p"
+	.string "type trial!$"
+
+CianwoodCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Storm formation\n"
+	.string "couldn't hold you back!$"
+
+CianwoodCity_Gym_Text_GymTrainer1PostBattle:
+	.string "CHUCK has honed FIGHTING-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+CianwoodCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from CHUCK! Let's\n"
+	.string "see how you handle true FIGHTING\p"
+	.string "power!$"
+
+CianwoodCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Dojo counter-strategy broke\n"
+	.string "right through my defense!$"
+
+CianwoodCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! CHUCK is waiting at\n"
+	.string "the back of the Gym!$"
 

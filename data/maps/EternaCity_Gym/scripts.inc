@@ -53,6 +53,16 @@ EternaCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox EternaCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+EternaCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_1, EternaCity_Gym_Text_GymTrainer1Intro, EternaCity_Gym_Text_GymTrainer1Defeat
+	msgbox EternaCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+EternaCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_2, EternaCity_Gym_Text_GymTrainer2Intro, EternaCity_Gym_Text_GymTrainer2Defeat
+	msgbox EternaCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 EternaCity_Gym_Text_GardeniaIntro:
 	.string "GARDENIA: Welcome to the ETERNA\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,31 @@ EternaCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: GARDENIA\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+EternaCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "GARDENIA, you must pass my GRASS-\p"
+	.string "type trial!$"
+
+EternaCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Forest formation\n"
+	.string "couldn't hold you back!$"
+
+EternaCity_Gym_Text_GymTrainer1PostBattle:
+	.string "GARDENIA has honed GRASS-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+EternaCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from GARDENIA!\n"
+	.string "Let's see how you handle true\p"
+	.string "GRASS power!$"
+
+EternaCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Bloom counter-strategy broke\n"
+	.string "right through my defense!$"
+
+EternaCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! GARDENIA is waiting\n"
+	.string "at the back of the Gym!$"
 

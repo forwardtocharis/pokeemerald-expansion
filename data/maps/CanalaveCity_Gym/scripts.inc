@@ -53,6 +53,16 @@ CanalaveCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox CanalaveCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+CanalaveCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, CanalaveCity_Gym_Text_GymTrainer1Intro, CanalaveCity_Gym_Text_GymTrainer1Defeat
+	msgbox CanalaveCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CanalaveCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, CanalaveCity_Gym_Text_GymTrainer2Intro, CanalaveCity_Gym_Text_GymTrainer2Defeat
+	msgbox CanalaveCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 CanalaveCity_Gym_Text_ByronIntro:
 	.string "BYRON: Welcome to the CANALAVE\n"
 	.string "CITY GYM!\p"
@@ -110,4 +120,30 @@ CanalaveCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: BYRON\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+CanalaveCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "BYRON, you must pass my STEEL-type\p"
+	.string "trial!$"
+
+CanalaveCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Mine formation\n"
+	.string "couldn't hold you back!$"
+
+CanalaveCity_Gym_Text_GymTrainer1PostBattle:
+	.string "BYRON has honed STEEL-type mastery\n"
+	.string "far beyond mine. Stay sharp!$"
+
+CanalaveCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from BYRON! Let's\n"
+	.string "see how you handle true STEEL\p"
+	.string "power!$"
+
+CanalaveCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Bastion counter-strategy\n"
+	.string "broke right through my defense!$"
+
+CanalaveCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! BYRON is waiting at\n"
+	.string "the back of the Gym!$"
 

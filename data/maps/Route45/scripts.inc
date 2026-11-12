@@ -87,6 +87,11 @@ Route45_EventScript_Trainer2::
 	msgbox Route45_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route45_EventScript_Trainer3::
+	trainerbattle_single TRAINER_DEAN, Route45_Text_Trainer3Intro, Route45_Text_Trainer3Defeat
+	msgbox Route45_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route45_Text_Sign1:
 	.string "ROUTE 45\n"
@@ -106,26 +111,37 @@ Route45_Text_RedPostgamePost:
 	.string "... ... ...$"
 
 Route45_Text_Trainer1Intro:
-	.string "Our eyes met on Route 45! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route45! My Pokémon are\n"
+	.string "itching for a match!$"
 
 Route45_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route45_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route45\n"
+	.string "always turns up new surprises!$"
 
 Route45_Text_Trainer2Intro:
-	.string "Our eyes met on Route 45! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route45 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route45_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route45_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route45_Text_Trainer3Intro:
+	.string "LASS: Travelling across Route45?\n"
+	.string "Show me your team's synergy!$"
+
+Route45_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route45_Text_Trainer3Post:
+	.string "My Pokémon and I have been\n"
+	.string "practicing combos all morning!$"
 

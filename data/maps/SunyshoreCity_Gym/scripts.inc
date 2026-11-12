@@ -53,6 +53,16 @@ SunyshoreCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox SunyshoreCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+SunyshoreCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_1, SunyshoreCity_Gym_Text_GymTrainer1Intro, SunyshoreCity_Gym_Text_GymTrainer1Defeat
+	msgbox SunyshoreCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SunyshoreCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_MT_PYRE_1, SunyshoreCity_Gym_Text_GymTrainer2Intro, SunyshoreCity_Gym_Text_GymTrainer2Defeat
+	msgbox SunyshoreCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 SunyshoreCity_Gym_Text_VolknerIntro:
 	.string "VOLKNER: Welcome to the SUNYSHORE\n"
 	.string "CITY GYM!\p"
@@ -112,4 +122,31 @@ SunyshoreCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: VOLKNER\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+SunyshoreCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "VOLKNER, you must pass my\p"
+	.string "ELECTRIC-type trial!$"
+
+SunyshoreCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Beacon formation\n"
+	.string "couldn't hold you back!$"
+
+SunyshoreCity_Gym_Text_GymTrainer1PostBattle:
+	.string "VOLKNER has honed ELECTRIC-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+SunyshoreCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from VOLKNER!\n"
+	.string "Let's see how you handle true\p"
+	.string "ELECTRIC power!$"
+
+SunyshoreCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Voltage counter-strategy\n"
+	.string "broke right through my defense!$"
+
+SunyshoreCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! VOLKNER is waiting at\n"
+	.string "the back of the Gym!$"
 

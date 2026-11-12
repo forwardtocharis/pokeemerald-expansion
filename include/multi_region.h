@@ -2,6 +2,7 @@
 #define GUARD_MULTI_REGION_H
 
 #include "global.h"
+#include "pokemon.h"
 #include "constants/opponents.h"
 
 #define STARTING_REGION_HOENN   0
@@ -23,11 +24,15 @@ u16 GetRegionBadgeCount(u8 regionId);
 u8 GetActiveRegion(void);
 void SetActiveRegion(u8 regionId);
 u8 GetScaledTrainerMonLevel(u8 baseLevel);
+u8 GetCurrentRegionLevelCap(void);
 void SetStartingRegionChoice(u8 region);
 u8 GetStartingRegionChoice(void);
 
 // Daily rematch cooldown
 bool32 HasRematchedToday(u16 trainerId);
 void SetRematchedToday(u16 trainerId);
+
+// Grand Champion Red procedural Level 100 team generator (3 Legendaries + 3 Aces)
+void CreateRedGrandChampionParty(struct Pokemon *party);
 
 #endif // GUARD_MULTI_REGION_H

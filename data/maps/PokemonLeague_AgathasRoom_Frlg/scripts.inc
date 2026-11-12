@@ -45,6 +45,8 @@ PokemonLeague_AgathasRoom_EventScript_EnterRoom::
 PokemonLeague_AgathasRoom_EventScript_Agatha::
 	lock
 	faceplayer
+	goto_if_eq VAR_CURRENT_REGION, 2, PokemonLeague_AgathasRoom_EventScript_Silver
+	goto_if_eq VAR_CURRENT_REGION, 3, PokemonLeague_AgathasRoom_EventScript_Flint
 	famechecker FAMECHECKER_AGATHA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	goto_if_set FLAG_DEFEATED_AGATHA, PokemonLeague_AgathasRoom_EventScript_PostBattle
 	famechecker FAMECHECKER_AGATHA, 0
@@ -58,6 +60,42 @@ PokemonLeague_AgathasRoom_EventScript_Agatha::
 	call_if_set FLAG_IS_CHAMPION, PokemonLeague_AgathasRoom_EventScript_Rematch
 	clearflag FLAG_TEMP_5
 	goto PokemonLeague_AgathasRoom_EventScript_DefeatedAgatha
+	end
+
+PokemonLeague_AgathasRoom_EventScript_Silver::
+	goto_if_set FLAG_DEFEATED_AGATHA, PokemonLeague_AgathasRoom_EventScript_SilverPostBattle
+	msgbox PokemonLeague_AgathasRoom_Text_SilverIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_SILVER, PokemonLeague_AgathasRoom_Text_SilverDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_AGATHA
+	call PokemonLeague_EventScript_OpenDoor
+	msgbox PokemonLeague_AgathasRoom_Text_SilverPostBattle
+	release
+	end
+
+PokemonLeague_AgathasRoom_EventScript_SilverPostBattle::
+	msgbox PokemonLeague_AgathasRoom_Text_SilverPostBattle
+	release
+	end
+
+PokemonLeague_AgathasRoom_EventScript_Flint::
+	goto_if_set FLAG_DEFEATED_AGATHA, PokemonLeague_AgathasRoom_EventScript_FlintPostBattle
+	msgbox PokemonLeague_AgathasRoom_Text_FlintIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_FLINT, PokemonLeague_AgathasRoom_Text_FlintDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_AGATHA
+	call PokemonLeague_EventScript_OpenDoor
+	msgbox PokemonLeague_AgathasRoom_Text_FlintPostBattle
+	release
+	end
+
+PokemonLeague_AgathasRoom_EventScript_FlintPostBattle::
+	msgbox PokemonLeague_AgathasRoom_Text_FlintPostBattle
+	release
 	end
 
 PokemonLeague_AgathasRoom_EventScript_Intro::
@@ -128,4 +166,45 @@ PokemonLeague_AgathasRoom_Text_PostBattle::
 	.string "you now.\p"
 	.string "I have nothing else to say.\n"
 	.string "Run along now, child!$"
+
+PokemonLeague_AgathasRoom_Text_SilverIntro::
+	.string "SILVER: …Hmph. So you made it.\p"
+	.string "I used to think strength alone\n"
+	.string "was all that mattered.\p"
+	.string "LANCE and my POKéMON taught me\n"
+	.string "what real trust looks like, and now\l"
+	.string "I stand here in the JOHTO ELITE FOUR!\p"
+	.string "Show me everything you've got,\n"
+	.string "{PLAYER}!{PLAY_BGM}{MUS_RG_ENCOUNTER_RIVAL}$"
+
+PokemonLeague_AgathasRoom_Text_SilverDefeat::
+	.string "…Tch! Even with my POKéMON\n"
+	.string "trusting me completely, you still\l"
+	.string "came out on top!$"
+
+PokemonLeague_AgathasRoom_Text_SilverPostBattle::
+	.string "SILVER: Don't get cocky.\n"
+	.string "I'm going to keep training with\l"
+	.string "my partners until we're unbeatable.\p"
+	.string "Go on. KAREN and LANCE are\n"
+	.string "waiting ahead.$"
+
+PokemonLeague_AgathasRoom_Text_FlintIntro::
+	.string "There you are! I'm FLINT of the\n"
+	.string "SINNOH ELITE FOUR!\p"
+	.string "You know how battles are heated?\n"
+	.string "I'm the guy who turns up the heat!\p"
+	.string "Let our burning spirits clash\n"
+	.string "at full blast!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+PokemonLeague_AgathasRoom_Text_FlintDefeat::
+	.string "…! Even my white-hot team\n"
+	.string "couldn't burn through your spirit!$"
+
+PokemonLeague_AgathasRoom_Text_FlintPostBattle::
+	.string "That was the best battle I've had\n"
+	.string "in ages!\p"
+	.string "Keep that fire burning and move on\n"
+	.string "to LUCIAN's room!$"
+
 

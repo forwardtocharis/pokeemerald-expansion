@@ -63,5 +63,57 @@
 #define FLAG_DEFEATED_SHAYMIN                    0x999 // [sinnoh] Defeated or caught Shaymin at Floaroma Meadow
 #define FLAG_DEFEATED_ARCEUS                     0x99a // [sinnoh] Defeated or caught Arceus at Hall of Origin
 #define FLAG_RECEIVED_MANAPHY_EGG                0x99b // [sinnoh] Received Fiore Ranger Manaphy Egg
+#define FLAG_ITEM_JOHTO_ROUTE29_POTION           0x99c // [johto] Overworld item ball: Potion on Route 29
+#define FLAG_ITEM_JOHTO_ROUTE30_ANTIDOTE         0x99d // [johto] Overworld item ball: Antidote on Route 30
+#define FLAG_ITEM_JOHTO_ROUTE31_SHARP_BEAK       0x99e // [johto] Overworld item ball: Sharp Beak on Route 31
+#define FLAG_ITEM_JOHTO_VIOLET_CITY_RARE_CANDY   0x99f // [johto] Overworld item ball: Rare Candy in Violet City
+#define FLAG_ITEM_JOHTO_ROUTE32_MIRACLE_SEED     0x9a0 // [johto] Overworld item ball: Miracle Seed on Route 32
+#define FLAG_ITEM_JOHTO_ROUTE33_SILVER_POWDER    0x9a1 // [johto] Overworld item ball: Silver Powder on Route 33
+#define FLAG_ITEM_JOHTO_AZALEA_TOWN_KINGS_ROCK   0x9a2 // [johto] Overworld item ball: King's Rock in Azalea Town
+#define FLAG_ITEM_JOHTO_ROUTE34_LEAF_STONE       0x9a3 // [johto] Overworld item ball: Leaf Stone on Route 34
+#define FLAG_ITEM_JOHTO_ROUTE35_SUN_STONE        0x9a4 // [johto] Overworld item ball: Sun Stone on Route 35
+#define FLAG_ITEM_JOHTO_ROUTE36_FIRE_STONE       0x9a5 // [johto] Overworld item ball: Fire Stone on Route 36
+#define FLAG_ITEM_JOHTO_ROUTE37_MAGNET           0x9a6 // [johto] Overworld item ball: Magnet on Route 37
+#define FLAG_ITEM_JOHTO_ECRUTEAK_CITY_MOON_STONE 0x9a7 // [johto] Overworld item ball: Moon Stone in Ecruteak City
+#define FLAG_ITEM_JOHTO_ROUTE38_THUNDER_STONE    0x493 // [johto] Overworld item ball: Thunder Stone on Route 38
+#define FLAG_ITEM_JOHTO_ROUTE39_METAL_COAT       0x494 // [johto] Overworld item ball: Metal Coat on Route 39
+#define FLAG_ITEM_JOHTO_OLIVINE_CITY_UP_GRADE    0x495 // [johto] Overworld item ball: Up-Grade in Olivine City
+#define FLAG_ITEM_JOHTO_ROUTE40_WATER_STONE      0x496 // [johto] Overworld item ball: Water Stone on Route 40
+#define FLAG_ITEM_JOHTO_ROUTE41_MYSTIC_WATER     0x497 // [johto] Overworld item ball: Mystic Water on Route 41
+#define FLAG_ITEM_JOHTO_CIANWOOD_CITY_TM01       0x498 // [johto] Overworld item ball: TM01 Focus Punch in Cianwood City
+#define FLAG_ITEM_JOHTO_ROUTE42_TM30             0x499 // [johto] Overworld item ball: TM30 Shadow Ball on Route 42
+#define FLAG_ITEM_JOHTO_ROUTE43_TM36             0x49a // [johto] Overworld item ball: TM36 Sludge Bomb on Route 43
+#define FLAG_ITEM_JOHTO_ROUTE44_NEVER_MELT_ICE   0x49b // [johto] Overworld item ball: Never-Melt Ice on Route 44
+#define FLAG_ITEM_JOHTO_BLACKTHORN_CITY_DRAGON_SCALE 0x49c // [johto] Overworld item ball: Dragon Scale in Blackthorn City
+#define FLAG_ITEM_JOHTO_ROUTE45_TM26             0x49d // [johto] Overworld item ball: TM26 Earthquake on Route 45
+#define FLAG_ITEM_JOHTO_ROUTE46_PP_UP            0x49e // [johto] Overworld item ball: PP Up on Route 46
+#define FLAG_ITEM_SINNOH_ROUTE201_SUPER_POTION   0x49f // [sinnoh] Overworld item ball: Super Potion on Route 201
+#define FLAG_ITEM_SINNOH_ROUTE202_OVAL_STONE     0x4a0 // [sinnoh] Overworld item ball: Oval Stone on Route 202
+#define FLAG_ITEM_SINNOH_ROUTE203_RAZOR_FANG     0x4a1 // [sinnoh] Overworld item ball: Razor Fang on Route 203
+#define FLAG_ITEM_SINNOH_OREBURGH_CITY_HARD_STONE 0x4a2 // [sinnoh] Overworld item ball: Hard Stone in Oreburgh City
+#define FLAG_ITEM_SINNOH_ROUTE204_SHINY_STONE    0x4a3 // [sinnoh] Overworld item ball: Shiny Stone on Route 204
+#define FLAG_ITEM_SINNOH_FLOAROMA_TOWN_DAWN_STONE 0x4a4 // [sinnoh] Overworld item ball: Dawn Stone in Floaroma Town
+#define FLAG_ITEM_SINNOH_ROUTE205_DUSK_STONE     0x4a5 // [sinnoh] Overworld item ball: Dusk Stone on Route 205
+#define FLAG_ITEM_SINNOH_ETERNA_CITY_TM19        0x4a6 // [sinnoh] Overworld item ball: TM19 Giga Drain in Eterna City
+#define FLAG_ITEM_SINNOH_ROUTE206_ELECTIRIZER    0x4a7 // [sinnoh] Overworld item ball: Electirizer on Route 206
+#define FLAG_ITEM_SINNOH_ROUTE207_MAGMARIZER     0x4a8 // [sinnoh] Overworld item ball: Magmarizer on Route 207
+#define FLAG_ITEM_SINNOH_ROUTE208_PROTECTOR      0x4a9 // [sinnoh] Overworld item ball: Protector on Route 208
+#define FLAG_ITEM_SINNOH_HEARTHOME_CITY_REAPER_CLOTH 0x4aa // [sinnoh] Overworld item ball: Reaper Cloth in Hearthome City
+#define FLAG_ITEM_SINNOH_ROUTE209_DUBIOUS_DISC   0x4ab // [sinnoh] Overworld item ball: Dubious Disc on Route 209
+#define FLAG_ITEM_SINNOH_SOLACEON_TOWN_RARE_CANDY 0x4ac // [sinnoh] Overworld item ball: Rare Candy in Solaceon Town
+#define FLAG_ITEM_SINNOH_ROUTE210_RAZOR_CLAW     0x4ad // [sinnoh] Overworld item ball: Razor Claw on Route 210
+#define FLAG_ITEM_SINNOH_ROUTE211_TM29           0x4ae // [sinnoh] Overworld item ball: TM29 Psychic on Route 211
+#define FLAG_ITEM_SINNOH_ROUTE212_LEFTOVERS      0x4af // [sinnoh] Overworld item ball: Leftovers on Route 212
+#define FLAG_ITEM_SINNOH_PASTORIA_CITY_MYSTIC_WATER 0x4b0 // [sinnoh] Overworld item ball: Mystic Water in Pastoria City
+#define FLAG_ITEM_SINNOH_ROUTE213_TM35           0x4b1 // [sinnoh] Overworld item ball: TM35 Flamethrower on Route 213
+#define FLAG_ITEM_SINNOH_ROUTE214_CHOICE_BAND    0x4b2 // [sinnoh] Overworld item ball: Choice Band on Route 214
+#define FLAG_ITEM_SINNOH_ROUTE215_TM31           0x4b3 // [sinnoh] Overworld item ball: TM31 Brick Break on Route 215
+#define FLAG_ITEM_SINNOH_ROUTE218_TM24           0x4b4 // [sinnoh] Overworld item ball: TM24 Thunderbolt on Route 218
+#define FLAG_ITEM_SINNOH_CANALAVE_CITY_SHELL_BELL 0x4b5 // [sinnoh] Overworld item ball: Shell Bell in Canalave City
+#define FLAG_ITEM_SINNOH_SNOWPOINT_CITY_TM13     0x4b6 // [sinnoh] Overworld item ball: TM13 Ice Beam in Snowpoint City
+#define FLAG_DEFEATED_JOHTO_ELITE_FOUR           0x4b7 // [johto] Defeated the Johto Elite Four & Champion Lance at Indigo Plateau
+#define FLAG_DEFEATED_SINNOH_ELITE_FOUR          0x4b8 // [sinnoh] Defeated the Sinnoh Elite Four & Champion Cynthia
+#define FLAG_WON_WORLD_CHAMPIONSHIP              0x4b9 // [system] Defeated all 4 Regional Champions and Grand Champion Red in the S.S. Anne World Championship
+#define FLAG_SYS_LEVEL_CAP_ENABLED               0x4ba // [system] Enables the optional per-region Gym/League level cap toggle
 
 #endif // GUARD_CONSTANTS_MULTI_REGION_FLAGS_H

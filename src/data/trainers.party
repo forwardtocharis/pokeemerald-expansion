@@ -17115,6 +17115,238 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aerial Ace
 - Earthquake
 
+=== TRAINER_ELITE_FOUR_WILL ===
+Name: WILL
+Class: Elite Four
+Pic: Psychic M
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Bronzong @ Leftovers
+Level: 70
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Trick Room
+- Gyro Ball
+- Psychic
+- Earthquake
+
+Jynx @ Focus Sash
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Lovely Kiss
+- Ice Beam
+- Psychic
+- Calm Mind
+
+Grumpig @ Sitrus Berry
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Power Gem
+- Calm Mind
+
+Slowbro @ Leftovers
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Psychic
+- Ice Beam
+- Slack Off
+
+Gardevoir @ Life Orb
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Dazzling Gleam
+- Thunderbolt
+- Calm Mind
+
+Xatu @ Lum Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Air Slash
+- Shadow Ball
+- Roost
+
+=== TRAINER_ELITE_FOUR_KOGA_JOHTO ===
+Name: KOGA
+Class: Elite Four
+Pic: Leader Koga Frlg
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Skuntank @ Black Sludge
+Level: 71
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Poison Jab
+- Crunch
+- Flamethrower
+- Sucker Punch
+
+Venomoth @ Focus Sash
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quiver Dance
+- Bug Buzz
+- Sludge Bomb
+- Sleep Powder
+
+Muk @ Leftovers
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gunk Shot
+- Shadow Sneak
+- Ice Punch
+- Curse
+
+Swalot @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sludge Bomb
+- Ice Beam
+- Earthquake
+- Toxic
+
+Toxicroak @ Life Orb
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Gunk Shot
+- Sucker Punch
+- Swords Dance
+
+Crobat @ Lum Berry
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Roost
+
+=== TRAINER_ELITE_FOUR_SILVER ===
+Name: SILVER
+Class: Elite Four
+Pic: Cooltrainer M
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Weavile @ Focus Sash
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Ice Punch
+- Ice Shard
+- Swords Dance
+
+Gengar @ Life Orb
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Sludge Bomb
+- Thunderbolt
+- Destiny Bond
+
+Alakazam @ Twisted Spoon
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Calm Mind
+
+Crobat @ Sharp Beak
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Cross Poison
+- U-turn
+- Confuse Ray
+
+Tyranitar @ Leftovers
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Feraligatr @ Lum Berry
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Waterfall
+- Ice Punch
+- Crunch
+- Dragon Dance
+
+=== TRAINER_ELITE_FOUR_KAREN ===
+Name: KAREN
+Class: Elite Four
+Pic: Cooltrainer F
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Umbreon @ Leftovers
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Foul Play
+- Moonlight
+- Toxic
+- Confuse Ray
+
+Weavile @ Focus Sash
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Ice Punch
+- Ice Shard
+- Low Kick
+
+Spiritomb @ Sitrus Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Shadow Ball
+- Will-O-Wisp
+- Sucker Punch
+
+Honchkrow @ Scope Lens
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Sucker Punch
+- Night Slash
+- Superpower
+
+Gengar @ Colbur Berry
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shadow Ball
+- Sludge Bomb
+- Focus Blast
+- Destiny Bond
+
+Houndoom @ Life Orb
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dark Pulse
+- Flamethrower
+- Sludge Bomb
+- Nasty Plot
+
 === TRAINER_LEADER_FALKNER ===
 Name: FALKNER
 Class: Leader
@@ -18027,6 +18259,238 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Claw
 - Swords Dance
 - Rock Slide
+
+=== TRAINER_ELITE_FOUR_AARON ===
+Name: AARON
+Class: Elite Four
+Pic: Bug Maniac
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Yanmega @ Focus Sash
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bug Buzz
+- Air Slash
+- Shadow Ball
+- Protect
+
+Scizor @ Choice Band
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Bullet Punch
+- U-turn
+- Superpower
+- Night Slash
+
+Vespiquen @ Leftovers
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
+
+Heracross @ Flame Orb
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Megahorn
+- Stone Edge
+- Night Slash
+
+Flygon @ Life Orb
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Dragon Claw
+- U-turn
+- Fire Punch
+
+Drapion @ Scope Lens
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cross Poison
+- Night Slash
+- Earthquake
+- Swords Dance
+
+=== TRAINER_ELITE_FOUR_BERTHA ===
+Name: BERTHA
+Class: Elite Four
+Pic: Expert F
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Whiscash @ Sitrus Berry
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Surf
+- Ice Beam
+- Rest
+
+Gliscor @ Leftovers
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Aerial Ace
+- Ice Fang
+- Roost
+
+Golem @ Custap Berry
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Stone Edge
+- Sucker Punch
+- Stealth Rock
+
+Hippowdon @ Leftovers
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Crunch
+- Ice Fang
+- Slack Off
+
+Mamoswine @ Life Orb
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stone Edge
+
+Rhyperior @ Lum Berry
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earthquake
+- Rock Wrecker
+- Megahorn
+- Avalanche
+
+=== TRAINER_ELITE_FOUR_FLINT ===
+Name: FLINT
+Class: Elite Four
+Pic: Kindler
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Houndoom @ Focus Sash
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
+
+Flareon @ Charcoal
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Superpower
+- Quick Attack
+- Will-O-Wisp
+
+Rapidash @ Wide Lens
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Megahorn
+- Poison Jab
+- Hypnosis
+
+Infernape @ Life Orb
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flare Blitz
+- Close Combat
+- Thunder Punch
+- Mach Punch
+
+Steelix @ Leftovers
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Iron Tail
+- Earthquake
+- Fire Fang
+- Stone Edge
+
+Magmortar @ Lum Berry
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Thunderbolt
+- Focus Blast
+- Psychic
+
+=== TRAINER_ELITE_FOUR_LUCIAN ===
+Name: LUCIAN
+Class: Elite Four
+Pic: Gentleman
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Basic Trainer
+
+Mr. Mime @ Light Clay
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Reflect
+- Light Screen
+- Psychic
+- Dazzling Gleam
+
+Espeon @ Twisted Spoon
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Dazzling Gleam
+- Morning Sun
+
+Bronzong @ Leftovers
+Level: 76
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Gyro Ball
+- Psychic
+- Earthquake
+- Calm Mind
+
+Alakazam @ Focus Sash
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Shadow Ball
+- Focus Blast
+- Energy Ball
+
+Gardevoir @ Sitrus Berry
+Level: 78
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Psychic
+- Moonblast
+- Thunderbolt
+- Calm Mind
+
+Gallade @ Lum Berry
+Level: 79
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Close Combat
+- Psycho Cut
+- Leaf Blade
+- Stone Edge
 
 === TRAINER_LEADER_ROARK ===
 Name: ROARK

@@ -133,3 +133,47 @@ Movement_PkmnCenterNurse_Bow:
 Movement_PkmnCenterNurse_Turn:
 	walk_in_place_faster_left
 	step_end
+
+Common_EventScript_ToggleLevelCap::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_LEVEL_CAP_ENABLED, Common_EventScript_DisableLevelCapPrompt
+	msgbox Common_Text_EnableLevelCapPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_LevelCapCancel
+	setflag FLAG_SYS_LEVEL_CAP_ENABLED
+	playse SE_SELECT
+	msgbox Common_Text_LevelCapEnabled, MSGBOX_DEFAULT
+	release
+	end
+
+Common_EventScript_DisableLevelCapPrompt::
+	msgbox Common_Text_DisableLevelCapPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Common_EventScript_LevelCapCancel
+	clearflag FLAG_SYS_LEVEL_CAP_ENABLED
+	playse SE_SELECT
+	msgbox Common_Text_LevelCapDisabled, MSGBOX_DEFAULT
+	release
+	end
+
+Common_EventScript_LevelCapCancel::
+	release
+	end
+
+Common_Text_EnableLevelCapPrompt:
+	.string "GYM LEVEL CAP MODE is currently OFF.\p"
+	.string "Would you like to enable GYM LEVEL\n"
+	.string "CAPS for the active region?$"
+
+Common_Text_DisableLevelCapPrompt:
+	.string "GYM LEVEL CAP MODE is currently ON.\p"
+	.string "Would you like to disable GYM LEVEL\n"
+	.string "CAPS?$"
+
+Common_Text_LevelCapEnabled:
+	.string "GYM LEVEL CAP MODE enabled!\n"
+	.string "Your POKéMON will not level past the\l"
+	.string "next unbeaten GYM LEADER's cap.$"
+
+Common_Text_LevelCapDisabled:
+	.string "GYM LEVEL CAP MODE disabled!\n"
+	.string "Your POKéMON can level freely.$"

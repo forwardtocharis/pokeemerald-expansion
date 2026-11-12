@@ -53,6 +53,16 @@ SnowpointCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox SnowpointCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+SnowpointCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, SnowpointCity_Gym_Text_GymTrainer1Intro, SnowpointCity_Gym_Text_GymTrainer1Defeat
+	msgbox SnowpointCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+SnowpointCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_MUSEUM_1, SnowpointCity_Gym_Text_GymTrainer2Intro, SnowpointCity_Gym_Text_GymTrainer2Defeat
+	msgbox SnowpointCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 SnowpointCity_Gym_Text_CandiceIntro:
 	.string "CANDICE: Welcome to the SNOWPOINT\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,30 @@ SnowpointCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: CANDICE\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+SnowpointCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "CANDICE, you must pass my ICE-type\p"
+	.string "trial!$"
+
+SnowpointCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Icicle formation\n"
+	.string "couldn't hold you back!$"
+
+SnowpointCity_Gym_Text_GymTrainer1PostBattle:
+	.string "CANDICE has honed ICE-type mastery\n"
+	.string "far beyond mine. Stay sharp!$"
+
+SnowpointCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from CANDICE!\n"
+	.string "Let's see how you handle true ICE\p"
+	.string "power!$"
+
+SnowpointCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Blizzard counter-strategy\n"
+	.string "broke right through my defense!$"
+
+SnowpointCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! CANDICE is waiting at\n"
+	.string "the back of the Gym!$"
 

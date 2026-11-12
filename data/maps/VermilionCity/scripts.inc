@@ -92,9 +92,26 @@ VermilionCity_EventScript_QualifyFrontier::
 	return
 
 VermilionCity_EventScript_OfferBattleFrontier::
+	goto_if_ge VAR_TOTAL_BADGES, 32, VermilionCity_EventScript_OfferWorldChampionship
+VermilionCity_EventScript_OfferBattleFrontierPrompt::
 	msgbox VermilionCity_Text_SailToFrontierPrompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, VermilionCity_EventScript_SailToFrontier
 	goto VermilionCity_EventScript_AskFerryDestination
+
+VermilionCity_EventScript_OfferWorldChampionship::
+	msgbox VermilionCity_Text_BoardSSAnneChampionshipPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, VermilionCity_EventScript_SailToSSAnneChampionship
+	goto VermilionCity_EventScript_OfferBattleFrontierPrompt
+
+VermilionCity_EventScript_SailToSSAnneChampionship::
+	setvar VAR_SS_ANNE_CHAMPIONSHIP_STAGE, 0
+	msgbox VermilionCity_Text_SailorDepartChampionship, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	warp MAP_SS_TIDAL_LOWER_DECK, 8, 6
+	waitstate
+	release
+	end
 
 VermilionCity_EventScript_SailToFrontier::
 	msgbox VermilionCity_Text_BattleFrontierItIs, MSGBOX_YESNO
@@ -272,4 +289,16 @@ VermilionCity_Text_SailorDepartOneIsland:
 VermilionCity_Text_SailorOneIslandUnavailable:
 	.string "Sorry, the ferry to One Island\n"
 	.string "isn't running right now.$"
+
+VermilionCity_Text_BoardSSAnneChampionshipPrompt:
+	.string "Incredible! You hold all 32 GYM\n"
+	.string "BADGES\p"
+	.string "across all four regions!\n"
+	.string "Would you like to board the S.S.\p"
+	.string "ANNE\n"
+	.string "WORLD CHAMPIONSHIP luxury liner?$"
+
+VermilionCity_Text_SailorDepartChampionship:
+	.string "All aboard for the S.S. ANNE WORLD\n"
+	.string "CHAMPIONSHIP Grand Ballroom!$"
 

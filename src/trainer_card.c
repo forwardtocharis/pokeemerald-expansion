@@ -57,7 +57,7 @@ struct TrainerCardData
     bool8 hasHofResult;
     bool8 hasLinkResults;
     bool8 hasBattleTowerWins;
-    bool8 unused_E;
+    u8 badgeRegionPage;
     bool8 unused_F;
     bool8 hasTrades;
     u8 badgeCount[NUM_BADGES];
@@ -133,6 +133,8 @@ static void PrintIdOnCard(void);
 static void PrintMoneyOnCard(void);
 static void PrintPokedexOnCard(void);
 static void PrintProfilePhraseOnCard(void);
+static void PopulateRegionBadgesOnCard(u8 regionPage);
+static void CycleTrainerCardBadgeRegion(s8 delta);
 static bool8 PrintAllOnCardBack(void);
 static void PrintNameOnCardBack(void);
 static void PrintHofDebutTimeOnCard(void);
@@ -449,6 +451,14 @@ static void Task_TrainerCard(u8 taskId)
             FlipTrainerCard();
             PlaySE(SE_RG_CARD_FLIP);
             sData->mainState = STATE_WAIT_FLIP_TO_BACK;
+        }
+        else if (!sData->isLink && JOY_NEW(L_BUTTON))
+        {
+            CycleTrainerCardBadgeRegion(-1);
+        }
+        else if (!sData->isLink && JOY_NEW(R_BUTTON))
+        {
+            CycleTrainerCardBadgeRegion(1);
         }
         else if (JOY_NEW(B_BUTTON))
         {
@@ -825,19 +835,77 @@ void CopyTrainerCardData(struct TrainerCard *dst, struct TrainerCard *src, u8 ga
     }
 }
 
-static void SetDataFromTrainerCard(void)
+static void PopulateRegionBadgesOnCard(u8 regionPage)
 {
     u8 i;
     u32 badgeFlag;
+    static const u16 sKantoBadgeFlags[NUM_BADGES] = {
+        FLAG_KANTO_BADGE01_GET, FLAG_KANTO_BADGE02_GET, FLAG_KANTO_BADGE03_GET, FLAG_KANTO_BADGE04_GET,
+        FLAG_KANTO_BADGE05_GET, FLAG_KANTO_BADGE06_GET, FLAG_KANTO_BADGE07_GET, FLAG_KANTO_BADGE08_GET,
+    };
+    static const u16 sJohtoBadgeFlags[NUM_BADGES] = {
+        FLAG_JOHTO_BADGE01_GET, FLAG_JOHTO_BADGE02_GET, FLAG_JOHTO_BADGE03_GET, FLAG_JOHTO_BADGE04_GET,
+        FLAG_JOHTO_BADGE05_GET, FLAG_JOHTO_BADGE06_GET, FLAG_JOHTO_BADGE07_GET, FLAG_JOHTO_BADGE08_GET,
+    };
+    static const u16 sSinnohBadgeFlags[NUM_BADGES] = {
+        FLAG_SINNOH_BADGE01_GET, FLAG_SINNOH_BADGE02_GET, FLAG_SINNOH_BADGE03_GET, FLAG_SINNOH_BADGE04_GET,
+        FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET,
+    };
 
+    memset(sData->badgeCount, 0, sizeof(sData->badgeCount));
+
+    if (regionPage == 1) // Kanto
+    {
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            if (FlagGet(sKantoBadgeFlags[i]))
+                sData->badgeCount[i]++;
+        }
+    }
+    else if (regionPage == 2) // Johto
+    {
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            if (FlagGet(sJohtoBadgeFlags[i]))
+                sData->badgeCount[i]++;
+        }
+    }
+    else if (regionPage == 3) // Sinnoh
+    {
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            if (FlagGet(sSinnohBadgeFlags[i]))
+                sData->badgeCount[i]++;
+        }
+    }
+    else // Hoenn (default)
+    {
+        for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
+        {
+            if (FlagGet(badgeFlag))
+                sData->badgeCount[i]++;
+        }
+    }
+}
+
+static void CycleTrainerCardBadgeRegion(s8 delta)
+{
+    sData->badgeRegionPage = (sData->badgeRegionPage + 4 + delta) % 4;
+    PopulateRegionBadgesOnCard(sData->badgeRegionPage);
+    PrintProfilePhraseOnCard();
+    DrawTrainerCardWindow(WIN_CARD_TEXT);
+    DrawStarsAndBadgesOnCard();
+    PlaySE(SE_SELECT);
+}
+
+static void SetDataFromTrainerCard(void)
+{
     sData->hasPokedex = FALSE;
     sData->hasHofResult = FALSE;
     sData->hasLinkResults = FALSE;
     sData->hasBattleTowerWins = FALSE;
-    sData->unused_E = FALSE;
     sData->unused_F = FALSE;
     sData->hasTrades = FALSE;
-    memset(sData->badgeCount, 0, sizeof(sData->badgeCount));
     if (sData->trainerCard.hasPokedex)
         sData->hasPokedex++;
 
@@ -853,54 +921,7 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
-    {
-        u8 activeRegion = GetActiveRegion();
-        static const u16 sKantoBadgeFlags[NUM_BADGES] = {
-            FLAG_KANTO_BADGE01_GET, FLAG_KANTO_BADGE02_GET, FLAG_KANTO_BADGE03_GET, FLAG_KANTO_BADGE04_GET,
-            FLAG_KANTO_BADGE05_GET, FLAG_KANTO_BADGE06_GET, FLAG_KANTO_BADGE07_GET, FLAG_KANTO_BADGE08_GET,
-        };
-        static const u16 sJohtoBadgeFlags[NUM_BADGES] = {
-            FLAG_JOHTO_BADGE01_GET, FLAG_JOHTO_BADGE02_GET, FLAG_JOHTO_BADGE03_GET, FLAG_JOHTO_BADGE04_GET,
-            FLAG_JOHTO_BADGE05_GET, FLAG_JOHTO_BADGE06_GET, FLAG_JOHTO_BADGE07_GET, FLAG_JOHTO_BADGE08_GET,
-        };
-        static const u16 sSinnohBadgeFlags[NUM_BADGES] = {
-            FLAG_SINNOH_BADGE01_GET, FLAG_SINNOH_BADGE02_GET, FLAG_SINNOH_BADGE03_GET, FLAG_SINNOH_BADGE04_GET,
-            FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET,
-        };
-
-        if (activeRegion == 1) // Kanto
-        {
-            for (i = 0; i < NUM_BADGES; i++)
-            {
-                if (FlagGet(sKantoBadgeFlags[i]))
-                    sData->badgeCount[i]++;
-            }
-        }
-        else if (activeRegion == 2) // Johto
-        {
-            for (i = 0; i < NUM_BADGES; i++)
-            {
-                if (FlagGet(sJohtoBadgeFlags[i]))
-                    sData->badgeCount[i]++;
-            }
-        }
-        else if (activeRegion == 3) // Sinnoh
-        {
-            for (i = 0; i < NUM_BADGES; i++)
-            {
-                if (FlagGet(sSinnohBadgeFlags[i]))
-                    sData->badgeCount[i]++;
-            }
-        }
-        else // Hoenn (default)
-        {
-            for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
-            {
-                if (FlagGet(badgeFlag))
-                    sData->badgeCount[i]++;
-            }
-        }
-    }
+    PopulateRegionBadgesOnCard(sData->badgeRegionPage);
 }
 
 static void InitGpuRegs(void)
@@ -1204,6 +1225,21 @@ static void PrintTimeOnCard(void)
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
 }
 
+static const u8 sText_RegionPageHoenn[]  = _("HOENN BADGES: ");
+static const u8 sText_RegionPageKanto[]  = _("KANTO BADGES: ");
+static const u8 sText_RegionPageJohto[]  = _("JOHTO BADGES: ");
+static const u8 sText_RegionPageSinnoh[] = _("SINNOH BADGES: ");
+static const u8 sText_SlashEightTotal[]  = _("/8  TOTAL: ");
+static const u8 sText_SlashThirtyTwoLR[] = _("/32 {L_BUTTON}{R_BUTTON}");
+
+static const u8 *const sRegionBadgePageLabels[4] =
+{
+    sText_RegionPageHoenn,
+    sText_RegionPageKanto,
+    sText_RegionPageJohto,
+    sText_RegionPageSinnoh,
+};
+
 static void PrintProfilePhraseOnCard(void)
 {
     static const u8 yOffsetsLine1[] = {113, 104};
@@ -1215,6 +1251,22 @@ static void PrintProfilePhraseOnCard(void)
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, GetStringWidth(FONT_NORMAL, sData->easyChatProfile[0], 0) + 14, yOffsetsLine1[sData->isHoenn], sTrainerCardTextColors, TEXT_SKIP_DRAW, sData->easyChatProfile[1]);
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 8, yOffsetsLine2[sData->isHoenn], sTrainerCardTextColors, TEXT_SKIP_DRAW, sData->easyChatProfile[2]);
         AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, GetStringWidth(FONT_NORMAL, sData->easyChatProfile[2], 0) + 14, yOffsetsLine2[sData->isHoenn], sTrainerCardTextColors, TEXT_SKIP_DRAW, sData->easyChatProfile[3]);
+    }
+    else
+    {
+        u8 buffer[64];
+        u8 *ptr;
+        u8 page = sData->badgeRegionPage <= 3 ? sData->badgeRegionPage : 0;
+        u16 regionBadges = GetRegionBadgeCount(page);
+        u16 totalBadges = GetTotalBadgesCount();
+
+        FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), 8, yOffsetsLine1[sData->isHoenn], 208, 16);
+        ptr = StringCopy(buffer, sRegionBadgePageLabels[page]);
+        ptr = ConvertIntToDecimalStringN(ptr, regionBadges, STR_CONV_MODE_LEFT_ALIGN, 1);
+        ptr = StringCopy(ptr, sText_SlashEightTotal);
+        ptr = ConvertIntToDecimalStringN(ptr, totalBadges, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringCopy(ptr, sText_SlashThirtyTwoLR);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, yOffsetsLine1[sData->isHoenn], sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
     }
 }
 
@@ -1566,6 +1618,7 @@ static void DrawStarsAndBadgesOnCard(void)
     {
         x = 4;
         y = IS_FRLG ? 16 : 15;
+        FillBgTilemapBufferRect_Palette0(3, 0, x, y, NUM_BADGES * 3, 2);
         for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
         {
             if (sData->badgeCount[i])
@@ -1891,6 +1944,9 @@ static void InitTrainerCardData(void)
     sData->timeColonInvisible = FALSE;
     sData->onBack = FALSE;
     sData->flipBlendY = 0;
+    sData->badgeRegionPage = GetActiveRegion();
+    if (sData->badgeRegionPage > 3)
+        sData->badgeRegionPage = 0;
     sData->cardType = GetSetCardType();
     for (i = 0; i < TRAINER_CARD_PROFILE_LENGTH; i++)
         CopyEasyChatWord(sData->easyChatProfile[i], sData->trainerCard.easyChatProfile[i]);

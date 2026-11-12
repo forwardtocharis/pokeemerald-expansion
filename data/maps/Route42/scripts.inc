@@ -70,6 +70,11 @@ Route42_EventScript_Trainer2::
 	msgbox Route42_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route42_EventScript_Trainer3::
+	trainerbattle_single TRAINER_DUSTY_3, Route42_Text_Trainer3Intro, Route42_Text_Trainer3Defeat
+	msgbox Route42_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route42_Text_Sign1:
 	.string "ROUTE 42\n"
@@ -79,26 +84,38 @@ Route42_Text_SuicuneRoar:
 	.string "Gugyoo-ooh!$"
 
 Route42_Text_Trainer1Intro:
-	.string "Our eyes met on Route 42! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route42! My Pokémon are\n"
+	.string "itching for a match!$"
 
 Route42_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route42_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route42\n"
+	.string "always turns up new surprises!$"
 
 Route42_Text_Trainer2Intro:
-	.string "Our eyes met on Route 42! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route42 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route42_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route42_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route42_Text_Trainer3Intro:
+	.string "PICNICKER: Travelling across\n"
+	.string "Route42? Show me your team's\p"
+	.string "synergy!$"
+
+Route42_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route42_Text_Trainer3Post:
+	.string "A scenic route like this is the\n"
+	.string "best place for a Pokémon match!$"
 

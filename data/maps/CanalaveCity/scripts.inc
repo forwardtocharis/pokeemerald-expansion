@@ -40,9 +40,26 @@ CanalaveCity_EventScript_QualifyFrontier::
 	return
 
 CanalaveCity_EventScript_OfferBattleFrontier::
+	goto_if_ge VAR_TOTAL_BADGES, 32, CanalaveCity_EventScript_OfferWorldChampionship
+CanalaveCity_EventScript_OfferBattleFrontierPrompt::
 	msgbox CanalaveCity_Text_SailToFrontierPrompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, CanalaveCity_EventScript_SailToFrontier
 	goto CanalaveCity_EventScript_AskFerryDestination
+
+CanalaveCity_EventScript_OfferWorldChampionship::
+	msgbox CanalaveCity_Text_BoardSSAnneChampionshipPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CanalaveCity_EventScript_SailToSSAnneChampionship
+	goto CanalaveCity_EventScript_OfferBattleFrontierPrompt
+
+CanalaveCity_EventScript_SailToSSAnneChampionship::
+	setvar VAR_SS_ANNE_CHAMPIONSHIP_STAGE, 0
+	msgbox CanalaveCity_Text_SailorDepartChampionship, MSGBOX_DEFAULT
+	playse SE_SHIP
+	waitse
+	warp MAP_SS_TIDAL_LOWER_DECK, 8, 6
+	waitstate
+	release
+	end
 
 CanalaveCity_EventScript_SailToFrontier::
 	msgbox CanalaveCity_Text_BattleFrontierItIs, MSGBOX_YESNO
@@ -438,4 +455,15 @@ CanalaveCity_Text_AutoNPC1:
 	.string "Canalave's canal!\n"
 	.string "Byron's Steel-type defense is\p"
 	.string "famous across the seas.$"
+
+CanalaveCity_Text_BoardSSAnneChampionshipPrompt:
+	.string "Incredible! You hold all 32 GYM\n"
+	.string "BADGES across all four regions!\p"
+	.string "Would you like to board the S.S.\n"
+	.string "ANNE WORLD CHAMPIONSHIP luxury\p"
+	.string "liner?$"
+
+CanalaveCity_Text_SailorDepartChampionship:
+	.string "All aboard for the S.S. ANNE WORLD\n"
+	.string "CHAMPIONSHIP Grand Ballroom!$"
 

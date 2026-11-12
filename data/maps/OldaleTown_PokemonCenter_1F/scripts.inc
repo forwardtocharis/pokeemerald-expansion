@@ -17,7 +17,10 @@ OldaleTown_PokemonCenter_1F_EventScript_Nurse::
 	end
 
 OldaleTown_PokemonCenter_1F_EventScript_Gentleman::
-	msgbox OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC, MSGBOX_DEFAULT
+	goto Common_EventScript_ToggleLevelCap
 	end
 
 OldaleTown_PokemonCenter_1F_EventScript_Boy::

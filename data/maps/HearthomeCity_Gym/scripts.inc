@@ -53,6 +53,16 @@ HearthomeCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox HearthomeCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+HearthomeCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_DECLAN, HearthomeCity_Gym_Text_GymTrainer1Intro, HearthomeCity_Gym_Text_GymTrainer1Defeat
+	msgbox HearthomeCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+HearthomeCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_RUSTURF_TUNNEL, HearthomeCity_Gym_Text_GymTrainer2Intro, HearthomeCity_Gym_Text_GymTrainer2Defeat
+	msgbox HearthomeCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 HearthomeCity_Gym_Text_FantinaIntro:
 	.string "FANTINA: Welcome to the HEARTHOME\n"
 	.string "CITY GYM!\p"
@@ -111,4 +121,31 @@ HearthomeCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: FANTINA\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+HearthomeCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "FANTINA, you must pass my GHOST-\p"
+	.string "type trial!$"
+
+HearthomeCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Relic formation\n"
+	.string "couldn't hold you back!$"
+
+HearthomeCity_Gym_Text_GymTrainer1PostBattle:
+	.string "FANTINA has honed GHOST-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+HearthomeCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from FANTINA!\n"
+	.string "Let's see how you handle true\p"
+	.string "GHOST power!$"
+
+HearthomeCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Dusk counter-strategy broke\n"
+	.string "right through my defense!$"
+
+HearthomeCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! FANTINA is waiting at\n"
+	.string "the back of the Gym!$"
 

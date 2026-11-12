@@ -53,6 +53,16 @@ EcruteakCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox EcruteakCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+EcruteakCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GRUNT_RUSTURF_TUNNEL, EcruteakCity_Gym_Text_GymTrainer1Intro, EcruteakCity_Gym_Text_GymTrainer1Defeat
+	msgbox EcruteakCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+EcruteakCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, EcruteakCity_Gym_Text_GymTrainer2Intro, EcruteakCity_Gym_Text_GymTrainer2Defeat
+	msgbox EcruteakCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 EcruteakCity_Gym_Text_MortyIntro:
 	.string "MORTY: Welcome to the ECRUTEAK\n"
 	.string "CITY GYM!\p"
@@ -109,4 +119,30 @@ EcruteakCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: MORTY\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+EcruteakCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "MORTY, you must pass my GHOST-type\p"
+	.string "trial!$"
+
+EcruteakCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Fog formation\n"
+	.string "couldn't hold you back!$"
+
+EcruteakCity_Gym_Text_GymTrainer1PostBattle:
+	.string "MORTY has honed GHOST-type mastery\n"
+	.string "far beyond mine. Stay sharp!$"
+
+EcruteakCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from MORTY! Let's\n"
+	.string "see how you handle true GHOST\p"
+	.string "power!$"
+
+EcruteakCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Phantom counter-strategy\n"
+	.string "broke right through my defense!$"
+
+EcruteakCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! MORTY is waiting at\n"
+	.string "the back of the Gym!$"
 

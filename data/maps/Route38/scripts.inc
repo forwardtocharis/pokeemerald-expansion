@@ -65,6 +65,11 @@ Route38_EventScript_Trainer1::
 	msgbox Route38_Text_Trainer1Post, MSGBOX_AUTOCLOSE
 	end
 
+Route38_EventScript_Trainer2::
+	trainerbattle_single TRAINER_ROSE_3, Route38_Text_Trainer2Intro, Route38_Text_Trainer2Defeat
+	msgbox Route38_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route38_Text_Sign1:
 	.string "ROUTE 38\n"
@@ -74,14 +79,27 @@ Route38_Text_RaikouRoar:
 	.string "Gyaaa-ooh!$"
 
 Route38_Text_Trainer1Intro:
-	.string "Our eyes met on Route 38! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route38! My Pokémon are\n"
+	.string "itching for a match!$"
 
 Route38_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route38_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route38\n"
+	.string "always turns up new surprises!$"
+
+Route38_Text_Trainer2Intro:
+	.string "BUG CATCHER: Travelling across\n"
+	.string "Route38? Show me your team's\p"
+	.string "synergy!$"
+
+Route38_Text_Trainer2Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route38_Text_Trainer2Post:
+	.string "Check out the rare specimens I\n"
+	.string "caught along this route!$"
 

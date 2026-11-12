@@ -53,6 +53,16 @@ VeilstoneCity_Gym_EventScript_GymStatuePostVictory::
 	msgbox VeilstoneCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
 	releaseall
 	end
+
+VeilstoneCity_Gym_EventScript_GymTrainer1::
+	trainerbattle_single TRAINER_GABRIELLE_1, VeilstoneCity_Gym_Text_GymTrainer1Intro, VeilstoneCity_Gym_Text_GymTrainer1Defeat
+	msgbox VeilstoneCity_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+VeilstoneCity_Gym_EventScript_GymTrainer2::
+	trainerbattle_single TRAINER_GRUNT_PETALBURG_WOODS, VeilstoneCity_Gym_Text_GymTrainer2Intro, VeilstoneCity_Gym_Text_GymTrainer2Defeat
+	msgbox VeilstoneCity_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
+	end
 VeilstoneCity_Gym_Text_MayleneIntro:
 	.string "MAYLENE: Welcome to the VEILSTONE\n"
 	.string "CITY GYM!\p"
@@ -112,4 +122,31 @@ VeilstoneCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: MAYLENE\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{PLAYER}$"
+
+VeilstoneCity_Gym_Text_GymTrainer1Intro:
+	.string "Hold it! Before you challenge\n"
+	.string "MAYLENE, you must pass my\p"
+	.string "FIGHTING-type trial!$"
+
+VeilstoneCity_Gym_Text_GymTrainer1Defeat:
+	.string "What poise! My Cobble formation\n"
+	.string "couldn't hold you back!$"
+
+VeilstoneCity_Gym_Text_GymTrainer1PostBattle:
+	.string "MAYLENE has honed FIGHTING-type\n"
+	.string "mastery far beyond mine. Stay\p"
+	.string "sharp!$"
+
+VeilstoneCity_Gym_Text_GymTrainer2Intro:
+	.string "You're one step from MAYLENE!\n"
+	.string "Let's see how you handle true\p"
+	.string "FIGHTING power!$"
+
+VeilstoneCity_Gym_Text_GymTrainer2Defeat:
+	.string "Your Strike counter-strategy broke\n"
+	.string "right through my defense!$"
+
+VeilstoneCity_Gym_Text_GymTrainer2PostBattle:
+	.string "Go on ahead! MAYLENE is waiting at\n"
+	.string "the back of the Gym!$"
 

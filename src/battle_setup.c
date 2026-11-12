@@ -2309,6 +2309,12 @@ void CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Traine
 
 static void CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
 {
+    if (trainerNum == TRAINER_CHAMPION_RED_POSTGAME && VarGet(VAR_TOTAL_BADGES) >= 32)
+    {
+        CreateRedGrandChampionParty(party);
+        return;
+    }
+
     if (!GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum));

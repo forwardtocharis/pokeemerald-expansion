@@ -12,20 +12,38 @@ Route33_EventScript_Trainer1::
 	msgbox Route33_Text_Trainer1Post, MSGBOX_AUTOCLOSE
 	end
 
+Route33_EventScript_Trainer2::
+	trainerbattle_single TRAINER_ARCHIE, Route33_Text_Trainer2Intro, Route33_Text_Trainer2Defeat
+	msgbox Route33_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route33_Text_Sign1:
 	.string "ROUTE 33\n"
 	.string "ROUTE 32 - AZALEA TOWN$"
 
 Route33_Text_Trainer1Intro:
-	.string "Our eyes met on Route 33! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route33! My Pokémon are\n"
+	.string "itching for a match!$"
 
 Route33_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route33_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route33\n"
+	.string "always turns up new surprises!$"
+
+Route33_Text_Trainer2Intro:
+	.string "PSYCHIC: Travelling across\n"
+	.string "Route33? Show me your team's\p"
+	.string "synergy!$"
+
+Route33_Text_Trainer2Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route33_Text_Trainer2Post:
+	.string "I foresaw our battle along this\n"
+	.string "path before you even arrived!$"
 

@@ -67,6 +67,11 @@ Route215_EventScript_Trainer2::
 	msgbox Route215_Text_Trainer2Post, MSGBOX_AUTOCLOSE
 	end
 
+Route215_EventScript_Trainer3::
+	trainerbattle_single TRAINER_DUSTY_2, Route215_Text_Trainer3Intro, Route215_Text_Trainer3Defeat
+	msgbox Route215_Text_Trainer3Post, MSGBOX_AUTOCLOSE
+	end
+
 @ === END GENERATED EVENTS ===
 Route215_Text_Sign1:
 	.string "Route 215\n"
@@ -110,26 +115,38 @@ Route215_Text_HeatranPeaceful:
 	.string "deep earth.$"
 
 Route215_Text_Trainer1Intro:
-	.string "Our eyes met on Route 215! Let's\n"
-	.string "battle!$"
+	.string "Hold up on Route215! My Pokémon\n"
+	.string "are itching for a match!$"
 
 Route215_Text_Trainer1Defeat:
 	.string "Whoa! Your Pokémon are seriously\n"
 	.string "strong!$"
 
 Route215_Text_Trainer1Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Exploring every corner of Route215\n"
+	.string "always turns up new surprises!$"
 
 Route215_Text_Trainer2Intro:
-	.string "Our eyes met on Route 215! Let's\n"
-	.string "battle!$"
+	.string "I've been training on Route215 to\n"
+	.string "challenge the Gym Leaders!$"
 
 Route215_Text_Trainer2Defeat:
-	.string "Whoa! Your Pokémon are seriously\n"
-	.string "strong!$"
+	.string "I see why you've made it this far!$"
 
 Route215_Text_Trainer2Post:
-	.string "Trainers across every region keep\n"
-	.string "pushing me to train harder!$"
+	.string "Trainers from all four regions\n"
+	.string "keep raising the bar!$"
+
+Route215_Text_Trainer3Intro:
+	.string "CAMPER: Travelling across\n"
+	.string "Route215? Show me your team's\p"
+	.string "synergy!$"
+
+Route215_Text_Trainer3Defeat:
+	.string "Astounding! You didn't leave a\n"
+	.string "single opening!$"
+
+Route215_Text_Trainer3Post:
+	.string "I've been camping out waiting for\n"
+	.string "a worthy challenger!$"
 

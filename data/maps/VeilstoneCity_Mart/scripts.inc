@@ -30,6 +30,16 @@ VeilstoneCity_Mart_Pokemart_Stock:
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_ICE_STONE
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ADAMANT_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_TIMID_MINT
 	@gba-only
 	pokemartlistend
 

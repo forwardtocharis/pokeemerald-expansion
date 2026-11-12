@@ -99,6 +99,8 @@ PokemonLeague_LancesRoom_Movement_WalkThroughCorridor::
 PokemonLeague_LancesRoom_EventScript_Lance::
 	lock
 	faceplayer
+	goto_if_eq VAR_CURRENT_REGION, 2, PokemonLeague_LancesRoom_EventScript_Karen
+	goto_if_eq VAR_CURRENT_REGION, 3, PokemonLeague_LancesRoom_EventScript_Lucian
 	famechecker FAMECHECKER_LANCE, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	goto_if_set FLAG_DEFEATED_LANCE, PokemonLeague_LancesRoom_EventScript_PostBattle
 	famechecker FAMECHECKER_LANCE, 0
@@ -111,6 +113,44 @@ PokemonLeague_LancesRoom_EventScript_Lance::
 	call_if_set FLAG_IS_CHAMPION, PokemonLeague_LancesRoom_EventScript_Rematch
 	clearflag FLAG_TEMP_5
 	goto PokemonLeague_LancesRoom_EventScript_DefeatedLance
+	end
+
+PokemonLeague_LancesRoom_EventScript_Karen::
+	goto_if_set FLAG_DEFEATED_LANCE, PokemonLeague_LancesRoom_EventScript_KarenPostBattle
+	msgbox PokemonLeague_LancesRoom_Text_KarenIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_KAREN, PokemonLeague_LancesRoom_Text_KarenDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_LANCE
+	call PokemonLeague_EventScript_OpenDoorLance
+	msgbox PokemonLeague_LancesRoom_Text_KarenPostBattle
+	closemessage
+	release
+	end
+
+PokemonLeague_LancesRoom_EventScript_KarenPostBattle::
+	msgbox PokemonLeague_LancesRoom_Text_KarenPostBattle
+	release
+	end
+
+PokemonLeague_LancesRoom_EventScript_Lucian::
+	goto_if_set FLAG_DEFEATED_LANCE, PokemonLeague_LancesRoom_EventScript_LucianPostBattle
+	msgbox PokemonLeague_LancesRoom_Text_LucianIntro
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_5
+	trainerbattle_no_intro TRAINER_ELITE_FOUR_LUCIAN, PokemonLeague_LancesRoom_Text_LucianDefeat
+	clearflag FLAG_TEMP_5
+	setflag FLAG_DEFEATED_LANCE
+	call PokemonLeague_EventScript_OpenDoorLance
+	msgbox PokemonLeague_LancesRoom_Text_LucianPostBattle
+	closemessage
+	release
+	end
+
+PokemonLeague_LancesRoom_EventScript_LucianPostBattle::
+	msgbox PokemonLeague_LancesRoom_Text_LucianPostBattle
+	release
 	end
 
 PokemonLeague_LancesRoom_EventScript_Intro::
@@ -215,4 +255,45 @@ PokemonLeague_LancesRoom_Text_PostBattle::
 	.string "you.\p"
 	.string "He is the real POKéMON LEAGUE\n"
 	.string "CHAMPION.$"
+
+PokemonLeague_LancesRoom_Text_KarenIntro::
+	.string "I am KAREN of the JOHTO ELITE FOUR.\p"
+	.string "You're {PLAYER}? How amusing.\n"
+	.string "I love DARK-type POKéMON.\p"
+	.string "I find their wild, tough image\n"
+	.string "to be so appealing.\p"
+	.string "Let's go. Just try to entertain me!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+PokemonLeague_LancesRoom_Text_KarenDefeat::
+	.string "Well, aren't you good.\n"
+	.string "I like that in a TRAINER.$"
+
+PokemonLeague_LancesRoom_Text_KarenPostBattle::
+	.string "Strong POKéMON.\n"
+	.string "Weak POKéMON.\p"
+	.string "That is only the selfish perception\n"
+	.string "of people.\p"
+	.string "Truly skilled TRAINERS should try to\n"
+	.string "win with their favorites.\p"
+	.string "I like your style. Go on—CHAMPION\n"
+	.string "LANCE is waiting.$"
+
+PokemonLeague_LancesRoom_Text_LucianIntro::
+	.string "Ah, you've come at last.\n"
+	.string "I am LUCIAN of the SINNOH ELITE FOUR.\p"
+	.string "As a user of PSYCHIC-type POKéMON,\n"
+	.string "I must say you are the most formidable\l"
+	.string "challenger we have faced.\p"
+	.string "Prepare yourself!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+
+PokemonLeague_LancesRoom_Text_LucianDefeat::
+	.string "Congratulations.\n"
+	.string "You have beaten the ELITE FOUR.$"
+
+PokemonLeague_LancesRoom_Text_LucianPostBattle::
+	.string "However, that doesn't mean you're\n"
+	.string "done with the POKéMON LEAGUE.\p"
+	.string "Step ahead to face the SINNOH\n"
+	.string "CHAMPION: CYNTHIA!$"
+
 

@@ -187,9 +187,24 @@ SlateportCity_Harbor_EventScript_QualifyFrontier::
 	return
 
 SlateportCity_Harbor_EventScript_OfferBattleFrontier::
+	goto_if_ge VAR_TOTAL_BADGES, 32, SlateportCity_Harbor_EventScript_OfferWorldChampionship
+SlateportCity_Harbor_EventScript_OfferBattleFrontierPrompt::
 	msgbox SlateportCity_Harbor_Text_SailToFrontierPrompt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_BattleFrontier
 	goto SlateportCity_Harbor_EventScript_ChooseDestination
+
+SlateportCity_Harbor_EventScript_OfferWorldChampionship::
+	msgbox SlateportCity_Harbor_Text_BoardSSAnneChampionshipPrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, SlateportCity_Harbor_EventScript_SailToSSAnneChampionship
+	goto SlateportCity_Harbor_EventScript_OfferBattleFrontierPrompt
+
+SlateportCity_Harbor_EventScript_SailToSSAnneChampionship::
+	setvar VAR_SS_ANNE_CHAMPIONSHIP_STAGE, 0
+	call SlateportCity_Harbor_EventScript_BoardFerry
+	warp MAP_SS_TIDAL_LOWER_DECK, 8, 6
+	waitstate
+	release
+	end
 
 SlateportCity_Harbor_EventScript_ChooseDestination::
 	goto_if_set FLAG_TRANSIT_SS_TIDAL_UNLOCKED, SlateportCity_Harbor_EventScript_ChooseDestinationMultiRegion
@@ -642,4 +657,11 @@ SlateportCity_Harbor_Text_SailToFrontierPrompt:
 	.string "Ah, an authorized BATTLE FRONTIER\n"
 	.string "competitor! Would you like to sail to\l"
 	.string "the BATTLE FRONTIER?$"
+
+SlateportCity_Harbor_Text_BoardSSAnneChampionshipPrompt:
+	.string "Incredible! You hold all 32 GYM BADGES\n"
+	.string "across HOENN, KANTO, JOHTO, and SINNOH!\p"
+	.string "Would you like to board the S.S. ANNE\n"
+	.string "WORLD CHAMPIONSHIP luxury liner?$"
+
 

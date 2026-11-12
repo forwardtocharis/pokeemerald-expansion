@@ -17,11 +17,52 @@ IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor::
 IndigoPlateau_PokemonCenter_1F_EventScript_DoorGuard::
 	lock
 	faceplayer
+	goto_if_lt VAR_KANTO_BADGES, 8, IndigoPlateau_PokemonCenter_1F_EventScript_Need8KantoBadges
+	setvar VAR_CURRENT_REGION, 1
+	call IndigoPlateau_PokemonCenter_1F_EventScript_ResetLeagueFlags
 	specialvar VAR_RESULT, IsNationalPokedexEnabled
 	goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckSeviiIslandComplete
 	msgbox IndigoPlateau_PokemonCenter_1F_Text_FaceEliteFourGoodLuck
 	release
 	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_Need8KantoBadges::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_Need8KantoBadges
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_JohtoDoorGuard::
+	lock
+	faceplayer
+	goto_if_lt VAR_JOHTO_BADGES, 8, IndigoPlateau_PokemonCenter_1F_EventScript_Need8JohtoBadges
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_JohtoLeaguePrompt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, IndigoPlateau_PokemonCenter_1F_EventScript_EnterJohtoLeague
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_Need8JohtoBadges::
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_Need8JohtoBadges
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_EnterJohtoLeague::
+	setvar VAR_CURRENT_REGION, 2
+	call IndigoPlateau_PokemonCenter_1F_EventScript_ResetLeagueFlags
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_JohtoLeagueGoodLuck
+	closemessage
+	warp MAP_POKEMON_LEAGUE_LORELEIS_ROOM, 6, 12
+	waitstate
+	release
+	end
+
+IndigoPlateau_PokemonCenter_1F_EventScript_ResetLeagueFlags::
+	clearflag FLAG_DEFEATED_LORELEI
+	clearflag FLAG_DEFEATED_BRUNO
+	clearflag FLAG_DEFEATED_AGATHA
+	clearflag FLAG_DEFEATED_LANCE
+	clearflag FLAG_DEFEATED_CHAMP
+	setvar VAR_MAP_SCENE_POKEMON_LEAGUE, 0
+	return
 
 IndigoPlateau_PokemonCenter_1F_EventScript_CheckSeviiIslandComplete::
 	goto_if_set FLAG_IS_CHAMPION, IndigoPlateau_PokemonCenter_1F_EventScript_SeviiIslandComplete
@@ -35,7 +76,10 @@ IndigoPlateau_PokemonCenter_1F_EventScript_SeviiIslandComplete::
 	end
 
 IndigoPlateau_PokemonCenter_1F_EventScript_GymGuy::
-	msgbox IndigoPlateau_PokemonCenter_1F_Text_GymGuyAdvice, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox IndigoPlateau_PokemonCenter_1F_Text_GymGuyAdvice, MSGBOX_DEFAULT
+	goto Common_EventScript_ToggleLevelCap
 	end
 
 IndigoPlateau_PokemonCenter_1F_EventScript_Clerk::
@@ -57,6 +101,15 @@ IndigoPlateau_PokemonCenter_1F_Items::
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
+	.2byte ITEM_ADAMANT_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_TIMID_MINT
+	.2byte ITEM_BOLD_MINT
+	.2byte ITEM_CAREFUL_MINT
 	.2byte ITEM_NONE
 	release
 	end
@@ -110,4 +163,33 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
 	.string "From what I've heard, LANCE has\n"
 	.string "a cousin who's a GYM LEADER\l"
 	.string "somewhere far away.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_Need8KantoBadges::
+	.string "Hold it right there!\p"
+	.string "Door 1 leads to the KANTO POKéMON\n"
+	.string "LEAGUE challenge.\p"
+	.string "Only TRAINERS who have earned all\n"
+	.string "8 KANTO GYM BADGES may enter!$"
+
+IndigoPlateau_PokemonCenter_1F_Text_Need8JohtoBadges::
+	.string "Welcome to INDIGO PLATEAU!\p"
+	.string "Door 2 leads to the JOHTO POKéMON\n"
+	.string "LEAGUE challenge: WILL, KOGA,\l"
+	.string "SILVER, KAREN, and CHAMPION LANCE.\p"
+	.string "Please return once you have earned\n"
+	.string "all 8 JOHTO GYM BADGES!$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JohtoLeaguePrompt::
+	.string "Welcome, holder of all 8 JOHTO\n"
+	.string "GYM BADGES!\p"
+	.string "Beyond Door 2 await the JOHTO\n"
+	.string "ELITE FOUR: WILL, KOGA, SILVER,\l"
+	.string "KAREN, and CHAMPION LANCE.\p"
+	.string "Would you like to enter the\n"
+	.string "JOHTO POKéMON LEAGUE now?$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JohtoLeagueGoodLuck::
+	.string "Step right through!\n"
+	.string "May your JOHTO bond shine bright!$"
+
 
