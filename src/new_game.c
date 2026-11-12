@@ -50,6 +50,7 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
+#include "constants/heal_locations.h"
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
@@ -141,12 +142,15 @@ static void WarpToTruck(void)
     switch (startingRegion)
     {
     case 1: // Kanto
+        SetLastHealLocationWarp(HEAL_LOCATION_PALLET_TOWN);
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
         break;
     case 2: // Johto
+        SetLastHealLocationWarp(HEAL_LOCATION_NEW_BARK_TOWN);
         SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN), MAP_NUM(MAP_NEW_BARK_TOWN), WARP_ID_NONE, 13, 6);
         break;
     case 3: // Sinnoh
+        SetLastHealLocationWarp(HEAL_LOCATION_TWINLEAF_TOWN);
         SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN), MAP_NUM(MAP_TWINLEAF_TOWN), WARP_ID_NONE, 8, 6);
         break;
     case 0: // Hoenn
@@ -249,9 +253,16 @@ void NewGameInitData(void)
     UpdateDailySeed();
     WarpToTruck();
     if (IS_FRLG)
+    {
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
+    }
     else
+    {
         RunScriptImmediately(EventScript_ResetAllMapFlags);
+        RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
+        if (VarGet(VAR_CURRENT_REGION) != 1)
+            FlagClear(FLAG_HIDE_OAK_IN_HIS_LAB);
+    }
 #if IS_FRLG
         StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
 #endif

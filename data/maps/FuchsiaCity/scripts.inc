@@ -61,10 +61,6 @@ FuchsiaCity_EventScript_OldMan::
 	msgbox FuchsiaCity_Text_WardenLostGoldTeeth, MSGBOX_NPC
 	end
 
-FuchsiaCity_EventScript_SubstituteTutor::
-	msgbox FuchsiaCity_Text_SubstituteTutor, MSGBOX_NPC
-	end
-
 FuchsiaCity_EventScript_Youngster::
 	msgbox FuchsiaCity_Text_RarePokemonInSafariZone, MSGBOX_NPC
 	end

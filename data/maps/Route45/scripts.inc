@@ -58,10 +58,74 @@ Route45_EventScript_RanFromEntei::
 	goto EventScript_MonFlewAway
 	end
 
+@ === BEGIN GENERATED EVENTS ===
 
+Route45_EventScript_RedPostgame::
+	lock
+	faceplayer
+	msgbox Route45_Text_RedPostgameChallenge, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route45_EventScript_RedPostgameDecline
+	@gba-only
+	trainerbattle_no_intro TRAINER_CHAMPION_RED_POSTGAME, Route45_Text_RedPostgameDefeat
+	setflag FLAG_DEFEATED_RED_POSTGAME
+	msgbox Route45_Text_RedPostgamePost, MSGBOX_DEFAULT
+	release
+	end
+
+Route45_EventScript_RedPostgameDecline::
+	msgbox Route45_Text_RedPostgamePost, MSGBOX_DEFAULT
+	release
+	end
+
+Route45_EventScript_Trainer1::
+	trainerbattle_single TRAINER_OLIVIA, Route45_Text_Trainer1Intro, Route45_Text_Trainer1Defeat
+	msgbox Route45_Text_Trainer1Post, MSGBOX_AUTOCLOSE
+	end
+
+Route45_EventScript_Trainer2::
+	trainerbattle_single TRAINER_PATRICIA, Route45_Text_Trainer2Intro, Route45_Text_Trainer2Defeat
+	msgbox Route45_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
+@ === END GENERATED EVENTS ===
 Route45_Text_Sign1:
-	.string "Route45$"
+	.string "ROUTE 45\n"
+	.string "BLACKTHORN CITY - ROUTE 46$"
 
 Route45_Text_EnteiRoar:
 	.string "Booo-ooh!$"
+
+Route45_Text_RedPostgameChallenge:
+	.string "RED: ... ... ...!\n"
+	.string "(Challenge Legendary Trainer Red?)$"
+
+Route45_Text_RedPostgameDefeat:
+	.string "... ... ...!$"
+
+Route45_Text_RedPostgamePost:
+	.string "... ... ...$"
+
+Route45_Text_Trainer1Intro:
+	.string "Our eyes met on Route 45! Let's\n"
+	.string "battle!$"
+
+Route45_Text_Trainer1Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route45_Text_Trainer1Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
+
+Route45_Text_Trainer2Intro:
+	.string "Our eyes met on Route 45! Let's\n"
+	.string "battle!$"
+
+Route45_Text_Trainer2Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route45_Text_Trainer2Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
 

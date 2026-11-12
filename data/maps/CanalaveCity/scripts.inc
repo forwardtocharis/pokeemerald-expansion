@@ -251,127 +251,191 @@ CanalaveCity_EventScript_RangerManaphyGiven::
 	msgbox CanalaveCity_Text_RangerPostGift, MSGBOX_NPC
 	end
 
+@ === BEGIN GENERATED EVENTS ===
 
+CanalaveCity_EventScript_AutoNPC1::
+	msgbox CanalaveCity_Text_AutoNPC1, MSGBOX_NPC
+	end
+
+@ === END GENERATED EVENTS ===
 CanalaveCity_Text_Sign1:
 	.string "Canalave City\n"
 	.string "The Canal City of Port and Library$"
 
 CanalaveCity_Text_Sign2:
 	.string "Canalave City Pokémon Gym\n"
-	.string "Leader: Byron, The Man with the Steel Body!$"
+	.string "Leader: Byron, The Man with the\p"
+	.string "Steel Body!$"
 
 CanalaveCity_Text_SailorWelcome:
-	.string "Ahoy! Welcome to Canalave Port in the SINNOH region.$"
+	.string "Ahoy! Welcome to Canalave Port in\n"
+	.string "the SINNOH region.$"
 
 CanalaveCity_Text_SailorWhereTo:
-	.string "Where would you like to set sail today?$"
+	.string "Where would you like to set sail\n"
+	.string "today?$"
 
 CanalaveCity_Text_SlateportItIs:
-	.string "Slateport City in HOENN, is that right?$"
+	.string "Slateport City in HOENN, is that\n"
+	.string "right?$"
 
 CanalaveCity_Text_LilycoveItIs:
-	.string "Lilycove City in HOENN, is that right?$"
+	.string "Lilycove City in HOENN, is that\n"
+	.string "right?$"
 
 CanalaveCity_Text_VermilionItIs:
-	.string "Vermilion City in KANTO, is that right?$"
+	.string "Vermilion City in KANTO, is that\n"
+	.string "right?$"
 
 CanalaveCity_Text_OlivineItIs:
-	.string "Olivine City in JOHTO, is that right?$"
+	.string "Olivine City in JOHTO, is that\n"
+	.string "right?$"
 
 CanalaveCity_Text_SailorDepartHoenn:
-	.string "Aye aye! Setting sail for the HOENN region!$"
+	.string "Aye aye! Setting sail for the\n"
+	.string "HOENN region!$"
 
 CanalaveCity_Text_SailorDepartKanto:
-	.string "Aye aye! Setting sail for the KANTO region!$"
+	.string "Aye aye! Setting sail for the\n"
+	.string "KANTO region!$"
 
 CanalaveCity_Text_SailorDepartJohto:
-	.string "Aye aye! Setting sail for the JOHTO region!$"
+	.string "Aye aye! Setting sail for the\n"
+	.string "JOHTO region!$"
 
 CanalaveCity_Text_SailorComeBackSoon:
-	.string "Let me know whenever you want to set sail!$"
+	.string "Let me know whenever you want to\n"
+	.string "set sail!$"
 
 CanalaveCity_Text_SailToFrontierPrompt:
-	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?$"
+	.string "Ah, an authorized BATTLE FRONTIER\n"
+	.string "contender! Would you like to sail\p"
+	.string "to the BATTLE FRONTIER?$"
 
 CanalaveCity_Text_BattleFrontierItIs:
 	.string "The BATTLE FRONTIER, is that right?$"
 
 CanalaveCity_Text_SailorDepartFrontier:
-	.string "Aye aye! Setting sail for the BATTLE FRONTIER!$"
+	.string "Aye aye! Setting sail for the\n"
+	.string "BATTLE FRONTIER!$"
 
 CanalaveCity_Text_EldritchIntro:
-	.string "Ahoy! My young boy has been trapped in endless nightmares...\n"
-	.string "They say out on Fullmoon Island, a legendary Pokémon can heal bad dreams.$"
+	.string "Ahoy! My young boy has been\n"
+	.string "trapped in endless nightmares...\p"
+	.string "They say out on Fullmoon Island, a\n"
+	.string "legendary Pokémon can heal bad\p"
+	.string "dreams.$"
 
 CanalaveCity_Text_SailToFullmoonPrompt:
-	.string "Would you board my vessel and sail out to Fullmoon Island?$"
+	.string "Would you board my vessel and sail\n"
+	.string "out to Fullmoon Island?$"
 
 CanalaveCity_Text_SailToFullmoonDepart:
-	.string "All aboard! Steering through the midnight mist to Fullmoon Island!$"
+	.string "All aboard! Steering through the\n"
+	.string "midnight mist to Fullmoon Island!$"
 
 CanalaveCity_Text_ArriveFullmoonIsland:
-	.string "You arrive upon the enchanted shores of Fullmoon Island.\n"
-	.string "Under the crescent moonlight, the Lunar Pokémon Cresselia shines with pure radiance!$"
+	.string "You arrive upon the enchanted\n"
+	.string "shores of Fullmoon Island.\p"
+	.string "Under the crescent moonlight, the\n"
+	.string "Lunar Pokémon Cresselia shines\p"
+	.string "with pure radiance!$"
 
 CanalaveCity_Text_CresseliaCalm:
-	.string "Cresselia bestowed a Lunar Wing upon you and granted peaceful dreams.$"
+	.string "Cresselia bestowed a Lunar Wing\n"
+	.string "upon you and granted peaceful\p"
+	.string "dreams.$"
 
 CanalaveCity_Text_CresseliaVanished:
-	.string "Cresselia dissolved into the shimmering lunar mist...$"
+	.string "Cresselia dissolved into the\n"
+	.string "shimmering lunar mist...$"
 
 CanalaveCity_Text_CresseliaFlewOff:
-	.string "Cresselia took flight across the ocean waves!$"
+	.string "Cresselia took flight across the\n"
+	.string "ocean waves!$"
 
 CanalaveCity_Text_EldritchDecline:
-	.string "I understand. I'll be here at the docks if you change your mind.$"
+	.string "I understand. I'll be here at the\n"
+	.string "docks if you change your mind.$"
 
 CanalaveCity_Text_EldritchPeaceful:
-	.string "Thanks to Cresselia's blessing, my son is sleeping like an angel.$"
+	.string "Thanks to Cresselia's blessing, my\n"
+	.string "son is sleeping like an angel.$"
 
 CanalaveCity_Text_HarborInnDescription:
 	.string "A weathered sign reads: Harbor Inn.\n"
-	.string "The door is unlocked, but a shadowy, chilling aura seeps through the frame...$"
+	.string "The door is unlocked, but a\p"
+	.string "shadowy, chilling aura seeps\n"
+	.string "through the frame...$"
 
 CanalaveCity_Text_InspectHarborInnPrompt:
-	.string "Would you like to step inside Harbor Inn and rest?$"
+	.string "Would you like to step inside\n"
+	.string "Harbor Inn and rest?$"
 
 CanalaveCity_Text_HarborInnDreamBegins:
-	.string "You lie down upon the dusty bed and close your eyes...\n"
-	.string "A profound, bottomless darkness pulls you into a terrifying dream!$"
+	.string "You lie down upon the dusty bed\n"
+	.string "and close your eyes...\p"
+	.string "A profound, bottomless darkness\n"
+	.string "pulls you into a terrifying dream!$"
 
 CanalaveCity_Text_DarkraiApproaches:
-	.string "You stand upon the barren shores of Newmoon Island!\n"
-	.string "The Pitch-Black Pokémon Darkrai rises from the abyssal darkness!$"
+	.string "You stand upon the barren shores\n"
+	.string "of Newmoon Island!\p"
+	.string "The Pitch-Black Pokémon Darkrai\n"
+	.string "rises from the abyssal darkness!$"
 
 CanalaveCity_Text_DarkraiCalm:
-	.string "Darkrai acknowledged your courage in facing the nightmare!$"
+	.string "Darkrai acknowledged your courage\n"
+	.string "in facing the nightmare!$"
 
 CanalaveCity_Text_DarkraiVanished:
-	.string "Darkrai vanished into the fading remnants of the nightmare...$"
+	.string "Darkrai vanished into the fading\n"
+	.string "remnants of the nightmare...$"
 
 CanalaveCity_Text_DarkraiFlewOff:
-	.string "Darkrai slipped away into the shadows of your mind!$"
+	.string "Darkrai slipped away into the\n"
+	.string "shadows of your mind!$"
 
 CanalaveCity_Text_HarborInnPeaceful:
-	.string "Harbor Inn is locked and peaceful. The shadows have departed.$"
+	.string "Harbor Inn is locked and peaceful.\n"
+	.string "The shadows have departed.$"
 
 CanalaveCity_Text_RangerIntro:
-	.string "Greetings, Trainer! I am a Pokémon Ranger researcher stationed from the Fiore region.\n"
-	.string "We recovered an ancient, glowing Egg from the sea floor--the legendary Prince of the Sea!$"
+	.string "Greetings, Trainer! I am a Pokémon\n"
+	.string "Ranger researcher stationed from\p"
+	.string "the Fiore region.\n"
+	.string "We recovered an ancient, glowing\p"
+	.string "Egg from the sea floor--the\n"
+	.string "legendary Prince of the Sea!$"
 
 CanalaveCity_Text_GiveEggPrompt:
-	.string "It needs a caring Trainer to hatch and explore the world. Will you accept this Pokémon Egg?$"
+	.string "It needs a caring Trainer to hatch\n"
+	.string "and explore the world. Will you\p"
+	.string "accept this Pokémon Egg?$"
 
 CanalaveCity_Text_ReceivedManaphyEgg:
 	.string "{PLAYER} received the mysterious Manaphy Egg!$"
 
 CanalaveCity_Text_RangerPostGift:
 	.string "Take great care of that Egg!\n"
-	.string "Legend says if Manaphy breeds with a Ditto at a Pokémon Day Care, a Phione will hatch!$"
+	.string "Legend says if Manaphy breeds with\p"
+	.string "a Ditto at a Pokémon Day Care, a\n"
+	.string "Phione will hatch!$"
 
 CanalaveCity_Text_PartyFull:
-	.string "Your party is full! Make room in your team and come speak with me again.$"
+	.string "Your party is full! Make room in\n"
+	.string "your team and come speak with me\p"
+	.string "again.$"
 
 CanalaveCity_Text_RangerRefused:
-	.string "I see. If you ever feel ready to care for this precious Egg, I will be here.$"
+	.string "I see. If you ever feel ready to\n"
+	.string "care for this precious Egg, I will\p"
+	.string "be here.$"
+
+CanalaveCity_Text_AutoNPC1:
+	.string "Ships from Slateport, Vermilion,\n"
+	.string "and Olivine moor right in\p"
+	.string "Canalave's canal!\n"
+	.string "Byron's Steel-type defense is\p"
+	.string "famous across the seas.$"
 

@@ -220,6 +220,10 @@ extern const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT];
 extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
 
+#if !TESTING
+const struct Trainer *GetMultiRegionTrainerStruct(enum DifficultyLevel difficulty, u16 trainerId);
+#endif
+
 extern const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT];
 
 extern const struct EggData gEggDatas[EGG_ID_COUNT];
@@ -289,7 +293,11 @@ static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
     else
     {
         difficulty = GetTrainerDifficultyLevel(trainerId);
+#if !TESTING
+        return GetMultiRegionTrainerStruct(difficulty, trainerId);
+#else
         return &gTrainers[difficulty][SanitizeTrainerId(trainerId)];
+#endif
     }
 }
 

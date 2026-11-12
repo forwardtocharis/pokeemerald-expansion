@@ -479,20 +479,24 @@ string generate_groups_text(Json groups_data, vector<string> &invalid_maps) {
     vector<string> valid_groups;
     for (auto &key : groups_data["group_order"].array_items()) {
         string group = json_to_string(key);
-        vector<string> valid_maps;
+        bool has_any_valid = false;
+        vector<string> group_entries;
         auto maps = groups_data[group].array_items();
         for (Json &map_name : maps) {
             string map_name_str = json_to_string(map_name);
             auto it = find(invalid_maps.begin(), invalid_maps.end(), map_name_str);
             if (it == invalid_maps.end()) {
-                valid_maps.push_back(map_name_str);
+                group_entries.push_back(map_name_str);
+                has_any_valid = true;
+            } else {
+                group_entries.push_back("NULL");
             }
         }
 
-        if (valid_maps.size() > 0) {
+        if (has_any_valid) {
             text << group << "::\n";
-            for (string map : valid_maps)
-                text << "\t.4byte " << map << "\n";
+            for (string entry : group_entries)
+                text << "\t.4byte " << entry << "\n";
             text << "\n";
             valid_groups.push_back(group);
         }
@@ -750,12 +754,36 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
         }
         string map_name = json_to_string(map_data, "name");
 
-        // Allow genuine multi-region maps (Johto/Kanto/Sinnoh).
-        // Only filter out legacy FireRed/LeafGreen maps (name ends with "_Frlg").
-        bool is_frlg_legacy = (map_name.size() >= 5
+        // Allow genuine multi-region maps (Johto/Kanto/Sinnoh) and mainland Kanto FRLG
+        // interiors, gyms, marts, gates, dungeons, and Pokemon League.
+        // Only filter out Sevii Islands, S.S. Anne, and unused legacy FRLG maps.
+        bool is_frlg_map = (map_name.size() >= 5
             && map_name.compare(map_name.size() - 5, 5, "_Frlg") == 0);
-        if (is_frlg_legacy) {
-            invalid_maps.push_back(map_name);
+        if (is_frlg_map) {
+            static const vector<string> excluded_prefixes = {
+                "SSAnne_",
+                "OneIsland",
+                "TwoIsland",
+                "ThreeIsland",
+                "FourIsland",
+                "FiveIsland",
+                "SixIsland",
+                "SevenIsland",
+                "MtEmber",
+                "TrainerTower",
+                "NavelRock",
+                "BirthIsland",
+            };
+            bool is_excluded = false;
+            for (const string &pfx : excluded_prefixes) {
+                if (map_name.rfind(pfx, 0) == 0) {
+                    is_excluded = true;
+                    break;
+                }
+            }
+            if (is_excluded) {
+                invalid_maps.push_back(map_name);
+            }
         }
     }
 
@@ -896,6 +924,8 @@ string generate_layouts_constants_text(Json layouts_data) {
         }
         i++;
     }
+
+    text << "\n#define LAYOUTS_COUNT " << (i - 1) << "\n";
 
     text << "\n//Constants for unused layouts\n";
     vector<string> required_layout_defines = parse_required_layout_defines();

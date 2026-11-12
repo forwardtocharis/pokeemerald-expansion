@@ -58,10 +58,30 @@ Route38_EventScript_RanFromRaikou::
 	goto EventScript_MonFlewAway
 	end
 
+@ === BEGIN GENERATED EVENTS ===
 
+Route38_EventScript_Trainer1::
+	trainerbattle_single TRAINER_FOSTER, Route38_Text_Trainer1Intro, Route38_Text_Trainer1Defeat
+	msgbox Route38_Text_Trainer1Post, MSGBOX_AUTOCLOSE
+	end
+
+@ === END GENERATED EVENTS ===
 Route38_Text_Sign1:
-	.string "Route38$"
+	.string "ROUTE 38\n"
+	.string "ECRUTEAK CITY - ROUTE 39$"
 
 Route38_Text_RaikouRoar:
 	.string "Gyaaa-ooh!$"
+
+Route38_Text_Trainer1Intro:
+	.string "Our eyes met on Route 38! Let's\n"
+	.string "battle!$"
+
+Route38_Text_Trainer1Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route38_Text_Trainer1Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
 

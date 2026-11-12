@@ -49,10 +49,6 @@ CeruleanCity_EventScript_TrainerTips::
 	msgbox CeruleanCity_Text_Sign4, MSGBOX_SIGN
 	end
 
-CeruleanCity_BikeShop_EventScript_Bicycle::
-	msgbox CeruleanCity_Text_Sign5, MSGBOX_SIGN
-	end
-
 CeruleanCity_EventScript_BaldingMan::
 	msgbox CeruleanCity_Text_CeruleanCaveHorriblyDangerous, MSGBOX_NPC
 	end
@@ -113,15 +109,21 @@ CeruleanCity_Text_Sign7:
 
 CeruleanCity_Text_CaveGuardHalt:
 	.string "This is CERULEAN CAVE.\n"
-	.string "Horribly powerful POKéMON lurk within.\p"
-	.string "Only a recognized POKéMON LEAGUE CHAMPION\n"
+	.string "Horribly powerful POKéMON lurk\p"
+	.string "within.\n"
+	.string "Only a recognized POKéMON LEAGUE\p"
+	.string "CHAMPION\n"
 	.string "is permitted beyond this point!$"
 
 CeruleanCity_Text_CaveGuardStepAside:
-	.string "Wait... you're the POKéMON LEAGUE CHAMPION!\n"
-	.string "Your strength and accomplishments are undeniable.\p"
-	.string "The barrier to CERULEAN CAVE is cleared for you.\n"
-	.string "Be extremely careful in those depths!$"
+	.string "Wait... you're the POKéMON LEAGUE\n"
+	.string "CHAMPION!\p"
+	.string "Your strength and accomplishments\n"
+	.string "are undeniable.\p"
+	.string "The barrier to CERULEAN CAVE is\n"
+	.string "cleared for you.\p"
+	.string "Be extremely careful in those\n"
+	.string "depths!$"
 
 CeruleanCity_Text_CeruleanCaveHorriblyDangerous:
 	.string "The CERULEAN CAVE is horribly\n"

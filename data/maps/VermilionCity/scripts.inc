@@ -172,79 +172,102 @@ VermilionCity_Text_Sign2:
 
 VermilionCity_Text_Sign3:
 	.string "Vermilion City Pokémon Gym\n"
-	.string "Leader: Lt. Surge, The Lightning American!$"
+	.string "Leader: Lt. Surge\l"
+	.string "The Lightning American!$"
 
 VermilionCity_Text_Sign4:
 	.string "Vermilion Harbor$"
 
 VermilionCity_Text_Sign5:
-	.string "Notice: A sleeping Pokémon is blocking the road.$"
+	.string "Notice: A sleeping Pokémon\n"
+	.string "is blocking the road.$"
 
 VermilionCity_Text_Woman:
-	.string "We're setting up a fast transit line between regions!$"
+	.string "We're setting up a fast transit\n"
+	.string "line between regions!$"
 
 VermilionCity_Text_OldMan1:
-	.string "Did you see the big ferry docked in the harbor?$"
+	.string "Did you see the big ferry\n"
+	.string "docked in the harbor?$"
 
 VermilionCity_Text_OldMan2:
-	.string "My Machop is stomping the land flat for building.$"
+	.string "My Machop is stomping the land\n"
+	.string "flat for building.$"
 
 VermilionCity_Text_Machop:
 	.string "Machop: Guo! Gogogoh!$"
 
 VermilionCity_Text_Sailor:
-	.string "The sea breeze feels wonderful here at the port.$"
+	.string "The sea breeze feels wonderful\n"
+	.string "here at the port.$"
 
 VermilionCity_Text_OaksAide:
-	.string "Professor Oak asked me to monitor regional biodiversity.$"
+	.string "Professor Oak asked me to\n"
+	.string "monitor regional biodiversity.$"
 
 VermilionCity_Text_SailorWelcome:
-	.string "Ahoy! The S.S. TIDAL offers high-speed transit across regions.$"
+	.string "Ahoy! The S.S. TIDAL offers high-\n"
+	.string "speed transit across regions.$"
 
 VermilionCity_Text_SailorWhereTo:
-	.string "Where would you like to set sail today?$"
+	.string "Where would you like to set\n"
+	.string "sail today?$"
 
 VermilionCity_Text_SlateportItIs:
-	.string "Slateport City in HOENN, is that right?$"
+	.string "Slateport City in HOENN,\n"
+	.string "is that right?$"
 
 VermilionCity_Text_LilycoveItIs:
-	.string "Lilycove City in HOENN, is that right?$"
+	.string "Lilycove City in HOENN,\n"
+	.string "is that right?$"
 
 VermilionCity_Text_OlivineItIs:
-	.string "Olivine City in JOHTO, is that right?$"
+	.string "Olivine City in JOHTO,\n"
+	.string "is that right?$"
 
 VermilionCity_Text_CanalaveItIs:
-	.string "Canalave City in SINNOH, is that right?$"
+	.string "Canalave City in SINNOH,\n"
+	.string "is that right?$"
 
 VermilionCity_Text_SailorDepartHoenn:
-	.string "Aye aye! Setting sail for the HOENN region!$"
+	.string "Aye aye! Setting sail for\n"
+	.string "the HOENN region!$"
 
 VermilionCity_Text_SailorDepartJohto:
-	.string "Aye aye! Setting sail for the JOHTO region!$"
+	.string "Aye aye! Setting sail for\n"
+	.string "the JOHTO region!$"
 
 VermilionCity_Text_SailorDepartSinnoh:
-	.string "Aye aye! Setting sail for the SINNOH region!$"
+	.string "Aye aye! Setting sail for\n"
+	.string "the SINNOH region!$"
 
 VermilionCity_Text_SailorComeBackSoon:
-	.string "Let me know whenever you're ready to sail!$"
+	.string "Let me know whenever you're\n"
+	.string "ready to sail!$"
 
 VermilionCity_Text_SailToFrontierPrompt:
-	.string "Ah, an authorized BATTLE FRONTIER contender! Would you like to sail to the BATTLE FRONTIER?$"
+	.string "Ah, an authorized BATTLE FRONTIER\n"
+	.string "contender!\p"
+	.string "Would you like to sail to the\n"
+	.string "BATTLE FRONTIER?$"
 
 VermilionCity_Text_BattleFrontierItIs:
-	.string "The BATTLE FRONTIER, is that right?$"
+	.string "The BATTLE FRONTIER,\n"
+	.string "is that right?$"
 
 VermilionCity_Text_SailorDepartFrontier:
-	.string "Aye aye! Setting sail for the BATTLE FRONTIER!$"
+	.string "Aye aye! Setting sail for\n"
+	.string "the BATTLE FRONTIER!$"
 
 VermilionCity_Text_SailorOneIslandPrompt:
-	.string "Ahoy! I operate the Seagallop ferry service\n"
+	.string "Ahoy! I operate the Seagallop\n"
 	.string "to the SEVII ISLANDS.\p"
-	.string "Would you like to set sail for ONE ISLAND?$"
+	.string "Would you like to set sail\n"
+	.string "for ONE ISLAND?$"
 
 VermilionCity_Text_SailorDepartOneIsland:
-	.string "All aboard the Seagallop for ONE ISLAND!\n"
-	.string "Hold on tight!$"
+	.string "All aboard the Seagallop for\n"
+	.string "ONE ISLAND! Hold on tight!$"
 
 VermilionCity_Text_SailorOneIslandUnavailable:
 	.string "Sorry, the ferry to One Island\n"

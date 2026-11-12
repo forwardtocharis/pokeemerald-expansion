@@ -1057,14 +1057,37 @@ static void TryUpdateGymLeaderRematchFromTrainer(void)
         UpdateGymLeaderRematch();
 }
 
+static inline u16 GetMultiRegionTrainerFlag(u16 trainerId)
+{
+#if !IS_FRLG
+    s8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    if (trainerId < TRAINERS_COUNT_FRLG)
+    {
+        if (mapGroup == MAP_GROUP(MAP_PALLET_TOWN)
+            || (mapGroup >= MAP_GROUP(MAP_BATTLE_COLOSSEUM_2P_FRLG) && mapGroup < MAP_GROUP(MAP_NEW_BARK_TOWN)))
+        {
+            return KANTO_TRAINER_FLAGS_START + trainerId;
+        }
+    }
+    if (trainerId > TRAINER_NONE && trainerId < TRAINERS_MULTI_REGION_START)
+    {
+        if (mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN))
+            return JOHTO_TRAINER_FLAGS_START + (trainerId % 112);
+        if (mapGroup == MAP_GROUP(MAP_TWINLEAF_TOWN))
+            return SINNOH_TRAINER_FLAGS_START + (trainerId % 112);
+    }
+#endif
+    return TRAINER_FLAGS_START + trainerId;
+}
+
 static u16 GetTrainerAFlag(void)
 {
-    return TRAINER_FLAGS_START + TRAINER_BATTLE_PARAM.opponentA;
+    return GetMultiRegionTrainerFlag(TRAINER_BATTLE_PARAM.opponentA);
 }
 
 static u16 GetTrainerBFlag(void)
 {
-    return TRAINER_FLAGS_START + TRAINER_BATTLE_PARAM.opponentB;
+    return GetMultiRegionTrainerFlag(TRAINER_BATTLE_PARAM.opponentB);
 }
 
 static bool32 IsPlayerDefeated(u32 battleOutcome)
@@ -1396,7 +1419,7 @@ void ConfigureApproachingFacilityTrainerBattle(struct ApproachingTrainer *approa
 bool32 GetTrainerFlagFromScriptPointer(const u8 *data)
 {
     TrainerBattleParameter *temp = (TrainerBattleParameter*)(data + TRAINERBATTLE_OPCODE_OFFSET);
-    return FlagGet(TRAINER_FLAGS_START + temp->params.opponentA);
+    return FlagGet(GetMultiRegionTrainerFlag(temp->params.opponentA));
 }
 
 bool32 GetRematchFromScriptPointer(const u8 *data)
@@ -1451,17 +1474,17 @@ static void UNUSED SetBattledTrainerFlag(void)
 
 bool8 HasTrainerBeenFought(u16 trainerId)
 {
-    return FlagGet(TRAINER_FLAGS_START + trainerId);
+    return FlagGet(GetMultiRegionTrainerFlag(trainerId));
 }
 
 void SetTrainerFlag(u16 trainerId)
 {
-    FlagSet(TRAINER_FLAGS_START + trainerId);
+    FlagSet(GetMultiRegionTrainerFlag(trainerId));
 }
 
 void ClearTrainerFlag(u16 trainerId)
 {
-    FlagClear(TRAINER_FLAGS_START + trainerId);
+    FlagClear(GetMultiRegionTrainerFlag(trainerId));
 }
 
 void BattleSetup_StartTrainerBattle(void)

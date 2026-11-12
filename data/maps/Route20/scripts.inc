@@ -5,9 +5,6 @@ Route20_EventScript_SeafoamIslandsSign::
 	msgbox Route20_Text_Sign1, MSGBOX_SIGN
 	end
 
-Route20_EventScript_Camper::
-	msgbox Route20_Text_MistyTrainsHere, MSGBOX_NPC
-	end
 Route20_Text_Sign1:
 	.string "Route20$"
 

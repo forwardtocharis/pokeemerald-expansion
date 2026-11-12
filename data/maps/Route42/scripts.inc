@@ -58,10 +58,47 @@ Route42_EventScript_RanFromSuicune::
 	goto EventScript_MonFlewAway
 	end
 
+@ === BEGIN GENERATED EVENTS ===
 
+Route42_EventScript_Trainer1::
+	trainerbattle_single TRAINER_MOLLIE, Route42_Text_Trainer1Intro, Route42_Text_Trainer1Defeat
+	msgbox Route42_Text_Trainer1Post, MSGBOX_AUTOCLOSE
+	end
+
+Route42_EventScript_Trainer2::
+	trainerbattle_single TRAINER_RONALD, Route42_Text_Trainer2Intro, Route42_Text_Trainer2Defeat
+	msgbox Route42_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
+@ === END GENERATED EVENTS ===
 Route42_Text_Sign1:
-	.string "Route42$"
+	.string "ROUTE 42\n"
+	.string "ECRUTEAK CITY - MAHOGANY TOWN$"
 
 Route42_Text_SuicuneRoar:
 	.string "Gugyoo-ooh!$"
+
+Route42_Text_Trainer1Intro:
+	.string "Our eyes met on Route 42! Let's\n"
+	.string "battle!$"
+
+Route42_Text_Trainer1Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route42_Text_Trainer1Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
+
+Route42_Text_Trainer2Intro:
+	.string "Our eyes met on Route 42! Let's\n"
+	.string "battle!$"
+
+Route42_Text_Trainer2Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route42_Text_Trainer2Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
 

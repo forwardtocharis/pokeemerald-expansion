@@ -1465,13 +1465,19 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
             DestroyTask(taskId);
             if (gTasks[taskId].tIsPlayerHouse)
             {
-                if (IS_FRLG)
+                if (IS_FRLG || gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_1F))
                     StringCopy(gStringVar1, COMPOUND_STRING("PROF. OAK"));
+                else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN__PLAYERS_HOUSE_1_F))
+                    StringCopy(gStringVar1, COMPOUND_STRING("PROF. ELM"));
+                else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TWINLEAF_TOWN__PLAYERS_HOUSE_1_F))
+                    StringCopy(gStringVar1, COMPOUND_STRING("PROF. ROWAN"));
                 else
                     StringCopy(gStringVar1, COMPOUND_STRING("PROF. BIRCH"));
                 ScriptContext_SetupScript(EventScript_AfterWhiteOutMomHeal);
             }
-            else if (IS_FRLG)
+            else if (IS_FRLG
+                  || (gSaveBlock1Ptr->location.mapGroup >= MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_1F)
+                   && gSaveBlock1Ptr->location.mapGroup <= MAP_GROUP(MAP_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE)))
             {
                 ScriptContext_SetupScript(EventScript_AfterWhiteOutHeal_Frlg);
             }

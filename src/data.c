@@ -10,6 +10,7 @@
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle_ai.h"
+#include "constants/map_groups.h"
 
 const u16 gMinigameDigits_Pal[] = INCGFX_U16("graphics/link/minigame_digits.png", ".gbapal");
 const u32 gMinigameDigits_Gfx[] = INCGFX_U32("graphics/link/minigame_digits.png", ".4bpp.smol");
@@ -235,6 +236,29 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #include "data/trainers.h"
 #endif
 };
+
+#if !IS_FRLG
+const struct Trainer gTrainersFrlg[DIFFICULTY_COUNT][TRAINERS_COUNT_FRLG] =
+{
+#include "data/trainers_frlg.h"
+};
+#endif
+
+const struct Trainer *GetMultiRegionTrainerStruct(enum DifficultyLevel difficulty, u16 trainerId)
+{
+#if !IS_FRLG
+    if (trainerId < TRAINERS_COUNT_FRLG)
+    {
+        s8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        if (mapGroup == MAP_GROUP(MAP_PALLET_TOWN)
+            || (mapGroup >= MAP_GROUP(MAP_BATTLE_COLOSSEUM_2P_FRLG) && mapGroup < MAP_GROUP(MAP_NEW_BARK_TOWN)))
+        {
+            return &gTrainersFrlg[difficulty][trainerId];
+        }
+    }
+#endif
+    return &gTrainers[difficulty][SanitizeTrainerId(trainerId)];
+}
 #endif
 
 #include "data/text/follower_messages.h"

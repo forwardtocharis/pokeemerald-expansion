@@ -55,7 +55,8 @@ Route14_Text_MarlonDefeat:
 
 Route14_Text_MarlonPostBattle:
 	.string "Bird POKéMON are my one true love.\n"
-	.string "I don't want to raise anything else.$"
+	.string "I don't want to raise anything\p"
+	.string "else.$"
 
 Route14_Text_DonaldIntro:
 	.string "Have you heard the legend of the\n"

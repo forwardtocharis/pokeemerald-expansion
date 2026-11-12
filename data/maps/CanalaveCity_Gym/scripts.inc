@@ -54,38 +54,50 @@ CanalaveCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 CanalaveCity_Gym_Text_ByronIntro:
-	.string "BYRON: Welcome to the CANALAVE CITY GYM!\n"
-	.string "I specialize in STEEL-type Pokémon.\p"
-	.string "Show me what you and your team are made of!$"
+	.string "BYRON: Welcome to the CANALAVE\n"
+	.string "CITY GYM!\p"
+	.string "I specialize in STEEL-type Pokémon.\n"
+	.string "Show me what you and your team are\p"
+	.string "made of!$"
 
 CanalaveCity_Gym_Text_ByronDefeat:
-	.string "Incredible! You have bested my STEEL techniques!\n"
-	.string "Take the official LEAGUE MINE BADGE!$"
+	.string "Incredible! You have bested my\n"
+	.string "STEEL techniques!\p"
+	.string "Take the official LEAGUE MINE\n"
+	.string "BADGE!$"
 
 CanalaveCity_Gym_Text_ByronPostBattle:
-	.string "BYRON: With that badge, your journey reaches new heights.\n"
+	.string "BYRON: With that badge, your\n"
+	.string "journey reaches new heights.\p"
 	.string "Continue striving toward greatness!$"
 
 CanalaveCity_Gym_Text_ByronRematchIntro:
 	.string "BYRON: Welcome back, Trainer!\n"
-	.string "My team has grown substantially since our last match.\p"
+	.string "My team has grown substantially\p"
+	.string "since our last match.\n"
 	.string "Are you ready for a rematch battle?$"
 
 CanalaveCity_Gym_Text_ByronPostRematch:
 	.string "BYRON: What a spectacular contest!\n"
-	.string "Your mastery is truly beyond compare!$"
+	.string "Your mastery is truly beyond\p"
+	.string "compare!$"
 
 CanalaveCity_Gym_Text_ByronExplainBadge:
-	.string "BYRON: The MINE BADGE proves your strength.\n"
-	.string "Pokémon across the land will acknowledge your bond!$"
+	.string "BYRON: The MINE BADGE proves your\n"
+	.string "strength.\p"
+	.string "Pokémon across the land will\n"
+	.string "acknowledge your bond!$"
 
 CanalaveCity_Gym_Text_GymGuyAdvice:
 	.string "Yo! Champ in the making!\n"
-	.string "This GYM is all about STEEL-type Pokémon.\p"
-	.string "Plan your types carefully and strike with purpose!$"
+	.string "This GYM is all about STEEL-type\p"
+	.string "Pokémon.\n"
+	.string "Plan your types carefully and\p"
+	.string "strike with purpose!$"
 
 CanalaveCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!$"
+	.string "You did it! That was an incredible\n"
+	.string "gym victory!$"
 
 CanalaveCity_Gym_Text_GymStatue:
 	.string "CANALAVE CITY POKéMON GYM\n"

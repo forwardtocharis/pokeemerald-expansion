@@ -37,10 +37,6 @@ SaffronCity_EventScript_TrainerFanClubSign::
 	msgbox SaffronCity_Text_Sign9, MSGBOX_SIGN
 	end
 
-SaffronCity_EventScript_BattleGirl::
-	msgbox SaffronCity_Text_LanceIsLegendary, MSGBOX_NPC
-	end
-
 SaffronCity_EventScript_Boy::
 	msgbox SaffronCity_Text_SilphCoLargestBuilding, MSGBOX_NPC
 	end

@@ -114,59 +114,105 @@ SnowpointCity_EventScript_RegigigasPeaceful::
 	msgbox SnowpointCity_Text_RegigigasPeaceful, MSGBOX_SIGN
 	end
 
+@ === BEGIN GENERATED EVENTS ===
+
+SnowpointCity_EventScript_AutoNPC1::
+	msgbox SnowpointCity_Text_AutoNPC1, MSGBOX_NPC
+	end
+
+SnowpointCity_EventScript_AutoNPC2::
+	msgbox SnowpointCity_Text_AutoNPC2, MSGBOX_NPC
+	end
+
+@ === END GENERATED EVENTS ===
 SnowpointCity_Text_Sign1:
 	.string "Snowpoint City\n"
-	.string "A city of roaring snow and serene endurance.$"
+	.string "A city of roaring snow and serene\p"
+	.string "endurance.$"
 
 SnowpointCity_Text_Sign2:
 	.string "Snowpoint City Pokémon Gym\n"
 	.string "Leader: Candice$"
 
 SnowpointCity_Text_LakeAcuityDescription:
-	.string "A pathway leads west into the tranquil, ice-fringed Lake Acuity.\n"
-	.string "An ancient island cavern rests in the center of the waters.$"
+	.string "A pathway leads west into the\n"
+	.string "tranquil, ice-fringed Lake Acuity.\p"
+	.string "An ancient island cavern rests in\n"
+	.string "the center of the waters.$"
 
 SnowpointCity_Text_InspectLakeAcuityPrompt:
-	.string "Would you like to approach the shimmering lake cavern?$"
+	.string "Would you like to approach the\n"
+	.string "shimmering lake cavern?$"
 
 SnowpointCity_Text_UxieApproaches:
-	.string "The Being of Knowledge descends from the tranquil heights of Lake Acuity!$"
+	.string "The Being of Knowledge descends\n"
+	.string "from the tranquil heights of Lake\p"
+	.string "Acuity!$"
 
 SnowpointCity_Text_UxieCalm:
-	.string "Uxie has bestowed its serene wisdom upon you.$"
+	.string "Uxie has bestowed its serene\n"
+	.string "wisdom upon you.$"
 
 SnowpointCity_Text_UxieVanished:
-	.string "Uxie vanished into the misty depths of the lake...$"
+	.string "Uxie vanished into the misty\n"
+	.string "depths of the lake...$"
 
 SnowpointCity_Text_UxieFlewOff:
-	.string "Uxie flew across the surface of the lake!$"
+	.string "Uxie flew across the surface of\n"
+	.string "the lake!$"
 
 SnowpointCity_Text_LakeAcuityPeaceful:
-	.string "Lake Acuity sparkles gently in the falling snow.$"
+	.string "Lake Acuity sparkles gently in the\n"
+	.string "falling snow.$"
 
 SnowpointCity_Text_SnowpointTempleDescription:
-	.string "A towering colossal statue slumbers deep within the ancient Snowpoint Temple.\n"
+	.string "A towering colossal statue\n"
+	.string "slumbers deep within the ancient\p"
+	.string "Snowpoint Temple.\n"
 	.string "A mysterious inscription reads:\p"
-	.string "'A body of rock, a body of ice, a body of steel...'\n"
-	.string "'When the three giants gather, the colossal titan awakens.'$"
+	.string "'A body of rock, a body of ice, a\n"
+	.string "body of steel...'\p"
+	.string "'When the three giants gather, the\n"
+	.string "colossal titan awakens.'$"
 
 SnowpointCity_Text_RegisResonate:
-	.string "The presence of Regirock, Regice, and Registeel resonates powerfully!\n"
+	.string "The presence of Regirock, Regice,\n"
+	.string "and Registeel resonates\p"
+	.string "powerfully!\n"
 	.string "The ancient titan begins to stir!$"
 
 SnowpointCity_Text_RegigigasCalm:
-	.string "Regigigas settled quietly into your party.$"
+	.string "Regigigas settled quietly into\n"
+	.string "your party.$"
 
 SnowpointCity_Text_RegigigasVanished:
-	.string "Regigigas fell into a deep, eternal slumber once more...$"
+	.string "Regigigas fell into a deep,\n"
+	.string "eternal slumber once more...$"
 
 SnowpointCity_Text_RegigigasFlewOff:
-	.string "Regigigas retreated into the temple depths!$"
+	.string "Regigigas retreated into the\n"
+	.string "temple depths!$"
 
 SnowpointCity_Text_RegigigasSlumbers:
-	.string "The massive titan remains completely motionless like a stone monument.\n"
-	.string "It feels as if three elemental giants are needed to break the ancient seal.$"
+	.string "The massive titan remains\n"
+	.string "completely motionless like a stone\p"
+	.string "monument.\n"
+	.string "It feels as if three elemental\p"
+	.string "giants are needed to break the\n"
+	.string "ancient seal.$"
 
 SnowpointCity_Text_RegigigasPeaceful:
-	.string "The sacred altar of Snowpoint Temple rests in solemn stillness.$"
+	.string "The sacred altar of Snowpoint\n"
+	.string "Temple rests in solemn stillness.$"
+
+SnowpointCity_Text_AutoNPC1:
+	.string "Up here in northern Sinnoh, only\n"
+	.string "determined Trainers reach\p"
+	.string "Snowpoint Temple!\n"
+	.string "Candice's Ice-type focus burns\p"
+	.string "bright despite the chill.$"
+
+SnowpointCity_Text_AutoNPC2:
+	.string "Lake Acuity's calm waters reflect\n"
+	.string "the northern sky like a mirror.$"
 

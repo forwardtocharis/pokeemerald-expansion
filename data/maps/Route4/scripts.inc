@@ -9,21 +9,10 @@ Route4_EventScript_RouteSign::
 	msgbox Route4_Text_Sign2, MSGBOX_SIGN
 	end
 
-Route4_EventScript_Boy::
-	msgbox Route4_Text_BrockFamousLeader, MSGBOX_NPC
-	end
-
 Route4_EventScript_Woman::
 	msgbox Route4_Text_TrippedOverGeodude, MSGBOX_NPC
 	end
 
-Route4_EventScript_MegaPunchTutor::
-	msgbox Route4_Text_MegaPunchTeach, MSGBOX_NPC
-	end
-
-Route4_EventScript_MegaKickTutor::
-	msgbox Route4_Text_MegaKickTeach, MSGBOX_NPC
-	end
 Route4_Text_Sign1:
 	.string "Route4$"
 

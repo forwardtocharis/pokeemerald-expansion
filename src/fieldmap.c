@@ -164,6 +164,8 @@ void InitTrainerHillMap(void)
 static void InitMapLayoutData(const struct MapHeader *mapHeader)
 {
     const struct MapLayout *mapLayout = mapHeader->mapLayout;
+    if (!mapLayout)
+        return;
     CpuFastFill16(MAPGRID_UNDEFINED, sBackupMapData, sizeof(sBackupMapData));
 
     gBackupMapLayout.map = sBackupMapData;

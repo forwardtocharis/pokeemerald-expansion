@@ -54,38 +54,52 @@ VeilstoneCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 VeilstoneCity_Gym_Text_MayleneIntro:
-	.string "MAYLENE: Welcome to the VEILSTONE CITY GYM!\n"
-	.string "I specialize in FIGHTING-type Pokémon.\p"
-	.string "Show me what you and your team are made of!$"
+	.string "MAYLENE: Welcome to the VEILSTONE\n"
+	.string "CITY GYM!\p"
+	.string "I specialize in FIGHTING-type\n"
+	.string "Pokémon.\p"
+	.string "Show me what you and your team are\n"
+	.string "made of!$"
 
 VeilstoneCity_Gym_Text_MayleneDefeat:
-	.string "Incredible! You have bested my FIGHTING techniques!\n"
-	.string "Take the official LEAGUE COBBLE BADGE!$"
+	.string "Incredible! You have bested my\n"
+	.string "FIGHTING techniques!\p"
+	.string "Take the official LEAGUE COBBLE\n"
+	.string "BADGE!$"
 
 VeilstoneCity_Gym_Text_MaylenePostBattle:
-	.string "MAYLENE: With that badge, your journey reaches new heights.\n"
+	.string "MAYLENE: With that badge, your\n"
+	.string "journey reaches new heights.\p"
 	.string "Continue striving toward greatness!$"
 
 VeilstoneCity_Gym_Text_MayleneRematchIntro:
 	.string "MAYLENE: Welcome back, Trainer!\n"
-	.string "My team has grown substantially since our last match.\p"
+	.string "My team has grown substantially\p"
+	.string "since our last match.\n"
 	.string "Are you ready for a rematch battle?$"
 
 VeilstoneCity_Gym_Text_MaylenePostRematch:
-	.string "MAYLENE: What a spectacular contest!\n"
-	.string "Your mastery is truly beyond compare!$"
+	.string "MAYLENE: What a spectacular\n"
+	.string "contest!\p"
+	.string "Your mastery is truly beyond\n"
+	.string "compare!$"
 
 VeilstoneCity_Gym_Text_MayleneExplainBadge:
-	.string "MAYLENE: The COBBLE BADGE proves your strength.\n"
-	.string "Pokémon across the land will acknowledge your bond!$"
+	.string "MAYLENE: The COBBLE BADGE proves\n"
+	.string "your strength.\p"
+	.string "Pokémon across the land will\n"
+	.string "acknowledge your bond!$"
 
 VeilstoneCity_Gym_Text_GymGuyAdvice:
 	.string "Yo! Champ in the making!\n"
-	.string "This GYM is all about FIGHTING-type Pokémon.\p"
-	.string "Plan your types carefully and strike with purpose!$"
+	.string "This GYM is all about FIGHTING-\p"
+	.string "type Pokémon.\n"
+	.string "Plan your types carefully and\p"
+	.string "strike with purpose!$"
 
 VeilstoneCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!$"
+	.string "You did it! That was an incredible\n"
+	.string "gym victory!$"
 
 VeilstoneCity_Gym_Text_GymStatue:
 	.string "VEILSTONE CITY POKéMON GYM\n"

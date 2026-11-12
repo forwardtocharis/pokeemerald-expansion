@@ -54,38 +54,50 @@ OreburghCity_Gym_EventScript_GymStatuePostVictory::
 	releaseall
 	end
 OreburghCity_Gym_Text_RoarkIntro:
-	.string "ROARK: Welcome to the OREBURGH CITY GYM!\n"
-	.string "I specialize in ROCK-type Pokémon.\p"
-	.string "Show me what you and your team are made of!$"
+	.string "ROARK: Welcome to the OREBURGH\n"
+	.string "CITY GYM!\p"
+	.string "I specialize in ROCK-type Pokémon.\n"
+	.string "Show me what you and your team are\p"
+	.string "made of!$"
 
 OreburghCity_Gym_Text_RoarkDefeat:
-	.string "Incredible! You have bested my ROCK techniques!\n"
-	.string "Take the official LEAGUE COAL BADGE!$"
+	.string "Incredible! You have bested my\n"
+	.string "ROCK techniques!\p"
+	.string "Take the official LEAGUE COAL\n"
+	.string "BADGE!$"
 
 OreburghCity_Gym_Text_RoarkPostBattle:
-	.string "ROARK: With that badge, your journey reaches new heights.\n"
+	.string "ROARK: With that badge, your\n"
+	.string "journey reaches new heights.\p"
 	.string "Continue striving toward greatness!$"
 
 OreburghCity_Gym_Text_RoarkRematchIntro:
 	.string "ROARK: Welcome back, Trainer!\n"
-	.string "My team has grown substantially since our last match.\p"
+	.string "My team has grown substantially\p"
+	.string "since our last match.\n"
 	.string "Are you ready for a rematch battle?$"
 
 OreburghCity_Gym_Text_RoarkPostRematch:
 	.string "ROARK: What a spectacular contest!\n"
-	.string "Your mastery is truly beyond compare!$"
+	.string "Your mastery is truly beyond\p"
+	.string "compare!$"
 
 OreburghCity_Gym_Text_RoarkExplainBadge:
-	.string "ROARK: The COAL BADGE proves your strength.\n"
-	.string "Pokémon across the land will acknowledge your bond!$"
+	.string "ROARK: The COAL BADGE proves your\n"
+	.string "strength.\p"
+	.string "Pokémon across the land will\n"
+	.string "acknowledge your bond!$"
 
 OreburghCity_Gym_Text_GymGuyAdvice:
 	.string "Yo! Champ in the making!\n"
-	.string "This GYM is all about ROCK-type Pokémon.\p"
-	.string "Plan your types carefully and strike with purpose!$"
+	.string "This GYM is all about ROCK-type\p"
+	.string "Pokémon.\n"
+	.string "Plan your types carefully and\p"
+	.string "strike with purpose!$"
 
 OreburghCity_Gym_Text_GymGuyPostVictory:
-	.string "You did it! That was an incredible gym victory!$"
+	.string "You did it! That was an incredible\n"
+	.string "gym victory!$"
 
 OreburghCity_Gym_Text_GymStatue:
 	.string "OREBURGH CITY POKéMON GYM\n"

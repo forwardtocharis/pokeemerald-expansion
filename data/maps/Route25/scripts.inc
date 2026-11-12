@@ -5,10 +5,6 @@ Route25_EventScript_SeaCottageSign::
 	msgbox Route25_Text_Sign1, MSGBOX_SIGN
 	end
 
-Route25_EventScript_Beauty::
-	msgbox Route25_Text_MistyHighHopes, MSGBOX_NPC
-	end
-
 Route25_EventScript_Man::
 	msgbox Route25_Text_AreYouHereAlone, MSGBOX_NPC
 	end

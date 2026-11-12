@@ -22,23 +22,59 @@
     {
       "map": "MAP_ROUTE34",
       "offset": 0,
-      "direction": "left"
+      "direction": "up"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 16,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AzaleaTown_EventScript_AutoNPC1",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 19,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AzaleaTown_EventScript_AutoNPC2",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
-      "x": 10,
-      "y": 8,
+      "x": 6,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_AZALEA_TOWN__GYM",
       "dest_warp_id": "0"
     },
     {
       "x": 24,
-      "y": 8,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_AZALEA_TOWN__POKEMON_CENTER_1_F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_AZALEA_TOWN__MART",
       "dest_warp_id": "0"
     }
   ],
@@ -46,11 +82,19 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 20,
-      "y": 8,
+      "x": 19,
+      "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "AzaleaTown_EventScript_TownSign"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AzaleaTown_EventScript_GymSignAuto"
     }
   ]
 }

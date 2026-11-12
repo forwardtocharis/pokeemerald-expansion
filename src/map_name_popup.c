@@ -560,9 +560,81 @@ static bool32 IsCeladonDeptStore(const struct MapHeader *mapHeader)
     return TRUE;
 }
 
+static const u8 *GetMultiRegionCustomMapName(const struct MapHeader *mapHeader)
+{
+    switch (mapHeader->mapLayoutId)
+    {
+    // Johto Outdoor Maps
+    case LAYOUT_NEW_BARK_TOWN:    return COMPOUND_STRING("NEW BARK TOWN");
+    case LAYOUT_CHERRYGROVE_CITY: return COMPOUND_STRING("CHERRYGROVE");
+    case LAYOUT_VIOLET_CITY:      return COMPOUND_STRING("VIOLET CITY");
+    case LAYOUT_AZALEA_TOWN:      return COMPOUND_STRING("AZALEA TOWN");
+    case LAYOUT_GOLDENROD_CITY:   return COMPOUND_STRING("GOLDENROD CITY");
+    case LAYOUT_ECRUTEAK_CITY:    return COMPOUND_STRING("ECRUTEAK CITY");
+    case LAYOUT_OLIVINE_CITY:     return COMPOUND_STRING("OLIVINE CITY");
+    case LAYOUT_CIANWOOD_CITY:    return COMPOUND_STRING("CIANWOOD CITY");
+    case LAYOUT_MAHOGANY_TOWN:    return COMPOUND_STRING("MAHOGANY TOWN");
+    case LAYOUT_BLACKTHORN_CITY:  return COMPOUND_STRING("BLACKTHORN");
+    case LAYOUT_ROUTE29:          return COMPOUND_STRING("ROUTE 29");
+    case LAYOUT_ROUTE30:          return COMPOUND_STRING("ROUTE 30");
+    case LAYOUT_ROUTE31:          return COMPOUND_STRING("ROUTE 31");
+    case LAYOUT_ROUTE32:          return COMPOUND_STRING("ROUTE 32");
+    case LAYOUT_ROUTE33:          return COMPOUND_STRING("ROUTE 33");
+    case LAYOUT_ROUTE34:          return COMPOUND_STRING("ROUTE 34");
+    case LAYOUT_ROUTE35:          return COMPOUND_STRING("ROUTE 35");
+    case LAYOUT_ROUTE36:          return COMPOUND_STRING("ROUTE 36");
+    case LAYOUT_ROUTE37:          return COMPOUND_STRING("ROUTE 37");
+    case LAYOUT_ROUTE38:          return COMPOUND_STRING("ROUTE 38");
+    case LAYOUT_ROUTE39:          return COMPOUND_STRING("ROUTE 39");
+    case LAYOUT_ROUTE40:          return COMPOUND_STRING("ROUTE 40");
+    case LAYOUT_ROUTE41:          return COMPOUND_STRING("ROUTE 41");
+    case LAYOUT_ROUTE42:          return COMPOUND_STRING("ROUTE 42");
+    case LAYOUT_ROUTE43:          return COMPOUND_STRING("ROUTE 43");
+    case LAYOUT_ROUTE44:          return COMPOUND_STRING("ROUTE 44");
+    case LAYOUT_ROUTE45:          return COMPOUND_STRING("ROUTE 45");
+    case LAYOUT_ROUTE46:          return COMPOUND_STRING("ROUTE 46");
+    // Sinnoh Outdoor Maps
+    case LAYOUT_TWINLEAF_TOWN:    return COMPOUND_STRING("TWINLEAF TOWN");
+    case LAYOUT_SANDGEM_TOWN:     return COMPOUND_STRING("SANDGEM TOWN");
+    case LAYOUT_JUBILIFE_CITY:    return COMPOUND_STRING("JUBILIFE CITY");
+    case LAYOUT_OREBURGH_CITY:    return COMPOUND_STRING("OREBURGH CITY");
+    case LAYOUT_FLOAROMA_TOWN:    return COMPOUND_STRING("FLOAROMA TOWN");
+    case LAYOUT_ETERNA_CITY:      return COMPOUND_STRING("ETERNA CITY");
+    case LAYOUT_HEARTHOME_CITY:   return COMPOUND_STRING("HEARTHOME CITY");
+    case LAYOUT_SOLACEON_TOWN:    return COMPOUND_STRING("SOLACEON TOWN");
+    case LAYOUT_VEILSTONE_CITY:   return COMPOUND_STRING("VEILSTONE CITY");
+    case LAYOUT_PASTORIA_CITY:    return COMPOUND_STRING("PASTORIA CITY");
+    case LAYOUT_CELESTIC_TOWN:    return COMPOUND_STRING("CELESTIC TOWN");
+    case LAYOUT_CANALAVE_CITY:    return COMPOUND_STRING("CANALAVE CITY");
+    case LAYOUT_SNOWPOINT_CITY:   return COMPOUND_STRING("SNOWPOINT CITY");
+    case LAYOUT_SUNYSHORE_CITY:   return COMPOUND_STRING("SUNYSHORE CITY");
+    case LAYOUT_ROUTE201:         return COMPOUND_STRING("ROUTE 201");
+    case LAYOUT_ROUTE202:         return COMPOUND_STRING("ROUTE 202");
+    case LAYOUT_ROUTE203:         return COMPOUND_STRING("ROUTE 203");
+    case LAYOUT_ROUTE204:         return COMPOUND_STRING("ROUTE 204");
+    case LAYOUT_ROUTE205:         return COMPOUND_STRING("ROUTE 205");
+    case LAYOUT_ROUTE206:         return COMPOUND_STRING("ROUTE 206");
+    case LAYOUT_ROUTE207:         return COMPOUND_STRING("ROUTE 207");
+    case LAYOUT_ROUTE208:         return COMPOUND_STRING("ROUTE 208");
+    case LAYOUT_ROUTE209:         return COMPOUND_STRING("ROUTE 209");
+    case LAYOUT_ROUTE210:         return COMPOUND_STRING("ROUTE 210");
+    case LAYOUT_ROUTE211:         return COMPOUND_STRING("ROUTE 211");
+    case LAYOUT_ROUTE212:         return COMPOUND_STRING("ROUTE 212");
+    case LAYOUT_ROUTE213:         return COMPOUND_STRING("ROUTE 213");
+    case LAYOUT_ROUTE214:         return COMPOUND_STRING("ROUTE 214");
+    case LAYOUT_ROUTE215:         return COMPOUND_STRING("ROUTE 215");
+    case LAYOUT_ROUTE218:         return COMPOUND_STRING("ROUTE 218");
+    default:
+        return NULL;
+    }
+}
+
 u8 *GetPopUpMapName(u8 *dest, const struct MapHeader *mapHeader)
 {
-    if (IsCeladonDeptStore(mapHeader))
+    const u8 *customName = GetMultiRegionCustomMapName(mapHeader);
+    if (customName != NULL)
+        StringCopy(dest, customName);
+    else if (IsCeladonDeptStore(mapHeader))
         StringCopy(dest, COMPOUND_STRING("CELADON DEPT."));
     else
         GetMapName(dest, mapHeader->regionMapSectionId, 0);
@@ -709,7 +781,10 @@ static void LoadMapNamePopUpWindowBg(void)
     }
     else
     {
-        popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
+        if (GetMultiRegionCustomMapName(&gMapHeader) != NULL)
+            popUpThemeId = (gMapHeader.mapType == MAP_TYPE_CITY) ? MAPPOPUP_THEME_MARBLE : MAPPOPUP_THEME_WOOD;
+        else
+            popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
         LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);
         CallWindowFunction(popupWindowId, DrawMapNamePopUpFrame);
         PutWindowTilemap(popupWindowId);

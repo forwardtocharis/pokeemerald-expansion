@@ -57,34 +57,82 @@ Route34_EventScript_ShrineLeave::
 	release
 	end
 
+@ === BEGIN GENERATED EVENTS ===
 
+Route34_EventScript_Trainer1::
+	trainerbattle_single TRAINER_WILTON_1, Route34_Text_Trainer1Intro, Route34_Text_Trainer1Defeat
+	msgbox Route34_Text_Trainer1Post, MSGBOX_AUTOCLOSE
+	end
+
+Route34_EventScript_Trainer2::
+	trainerbattle_single TRAINER_STEVE_1, Route34_Text_Trainer2Intro, Route34_Text_Trainer2Defeat
+	msgbox Route34_Text_Trainer2Post, MSGBOX_AUTOCLOSE
+	end
+
+@ === END GENERATED EVENTS ===
 Route34_Text_Sign1:
-	.string "Route34$"
+	.string "ROUTE 34\n"
+	.string "AZALEA TOWN - GOLDENROD CITY$"
 
 Route34_Text_IlexShrineDescription:
-	.string "An ancient wooden shrine weathered by centuries.\n"
-	.string "It honors the guardian spirit of the forest.$"
+	.string "An ancient wooden shrine weathered\n"
+	.string "by centuries.\p"
+	.string "It honors the guardian spirit of\n"
+	.string "the forest.$"
 
 Route34_Text_OfferPrayerPrompt:
-	.string "A soothing breeze whispers through the trees.\n"
-	.string "Would you like to offer a prayer at the shrine?$"
+	.string "A soothing breeze whispers through\n"
+	.string "the trees.\p"
+	.string "Would you like to offer a prayer\n"
+	.string "at the shrine?$"
 
 Route34_Text_OfferedPrayer:
 	.string "{PLAYER} offered a sincere prayer at the shrine...\n"
-	.string "A brilliant emerald light illuminated the forest canopy,\p"
-	.string "and the mythical voice of the forest appeared!$"
+	.string "A brilliant emerald light\p"
+	.string "illuminated the forest canopy,\n"
+	.string "and the mythical voice of the\p"
+	.string "forest appeared!$"
 
 Route34_Text_CelebiBlessedForest:
 	.string "CELEBI touched {PLAYER}'s hand with a warm smile\n"
-	.string "before settling peacefully into the POKé BALL.$"
+	.string "before settling peacefully into\p"
+	.string "the POKé BALL.$"
 
 Route34_Text_CelebiFlewThroughTime:
-	.string "CELEBI dissolved into sparkling verdant light,\n"
-	.string "vanishing into the streams of time...$"
+	.string "CELEBI dissolved into sparkling\n"
+	.string "verdant light,\p"
+	.string "vanishing into the streams of\n"
+	.string "time...$"
 
 Route34_Text_CelebiVanished:
-	.string "CELEBI zipped back into the dense green canopy...$"
+	.string "CELEBI zipped back into the dense\n"
+	.string "green canopy...$"
 
 Route34_Text_ShrinePeaceful:
-	.string "The forest shrine rests quietly in the gentle breeze.$"
+	.string "The forest shrine rests quietly in\n"
+	.string "the gentle breeze.$"
+
+Route34_Text_Trainer1Intro:
+	.string "Our eyes met on Route 34! Let's\n"
+	.string "battle!$"
+
+Route34_Text_Trainer1Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route34_Text_Trainer1Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
+
+Route34_Text_Trainer2Intro:
+	.string "Our eyes met on Route 34! Let's\n"
+	.string "battle!$"
+
+Route34_Text_Trainer2Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route34_Text_Trainer2Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
 

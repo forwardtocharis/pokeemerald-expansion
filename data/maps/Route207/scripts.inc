@@ -154,77 +154,128 @@ Route207_EventScript_SpearPillarLeave::
 	release
 	end
 
+@ === BEGIN GENERATED EVENTS ===
+
+Route207_EventScript_Trainer1::
+	trainerbattle_single TRAINER_NOB_1, Route207_Text_Trainer1Intro, Route207_Text_Trainer1Defeat
+	msgbox Route207_Text_Trainer1Post, MSGBOX_AUTOCLOSE
+	end
+
+@ === END GENERATED EVENTS ===
 Route207_Text_Sign1:
 	.string "Route 207\n"
-	.string "North to Cycling Road, South to Oreburgh City.$"
+	.string "North to Cycling Road, South to\p"
+	.string "Oreburgh City.$"
 
 Route207_Text_DialgaAltarDescription:
-	.string "A massive staircase carves up Mt. Coronet toward the ancient Spear Pillar.\n"
-	.string "The Diamond Altar hums with temporal resonance.$"
+	.string "A massive staircase carves up Mt.\n"
+	.string "Coronet toward the ancient Spear\p"
+	.string "Pillar.\n"
+	.string "The Diamond Altar hums with\p"
+	.string "temporal resonance.$"
 
 Route207_Text_InspectDialgaPrompt:
-	.string "Would you like to touch the Diamond Altar?$"
+	.string "Would you like to touch the\n"
+	.string "Diamond Altar?$"
 
 Route207_Text_DialgaApproaches:
-	.string "Time twists and fractures! Dialga materializes before you!$"
+	.string "Time twists and fractures! Dialga\n"
+	.string "materializes before you!$"
 
 Route207_Text_DialgaCalm:
-	.string "Dialga accepted your presence and aligned with your journey.$"
+	.string "Dialga accepted your presence and\n"
+	.string "aligned with your journey.$"
 
 Route207_Text_DialgaVanished:
-	.string "Dialga dissolved into the infinite river of time...$"
+	.string "Dialga dissolved into the infinite\n"
+	.string "river of time...$"
 
 Route207_Text_DialgaFlewOff:
-	.string "Dialga roared and warped out of the mortal realm!$"
+	.string "Dialga roared and warped out of\n"
+	.string "the mortal realm!$"
 
 Route207_Text_DialgaPeaceful:
-	.string "The Diamond Altar rests under a calm, unbroken flow of time.$"
+	.string "The Diamond Altar rests under a\n"
+	.string "calm, unbroken flow of time.$"
 
 Route207_Text_PalkiaAltarDescription:
-	.string "At the peak of Spear Pillar, the Pearl Altar glows with spatial distortion.$"
+	.string "At the peak of Spear Pillar, the\n"
+	.string "Pearl Altar glows with spatial\p"
+	.string "distortion.$"
 
 Route207_Text_InspectPalkiaPrompt:
-	.string "Would you like to touch the Pearl Altar?$"
+	.string "Would you like to touch the Pearl\n"
+	.string "Altar?$"
 
 Route207_Text_PalkiaApproaches:
-	.string "Space bends and ripples violently! Palkia manifests into this dimension!$"
+	.string "Space bends and ripples violently!\n"
+	.string "Palkia manifests into this\p"
+	.string "dimension!$"
 
 Route207_Text_PalkiaCalm:
-	.string "Palkia acknowledged your strength and harmonized with your soul.$"
+	.string "Palkia acknowledged your strength\n"
+	.string "and harmonized with your soul.$"
 
 Route207_Text_PalkiaVanished:
-	.string "Palkia faded into the dimensional folds of space...$"
+	.string "Palkia faded into the dimensional\n"
+	.string "folds of space...$"
 
 Route207_Text_PalkiaFlewOff:
-	.string "Palkia slashed the rift and vanished across dimensions!$"
+	.string "Palkia slashed the rift and\n"
+	.string "vanished across dimensions!$"
 
 Route207_Text_PalkiaPeaceful:
-	.string "The Pearl Altar stands serene against the endless sky.$"
+	.string "The Pearl Altar stands serene\n"
+	.string "against the endless sky.$"
 
 Route207_Text_HallOfOriginDescription:
-	.string "An ethereal glass staircase ascends into the heavens above Spear Pillar!\n"
-	.string "At the summit lies the Hall of Origin.$"
+	.string "An ethereal glass staircase\n"
+	.string "ascends into the heavens above\p"
+	.string "Spear Pillar!\n"
+	.string "At the summit lies the Hall of\p"
+	.string "Origin.$"
 
 Route207_Text_InspectArceusPrompt:
-	.string "Would you like to ascend the glass staircase to the Hall of Origin?$"
+	.string "Would you like to ascend the glass\n"
+	.string "staircase to the Hall of Origin?$"
 
 Route207_Text_ArceusApproaches:
-	.string "A blinding, celestial luminescence fills the cosmos!\n"
-	.string "The Original One, Arceus, descends upon the altar!$"
+	.string "A blinding, celestial luminescence\n"
+	.string "fills the cosmos!\p"
+	.string "The Original One, Arceus, descends\n"
+	.string "upon the altar!$"
 
 Route207_Text_ArceusCalm:
-	.string "Arceus recognized your bond with all living beings!$"
+	.string "Arceus recognized your bond with\n"
+	.string "all living beings!$"
 
 Route207_Text_ArceusVanished:
-	.string "Arceus returned into the divine origin of creation...$"
+	.string "Arceus returned into the divine\n"
+	.string "origin of creation...$"
 
 Route207_Text_ArceusFlewOff:
-	.string "Arceus ascended beyond the veil of creation!$"
+	.string "Arceus ascended beyond the veil of\n"
+	.string "creation!$"
 
 Route207_Text_ArceusDormant:
-	.string "A mysterious glass etching rests upon the summit.\n"
-	.string "It remains inert... Both Dialga and Palkia must be appeased first.$"
+	.string "A mysterious glass etching rests\n"
+	.string "upon the summit.\p"
+	.string "It remains inert... Both Dialga\n"
+	.string "and Palkia must be appeased first.$"
 
 Route207_Text_ArceusPeaceful:
-	.string "The Hall of Origin radiates with quiet divine tranquility.$"
+	.string "The Hall of Origin radiates with\n"
+	.string "quiet divine tranquility.$"
+
+Route207_Text_Trainer1Intro:
+	.string "Our eyes met on Route 207! Let's\n"
+	.string "battle!$"
+
+Route207_Text_Trainer1Defeat:
+	.string "Whoa! Your Pokémon are seriously\n"
+	.string "strong!$"
+
+Route207_Text_Trainer1Post:
+	.string "Trainers across every region keep\n"
+	.string "pushing me to train harder!$"
 

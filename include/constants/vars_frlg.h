@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_VARS_FRLG_H
 #define GUARD_CONSTANTS_VARS_FRLG_H
-
-
+// FRLG_MULTI_REGION_SHIFTED
+#if IS_FRLG
 
 
 // If nonzero, counts down by one every step.
@@ -305,4 +305,282 @@
 #define NPC_TEXT_COLOR_NEUTRAL   3 // Black, for inanimate objects and messages from the game
 #define NPC_TEXT_COLOR_DEFAULT 255 // If an NPC is selected, use the color specified by GetColorFromTextColorTable, otherwise use Neutral.
 
+#else
+
+
+// If nonzero, counts down by one every step.
+// When it hits zero, repel's effect wears off.
+#define VAR_REPEL_STEP_COUNT_FRLG                0x4220
+
+// Counts up every step. Wraps around at 128.
+// When wraparound occurs, the friendship of
+// every party poke gets a slight boost.
+#define VAR_HAPPINESS_STEP_COUNTER          0x4221
+
+// Counts up every step while a party Pokemon is
+// poisoned. Wraps around at 5. When wraparound
+// occurs, every party Pokemon with the PSN status
+// takes 1 point of damage.
+// This is a deviation from the typical rate in
+// the series, which is 1 damage every 4 steps.
+#define VAR_POISON_STEP_COUNTER_FRLG             0x4222
+
+// Step counter. Caps at 1500. If you enter a map with
+// renewable hidden items and this counter is capped,
+// the counter resets to 0 and all renewable hidden
+// item flags are resampled.
+#define VAR_RENEWABLE_ITEM_STEP_COUNTER     0x4223
+
+// Determines which wild encounter set to use in the
+// Altering Cave. Incremented by Mystery Event.
+// Wraps around at 10.
+#define VAR_ALTERING_CAVE_WILD_SET_FRLG          0x4224
+
+// Step counter set to 500 at game start. When you get
+// a massage from Daisy, it resets to 0. Caps at 500.
+#define VAR_MASSAGE_COOLDOWN_STEP_COUNTER   0x4225
+
+// Step counter. Wraps around at 100. Used to
+// determine whether the player has reached the
+// triangle in time.
+#define VAR_DEOXYS_INTERACTION_STEP_COUNTER 0x4226
+
+// Bits 0-11 are the number of mons in all boxes
+// with the species sanity bit set.
+// Bits 12-15 are the same for the player's party.
+// Used by Quest Log.
+#define VAR_QUEST_LOG_MON_COUNTS           0x4227
+#define VAR_WONDER_NEWS_STEP_COUNTER_FRLG  0x4228
+#define VAR_0x4029                         0x4229
+#define VAR_0x402A                         0x422A
+#define VAR_0x402B                         0x422B
+#define VAR_DAYS_FRLG                      0x422C // was VAR_RESET_RTC_ENABLE
+#define VAR_0x402D                         0x422D
+#define VAR_0x402E                         0x422E
+
+#define VAR_0x402F                         0x422F
+
+#define VAR_ICE_STEP_COUNT_FRLG            0x4230
+#define VAR_STARTER_MON_FRLG               0x4231 // 0: Bulbasaur, 1: Squirtle, 2: Charmander
+#define VAR_RESET_RTC_ENABLE_FRLG          0x4232
+#define VAR_ENIGMA_BERRY_AVAILABLE_FRLG    0x4233
+
+#define VAR_0x4034                         0x4234
+#define VAR_RESORT_GOREGEOUS_STEP_COUNTER  0x4235
+#define VAR_RESORT_GORGEOUS_REQUESTED_MON  0x4236
+#define VAR_PC_BOX_TO_SEND_MON_FRLG        0x4237
+#define VAR_FANCLUB_FAN_COUNTER_FRLG       0x4238
+#define VAR_FANCLUB_LOSE_FAN_TIMER_FRLG    0x4239
+#define VAR_ELEVATOR_FLOOR                 0x423A
+#define VAR_RESORT_GORGEOUS_REWARD         0x423B
+#define VAR_0x403C                         0x423C // Set to 0x0302, never read
+#define VAR_HERACROSS_SIZE_RECORD          0x423D
+#define VAR_DEOXYS_INTERACTION_NUM         0x423E
+#define VAR_0x403F                         0x423F
+#define VAR_MAGIKARP_SIZE_RECORD           0x4240
+#define VAR_0x4041                         0x4241
+#define VAR_TRAINER_CARD_MON_ICON_TINT_IDX 0x4242
+#define VAR_TRAINER_CARD_MON_ICON_1        0x4243
+#define VAR_TRAINER_CARD_MON_ICON_2        0x4244
+#define VAR_TRAINER_CARD_MON_ICON_3        0x4245
+#define VAR_TRAINER_CARD_MON_ICON_4        0x4246
+#define VAR_TRAINER_CARD_MON_ICON_5        0x4247
+#define VAR_TRAINER_CARD_MON_ICON_6        0x4248
+#define VAR_HOF_BRAG_STATE                 0x4249
+#define VAR_EGG_BRAG_STATE                 0x424A
+#define VAR_LINK_WIN_BRAG_STATE            0x424B
+#define VAR_QL_ENTRANCE                    0x424D
+#define VAR_NATIONAL_DEX_FRLG              0x424E
+
+// Map Scene
+#define VAR_MAP_SCENE_PALLET_TOWN_OAK                                          0x4250
+#define VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN                                    0x4251
+#define VAR_MAP_SCENE_CERULEAN_CITY_RIVAL                                      0x4252
+#define VAR_VERMILION_CITY_TICKET_CHECK_TRIGGER                                0x4253
+#define VAR_MAP_SCENE_ROUTE22                                                  0x4254
+#define VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB                           0x4255
+#define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F                             0x4256
+#define VAR_MAP_SCENE_VIRIDIAN_CITY_MART                                       0x4257
+#define VAR_MAP_SCENE_PALLET_TOWN_RIVALS_HOUSE                                 0x4258
+#define VAR_MAP_SCENE_POKEMON_TOWER_6F                                         0x4259
+#define VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR                                   0x425A
+#define VAR_MAP_SCENE_S_S_ANNE_2F_CORRIDOR                                     0x425B
+#define VAR_MAP_SCENE_SILPH_CO_7F                                              0x425C
+#define VAR_MAP_SCENE_POKEMON_TOWER_2F                                         0x425D
+#define VAR_MAP_SCENE_ROUTE16                                                  0x425E
+#define VAR_MAP_SCENE_ROUTE23                                                  0x425F
+#define VAR_MAP_SCENE_SILPH_CO_11F                                             0x4260
+#define VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F                                    0x4261
+#define VAR_MAP_SCENE_ROUTE5_ROUTE6_ROUTE7_ROUTE8_GATES                        0x4262
+#define VAR_MAP_SCENE_SEAFOAM_ISLANDS_B4F                                      0x4263
+#define VAR_MAP_SCENE_VICTORY_ROAD_1F                                          0x4264
+#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER1                                 0x4265
+#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER2                                 0x4266
+#define VAR_MAP_SCENE_VICTORY_ROAD_3F                                          0x4267
+#define VAR_MAP_SCENE_POKEMON_LEAGUE                                           0x4268
+#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL 0x4269
+#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE 0x426A
+#define VAR_MAP_SCENE_ROUTE24                                                  0x426B
+#define VAR_MAP_SCENE_PEWTER_CITY                                              0x426C
+#define VAR_0x406D                                                             0x426D
+#define VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE                        0x426E
+#define VAR_CABLE_CLUB_STATE_FRLG                                              0x426F
+#define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY                                    0x4270
+#define VAR_MAP_SCENE_CINNABAR_ISLAND                                          0x4271
+#define VAR_0x4072                                                             0x4272
+#define VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB                    0x4273
+#define VAR_MAP_SCENE_SEVEN_ISLAND_HOUSE_ROOM1                                 0x4274
+#define VAR_MAP_SCENE_ONE_ISLAND_HARBOR                                        0x4275
+#define VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F                             0x4276
+#define VAR_0x4077                                                             0x4277
+#define VAR_MAP_SCENE_TWO_ISLAND                                               0x4278
+#define VAR_MAP_SCENE_TWO_ISLAND_JOYFUL_GAME_CORNER                            0x4279
+#define VAR_0x407A                                                             0x427A
+#define VAR_MAP_SCENE_THREE_ISLAND                                             0x427B
+#define VAR_MAP_SCENE_POKEMON_CENTER_TEALA                                     0x427C
+#define VAR_MAP_SCENE_CERULEAN_CITY_ROCKET                                     0x427D
+#define VAR_MAP_SCENE_VERMILION_CITY                                           0x427E
+#define VAR_MAP_SCENE_MT_EMBER_EXTERIOR                                        0x427F
+#define VAR_MAP_SCENE_ICEFALL_CAVE_BACK                                        0x4280
+#define VAR_MAP_SCENE_SAFFRON_CITY_DOJO                                        0x4281
+#define VAR_MAP_SCENE_TRAINER_TOWER                                            0x4282
+#define VAR_MAP_SCENE_FIVE_ISLAND_LOST_CAVE_ROOM10                             0x4283
+#define VAR_MAP_SCENE_FIVE_ISLAND_RESORT_GORGEOUS                              0x4284
+#define VAR_MAP_SCENE_INDIGO_PLATEAU_EXTERIOR                                  0x4285
+#define VAR_MAP_SCENE_FOUR_ISLAND                                              0x4286
+#define VAR_0x4087                                                             0x4287
+#define VAR_MAP_SCENE_ROCKET_WAREHOUSE                                         0x4288
+#define VAR_MAP_SCENE_SIX_ISLAND_POKEMON_CENTER_1F                             0x4289
+#define VAR_MAP_SCENE_CINNABAR_ISLAND_2                                        0x428A
+#define VAR_MAP_SCENE_MT_MOON_B2F                                              0x428B
+
+
+#define VAR_0x408C                 0x428C
+#define VAR_0x408D                 0x428D
+#define VAR_0x408E                 0x428E
+#define VAR_0x408F                 0x428F
+#define VAR_0x4090                 0x4290
+#define VAR_0x4091                 0x4291
+#define VAR_0x4092                 0x4292
+#define VAR_0x4093                 0x4293
+#define VAR_0x4094                 0x4294
+#define VAR_0x4095                 0x4295
+#define VAR_0x4096                 0x4296
+#define VAR_0x4097                 0x4297
+#define VAR_0x4098                 0x4298
+#define VAR_0x4099                 0x4299
+#define VAR_0x409A                 0x429A
+#define VAR_0x409B                 0x429B
+#define VAR_0x409C                 0x429C
+#define VAR_0x409D                 0x429D
+#define VAR_0x409E                 0x429E
+#define VAR_0x409F                 0x429F
+#define VAR_0x40A0                 0x42A0
+#define VAR_0x40A1                 0x42A1
+#define VAR_0x40A2                 0x42A2
+#define VAR_0x40A3                 0x42A3
+#define VAR_0x40A4                 0x42A4
+#define VAR_0x40A5                 0x42A5
+#define VAR_0x40A6                 0x42A6
+#define VAR_0x40A7                 0x42A7
+#define VAR_0x40A8                 0x42A8
+#define VAR_0x40A9                 0x42A9
+
+#define VAR_QLBAK_TRAINER_REMATCHES 0x42AA // array of 4
+#define VAR_QLBAK_MAP_LAYOUT        0x42AE
+
+#define VAR_0x40AF                 0x42AF
+#define VAR_0x40B0                 0x42B0
+#define VAR_0x40B1                 0x42B1
+#define VAR_0x40B2                 0x42B2
+#define VAR_0x40B3                 0x42B3
+#define VAR_PORTHOLE               0x42B4
+#define VAR_EVENT_PICHU_SLOT       0x42B5
+#define VAR_MYSTERY_GIFT_1         0x42B6
+#define VAR_MYSTERY_GIFT_2         0x42B7
+#define VAR_MYSTERY_GIFT_3         0x42B8
+#define VAR_MYSTERY_GIFT_4         0x42B9
+#define VAR_MYSTERY_GIFT_5         0x42BA
+#define VAR_MYSTERY_GIFT_6         0x42BB
+#define VAR_MYSTERY_GIFT_7         0x42BC
+#define VAR_0x40BD                 0x42BD
+#define VAR_0x40BE                 0x42BE
+#define VAR_0x40BF                 0x42BF
+#define VAR_0x40C0                 0x42C0
+#define VAR_0x40C1                 0x42C1
+#define VAR_0x40C2                 0x42C2
+#define VAR_0x40C3                 0x42C3
+#define VAR_0x40C4                 0x42C4
+#define VAR_0x40C5                 0x42C5
+#define VAR_0x40C6                 0x42C6
+#define VAR_0x40C7                 0x42C7
+#define VAR_0x40C8                 0x42C8
+#define VAR_0x40C9                 0x42C9
+#define VAR_0x40CA                 0x42CA
+#define VAR_0x40CB                 0x42CB
+#define VAR_0x40CC                 0x42CC
+#define VAR_0x40CD                 0x42CD
+#define VAR_0x40CE                 0x42CE
+#define VAR_0x40D0                 0x42D0
+#define VAR_0x40D1                 0x42D1
+#define VAR_0x40D2                 0x42D2
+#define VAR_0x40D3                 0x42D3
+#define VAR_0x40D4                 0x42D4
+#define VAR_0x40D5                 0x42D5
+#define VAR_0x40D6                 0x42D6
+#define VAR_0x40D7                 0x42D7
+#define VAR_0x40D8                 0x42D8
+#define VAR_0x40D9                 0x42D9
+#define VAR_0x40DA                 0x42DA
+#define VAR_0x40DB                 0x42DB
+#define VAR_0x40DC                 0x42DC
+#define VAR_0x40DD                 0x42DD
+#define VAR_0x40DE                 0x42DE
+#define VAR_0x40DF                 0x42DF
+#define VAR_0x40E0                 0x42E0
+#define VAR_0x40E1                 0x42E1
+#define VAR_0x40E2                 0x42E2
+#define VAR_0x40E3                 0x42E3
+#define VAR_0x40E4                 0x42E4
+#define VAR_0x40E5                 0x42E5
+#define VAR_0x40EC                 0x42EC
+#define VAR_0x40ED                 0x42ED
+#define VAR_0x40EE                 0x42EE
+#define VAR_0x40EF                 0x42EF
+#define VAR_0x40F0                 0x42F0
+#define VAR_0x40F2                 0x42F2
+#define VAR_0x40F3                 0x42F3
+#define VAR_0x40F4                 0x42F4
+#define VAR_0x40F5                 0x42F5
+#define VAR_0x40F6                 0x42F6
+#define VAR_0x40F7                 0x42F7
+#define VAR_0x40F8                 0x42F8
+#define VAR_0x40F9                 0x42F9
+#define VAR_0x40FA                 0x42FA
+#define VAR_0x40FB                 0x42FB
+#define VAR_0x40FC                 0x42FC
+#define VAR_0x40FD                 0x42FD
+#define VAR_0x40FE                 0x42FE
+#define VAR_0x40FF                 0x42FF
+
+#define VARS_END_FRLG              0x42FF
+#define VARS_COUNT_FRLG            0xE0
+
+
+#define VAR_MON_BOX_ID_FRLG        0x8010
+#define VAR_MON_BOX_POS_FRLG       0x8011
+#define VAR_TEXT_COLOR             0x8012
+#define VAR_PREV_TEXT_COLOR        0x8013
+#define VAR_0x8014                 0x8014 // Unknown/unused
+
+#define SPECIAL_VARS_END_FRLG      0x8014
+
+// Text color ids for VAR_TEXT_COLOR / VAR_PREV_TEXT_COLOR
+#define NPC_TEXT_COLOR_MALE      0 // Blue, for male NPCs
+#define NPC_TEXT_COLOR_FEMALE    1 // Red, for female NPCs
+#define NPC_TEXT_COLOR_MON       2 // Black, for Pokémon
+#define NPC_TEXT_COLOR_NEUTRAL   3 // Black, for inanimate objects and messages from the game
+#define NPC_TEXT_COLOR_DEFAULT 255 // If an NPC is selected, use the color specified by GetColorFromTextColorTable, otherwise use Neutral.
+
+#endif // IS_FRLG
 #endif // GUARD_CONSTANTS_VARS_FRLG_H

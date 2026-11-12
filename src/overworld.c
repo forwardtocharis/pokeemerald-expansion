@@ -79,6 +79,10 @@
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/layouts.h"
+#include "constants/map_groups.h"
+#include "data/map_group_count.h"
+#define NUM_MAP_LAYOUTS LAYOUTS_COUNT
+
 #include "constants/region_map_sections.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -565,11 +569,20 @@ void LoadObjEventTemplatesFromHeader(void)
 
 void LoadSaveblockObjEventScripts(void)
 {
-    const struct ObjectEventTemplate *mapHeaderObjTemplates = gMapHeader.events->objectEvents;
-    struct ObjectEventTemplate *savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
+    const struct ObjectEventTemplate *mapHeaderObjTemplates;
+    struct ObjectEventTemplate *savObjTemplates;
     s32 i;
 
-    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    if (!gMapHeader.events)
+        return;
+
+    mapHeaderObjTemplates = gMapHeader.events->objectEvents;
+    savObjTemplates = gSaveBlock1Ptr->objectEventTemplates;
+
+    if (!mapHeaderObjTemplates)
+        return;
+
+    for (i = 0; i < gMapHeader.events->objectEventCount && i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
         savObjTemplates[i].script = mapHeaderObjTemplates[i].script;
 }
 
@@ -605,14 +618,19 @@ void SetObjEventTemplateMovementType(u8 localId, u8 movementType)
 static void InitMapView(void)
 {
     ResetFieldCamera();
-    CopyMapTilesetsToVram(gMapHeader.mapLayout);
-    LoadMapTilesetPalettes(gMapHeader.mapLayout);
+    if (gMapHeader.mapLayout != NULL)
+    {
+        CopyMapTilesetsToVram(gMapHeader.mapLayout);
+        LoadMapTilesetPalettes(gMapHeader.mapLayout);
+    }
     DrawWholeMapView();
     InitTilesetAnimations();
 }
 
 const struct MapLayout *GetMapLayout(u16 mapLayoutId)
 {
+    if (mapLayoutId == 0 || mapLayoutId > NUM_MAP_LAYOUTS)
+        return NULL;
     return gMapLayouts[mapLayoutId - 1];
 }
 
@@ -655,8 +673,21 @@ static bool32 IsDummyWarp(struct WarpData *warp)
         return TRUE;
 }
 
+static bool8 IsValidCompiledMap(s32 mapGroup, s32 mapNum)
+{
+    if (mapGroup < 0 || mapGroup >= (s32)ARRAY_COUNT(MAP_GROUP_COUNT))
+        return FALSE;
+    if (mapNum < 0 || mapNum >= MAP_GROUP_COUNT[mapGroup])
+        return FALSE;
+    if (gMapGroups[mapGroup] == NULL || gMapGroups[mapGroup][mapNum] == NULL)
+        return FALSE;
+    return TRUE;
+}
+
 struct MapHeader const *const Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum)
 {
+    if (!IsValidCompiledMap(mapGroup, mapNum))
+        return gMapGroups[MAP_GROUP(MAP_VERMILION_CITY)][MAP_NUM(MAP_VERMILION_CITY)];
     return gMapGroups[mapGroup][mapNum];
 }
 
@@ -671,12 +702,129 @@ static void LoadCurrentMapData(void)
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
     gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
     gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+    if (gMapHeader.mapLayout == NULL)
+        gMapHeader.mapLayout = gMapLayouts[0];
+}
+
+static void SanitizeWarpData(struct WarpData *warp)
+{
+    // Legacy Vermilion City Gym (previously mapGroup 76, mapNum 36)
+    if (warp->mapGroup == 76 && warp->mapNum == 36)
+    {
+        warp->mapGroup = MAP_GROUP(MAP_VERMILION_CITY_GYM);
+        warp->mapNum = MAP_NUM(MAP_VERMILION_CITY_GYM);
+        warp->warpId = 1;
+        warp->x = 5;
+        warp->y = 19;
+    }
+    // Legacy Vermilion City Pokemon Center 1F (previously mapGroup 76, mapNum 37)
+    else if (warp->mapGroup == 76 && warp->mapNum == 37)
+    {
+        warp->mapGroup = MAP_GROUP(MAP_VERMILION_CITY_POKEMON_CENTER_1F);
+        warp->mapNum = MAP_NUM(MAP_VERMILION_CITY_POKEMON_CENTER_1F);
+        warp->warpId = 1;
+        warp->x = 7;
+        warp->y = 8;
+    }
+    // Any other invalid Kanto towns/routes map index
+    else if (warp->mapGroup == 76 && warp->mapNum >= 36)
+    {
+        warp->mapGroup = MAP_GROUP(MAP_VERMILION_CITY);
+        warp->mapNum = MAP_NUM(MAP_VERMILION_CITY);
+        warp->warpId = WARP_ID_NONE;
+        warp->x = 24;
+        warp->y = 32;
+    }
+    // General map bounds and compiled-group sanitization
+    else if (warp->mapGroup >= 0 && !IsValidCompiledMap(warp->mapGroup, warp->mapNum))
+    {
+        warp->mapGroup = MAP_GROUP(MAP_VERMILION_CITY);
+        warp->mapNum = MAP_NUM(MAP_VERMILION_CITY);
+        warp->warpId = WARP_ID_NONE;
+        warp->x = 24;
+        warp->y = 32;
+    }
+}
+
+void MigrateSaveLocationAndLayout(void)
+{
+    // 1. Sanitize location
+    if (gSaveBlock1Ptr->location.mapGroup == 76 && gSaveBlock1Ptr->location.mapNum == 36)
+    {
+        // Player saved in old Vermilion City Gym
+        gSaveBlock1Ptr->location.mapGroup = MAP_GROUP(MAP_VERMILION_CITY_GYM);
+        gSaveBlock1Ptr->location.mapNum = MAP_NUM(MAP_VERMILION_CITY_GYM);
+        gSaveBlock1Ptr->mapLayoutId = LAYOUT_VERMILION_CITY_GYM;
+        gSaveBlock1Ptr->pos.x = 5;
+        gSaveBlock1Ptr->pos.y = 19;
+        gSaveBlock1Ptr->location.x = 5;
+        gSaveBlock1Ptr->location.y = 19;
+        gSaveBlock1Ptr->location.warpId = WARP_ID_NONE;
+    }
+    else if (gSaveBlock1Ptr->location.mapGroup == 76 && gSaveBlock1Ptr->location.mapNum == 37)
+    {
+        // Player saved in old Vermilion City Pokemon Center 1F
+        gSaveBlock1Ptr->location.mapGroup = MAP_GROUP(MAP_VERMILION_CITY_POKEMON_CENTER_1F);
+        gSaveBlock1Ptr->location.mapNum = MAP_NUM(MAP_VERMILION_CITY_POKEMON_CENTER_1F);
+        gSaveBlock1Ptr->mapLayoutId = LAYOUT_POKEMON_CENTER_1F_FRLG;
+        gSaveBlock1Ptr->pos.x = 7;
+        gSaveBlock1Ptr->pos.y = 8;
+        gSaveBlock1Ptr->location.x = 7;
+        gSaveBlock1Ptr->location.y = 8;
+        gSaveBlock1Ptr->location.warpId = WARP_ID_NONE;
+    }
+    else if (!IsValidCompiledMap(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum))
+    {
+        gSaveBlock1Ptr->location.mapGroup = MAP_GROUP(MAP_VERMILION_CITY);
+        gSaveBlock1Ptr->location.mapNum = MAP_NUM(MAP_VERMILION_CITY);
+        gSaveBlock1Ptr->mapLayoutId = LAYOUT_VERMILION_CITY;
+        gSaveBlock1Ptr->pos.x = 24;
+        gSaveBlock1Ptr->pos.y = 32;
+        gSaveBlock1Ptr->location.x = 24;
+        gSaveBlock1Ptr->location.y = 32;
+        gSaveBlock1Ptr->location.warpId = WARP_ID_NONE;
+    }
+
+    // 2. Sanitize secondary warps
+    SanitizeWarpData(&gSaveBlock1Ptr->lastHealLocation);
+    SanitizeWarpData(&gSaveBlock1Ptr->continueGameWarp);
+    SanitizeWarpData(&gSaveBlock1Ptr->dynamicWarp);
+    SanitizeWarpData(&gSaveBlock1Ptr->escapeWarp);
 }
 
 static void LoadSaveblockMapHeader(void)
 {
     gMapHeader = *Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+
+    // Validate or correct mapLayoutId
+    if (gSaveBlock1Ptr->mapLayoutId == 0 
+     || gSaveBlock1Ptr->mapLayoutId > NUM_MAP_LAYOUTS
+     || GetMapLayout(gSaveBlock1Ptr->mapLayoutId) == NULL)
+    {
+        gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
+    }
+    else if (gMapHeader.mapLayoutId != 0 && gSaveBlock1Ptr->mapLayoutId != gMapHeader.mapLayoutId)
+    {
+        if (gSaveBlock1Ptr->mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_RED_CAVE1
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_BROWN_CAVE1
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_BLUE_CAVE1
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_YELLOW_CAVE1
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_TREE1
+         && gSaveBlock1Ptr->mapLayoutId != LAYOUT_SECRET_BASE_SHRUB1)
+        {
+            gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
+        }
+    }
+
     gMapHeader.mapLayout = GetMapLayout(gSaveBlock1Ptr->mapLayoutId);
+    if (gMapHeader.mapLayout == NULL)
+    {
+        gSaveBlock1Ptr->mapLayoutId = gMapHeader.mapLayoutId;
+        gMapHeader.mapLayout = GetMapLayout(gMapHeader.mapLayoutId);
+        if (gMapHeader.mapLayout == NULL)
+            gMapHeader.mapLayout = gMapLayouts[0];
+    }
 }
 
 static void SetPlayerCoordsFromWarp(void)
@@ -914,7 +1062,9 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
-        if (gMapHeader.regionMapSectionId != sLastMapSectionId)
+        if (gMapHeader.regionMapSectionId != sLastMapSectionId
+         || mapGroup == MAP_GROUP(MAP_NEW_BARK_TOWN)
+         || mapGroup == MAP_GROUP(MAP_TWINLEAF_TOWN))
             ShowMapNamePopup();
     }
     else
@@ -2122,6 +2272,7 @@ void CB2_ContinueSavedGame(void)
     if (gSaveFileStatus == SAVE_STATUS_ERROR)
         ResetWinStreaks();
 
+    MigrateSaveLocationAndLayout();
     LoadSaveblockMapHeader();
     ClearDiveAndHoleWarps();
     trainerHillMapId = GetCurrentTrainerHillMapId();
