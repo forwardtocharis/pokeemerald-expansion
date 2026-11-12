@@ -32,6 +32,16 @@ u8 GetStartingRegionChoice(void);
 bool32 HasRematchedToday(u16 trainerId);
 void SetRematchedToday(u16 trainerId);
 
+// Gym Monotype Mirror restriction (enforced after first region; starting region waived)
+enum Type GetGymRequiredTypeForMap(s8 mapGroup, s8 mapNum);
+enum Type GetCurrentGymRequiredType(void);
+bool32 CanMonParticipateInGymTypeBattle(struct Pokemon *mon, enum Type requiredType);
+u32 CountUsableGymTypePartyMons(enum Type requiredType);
+bool32 HasEnoughMonsForCurrentGymBattle(bool32 isDoubleBattle);
+void BufferCurrentGymRestrictionStrings(bool32 isDoubleBattle);
+void TryPreparePartyForGymTypeBattle(void);
+void RestorePartyAfterGymTypeBattle(void);
+
 // Grand Champion Red procedural Level 100 team generator (3 Legendaries + 3 Aces)
 void CreateRedGrandChampionParty(struct Pokemon *party);
 

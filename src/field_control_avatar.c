@@ -25,6 +25,7 @@
 #include "link.h"
 #include "match_call.h"
 #include "metatile_behavior.h"
+#include "multi_region.h"
 #include "overworld.h"
 #include "pokemon.h"
 #include "safari_zone.h"
@@ -996,6 +997,17 @@ static bool8 TryStartWarpEventScript(struct MapPosition *position, u16 metatileB
 
     if (warpEventId != WARP_ID_NONE && IsWarpMetatileBehavior(metatileBehavior) == TRUE)
     {
+        const struct WarpEvent *warpEvent = &gMapHeader.events->warps[warpEventId];
+        if (GetCurrentGymRequiredType() != TYPE_NONE
+         && GetGymRequiredTypeForMap(warpEvent->mapGroup, warpEvent->mapNum) != TYPE_NONE
+         && !HasEnoughMonsForCurrentGymBattle(FALSE))
+        {
+            BufferCurrentGymRestrictionStrings(FALSE);
+            gSpecialVar_Facing = GetPlayerFacingDirection();
+            ScriptContext_SetupScript(EventScript_GymWarpTypeBlock);
+            LockPlayerFieldControls();
+            return TRUE;
+        }
         StoreInitialPlayerAvatarState();
         SetupWarp(&gMapHeader, warpEventId, position);
         if (MetatileBehavior_IsEscalator(metatileBehavior) == TRUE)

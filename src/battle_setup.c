@@ -1249,6 +1249,9 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
     PUSH       (EventSnippet_RevealTrainer)
 
     bool32 isTrainerDefeated = !battleParams->params.skipFlagCheck && GetTrainerFlag();
+    bool32 isDouble = battleParams->params.isDoubleBattle
+                   || (battleParams->params.opponentA != 0 && battleParams->params.opponentB != 0)
+                   || GetTrainerBattleType(battleParams->params.opponentA) == TRAINER_BATTLE_TYPE_DOUBLES;
 
     if ((isTrainerDefeated && !battleParams->params.isRematch)
     || (!IsTrainerReadyForRematch() && battleParams->params.isRematch)) {
@@ -1256,6 +1259,11 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
         {
             // One rematch per trainer per calendar day
             if (HasRematchedToday(battleParams->params.opponentA))
+            {
+                PUSH(EventSnippet_GotoPostBattleScript);
+                return;
+            }
+            if (!HasEnoughMonsForCurrentGymBattle(isDouble))
             {
                 PUSH(EventSnippet_GotoPostBattleScript);
                 return;
@@ -1275,6 +1283,13 @@ static void BattleSetup_ConfigureTrainerBattle(TrainerBattleParameter *battlePar
             return;
         }
         PUSH(EventSnippet_GotoPostBattleScript);
+        return;
+    }
+
+    if (!HasEnoughMonsForCurrentGymBattle(isDouble))
+    {
+        BufferCurrentGymRestrictionStrings(isDouble);
+        PUSH(EventSnippet_NotEnoughMonsForGymTypeBattle)
         return;
     }
 
@@ -1563,7 +1578,10 @@ void BattleSetup_StartTrainerBattle(void)
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InTrainerHillChallenge())
         DoBattlePyramidTrainerHillBattle();
     else
+    {
+        TryPreparePartyForGymTypeBattle();
         DoTrainerBattle();
+    }
 
     ScriptContext_Stop();
 }
@@ -1612,6 +1630,8 @@ static void SaveChangesToPlayerParty(void)
 
 static void HandleBattleVariantEndParty(void)
 {
+    RestorePartyAfterGymTypeBattle();
+
     if (B_FLAG_SKY_BATTLE == 0 || !FlagGet(B_FLAG_SKY_BATTLE))
         return;
     SaveChangesToPlayerParty();
@@ -1682,6 +1702,8 @@ static void CB2_EndTrainerBattle(void)
 
 static void CB2_EndRematchBattle(void)
 {
+    HandleBattleVariantEndParty();
+
     if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_SECRET_BASE)
     {
         DowngradeBadPoison();
@@ -1708,6 +1730,7 @@ void BattleSetup_StartRematchBattle(void)
         gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     
     gMain.savedCallback = CB2_EndRematchBattle;
+    TryPreparePartyForGymTypeBattle();
     DoTrainerBattle();
     ScriptContext_Stop();
 }

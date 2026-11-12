@@ -15,6 +15,8 @@
 #include "trainer_hill.h"
 #include "util.h"
 #include "battle_pyramid.h"
+#include "multi_region.h"
+#include "field_control_avatar.h"
 #include "constants/battle_frontier.h"
 #include "constants/event_objects.h"
 #include "constants/event_object_movement.h"
@@ -472,6 +474,8 @@ bool8 CheckForTrainersWantingBattle(void)
     {
         u8 numTrainers;
         numTrainers = CheckTrainer(trainerObjects[i]);
+        if (numTrainers == 0xFE) // blocked by gym type restriction
+            return TRUE;
         if (numTrainers == 0xFF) // non-trainerbattle script
         {
             u32 objectEventId = gApproachingTrainers[gNoOfApproachingTrainers - 1].objectEventId;
@@ -491,7 +495,7 @@ bool8 CheckForTrainersWantingBattle(void)
 
         if (gNoOfApproachingTrainers > 1)
             break;
-        if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS) // one trainer found and can't have a double battle
+        if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS || !HasEnoughMonsForCurrentGymBattle(TRUE)) // one trainer found and can't have a double battle
             break;
     }
 
@@ -580,7 +584,22 @@ static u8 CheckTrainer(u8 objectEventId)
     if (trainerBattlePtr && !InTrainerHillChallenge() && !InBattlePyramid()) 
     {
         TrainerBattleParameter *temp = (TrainerBattleParameter *)(trainerBattlePtr + 1);
-        if (temp->params.isDoubleBattle)
+        bool32 isDouble = temp->params.isDoubleBattle;
+        if (!HasEnoughMonsForCurrentGymBattle(isDouble))
+        {
+            if (gNoOfApproachingTrainers == 0)
+            {
+                BufferCurrentGymRestrictionStrings(isDouble);
+                gSelectedObjectEvent = objectEventId;
+                gSpecialVar_LastTalked = gObjectEvents[objectEventId].localId;
+                gSpecialVar_Facing = GetPlayerFacingDirection();
+                ScriptContext_SetupScript(EventScript_GymTrainerTypeBlock);
+                LockPlayerFieldControls();
+                return 0xFE;
+            }
+            return 0;
+        }
+        if (isDouble)
         {
             if (GetMonsStateToDoubles_2() != PLAYER_HAS_TWO_USABLE_MONS)
                 return 0;

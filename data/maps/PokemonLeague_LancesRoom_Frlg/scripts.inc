@@ -275,7 +275,7 @@ PokemonLeague_LancesRoom_Text_KarenPostBattle::
 	.string "of people.\p"
 	.string "Truly skilled TRAINERS should try to\n"
 	.string "win with their favorites.\p"
-	.string "I like your style. Go on—CHAMPION\n"
+	.string "I like your style. Go on - CHAMPION\n"
 	.string "LANCE is waiting.$"
 
 PokemonLeague_LancesRoom_Text_LucianIntro::

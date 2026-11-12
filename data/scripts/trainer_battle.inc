@@ -196,6 +196,77 @@ EventSnippet_NotEnoughMonsForDoubleBattle::
 	release
 	end
 
+EventSnippet_NotEnoughMonsForGymTypeBattle::
+	msgbox Text_NotEnoughMonsForGymTypeBattle, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_GymTrainerTypeBlock::
+	lockall
+	playse SE_PIN
+	msgbox Text_GymTrainerTypeBlock, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_FACING
+	case DIR_NORTH, EventScript_GymTypeBlock_StepDown
+	case DIR_SOUTH, EventScript_GymTypeBlock_StepUp
+	case DIR_WEST, EventScript_GymTypeBlock_StepRight
+	case DIR_EAST, EventScript_GymTypeBlock_StepLeft
+	releaseall
+	end
+
+EventScript_GymWarpTypeBlock::
+	lockall
+	playse SE_FAILURE
+	msgbox Text_NotEnoughMonsForGymTypeBattle, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_FACING
+	case DIR_NORTH, EventScript_GymTypeBlock_StepDown
+	case DIR_SOUTH, EventScript_GymTypeBlock_StepUp
+	case DIR_WEST, EventScript_GymTypeBlock_StepRight
+	case DIR_EAST, EventScript_GymTypeBlock_StepLeft
+	releaseall
+	end
+
+EventScript_GymTypeBlock_StepDown::
+	applymovement LOCALID_PLAYER, Movement_GymTypeBlock_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_GymTypeBlock_StepUp::
+	applymovement LOCALID_PLAYER, Movement_GymTypeBlock_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_GymTypeBlock_StepRight::
+	applymovement LOCALID_PLAYER, Movement_GymTypeBlock_WalkRight
+	waitmovement 0
+	releaseall
+	end
+
+EventScript_GymTypeBlock_StepLeft::
+	applymovement LOCALID_PLAYER, Movement_GymTypeBlock_WalkLeft
+	waitmovement 0
+	releaseall
+	end
+
+Movement_GymTypeBlock_WalkDown:
+	walk_down
+	step_end
+
+Movement_GymTypeBlock_WalkUp:
+	walk_up
+	step_end
+
+Movement_GymTypeBlock_WalkRight:
+	walk_right
+	step_end
+
+Movement_GymTypeBlock_WalkLeft:
+	walk_left
+	step_end
+
 EventSnippet_AskTrainerRematch::
 	msgbox Text_AskTrainerRematch, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, EventSnippet_DoUniversalRematch
@@ -210,3 +281,15 @@ EventSnippet_DoUniversalRematch::
 
 Text_AskTrainerRematch:
 	.string "Care for a rematch?$"
+
+Text_NotEnoughMonsForGymTypeBattle:
+	.string "This GYM only permits {STR_VAR_1}-type\n"
+	.string "POKéMON in battle!\p"
+	.string "You need at least {STR_VAR_2} usable\n"
+	.string "{STR_VAR_1}-type POKéMON to challenge here.$"
+
+Text_GymTrainerTypeBlock:
+	.string "Hold it! This GYM only permits\n"
+	.string "{STR_VAR_1}-type POKéMON in battle!\p"
+	.string "Come back with at least {STR_VAR_2} usable\n"
+	.string "{STR_VAR_1}-type POKéMON in your party!$"

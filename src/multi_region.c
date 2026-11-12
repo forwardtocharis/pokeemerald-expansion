@@ -1,11 +1,16 @@
 #include "global.h"
+#include "battle_main.h"
 #include "event_data.h"
+#include "load_save.h"
 #include "multi_region.h"
 #include "pokemon.h"
 #include "random.h"
 #include "rtc.h"
+#include "string_util.h"
+#include "text.h"
 #include "constants/flags.h"
 #include "constants/items.h"
+#include "constants/map_groups.h"
 #include "constants/moves.h"
 #include "constants/pokemon.h"
 #include "constants/species.h"
@@ -215,7 +220,215 @@ void SetStartingRegionChoice(u8 region)
 
 u8 GetStartingRegionChoice(void)
 {
+    u16 saved = VarGet(VAR_STARTING_REGION);
+    if (saved >= 1 && saved <= 4)
+        return (u8)(saved - 1);
+    if (GetTotalBadgesCount() < 8)
+        return GetActiveRegion();
     return sStartingRegionChoice;
+}
+
+// ── Gym Monotype Mirror Restriction ─────────────────────────────────────
+// After completing the first region (8+ badges), all Gyms outside the
+// player's starting region require participating Pokemon to match the
+// Gym's elemental type (primary or secondary). Non-matching party members
+// are automatically stripped before battle and restored immediately after.
+
+struct GymTypeRule
+{
+    s8 mapGroup;
+    s8 mapNum;
+    u8 regionId;
+    enum Type requiredType;
+};
+
+#define GYM_RULE(map, region, type) \
+    { MAP_GROUP(map), MAP_NUM(map), (region), (type) }
+
+static const struct GymTypeRule sGymTypeRules[] =
+{
+    // Hoenn (region 0)
+    GYM_RULE(MAP_RUSTBORO_CITY_GYM,       STARTING_REGION_HOENN,  TYPE_ROCK),
+    GYM_RULE(MAP_DEWFORD_TOWN_GYM,        STARTING_REGION_HOENN,  TYPE_FIGHTING),
+    GYM_RULE(MAP_MAUVILLE_CITY_GYM,       STARTING_REGION_HOENN,  TYPE_ELECTRIC),
+    GYM_RULE(MAP_LAVARIDGE_TOWN_GYM_1F,   STARTING_REGION_HOENN,  TYPE_FIRE),
+    GYM_RULE(MAP_LAVARIDGE_TOWN_GYM_B1F,  STARTING_REGION_HOENN,  TYPE_FIRE),
+    GYM_RULE(MAP_PETALBURG_CITY_GYM,      STARTING_REGION_HOENN,  TYPE_NORMAL),
+    GYM_RULE(MAP_FORTREE_CITY_GYM,        STARTING_REGION_HOENN,  TYPE_FLYING),
+    GYM_RULE(MAP_MOSSDEEP_CITY_GYM,       STARTING_REGION_HOENN,  TYPE_PSYCHIC),
+    GYM_RULE(MAP_SOOTOPOLIS_CITY_GYM_1F,  STARTING_REGION_HOENN,  TYPE_WATER),
+    GYM_RULE(MAP_SOOTOPOLIS_CITY_GYM_B1F, STARTING_REGION_HOENN,  TYPE_WATER),
+
+    // Kanto (region 1)
+    GYM_RULE(MAP_PEWTER_CITY_GYM,         STARTING_REGION_KANTO,  TYPE_ROCK),
+    GYM_RULE(MAP_CERULEAN_CITY_GYM,       STARTING_REGION_KANTO,  TYPE_WATER),
+    GYM_RULE(MAP_VERMILION_CITY_GYM,      STARTING_REGION_KANTO,  TYPE_ELECTRIC),
+    GYM_RULE(MAP_CELADON_CITY_GYM,        STARTING_REGION_KANTO,  TYPE_GRASS),
+    GYM_RULE(MAP_FUCHSIA_CITY_GYM,        STARTING_REGION_KANTO,  TYPE_POISON),
+    GYM_RULE(MAP_SAFFRON_CITY_GYM,        STARTING_REGION_KANTO,  TYPE_PSYCHIC),
+    GYM_RULE(MAP_CINNABAR_ISLAND_GYM,     STARTING_REGION_KANTO,  TYPE_FIRE),
+    GYM_RULE(MAP_VIRIDIAN_CITY_GYM,       STARTING_REGION_KANTO,  TYPE_GROUND),
+
+    // Johto (region 2)
+    GYM_RULE(MAP_VIOLET_CITY__GYM,        STARTING_REGION_JOHTO,  TYPE_FLYING),
+    GYM_RULE(MAP_AZALEA_TOWN__GYM,        STARTING_REGION_JOHTO,  TYPE_BUG),
+    GYM_RULE(MAP_GOLDENROD_CITY__GYM,     STARTING_REGION_JOHTO,  TYPE_NORMAL),
+    GYM_RULE(MAP_ECRUTEAK_CITY__GYM,      STARTING_REGION_JOHTO,  TYPE_GHOST),
+    GYM_RULE(MAP_CIANWOOD_CITY__GYM,      STARTING_REGION_JOHTO,  TYPE_FIGHTING),
+    GYM_RULE(MAP_OLIVINE_CITY__GYM,       STARTING_REGION_JOHTO,  TYPE_STEEL),
+    GYM_RULE(MAP_MAHOGANY_TOWN__GYM,      STARTING_REGION_JOHTO,  TYPE_ICE),
+    GYM_RULE(MAP_BLACKTHORN_CITY__GYM,    STARTING_REGION_JOHTO,  TYPE_DRAGON),
+
+    // Sinnoh (region 3)
+    GYM_RULE(MAP_OREBURGH_CITY__GYM,      STARTING_REGION_SINNOH, TYPE_ROCK),
+    GYM_RULE(MAP_ETERNA_CITY__GYM,        STARTING_REGION_SINNOH, TYPE_GRASS),
+    GYM_RULE(MAP_VEILSTONE_CITY__GYM,     STARTING_REGION_SINNOH, TYPE_FIGHTING),
+    GYM_RULE(MAP_PASTORIA_CITY__GYM,      STARTING_REGION_SINNOH, TYPE_WATER),
+    GYM_RULE(MAP_HEARTHOME_CITY__GYM,     STARTING_REGION_SINNOH, TYPE_GHOST),
+    GYM_RULE(MAP_CANALAVE_CITY__GYM,      STARTING_REGION_SINNOH, TYPE_STEEL),
+    GYM_RULE(MAP_SNOWPOINT_CITY__GYM,     STARTING_REGION_SINNOH, TYPE_ICE),
+    GYM_RULE(MAP_SUNYSHORE_CITY__GYM,     STARTING_REGION_SINNOH, TYPE_ELECTRIC),
+};
+
+#undef GYM_RULE
+
+static EWRAM_DATA bool8 sIsGymTypeFilteredBattle = FALSE;
+static EWRAM_DATA u8 sGymTypeParticipatingMask = 0;
+
+enum Type GetGymRequiredTypeForMap(s8 mapGroup, s8 mapNum)
+{
+    u32 i;
+    u8 startingRegion;
+
+    for (i = 0; i < ARRAY_COUNT(sGymTypeRules); i++)
+    {
+        if (sGymTypeRules[i].mapGroup == mapGroup && sGymTypeRules[i].mapNum == mapNum)
+        {
+            startingRegion = GetStartingRegionChoice();
+            // Starting region always waives the requirement
+            if (sGymTypeRules[i].regionId == startingRegion)
+                return TYPE_NONE;
+            // Wait until after the first region (8 badges) before enforcing
+            if (GetTotalBadgesCount() < 8)
+                return TYPE_NONE;
+            return sGymTypeRules[i].requiredType;
+        }
+    }
+    return TYPE_NONE;
+}
+
+enum Type GetCurrentGymRequiredType(void)
+{
+    return GetGymRequiredTypeForMap(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
+}
+
+bool32 CanMonParticipateInGymTypeBattle(struct Pokemon *mon, enum Type requiredType)
+{
+    enum Species species;
+
+    if (requiredType == TYPE_NONE)
+        return TRUE;
+
+    if (!GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) || GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    return IsSpeciesOfType(species, requiredType);
+}
+
+u32 CountUsableGymTypePartyMons(enum Type requiredType)
+{
+    u32 i;
+    u32 count = 0;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        if (CanMonParticipateInGymTypeBattle(mon, requiredType) && GetMonData(mon, MON_DATA_HP) > 0)
+            count++;
+    }
+    return count;
+}
+
+bool32 HasEnoughMonsForCurrentGymBattle(bool32 isDoubleBattle)
+{
+    enum Type requiredType = GetCurrentGymRequiredType();
+    u32 needed;
+
+    if (requiredType == TYPE_NONE)
+        return TRUE;
+
+    needed = isDoubleBattle ? 2 : 1;
+    return CountUsableGymTypePartyMons(requiredType) >= needed;
+}
+
+void BufferCurrentGymRestrictionStrings(bool32 isDoubleBattle)
+{
+    enum Type requiredType = GetCurrentGymRequiredType();
+    u32 needed = isDoubleBattle ? 2 : 1;
+
+    if (requiredType != TYPE_NONE && requiredType < NUMBER_OF_MON_TYPES)
+        StringCopy(gStringVar1, gTypesInfo[requiredType].name);
+    else
+        gStringVar1[0] = EOS;
+
+    ConvertIntToDecimalStringN(gStringVar2, needed, STR_CONV_MODE_LEFT_ALIGN, 1);
+}
+
+void TryPreparePartyForGymTypeBattle(void)
+{
+    enum Type requiredType = GetCurrentGymRequiredType();
+    u8 i;
+    u8 partyCount;
+    u8 mask = 0;
+
+    if (requiredType == TYPE_NONE || sIsGymTypeFilteredBattle)
+        return;
+
+    partyCount = CalculatePlayerPartyCount();
+    sIsGymTypeFilteredBattle = TRUE;
+    SavePlayerParty();
+
+    for (i = 0; i < partyCount; i++)
+    {
+        struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][i];
+        if (CanMonParticipateInGymTypeBattle(mon, requiredType))
+            mask |= (1 << i);
+        else
+            ZeroMonData(mon);
+    }
+
+    sGymTypeParticipatingMask = mask;
+    CompactPartySlots();
+}
+
+void RestorePartyAfterGymTypeBattle(void)
+{
+    u8 i, j = 0;
+
+    if (!sIsGymTypeFilteredBattle)
+        return;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if ((sGymTypeParticipatingMask >> i) & 1)
+        {
+            SavePlayerPartyMon(i, &gParties[B_TRAINER_PLAYER][j]);
+            j++;
+        }
+    }
+
+    // Preserve any newly spawned party Pokémon during battle (e.g., Shedinja)
+    while (j < gPartiesCount[B_TRAINER_PLAYER] && *GetSavedPlayerPartyCount() < PARTY_SIZE)
+    {
+        u8 newSlot = (*GetSavedPlayerPartyCount())++;
+        SavePlayerPartyMon(newSlot, &gParties[B_TRAINER_PLAYER][j]);
+        j++;
+    }
+
+    LoadPlayerParty();
+    sIsGymTypeFilteredBattle = FALSE;
+    sGymTypeParticipatingMask = 0;
 }
 
 // ── Daily rematch cooldown ──────────────────────────────────────────────

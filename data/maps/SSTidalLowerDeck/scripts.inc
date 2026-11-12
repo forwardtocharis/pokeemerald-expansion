@@ -248,7 +248,7 @@ SSTidalLowerDeck_Text_LanceDefeat:
 SSTidalLowerDeck_Text_Stage2_LancePost:
 	.string "LANCE: You have defeated three\n"
 	.string "Regional Champions in succession.\p"
-	.string "ANNOUNCER: Round 4—the Semifinal\n"
+	.string "ANNOUNCER: Round 4 - the Semifinal\n"
 	.string "against SINNOH CHAMPION CYNTHIA!$"
 
 SSTidalLowerDeck_Text_Stage3_IntroPrompt:

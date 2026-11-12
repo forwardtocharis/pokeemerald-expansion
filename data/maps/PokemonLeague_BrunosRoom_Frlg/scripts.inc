@@ -187,7 +187,7 @@ PokemonLeague_BrunosRoom_Text_PostBattle::
 PokemonLeague_BrunosRoom_Text_KogaJohtoIntro::
 	.string "Fwahahaha!\p"
 	.string "I am KOGA of the JOHTO ELITE FOUR.\p"
-	.string "I live in shadows—a ninja!\n"
+	.string "I live in shadows - a ninja!\n"
 	.string "My intricate style will confound\l"
 	.string "and destroy you!\p"
 	.string "Fell the despair of POISON and\n"

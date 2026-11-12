@@ -206,6 +206,7 @@ void NewGameInitData(void)
     VarSet(VAR_CURRENT_REGION, 0); // 0: Hoenn (from content/game.yaml starting_region)
     if (GetStartingRegionChoice() != 0)
         VarSet(VAR_CURRENT_REGION, GetStartingRegionChoice());
+    VarSet(VAR_STARTING_REGION, VarGet(VAR_CURRENT_REGION) + 1);
     VarSet(VAR_TOTAL_BADGES, 0);
     VarSet(VAR_HOENN_BADGES, 0);
     VarSet(VAR_KANTO_BADGES, 0);
